@@ -1155,13 +1155,22 @@ const rightGrid = [
   },
 ];
 
+
+
   const [openGridImage, setOpenGridImage] = useState(null);
 
-  const carouselItems = Array.from({ length: 3 }).map((_, i) => ({
-    id: i,
-    title: `Carousel ${i + 1}`,
-    content: `Content for carousel ${i + 1}`
-  }));
+  const bottomThree = [
+  { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical catagory for a civillian of the world empire." },
+  { id: 1, title: "CARD", text: "CARD stands for Councillor, Academic, Researcher, Designer. It is the higher tier that forms the 4 in the KTSHAM" },
+  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light." }
+];
+
+const carouselItems = bottomThree.map(item => ({
+  id: item.id,
+  title: item.title,
+  content: item.text || `Content for carousel ${item.id + 1}`
+}));
+
   const [openLeftCard, setOpenLeftCard] = useState(null);
 
 
