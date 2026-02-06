@@ -411,78 +411,39 @@ function HomePage() {
 function LanguagePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [showCountries, setShowCountries] = useState(false);
 
   const languages = [
-    {
-      name: "Italian",
-      img: "/images/italian.jpg",
-      text: "Romance language spoken primarily in Italy: Villa Reale di Monza."
-    },
-    {
-      name: "French",
-      img: "/images/french.jpg",
-      text: "Widely used in diplomacy and European culture: Versailles."
-    },
-    {
-      name: "Spanish",
-      img: "/images/spanish.jpg",
-      text: "One of the most spoken languages worldwide: Alhambara."
-    },
-    {
-      name: "German",
-      img: "/images/german.jpg",
-      text: "Major language of Central Europe: Hohenzollern castle."
-    },
-    {
-      name: "Swedish",
-      img: "/images/swedish.jpg",
-      text: "Scandinavian language spoken in Sweden: Kalmar Castle."
-    },
-    {
-      name: "Polish",
-      img: "/images/polish.jpg",
-      text: "Slavic language of Poland: Moszna Castle."
-    },
-    {
-      name: "Arabic",
-      img: "/images/arabic.jpg",
-      text: "Semitic language used across the Middle East: Citadel of Saladin."
-    },
-    {
-      name: "Armenian",
-      img: "/images/armenian.jpg",
-      text: "Indo-European language with its own script: Government House number 1: ."
-    },
-    {
-      name: "Hebrew",
-      img: "/images/hebrew.jpg",
-      text: "Ancient and revived Semitic language: Caesarea."
-    },
-    {
-      name: "Farsi",
-      img: "/images/farsi.jpg",
-      text: "Persian language spoken in Iran: Borazjan Castle."
-    },
-    {
-      name: "Sorani",
-      img: "/images/sorani.jpg",
-      text: "Central Kurdish dialect: Sherwana Castle."
-    },
-    {
-      name: "Hindi",
-      img: "/images/hindi.jpg",
-      text: "Major Indo-Aryan language: Ummaid Bhawan - Jodhpur."
-    },
-    {
-      name: "Mandarin",
-      img: "/images/mandarin.jpg",
-      text: "Most spoken native language in the world: Forbidden City."
-    },
-    {
-      name: "Japanese",
-      img: "/images/japanese.jpg",
-      text: "Language of Japan with multiple scripts: Himeji Castle."
-    }
+    { name: "Italian", img: "/images/italian.jpg", text: "Romance language spoken primarily in Italy: Villa Reale di Monza." },
+    { name: "French", img: "/images/french.jpg", text: "Widely used in diplomacy and European culture: Versailles." },
+    { name: "Spanish", img: "/images/spanish.jpg", text: "One of the most spoken languages worldwide: Alhambara." },
+    { name: "German", img: "/images/german.jpg", text: "Major language of Central Europe: Hohenzollern castle." },
+    { name: "Swedish", img: "/images/swedish.jpg", text: "Scandinavian language spoken in Sweden: Kalmar Castle." },
+    { name: "Polish", img: "/images/polish.jpg", text: "Slavic language of Poland: Moszna Castle." },
+    { name: "Arabic", img: "/images/arabic.jpg", text: "Semitic language used across the Middle East: Citadel of Saladin." },
+    { name: "Armenian", img: "/images/armenian.jpg", text: "Indo-European language with its own script: Government House number 1." },
+    { name: "Hebrew", img: "/images/hebrew.jpg", text: "Ancient and revived Semitic language: Caesarea." },
+    { name: "Farsi", img: "/images/farsi.jpg", text: "Persian language spoken in Iran: Borazjan Castle." },
+    { name: "Sorani", img: "/images/sorani.jpg", text: "Central Kurdish dialect: Sherwana Castle." },
+    { name: "Hindi", img: "/images/hindi.jpg", text: "Major Indo-Aryan language: Ummaid Bhawan - Jodhpur." },
+    { name: "Mandarin", img: "/images/mandarin.jpg", text: "Most spoken native language in the world: Forbidden City." },
+    { name: "Japanese", img: "/images/japanese.jpg", text: "Language of Japan with multiple scripts: Himeji Castle." }
+  ];
+
+  const countries = [
+    "Argentina","Brazil","Chile","Colombia (Haiti and Little Ragged Island)","USA",
+    "India","Australia","Malaysia","Bangladesh","Phillipines","Vietnam","China","Japan",
+    "Thailand","Spain","Netherlands","Morocco","Egypt","France","Italy","Saudi Arabia",
+    "UAE","Yemen","Israel","Greece","Poland","Germany","Ukraine","Sweden","Finland",
+    "San Marino","Switzerland","South Africa","Algeria","Iran","Indonesia","Turkey"
+  ];
+
+  const runs = [
+    "IAMMEPMVSCSMS",
+    "IAMBPVSHIHTH",
+    "DRJIS",
+    "LLNKSFMJZ",
+    "ABCCHL(CCNL)"
   ];
 
   const visible = [
@@ -495,15 +456,8 @@ function LanguagePage() {
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>Languages</h2>
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "18px"
-        }}
-      >
-        {/* Carousel Row */}
+      {/* Carousel */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "18px" }}>
         <div style={{ display: "flex", gap: "24px", justifyContent: "center" }}>
           {visible.map((idx, pos) => {
             const lang = languages[idx];
@@ -512,9 +466,7 @@ function LanguagePage() {
             return (
               <div
                 key={idx}
-                onClick={() =>
-                  setExpandedIndex(isExpanded ? null : idx)
-                }
+                onClick={() => setExpandedIndex(isExpanded ? null : idx)}
                 style={{
                   ...styles.card,
                   minWidth: "220px",
@@ -526,10 +478,8 @@ function LanguagePage() {
                 }}
               >
                 <h3>{lang.name}</h3>
-
                 {isExpanded && (
                   <>
-                    {/* Image */}
                     <div
                       style={{
                         height: "150px",
@@ -540,8 +490,6 @@ function LanguagePage() {
                         backgroundPosition: "center"
                       }}
                     />
-
-                    {/* Text */}
                     <p style={{ marginTop: "10px" }}>{lang.text}</p>
                   </>
                 )}
@@ -550,28 +498,59 @@ function LanguagePage() {
           })}
         </div>
 
-        {/* Controls */}
+        {/* Carousel controls */}
         <div style={{ display: "flex", gap: "16px" }}>
           <button
             onClick={() => {
               setExpandedIndex(null);
-              setCurrentIndex((i) => (i - 1 + languages.length) % languages.length);
+              setCurrentIndex(i => (i - 1 + languages.length) % languages.length);
             }}
             style={styles.btn}
           >
             Previous
           </button>
-
           <button
             onClick={() => {
               setExpandedIndex(null);
-              setCurrentIndex((i) => (i + 1) % languages.length);
+              setCurrentIndex(i => (i + 1) % languages.length);
             }}
             style={styles.btn}
           >
             Next
           </button>
         </div>
+      </div>
+
+      {/* Countries Accordion */}
+      <div
+        style={{
+          marginTop: "32px",
+          width: "80%",
+          maxWidth: "800px",
+          cursor: "pointer",
+          ...styles.card,
+          textAlign: "center"
+        }}
+        onClick={() => setShowCountries(!showCountries)}
+      >
+        <h3>36 Countries and the Run</h3>
+        {showCountries && (
+          <ul style={{ textAlign: "left", marginTop: "12px", columns: 2, gap: "12px", listStyleType: "disc", paddingLeft: "20px" }}>
+            {countries.map((c, i) => (
+              <li key={i}>{c}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Runs Section */}
+      <div style={{ marginTop: "32px", width: "80%", maxWidth: "800px", ...styles.card, padding: "16px" }}>
+        <h3>5 Runs IIDADADII</h3>
+        <ol style={{ marginTop: "12px" }}>
+          {runs.map((r, i) => (
+            <li key={i}>{r}</li>
+          ))}
+        </ol>
       </div>
     </AnimatedPage>
   );
