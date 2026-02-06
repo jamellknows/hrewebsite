@@ -576,7 +576,7 @@ function BusinessPage() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   const metric5 = [
     {
