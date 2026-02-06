@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence, px, color } from "framer-motion";
-import { Home, Building2, PenTool, LineChart, Image, Mail, CrownIcon, BriefcaseBusiness, Earth, EarthLock, Cross } from "lucide-react";
+import { motion, AnimatePresence, } from "framer-motion";
+import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react";
 import './App.css';
 import { useState, useEffect } from "react";
-import profileImage from './srcImages/hre.jpg'
 import crownImage from './srcImages/crown.jpg'
-import christmas from './srcImages/christmas.jpg'
-import cross from './srcImages/cross.jpg'
+
 
 const languages = [
   "Italian", "French", "Spanish", "German", "Swedish",
