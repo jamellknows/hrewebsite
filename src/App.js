@@ -643,7 +643,7 @@ function BusinessPage() {
       id: 1,
       title: "Male Business Structure",
       text:
-        "P->M->S,P,L. Performance(11 women from the female side) -> Managers -> Security, Payments, Produce(Labour, Safety, Office, Marketing, Procurement)."
+        "P->M->S,P,L. Performance(7 women from the female side) -> Managers -> Security, Payments, Produce(Labour, Safety, Office, Marketing, Procurement)."
     },
     {
       id: 2,
