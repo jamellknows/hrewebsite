@@ -6,11 +6,7 @@ import { useState, useEffect } from "react";
 import crownImage from './srcImages/crown.jpg'
 
 
-const languages = [
-  "Italian", "French", "Spanish", "German", "Swedish",
-  "Polish", "Arabic", "Armenian", "Hebrew", "Farsi",
-  "Sorani", "Hindi", "Mandarin", "Japanese"
-];
+
 // Added inline CSS to replace missing App.css
 const styles = {
   app: {
@@ -1166,7 +1162,6 @@ const rightGrid = [
     title: `Carousel ${i + 1}`,
     content: `Content for carousel ${i + 1}`
   }));
-  const [activeImage, setActiveImage] = useState(null);
   const [openLeftCard, setOpenLeftCard] = useState(null);
 
 
