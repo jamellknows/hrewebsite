@@ -203,7 +203,7 @@ const LearnMoreButton = () => {
       {open && (
         <div style={styles.box}>
           <ul style={styles.bulletList}>
-            <li>My full name is Alvah Ivor Jamell Ivan Bucknor Wisdom Samuels</li>
+            <li>My full name is Alvah Ivan Jamell Ivor Bucknor Wisdom Samuels</li>
             <li>I am God and I am not(Nun/None).</li>
             <li>I am going to conquer the world very slowly and very quickly by living from 26th April 2023 to some end date at 32 again and again (10000 times in 5 cycles or maybe 50000 times in 5 cycles) in what I call an iteration of time. Obviously you all iterate with me but don't realize unless I inform you as I am now, don't think about it too much just continue living life.</li>
           </ul>
@@ -318,8 +318,8 @@ function HomePage() {
         {/* Left Content */}
         <div style={{ flex: 2 }}>
   <h1 style={{ ...styles.title, fontFamily: '"Times New Roman", serif' }}>
-    His Highness He Adds Light Sea to He Adds God's Grace and Favour
-  </h1>
+    His Highness He Add's God's Grace and Favour Sea to He Adds Light.
+  </h1> 
 
   <ul style={{ ...styles.subtitle, listStyleType: "none", paddingLeft: 0 }}>
     <li>⭐ Holy Roman Emperor Sancte Romane Imperatoris</li>
