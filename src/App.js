@@ -1096,7 +1096,7 @@ function WorldRule1Page() {
   {
     id: 3,
     title: "Cause: FEST",
-    content: "FEST stands for Fashion, Environment, Science and Trade. It is the sub-branch of 4 which in turn is the sub-branch of 9 and is governed by princesses."
+    content: "FEST stands for Fashion, Environment, Science and Test. It is the sub-branch of 4 which in turn is the sub-branch of 9 and is governed by princesses."
   },
   {
     id: 4,
