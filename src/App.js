@@ -1184,7 +1184,7 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical catagory for a civillian of the world empire." },
-  { id: 1, title: "CARD", text: "CARD stands for Councillor, Academic, Researcher, Designer. These are the men and women chosen to work as a group of 16 in leading their town." },
+  { id: 1, title: "CARD", text: "CARD stands for Councillor, Academic, Researcher, Designer. These are the men and women chosen to work as a group of 16 in leading their town. Women who are members of CARD do not get 2 husbands. " },
   { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light." }
 ];
 
