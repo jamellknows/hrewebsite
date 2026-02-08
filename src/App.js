@@ -1117,14 +1117,14 @@ function WorldRule1Page() {
     title: "Produce",
     summary: "Produce is the most important part of a civilization, I have therefore decided to completely integrate produce to be a unifier controlled from the top to ensure stability.  ",
     details:
-      "Planting: 2, Animals: 2 and priests, Processing: 2, Tending: Common, Reaping: Saints, Packaging: Saints",
+      "Planting: 2, Animals: 2 and priests, Processing: 2, Tending: Common, Reaping: Priests, Packaging: 2",
   },
   {
     id: 1,
     title: "Manufacturing",
     summary: "Manufcaturing is a vital part of maintaining or sustaining a functional society. I have decided to divide the work by size of product.",
     details:
-      "Mining: Commoners, Refining: 2 and priests, Small: 2 and priests, Medium: Common, Large: Saints, Gigantic(Colossal): 2 and Priests ",
+      "Mining: Commoners, Refining: priests, Small: 2, Medium: Common, Large: Common, Gigantic(Colossal): 2 and Priests ",
   },
   {
     id: 2,
@@ -1136,7 +1136,7 @@ function WorldRule1Page() {
   {
     id: 3,
     title: "Entertainment",
-    summary: "Entertainment is the industry some people work if they seek to be worshipped, others worked in finance but that was outlawed apart from in the 15% where it is controlled to not affect the bigger picture of development. In the new age entertainment will be improved with an open policy where everybody makes music.",
+    summary: "Entertainment will be open source with everybody having access to a studio, theatre etc at one on the 12 towns in their locality. There is also the Queer entertainment from the THANA.",
     details:
       "The available industries with the entertainment industry are TV and Film, Music, Sports, Games, Live Entertainment and Publishing and Print",
   },
@@ -1184,7 +1184,7 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 1, title: "GAZE", text: "Anybody who falls within the category of gaze will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Gaze can kiss their partner, but they can not cause the ejaculation of their partner." },
+  { id: 1, title: "Queer", text: "Anybody who falls within the category of queer will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Queers can kiss their partner, but they can not cause the ejaculation of their partner." },
   { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry and have children. They live in the EMPORIUM and wear electronic braces made from LL on their arms and legs. Acolytes work as labourers and have the option of pitching a business idea to work half time on." }
 ];
 
