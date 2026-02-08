@@ -937,31 +937,31 @@ function ReligionPage() {
     id: 1,
     title: "Christianity",
     img: "./images/christianity.jpg",
-    content: "Christianity Christianity is a monotheistic faith based on the life and teachings of Jesus Christ as the Savior of humanity. It emphasizes the grace of God and the importance of faith, hope, and love in achieving spiritual redemption. Through the study of the Bible, followers seek to live a life modeled after Christ’s compassion and service to others."
+    content: "Christianity is a monotheistic faith based on the life and teachings of Jesus Christ as the Savior of humanity. It emphasizes the grace of God and the importance of faith, hope, and love in achieving spiritual redemption. Through the study of the Bible, followers seek to live a life modeled after Christ’s compassion and service to others."
   },
   {
     id: 2,
     title: "Islam",
     img: "./images/islam.jpg",
-    content: "Islam Islam is a monotheistic religion centered on the belief in one God, Allah, and the teachings of the Prophet Muhammad. It is guided by the Five Pillars, which provide a framework for worship, charity, and a life of intentional devotion. The faith emphasizes the pursuit of justice, peace, and total submission to the divine will as revealed in the Quran."
+    content: "Islam is a monotheistic religion centered on the belief in one God, Allah, and the teachings of the Prophet Muhammad. It is guided by the Five Pillars, which provide a framework for worship, charity, and a life of intentional devotion. The faith emphasizes the pursuit of justice, peace, and total submission to the divine will as revealed in the Quran."
   },
   {
     id: 3,
     title: "Hinduism",
     img: "/images/hinduism.jpg",
-    content: "Hinduism Hinduism is a diverse spiritual tradition that emphasizes the concepts of Dharma (duty), Karma (action), and Samsara (the cycle of rebirth). It offers various paths to spiritual liberation, or Moksha, through devotion, meditation, and ethical living. Practitioners recognize the divine in many forms while acknowledging a single, ultimate reality known as Brahman."
+    content: "Hinduism is a diverse spiritual tradition that emphasizes the concepts of Dharma (duty), Karma (action), and Samsara (the cycle of rebirth). It offers various paths to spiritual liberation, or Moksha, through devotion, meditation, and ethical living. Practitioners recognize the divine in many forms while acknowledging a single, ultimate reality known as Brahman."
   },
   {
     id: 4,
     title: "Judaism",
     img: "/images/judaism.jpg",
-    content: "Judaism Judaism is one of the world’s oldest monotheistic religions, rooted in a foundational covenant between God and the Jewish people. It prioritizes the study of the Torah and the observance of commandments to lead a life of holiness and ethical responsibility. The faith places a strong emphasis on community, historical memory, and the pursuit of Tikkun Olam, or repairing the world."
+    content: "Judaism is one of the world’s oldest monotheistic religions, rooted in a foundational covenant between God and the Jewish people. It prioritizes the study of the Torah and the observance of commandments to lead a life of holiness and ethical responsibility. The faith places a strong emphasis on community, historical memory, and the pursuit of Tikkun Olam, or repairing the world."
   },
   {
     id: 5,
     title: "Buddhism",
     img: "/images/buddhism.jpg",
-    content: "Buddhism Buddhism is a spiritual path focused on ending suffering by attaining enlightenment and understanding the true nature of reality. It follows the Four Noble Truths and the Eightfold Path, which advocate for mindfulness, ethical conduct, and mental discipline. By practicing meditation and compassion, followers strive to reach a state of Nirvana, free from the cycle of craving and attachment."
+    content: "Buddhism is a spiritual path focused on ending suffering by attaining enlightenment and understanding the true nature of reality. It follows the Four Noble Truths and the Eightfold Path, which advocate for mindfulness, ethical conduct, and mental discipline. By practicing meditation and compassion, followers strive to reach a state of Nirvana, free from the cycle of craving and attachment."
   }
 ];
 
@@ -1184,7 +1184,7 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 1, title: "GAZE", text: "Anybody who falls within the category of gaze will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Gaze can kiss their partner, but they can not cause the ejaculation of their partner. " },
+  { id: 1, title: "GAZE", text: "Anybody who falls within the category of gaze will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Gaze can kiss their partner, but they can not cause the ejaculation of their partner." },
   { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry and have children. They live in the EMPORIUM and wear electronic braces made from LL on their arms and legs. Acolytes work as labourers and have the option of pitching a business idea to work half time on." }
 ];
 
@@ -1658,8 +1658,8 @@ function WorldRule2Page() {
   }));
 
    const metric4 = [
-  { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 23328 christmases there is a division of 37 head Queen wives (Agostina + 36) they are divided into 4 groups of 9 for the 4 regions of the world. Each of these wives have 12 chest Queen wives who in turn have 4 leg Queen wives. This is a total of 1777 wives with 432 for each region and Agostina's group of 48 as the senior branch. They all are assisted by evangelions. 4 groups of 432 vs their 5's and the total 1777 vs the chief 5."},
-  { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) and therefore have been conscripted to being of priests, priestesses, princesses, Queens myself or any other member of NIFTY59ER. They are fitted with a collar and braces and perform labour. They live in moving studio apartments to ensure they can get from job to job in time. There is always 1 evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
+  { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 23328 christmases there is a division of 37 Head Queen wives (Agostina + 36) they are divided into 4 groups of 9 for the 4 regions of the world. Each of these wives have 12 Chest Queen wives who in turn have 4 Leg Queen wives. This is a total of 1777 wives with 432 for each region and Agostina's group of 48 as the senior branch. They all are assisted by evangelions. 4 groups of 432 vs their 5's and the total 1777 vs the chief 5."},
+  { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) and therefore have been conscripted to being of priests, priestesses, princesses, Queens myself or any other member of NIFTY59ER. They are fitted with a collar and braces and perform labour. They live in moving studio apartments to ensure they can get from job to job in time. There is always 1 Evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
   { id: 3, title: "Wives", text: "Everybody is to have a wife by the age of 24, PMSEC get 1, CARD get 2, Saints get 3 and Priests get 4. " },
 ]; 
 
