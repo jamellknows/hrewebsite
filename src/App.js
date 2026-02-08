@@ -1184,7 +1184,7 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 1, title: "GAZE", text: "Anybody who falls within the category of gaze will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of work from innovation of products and business to entertainment. Civilians from WE SHG B can come to visit the THANA and browse their goods. It will be a fun place. They can kiss their partner, they can masturbate their partner, but they can not use the orifice of their partner. " },
+  { id: 1, title: "GAZE", text: "Anybody who falls within the category of gaze will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of work from innovation of products and business to entertainment. Civilians from WE SHG B can come to visit the THANA and browse their goods. It will be a fun place. They can kiss their partner, but they can not cause the ejaculation of their partner. " },
   { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry. They live in the EMPORIUM and wear electronic braces made from LL on their arms and legs." }
 ];
 
