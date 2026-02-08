@@ -1184,8 +1184,8 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 1, title: "CARD", text: "CARD stands for Councillor, Academic, Researcher, Designer. These are the men and women chosen to work as a group of 16 in leading their town. Women who are members of CARD do not get 2 husbands. " },
-  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light." }
+  { id: 1, title: "QUEER", text: "Anybody who falls within the category of Queer will be taken to live in the Emporium and be given an electronic collar made of LL. They will be given a range of work from innovation of products and business to entertainment. Civilians from WE SHG B can come to visit the Emporium and browse their goods. It will be a fun place." },
+  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry. They live in the THANA and wear electronic braces made from LL on their arms and legs." }
 ];
 
 const carouselItems = bottomThree.map(item => ({
