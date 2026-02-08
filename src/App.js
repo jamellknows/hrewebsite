@@ -205,7 +205,7 @@ const LearnMoreButton = () => {
           <ul style={styles.bulletList}>
             <li>My full name is Alvah Ivor Jamell Ivan Bucknor Wisdom Samuels</li>
             <li>I am God and I am not(Nun/None).</li>
-            <li>I am going to conquer the world very slowly and very quickly by living from 26th April 2023 to some end date at 32 again and again (10000 times in 5 cycles or maybe 50000 times in 5 cycles) in what I call an iteration of time. Obviously you all iterate with me but don't realise unless I inform you as I am now, don't think about it too much just continue living life.</li>
+            <li>I am going to conquer the world very slowly and very quickly by living from 26th April 2023 to some end date at 32 again and again (10000 times in 5 cycles or maybe 50000 times in 5 cycles) in what I call an iteration of time. Obviously you all iterate with me but don't realize unless I inform you as I am now, don't think about it too much just continue living life.</li>
           </ul>
           <div>
             <button
@@ -921,9 +921,9 @@ function ReligionPage() {
   const [expandedGrid, setExpandedGrid] = useState(null);
 
   const accordionItems = [
-    { number: 5, text: "5 represents the Pentateuch and the breath of life. What it can be defined as numerically is 120, 11, 16 or 120, 2, 16. 120 is the age at which Moses died, it is connected to joining and salvation, with two complete cycles of authority and teaching, learning and the aspiration to go beyond. 11 is associated with potential, actualisation and the palm and 16 is associated with the eyes, insight and perception. 2 is duality and the world made with wisdom. Therefore 5 can be thought of many ways from teaching actualisation of potential to giving an insight into authority. " },
-    { number: 4, text: "4 represents materiality and the door to spiritual growth, it is numerically represented as 120,16 or 120, 11. This material world is the actualisation of authority or the the perception of authority. Materiality and the begining of spiritual growth are linked as from birth we are in the material world and that is where we must grow spiritually. This would also link it with potential and actualisation as from spiritual growth a person is able to actualise their potential.  " },
-    { number: 3, text: "3 represents kindness, giving and the balance between giving and recieving and is associated with the foot and the Tetragrammaton. It is numerically represented as 120 and 26 or 46. 120 and 26 would mean it is the authority of the Tetragrammaton or the teaching of the Tetragrammaton. 46 would mean it is a combination of spiritual and physical realms. Kindness can therefore stated as being the authority of the Tetragramaton or what the Tetragramaton teaches." },
+    { number: 5, text: "5 represents the Pentateuch and the breath of life. What it can be defined as numerically is 120, 11, 16 or 120, 2, 16. 120 is the age at which Moses died, it is connected to joining and salvation, with two complete cycles of authority and teaching, learning and the aspiration to go beyond. 11 is associated with potential, actualization and the palm and 16 is associated with the eyes, insight and perception. 2 is duality and the world made with wisdom. Therefore 5 can be thought of many ways from teaching actualization of potential to giving an insight into authority. " },
+    { number: 4, text: "4 represents materiality and the door to spiritual growth, it is numerically represented as 120,16 or 120, 11. This material world is the actualization of authority or the the perception of authority. Materiality and the beginning of spiritual growth are linked as from birth we are in the material world and that is where we must grow spiritually. This would also link it with potential and actualization as from spiritual growth a person is able to actualize their potential.  " },
+    { number: 3, text: "3 represents kindness, giving and the balance between giving and receiving and is associated with the foot and the Tetragrammaton. It is numerically represented as 120 and 26 or 46. 120 and 26 would mean it is the authority of the Tetragrammaton or the teaching of the Tetragrammaton. 46 would mean it is a combination of spiritual and physical realms. Kindness can therefore stated as being the authority of the Tetragrammaton or what the Tetragrammaton teaches." },
   ];
 
   const gridItems = [
@@ -1081,7 +1081,7 @@ function WorldRule1Page() {
   {
     id: 0,
     title: "Love: Service",
-    content: "It has remained determined a compatiability metric governed more by materiality than spiritulity. With materiality fulfilled love shall be determined by a persons spiritual journey with mandatroy pairings by age 24."
+    content: "It has remained determined a compatibility metric governed more by materiality than spirituality. With materiality fulfilled love shall be determined by a persons spiritual journey with mandatory pairings by age 24."
   },
   {
     id: 1,
@@ -1101,7 +1101,7 @@ function WorldRule1Page() {
   {
     id: 4,
     title: "Justice: JSPEM",
-    content: "JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decions about FEST.",
+    content: "JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decisions about FEST.",
     fontSize: "0.5em"
   },
   {
@@ -1115,21 +1115,21 @@ function WorldRule1Page() {
   {
     id: 0,
     title: "Produce",
-    summary: "Produce is the most important part of a civillization, I have therefore decided to completely integrate produce to be a unifyer controlled from the top to ensure stability.  ",
+    summary: "Produce is the most important part of a civilization, I have therefore decided to completely integrate produce to be a unifier controlled from the top to ensure stability.  ",
     details:
       "Planting: 2, Animals: 2 and priests, Processing: 2, Tending: Common, Reaping: Saints, Packaging: Saints",
   },
   {
     id: 1,
     title: "Manufacturing",
-    summary: "Manufcaturing is a vital part of mainting or sustaining a functional society. I have decided to divide the work by size of product.",
+    summary: "Manufcaturing is a vital part of maintaining or sustaining a functional society. I have decided to divide the work by size of product.",
     details:
-      "Mining: Commoners, Refining: 2 and priests, Small: 2 and priests, Medium: Common, Large: Saints, Gigantic(Collosal): 2 and Priests ",
+      "Mining: Commoners, Refining: 2 and priests, Small: 2 and priests, Medium: Common, Large: Saints, Gigantic(Colossal): 2 and Priests ",
   },
   {
     id: 2,
     title: "Services",
-    summary: "Modern society treates services as if it is the bread and butter. In this new paradigm services will be split into 6 areas with key sectors such as transport, infrastructure, leadership and education being either the work of sneior officials or automated.",
+    summary: "Modern society treats services as if it is the bread and butter. In this new paradigm services will be split into 6 areas with key sectors such as transport, infrastructure, leadership and education being either the work of senior officials or automated.",
     details:
       "Available areas are medicine, commerce, hospitality, app development, domestics and utilities.",
   },
@@ -1143,9 +1143,9 @@ function WorldRule1Page() {
   {
     id: 4,
     title: "Construction",
-    summary: "Construction is mandatory and everybody of able body will be required to take part. Each settlement and its cities have ben predesigned and therefore all construction is government owned.",
+    summary: "Construction is mandatory and everybody of able body will be required to take part. Each settlement and its cities have ben pre-designed and therefore all construction is government owned.",
     details:
-      "There will be assistance in the form of Evangelions, everybody will have a mandated studio flat in a house, cohabitiation will no longer be allowed, although people will be moved to live next to their partner with divorce prohibited. ",
+      "There will be assistance in the form of Evangelions, everybody will have a mandated studio flat in a house, cohabitation will no longer be allowed, although people will be moved to live next to their partner with divorce prohibited. ",
   }
 ];
 
@@ -1161,19 +1161,19 @@ const rightGrid = [
   {
     id: 1,
     title: "Society",
-    content: "The social order is headed by Hearing and Light which is the head of the NIFTY59ER and Bucknor Wisdom in the Samuels family, BWITS is a clan of the NIFTY59ER. The government here is in a [37,3,4] format to efficieintly govern all 444 settlements like a super computer. Society is then shaed like a cross with the Priesthood of Melchizidek underneath, 2 which is the business to its left and 9 the Queens governing body to the right. Underneath 2 are Saints who live in the 15% and run businesses that are flexible franchises of 2 and form the only capitalst societies between themsleves directed by a bank owned by 2. They are able to employ people from the bottom part of society who still wish to live in capitalism. The princessess govern the bottom societies along with the priestessess.",
+    content: "The social order is headed by Hearing and Light which is the head of the NIFTY59ER and Bucknor Wisdom in the Samuels family, BWITS is a clan of the NIFTY59ER. The government here is in a [37,3,4] format to efficiently govern all 444 settlements like a super computer. Society is then shaped like a cross with the Priesthood of Melchizidek underneath, 2 which is the business to its left and 9 the Queens governing body to the right. Underneath 2 are Saints who live in the 15% and run businesses that are flexible franchises of 2 and form the only capitalist societies between themselves directed by a bank owned by 2. They are able to employ people from the bottom part of society who still wish to live in capitalism. The princesses govern the bottom societies along with the priestesses.",
     image: "./images/cross.jpg",
   },
   {
     id: 2,
     title: "Test",
-    content: "Where people in society will be placed is to be decided upon by a test that will split into 72 catagroies by a superceding group of 8 and a sub group of 9 for each 8. The 8 are where a person has failed in life and the 9 are where they have failed in good. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualisation of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livlihoodand sustenance, divine power and transformation of which there are 2, faithfullness and continuation of life, potential and actualisation, the future and hope, and the penteteuch and the breath of life or dedication and the fulfillment of vows. ",
+    content: "Where people in society will be placed is to be decided upon by a test that will split into 72 categories by a superseding group of 8 and a sub group of 9 for each 8. The 8 are where a person has failed in life and the 9 are where they have failed in good. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualization of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livlihood and sustenance, divine power and transformation of which there are 2, faithfulness and continuation of life, potential and actualization, the future and hope, and the pentateuch and the breath of life or dedication and the fulfillment of vows. ",
     image: "./images/card.jpg",
   },
   {
     id: 3,
     title: "Payment and Process",
-    content: "The general process is that each part of scoiety produces what is required of it under my leadership and gives to others in return for what they produce. There is no money required, working a certain number fo hours entitles somebody to a ceertain amount fo goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe is a necessity of having. This is because money is 360 degrees or 50x13 or 63 which means it is and requires support and protection, needs the hidden righteousness of sustainers and functions that it stays within a water (race, community, class). My method adds 25 which is a grace and favour and I can probably explain this better but its the difference between 675 and 360. In the society common people will be expected to work a job in every sub group of production, manufacturing, services,entertainment and construction in order to actualise their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.  ",
+    content: "The general process is that each part of society produces what is required of it under my leadership and gives to others in return for what they produce. There is no money required, working a certain number fo hours entitles somebody to a certain amount fo goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe is a necessity of having. This is because money is 360 degrees or 50x13 or 63 which means it is and requires support and protection, needs the hidden righteousness of sustainer and functions that it stays within a water (race, community, class). My method adds 25 which is a grace and favour and I can probably explain this better but its the difference between 675 and 360. In the society common people will be expected to work a job in every sub group of production, manufacturing, services,entertainment and construction in order to actualize their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.  ",
     image: "./images/tet.jpg",
   },
 ];
@@ -1183,7 +1183,7 @@ const rightGrid = [
   const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
-  { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical catagory for a civillian of the world empire." },
+  { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
   { id: 1, title: "CARD", text: "CARD stands for Councillor, Academic, Researcher, Designer. These are the men and women chosen to work as a group of 16 in leading their town. Women who are members of CARD do not get 2 husbands. " },
   { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light." }
 ];
@@ -1452,10 +1452,10 @@ const carouselItems = bottomThree.map(item => ({
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
             Each letter of HAM KT S WE SHG B aka KTSHAM WEBSHG represents a town. 
             These towns are made up of 6 villages designed to hold 4560 people in saddles or 4380 people in triangles/sandwiches. 
-            They are agriculture centered with the outisde zones being for manufacturing. 
+            They are agriculture centered with the outside zones being for manufacturing. 
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
-            On the levels are the service and entertainment buildings designed like elephant heads to be multileveld and support the roads and transport to and from. 
-            There are 8 castles that serve as governement buildings and princess residences. 
+            On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
+            There are 8 castles that serve as government buildings and princess residences. 
             This is where the members of CARD will also go to work. 
             The Towns are designed to be good for the princesses as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and CARD.
           </p>
@@ -1552,15 +1552,15 @@ const carouselItems = bottomThree.map(item => ({
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
             As there are 20 princesses per city and 12 towns per city. 
-            The princeses will move about often. The total population of a city is 354504 and a Town is 29542. 
-            Saddles can contain 38 people and are built in neigbourhoods of 120 and sandwiches can contain 60 people and are built in neighbourhoods of 73. 
+            The princess will move about often. The total population of a city is 354504 and a Town is 29542. 
+            Saddles can contain 38 people and are built in neighborhoods of 120 and sandwiches can contain 60 people and are built in neighbourhoods of 73. 
             Priestesses are shared between 4 cities. Hospitals are a service and within the walls. 
-            There will be local health facilities and convenience stores at each resiential area serviced by people and evangelions. 
-            Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these catagories. 
+            There will be local health facilities and convenience stores at each residential area serviced by people and evangelions. 
+            Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these categories. 
             People are sorted based on a test which ranks their best goodness, then their worst attribute in life, followed by their worst attribute in goodness, 
-            then the average of their other goodnesses and then sorted between KTSHAM and WEBSHG by the avergae of their other life attributes. It works 
-            out that the princeses have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
-            This is where tiral testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
+            then the average of their other goodness and then sorted between KTSHAM and WEBSHG by the average of their other life attributes. It works 
+            out that the princesses have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
+            This is where trial testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
           </p>
         </div>
       </div>
@@ -1615,12 +1615,12 @@ function WorldRule2Page() {
   const [highlightIndex, setHighlightIndex] = useState(0);
   const [openStatId, setOpenStatId] = useState(null); // <-- track expanded stat
   const metrics = [
-  { id: 1, title: "Princess", text:"Princess is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They live in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 31968 princesses. They have acolytes who help with the managing of the farm and evangelions. Each acolyte is fitted with a collar and braces. There are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM). Princesses live in castles and have evangellions and acolytes." },
+  { id: 1, title: "Princess", text:"Princess is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They live in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 31968 princesses. They have acolytes who help with the managing of the farm and evangelions. Each acolyte is fitted with a collar and braces. There are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM). Princesses live in castles and have evangelions and acolytes." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
   { id: 3, title: "Senator", text:"Senators are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 senators. " },
   { id: 4, title: "Queen", text:"Queens are the heads of state of a christmas, arrow, or a tooth. They are who the princesses are guided by and they meet with their respective Queens in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Queens. Queens princesses, priestesses, priests and saints enjoy the luxury of being able to drive ." },
-  { id: 5, title: "Saint", text:"Saints are the leaders of families also called, tents, pegs or guilds that operate enclave cities within the 15% where capitalism is permitted. There are 13320 Saints. Saints can choose who they share their priviledges with however they are responsible for the actions of who they share it with. These enclaves are only with WE SHG B. " },
-  { id: 6, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down fortheir number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598. It is estimated tere are between 300 to 500 cities worldwide with historically sacred temples which avergaes as 22979 people per city which should give an idea of how mch each city will be scaled back. Priests get evangelions and acolytes." },
+  { id: 5, title: "Saint", text:"Saints are to be finalized. They may be removed from the system if I decide it is not necessary. " },
+  { id: 6, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598. It is estimated there are between 300 to 500 cities worldwide with historically sacred temples which averages as 22979 people per city which should give an idea of how mch each city will be scaled back. Priests get evangelions and acolytes." },
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
     id: i,
@@ -1633,7 +1633,7 @@ function WorldRule2Page() {
   { id: 2, title: "System", text:"System stands for Designing, Preparation, Implementation, Maintenance, Surveillance and Analysis. It is tasked with these objectives towards city infrastructure. It is led by 4 evangelions. "},
   { id: 3, title: "Psychic", text:"Psychology, Sports, Culture, Housing, Imbursement, Cohesion. It is tasked towards nurturing and maintaining these areas of a city. It is led by 4 evangelions." },
   { id: 4, title: "Estem", text:"Education and research, Science, Technology, Engineering and Medicine. It is tasked with the implementation of these areas. It is led by 4 evangelions." },
-  { id: 5, title: "Meal", text:"Manufacturing, Environment, Agriculture and Labour. It is taked with the implentation and management of these areas of society. It is led by 4 evangelions."}, 
+  { id: 5, title: "Meal", text:"Manufacturing, Environment, Agriculture and Labour. It is tasked with the implementation and management of these areas of society. It is led by 4 evangelions."}, 
 ]; 
 
   const panels5 = Array.from({ length: 5 }).map((_, i) => ({
@@ -1643,10 +1643,10 @@ function WorldRule2Page() {
   }));
 
   const metric3 = [
-  { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the princesses in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. But generally it is princesses to fashion for KTSHAM, priestesses do their own fashion. Saints don't do fashion, they are given their clothes as part of the bargain. Queens can choose between princess fashion, priestess fashion or making their own clothes. The diversity is brought in by competeing fashion brands from each of the 3 zones of a christmas and from other christmases which total to 1332 different fashion brands worldwide. This of course can be applied to virtually all parts of commerce. I am also including game development as a part of fashion. They have the help of acolytes who also "},
+  { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the princesses in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. But generally it is princesses to fashion for KTSHAM, priestesses do their own fashion. Saints don't do fashion, they are given their clothes as part of the bargain. Queens can choose between princess fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the 3 zones of a christmas and from other christmases which total to 1332 different fashion brands worldwide. This of course can be applied to virtually all parts of commerce. I am also including game development as a part of fashion. They have the help of acolytes who also "},
   { id: 2, title: "Environment", text:"Each city has a department of princesses and evangelions tasked with maintaining the environment of the area. Environment is also man made so the style of buildings to an extent although there are parameters they must meet the evangelions will help them to scale it to their ideas. It is a good chance to learn what makes good design."},
-  { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civillians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
-  { id: 4, title: "Test", text:"Test used to be trade, but test made more sense which is the continual testing of the citizenry to better the population. How to adminster the test, what the test is, the pass and fails marks and how to improve the citizens results contiously are all dealth with by test. Each city zone has its own 8 and 9 to improve upon and there will be comparissons betwene the results of HAM , KT and S. As well as tests on each citizen on the other 8 and 9 catagories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 for example and the solution would be to select the most saddening group of people to move to the 42. " },
+  { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
+  { id: 4, title: "Test", text:"Test used to be trade, but test made more sense which is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test. Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of HAM , KT and S. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 for example and the solution would be to select the most saddening group of people to move to the 42. " },
 ]; 
 
 
@@ -1658,7 +1658,7 @@ function WorldRule2Page() {
 
    const metric4 = [
   { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 23328 christmases there is a division of 37 head Queen wives (Agostina + 36) they are divided into 4 groups of 9 for the 4 regions of the world. Each of these wives have 12 chest Queen wives who in turn have 4 leg Queen wives. This is a total of 1777 wives with 432 for each region and Agostina's group of 48 as the senior branch. They all are assisted by evangelions. 4 groups of 432 vs their 5's and the total 1777 vs the chief 5."},
-  { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) and therefore have been conscripted to being of priests, priestesses, princesses, Queens myself or any other member of NIFTY59ER. They are fitted with a collar and braces and perform labour. They live in moving studio apartmeents to ensure they can get from job to job in time. There is always 1 evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
+  { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) and therefore have been conscripted to being of priests, priestesses, princesses, Queens myself or any other member of NIFTY59ER. They are fitted with a collar and braces and perform labour. They live in moving studio apartments to ensure they can get from job to job in time. There is always 1 evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
   { id: 3, title: "Wives", text: "Everybody is to have a wife by the age of 24, PMSEC get 1, CARD get 2, Saints get 3 and Priests get 4. " },
 ]; 
 
