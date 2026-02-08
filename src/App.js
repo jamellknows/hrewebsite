@@ -1556,7 +1556,11 @@ const carouselItems = bottomThree.map(item => ({
             Saddles can contain 38 people and are built in neigbourhoods of 120 and sandwiches can contain 60 people and are built in neighbourhoods of 73. 
             Priestesses are shared between 4 cities. Hospitals are a service and within the walls. 
             There will be local health facilities and convenience stores at each resiential area serviced by people and evangelions. 
-            Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these catagories.
+            Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these catagories. 
+            People are sorted based on a test which ranks their best goodness, then their worst attribute in life, followed by their worst attribute in goodness, 
+            then the average of their other goodnesses and then sorted between KTSHAM and WEBSHG by the avergae of their other life attributes. It works 
+            out that the princeses have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
+            This is where tiral testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
           </p>
         </div>
       </div>
