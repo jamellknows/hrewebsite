@@ -1096,7 +1096,7 @@ function WorldRule1Page() {
   {
     id: 3,
     title: "Cause: FEST",
-    content: "FEST stands for Fashion, Environment, Science and Test. It is the sub-branch of 4 which in turn is the sub-branch of 9 and is governed by princesses."
+    content: "FEST stands for Fashion, Environment, Science and Test. It is the sub-branch of 4 which in turn is the sub-branch of 9 and is governed by women titled Ladies of the Lamp."
   },
   {
     id: 4,
@@ -1161,7 +1161,7 @@ const rightGrid = [
   {
     id: 1,
     title: "Society",
-    content: "The social order is headed by Hearing and Light which is the head of the NIFTY59ER and Bucknor Wisdom in the Samuels family, BWITS is a clan of the NIFTY59ER. The government here is in a [37,3,4] format to efficiently govern all 444 settlements like a super computer. Society is then shaped like a cross with the Priesthood of Melchizidek underneath, 2 which is the business to its left and 9 the Queens governing body to the right. Underneath 2 are Saints who live in the 15% and run businesses that are flexible franchises of 2 and form the only capitalist societies between themselves directed by a bank owned by 2. They are able to employ people from the bottom part of society who still wish to live in capitalism. The princesses govern the bottom societies along with the priestesses.",
+    content: "The social order is headed by Hearing and Light which is the head of the NIFTY59ER and Bucknor Wisdom in the Samuels family, BWITS is a clan of the NIFTY59ER. The government here is in a [37,3,4] format to efficiently govern all 444 settlements like a super computer. Society is then shaped like a cross with the Priesthood of Melchizidek underneath, 2 which is the business to its left and 9 the Queens governing body to the right. Underneath 2 are Saints who live in the 15% and run businesses that are flexible franchises of 2 and form the only capitalist societies between themselves directed by a bank owned by 2. They are able to employ people from the bottom part of society who still wish to live in capitalism. The Ladies of the Lamp govern the bottom societies along with the priestesses.",
     image: "./images/cross.jpg",
   },
   {
@@ -1455,9 +1455,9 @@ const carouselItems = bottomThree.map(item => ({
             They are agriculture centered with the outside zones being for manufacturing. 
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
             On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
-            There are 8 castles that serve as government buildings and princess residences. 
+            There are 8 castles that serve as government buildings and Ladies of the Lamp residences. 
             This is where the members of CARD will also go to work. 
-            The Towns are designed to be good for the princesses as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and CARD.
+            The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and CARD.
           </p>
         </div>
       </div>
@@ -1551,15 +1551,15 @@ const carouselItems = bottomThree.map(item => ({
           }}
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
-            There are 20 princesses per city and 12 towns per city and the total number of princesses is 93312 worldwide. 
-            The princess will move about often. The total population of a city is 354504 and a Town is 29542. 
+            There are 20 Ladies of the Lamp per city and 12 towns per city and the total number of Ladies of the Lamp is 93312 worldwide. 
+            The Ladies of the Lamp will move about often. The total population of a city is 354504 and a Town is 29542. 
             Saddles can contain 38 people and are built in neighborhoods of 120 and sandwiches can contain 60 people and are built in neighborhoods of 73. 
             Priestesses are shared between 4 cities. Hospitals are a service and within the walls. 
             There will be local health facilities and convenience stores at each residential area serviced by people and evangelions. 
             Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these categories. 
             People are sorted based on a test which ranks their best goodness, then their worst attribute in life, followed by their worst attribute in goodness, 
             then the average of their other goodness and then sorted between KTSHAM and WEBSHG by the average of their other life attributes. It works 
-            out that the princesses have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
+            out that the Ladies of the Lamp have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
             This is where trial testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
             There are 6 religious leaders for each town who the Senators of the business communicate with to ensure that production is on target. 
           </p>
@@ -1626,10 +1626,10 @@ function WorldRule2Page() {
 
 
   const metrics = [
-  { id: 1, title: "Princess", text:"Princess is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 princesses who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
+  { id: 1, title: "Ladies of the Lamp", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 princesses who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
   { id: 3, title: "Senator", text:"Senators are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 senators. " },
-  { id: 4, title: "Queen", text:"Queens are the heads of state of a christmas, arrow, or a tooth. They are who the princesses are guided by and they meet with their respective Queens in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Queens. Queens princesses, priestesses, priests and saints enjoy the luxury of being able to drive ." },
+  { id: 4, title: "Queen", text:"Queens are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Queens in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Queens. Queens, Ladies of the Lamp, priestesses, priests and saints enjoy the luxury of being able to drive ." },
   { id: 5, title: "Religious Leaders and CARD", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB). There are 16 members of CARD who assist the princesses with organizing the town." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
 ];
