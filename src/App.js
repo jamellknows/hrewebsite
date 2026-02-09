@@ -1662,7 +1662,7 @@ function WorldRule2Page() {
   ];
   
    const metric5 = [
-  { id: 1, title: "Sea Villiage", text:" "},
+  { id: 1, title: "Sea Villiage", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. In the same shape of a pyramid. This can be done by laying a flat plate with a door and then completing the sides full of water and using aquatic robots to open the door and drill a hole which will allow the water to flow out and then completing the underground pyramid."},
   { id: 2, title: "ET", text:""},
   { id: 3, title: "WEBSHG", text:"" },
   { id: 4, title: "HAM", text:"" },
