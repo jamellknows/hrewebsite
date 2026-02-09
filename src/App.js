@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import { motion, AnimatePresence, } from "framer-motion";
 import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react";
 import './App.css';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef  } from "react";
 import crownImage from './srcImages/crown.jpg'
 
 
@@ -318,7 +318,7 @@ function HomePage() {
         {/* Left Content */}
         <div style={{ flex: 2 }}>
   <h1 style={{ ...styles.title, fontFamily: '"Times New Roman", serif' }}>
-    His Highness He Add's God's Grace and Favour Sea to He Adds Light.
+    His Highness He Adds Grace and Favour Sea to He Adds Light.
   </h1> 
 
   <ul style={{ ...styles.subtitle, listStyleType: "none", paddingLeft: 0 }}>
@@ -1615,6 +1615,16 @@ const carouselItems = bottomThree.map(item => ({
 function WorldRule2Page() {
   const [highlightIndex, setHighlightIndex] = useState(0);
   const [openStatId, setOpenStatId] = useState(null); // <-- track expanded stat
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+
+
+
+  
+  
+
+
   const metrics = [
   { id: 1, title: "Princess", text:"Princess is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 princesses who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
@@ -1637,12 +1647,6 @@ function WorldRule2Page() {
   { id: 5, title: "Meal", text:"Manufacturing, Environment, Agriculture and Labour. It is tasked with the implementation and management of these areas of society. It is led by 4 evangelions."}, 
 ]; 
 
-  const panels5 = Array.from({ length: 5 }).map((_, i) => ({
-    id: i,
-    title: `${metric2[i].title}`,
-    text: `${metric2[i].text}`
-  }));
-
   const metric3 = [
   { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the princesses in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. Princesses do fashion for WESHGB KTSHAM, as there is 1 princess per department for all of the towns (12, 12 towns = 1 city). Priestesses do their own fashion. Queens can choose between princess fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the princesses which total to 23328 different fashion brands worldwide. The princesses use the city to produce their brand after which they compete with each other worldwide. Her home city will always wear her clothes. I am also including game development as a part of fashion. "},
   { id: 2, title: "Environment", text:"Each city has a department of princesses and evangelions tasked with maintaining the environment of the area. Environment is also man made so the style of buildings to an extent although there are parameters they must meet the evangelions will help them to scale it to their ideas. It is a good chance to learn what makes good design."},
@@ -1651,17 +1655,39 @@ function WorldRule2Page() {
 ]; 
 
 
-  const blocks4 = Array.from({ length: 4 }).map((_, i) => ({
+    const metric4 = [
+    { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 23328 christmases there is a division of 37 Head Queen wives (Agostina + 36) they are divided into 4 groups of 9 for the 4 regions of the world. Each of these wives have 12 Chest Queen wives who in turn have 4 Leg Queen wives. This is a total of 1777 wives with 432 for each region and Agostina's group of 48 as the senior branch. They all are assisted by evangelions. 4 groups of 432 vs their 5's and the total 1777 vs the chief 5."},
+    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) or WEBSHG(ing) and therefore have been conscripted to being the property of myself or any other member of NIFTY59ER. They are fitted with a electronic LL or ceramic braces and perform labour. Some live in moving studio apartments to ensure they can get from job to job in time. I am considering 1 Evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
+    { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities. These are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
+  ];
+  
+   const metric5 = [
+  { id: 1, title: "Sea Villiage", text:" "},
+  { id: 2, title: "ET", text:""},
+  { id: 3, title: "WEBSHG", text:"" },
+  { id: 4, title: "HAM", text:"" },
+  { id: 5, title: "KT", text:""},
+  { id: 6, title: "R(Rus)", text:""},
+  { id: 7, title: "HE", text:""},
+  { id: 8, title: "Burg", text:""},
+  { id: 9, title: "Arx", text:""}, 
+ 
+ 
+
+]; 
+
+const blocks4 = Array.from({ length: 4 }).map((_, i) => ({
     id: i,
     title: `${metric3[i].title}`,
     text: `${metric3[i].text}`
   }));
 
-   const metric4 = [
-  { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 23328 christmases there is a division of 37 Head Queen wives (Agostina + 36) they are divided into 4 groups of 9 for the 4 regions of the world. Each of these wives have 12 Chest Queen wives who in turn have 4 Leg Queen wives. This is a total of 1777 wives with 432 for each region and Agostina's group of 48 as the senior branch. They all are assisted by evangelions. 4 groups of 432 vs their 5's and the total 1777 vs the chief 5."},
-  { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) or WEBSHG(ing) and therefore have been conscripted to being the property of myself or any other member of NIFTY59ER. They are fitted with a electronic LL or ceramic braces and perform labour. Some live in moving studio apartments to ensure they can get from job to job in time. I am considering 1 Evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
-  { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities. These are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
-]; 
+const panels5 = Array.from({ length: 5 }).map((_, i) => ({
+      id: i,
+      title: `${metric2[i].title}`,
+      text: `${metric2[i].text}`
+    }));
+
 
   const highlights3 = Array.from({ length: 3 }).map((_, i) => ({
     id: i,
@@ -1669,12 +1695,84 @@ function WorldRule2Page() {
     text: `${metric4[i].text}`
   }));
 
+
+    const carouselSlides = [
+    {
+      title: "Sea Villiage",
+      text: metric5[0].text,
+      img: "/images/seavillage.jpg"
+    },
+    {
+      title: "ET",
+      text: metric5[1].text,
+      img: "/images/city3.png"
+    },
+    {
+      title: "WEBSHG",
+      text: metric5[2].text,
+      img: "/images/city2.png"
+    },
+    {
+      title: "HAM",
+      text: metric5[3].text,
+      img: "/images/city3.png"
+    },
+    {
+      title: "KT",
+      text: metric5[4].text,
+      img: "/images/city4.jpg"
+    },
+    {
+      title: "R(Rus)",
+      text: metric5[5].text,
+      img: "/images/city5.png"
+    },
+    {
+      title: "HE",
+      text: metric5[6].text,
+      img: "/images/city7.png"
+    },
+    {
+      title: "Burg",
+      text: metric5[7].text,
+      img: "/images/city6.png"
+    },
+    {
+      title: "Arx",
+      text: metric5[8].text,
+      img: "/images/city9.png"
+    }
+  ];
+
+
   useEffect(() => {
+  if (isPaused) return;
+
     const timer = setInterval(() => {
-      setHighlightIndex((i) => (i + 1) % 3);
-    }, 4000);
+      setCarouselIndex((i) => (i + 1) % carouselSlides.length);
+    }, 4500);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused, carouselSlides.length]);
+
+
+
+    const arrowStyle = (side) => ({
+      position: "absolute",
+      top: "50%",
+      [side]: "-70px",
+      transform: "translateY(-50%)",
+      fontSize: "42px",
+      background: "rgba(255,255,255,0.35)",
+      backdropFilter: "blur(10px)",
+      border: "none",
+      borderRadius: "50%",
+      width: "54px",
+      height: "54px",
+      cursor: "pointer",
+      boxShadow: "0 8px 22px rgba(0,0,0,0.25)"
+    });
+
 
   return (
     <AnimatedPage>
@@ -1795,6 +1893,148 @@ function WorldRule2Page() {
           ))}
         </div>
       </div>
+
+        {/* ===================== */}
+        {/* PREMIUM CAROUSEL */}
+        {/* ===================== */}
+
+        <div
+          style={{
+            marginTop: "80px",
+            display: "flex",
+            justifyContent: "center"
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "75%",
+              maxWidth: "900px"
+            }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
+            onTouchEnd={(e) => {
+              const delta = e.changedTouches[0].clientX - touchStartX.current;
+              if (delta > 60)
+                setCarouselIndex(
+                  (carouselIndex - 1 + carouselSlides.length) %
+                    carouselSlides.length
+                );
+              if (delta < -60)
+                setCarouselIndex((carouselIndex + 1) % carouselSlides.length);
+            }}
+          >
+            {/* Slides */}
+            {carouselSlides.map((slide, i) => {
+              const offset = i - carouselIndex;
+
+              return (
+                <div
+                  key={i}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    opacity: offset === 0 ? 1 : 0,
+                    transform: `translateX(${offset * 60}px) scale(${
+                      offset === 0 ? 1 : 0.95
+                    })`,
+                    transition: "all 0.6s ease",
+                    pointerEvents: offset === 0 ? "auto" : "none",
+
+                    backdropFilter: "blur(14px)",
+                    background: "rgba(255,255,255,0.18)",
+                    borderRadius: "22px",
+                    boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
+                    padding: "30px",
+
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "24px",
+                    alignItems: "center",
+                    minHeight: "320px"
+                  }}
+                >
+                  {/* Text */}
+                  <div>
+                    <h2>{slide.title}</h2>
+                    <p>{slide.text}</p>
+                  </div>
+
+                  {/* Image */}
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "220px",
+                      borderRadius: "18px",
+                      overflow: "hidden"
+                    }}
+                  >
+                    <img
+                      src={slide.img}
+                      alt={slide.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover"
+                      }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Arrows */}
+            <button
+              onClick={() =>
+                setCarouselIndex(
+                  (carouselIndex - 1 + carouselSlides.length) %
+                    carouselSlides.length
+                )
+              }
+              style={arrowStyle("left")}
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={() =>
+                setCarouselIndex((carouselIndex + 1) % carouselSlides.length)
+              }
+              style={arrowStyle("right")}
+            >
+              ›
+            </button>
+
+            {/* Dots */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-48px",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                gap: "10px"
+              }}
+            >
+              {carouselSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCarouselIndex(i)}
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    borderRadius: "50%",
+                    border: "none",
+                    background: i === carouselIndex ? "#000" : "#aaa",
+                    cursor: "pointer"
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
     </AnimatedPage>
   );
 }
