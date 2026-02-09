@@ -1723,7 +1723,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       img: "/images/city4.jpg"
     },
     {
-      title: "R(Rus)",
+      title: "Rus",
       text: metric5[5].text,
       img: "/images/city5.png"
     },
