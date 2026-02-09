@@ -1154,8 +1154,8 @@ function WorldRule1Page() {
 const rightGrid = [
   {
     id: 0,
-    title: "Settlements",
-    content: `Settlements are divided into 3 parts, The capital region is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Queens), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. Each city has its own focus, the Hamlet is mixed, the Alber is produce, the Mish is manufacturing, the Kent construction, the Thorpe is produce and the Sea Village is manufacturing.`,
+    title: "A Cat",
+    content: `A Cat is divided into 3 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Queens), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as an arrow uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. Each city has its own focus, the Hamlet is mixed, the Alber is produce, the Mish is manufacturing, the Kent construction, the Thorpe is produce and the Sea Village is manufacturing.`,
     image: "./images/christmas.jpg",
   },
   {
@@ -1662,14 +1662,14 @@ function WorldRule2Page() {
   ];
   
    const metric5 = [
-  { id: 1, title: "Sea Villiage", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. In the same shape of a pyramid. This can be done by laying a flat plate with a door and then completing the sides full of water and using aquatic robots to open the door and drill a hole which will allow the water to flow out and then completing the underground pyramid."},
-  { id: 2, title: "ET", text:""},
-  { id: 3, title: "WEBSHG", text:"" },
-  { id: 4, title: "HAM", text:"" },
-  { id: 5, title: "KT", text:""},
-  { id: 6, title: "R(Rus)", text:""},
-  { id: 7, title: "HE", text:""},
-  { id: 8, title: "Burg", text:""},
+  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. In the same shape of a pyramid. This can be done by laying a flat plate with a door and then completing the sides full of water and using aquatic robots to open the door and drill a hole which will allow the water to flow out and then completing the underground pyramid."},
+  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a Cat. They are designed to have a capacity of 75244 people from the Queer social class. The Emporium is a business town and the Thana is for agriculture."},
+  { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
+  { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. " },
+  { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth."},
+  { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
+  { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the centers for the business 2. "},
+  { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Arx", text:""}, 
  
  
@@ -1703,22 +1703,22 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       img: "/images/seavillage.jpg"
     },
     {
-      title: "ET",
+      title: "Emporium and Thana",
       text: metric5[1].text,
       img: "/images/city3.png"
     },
     {
-      title: "WEBSHG",
+      title: "Wola, Eshkol, Shefa, Hromoda and Grad",
       text: metric5[2].text,
       img: "/images/city2.png"
     },
     {
-      title: "HAM",
+      title: "Hamlet, Alber and Mish",
       text: metric5[3].text,
       img: "/images/city3.png"
     },
     {
-      title: "KT",
+      title: "Kent and Thorpe",
       text: metric5[4].text,
       img: "/images/city4.jpg"
     },
@@ -1728,12 +1728,12 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       img: "/images/city5.png"
     },
     {
-      title: "HE",
+      title: "Hidalgo, Emirate",
       text: metric5[6].text,
       img: "/images/city7.png"
     },
     {
-      title: "Burg",
+      title: "Statstics",
       text: metric5[7].text,
       img: "/images/city6.png"
     },
