@@ -1185,7 +1185,8 @@ const rightGrid = [
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
   { id: 1, title: "Queer", text: "Anybody who falls within the category of queer will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Queers can kiss their partner, but they can not cause the ejaculation of their partner." },
-  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry and have children. They live in the EMPORIUM and wear electronic braces made from LL or ceramic on their arms and legs. Acolytes work as labourers and have the option of pitching a business idea to work half time on." }
+  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry and have children. They live in the EMPORIUM and wear electronic braces made from LL or ceramic on their arms and legs. Acolytes work as labourers and have the option of pitching a business idea to work half time on." },
+  { id: 3, title: "FDELM", text:"FDELM stands for fashion designer, evangellion, lady of the lamp and models. Each town has 16 people who are members of FDELM. This is the 4 that goes against the PMSEC 5. This is 4 fashion designers and 12 models." }
 ];
 
 const carouselItems = bottomThree.map(item => ({
@@ -1456,8 +1457,8 @@ const carouselItems = bottomThree.map(item => ({
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
             On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
             There are 8 castles that serve as government buildings and Ladies of the Lamp residences. 
-            This is where the members of CARD will also go to work. 
-            The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and CARD.
+            This is where the members of FDELM will also go to work. 
+            The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and FDELM.
           </p>
         </div>
       </div>
@@ -1570,7 +1571,7 @@ const carouselItems = bottomThree.map(item => ({
 
       {/* Carousel at the bottom */}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-        <div style={{ display: 'flex', gap: '16px', overflow: 'hidden', justifyContent: 'center', width: '100%', maxWidth: '600px' }}>
+        <div style={{ display: 'flex', gap: '16px', overflow: 'hidden', justifyContent: 'center', width: '100%', maxWidth: '340rem' }}>
           {carouselItems.map((item, idx) => {
             const offset = (idx - carouselIndex + carouselItems.length) % carouselItems.length;
             let scale = 0.8, opacity = 0.5;
@@ -1632,7 +1633,7 @@ function WorldRule2Page() {
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
   { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines." },
   { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and Palatines enjoy the luxury of being able to drive ." },
-  { id: 5, title: "Religious Leaders and CARD", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB). There are 16 members of CARD who assist the Ladies of the Lamp with organizing the town." },
+  { id: 5, title: "Religious Leaders and FDELM", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB), they each are in charge one of the 6 boroughs of a town. There are 16 members of FDELM for each Town 4 are fashion designers and 12 are models." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
@@ -1678,12 +1679,12 @@ function WorldRule2Page() {
 ]; 
 
 const metric6 = [
-  {id: 1, title: "Governance", text: "The " },
-  {id: 2, title: "Infrastructure", text: "The " },
-  {id: 3, title: "Culture", text: "The " },
-  {id: 4, title: "Science", text: "The " },
-  {id: 5, title: "Labour", text: "The " },
-  {id: 6, title: "Population", text: "The " }
+  {id: 1, title: "Governance", text: "Governance is localised while maintaining a strict heirachy. It is a matriarchal society with only women in direct leadership all of whom have taken a pledge to only give themselves to the Father or the Brother." },
+  {id: 2, title: "Infrastructure", text: "The infrastructure is designed so that each town forms a part of a produce chain as a Cat. Each Cat then is a part of a chain called the Pig (Production Integrated Globe)." },
+  {id: 3, title: "Culture", text: "The culture is religious. Entertainment is the work of the ladies of the lamp who oversee sports teams for each town and who select representative musicians for each town. As the culture is designed to be inclusive all people are required to create a song that they can perform every 5 months." },
+  {id: 4, title: "Science", text: "Education is completed over a 12 year programme from the age of 5 to 17. Scientific research is done by HAL, POM, and 2. Major scientific projects include Pokemon creation and other novelties for everybodies enjoyment." },
+  {id: 5, title: "Labour", text: "The work pattern is 4 hour and 5 hour shifts with a 3 hour break in between to enjoy the town. Major labour projects include, spaceships, sea villages, sky castles, orbital platforms and trident terraforming spears." },
+  {id: 6, title: "Population", text: "The population is controlled everywhere. When the population increases too high a new CAT will be constructed or more will be taken to the 17%. " }
 
 ];
 
