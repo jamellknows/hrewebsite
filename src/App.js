@@ -1630,7 +1630,7 @@ function WorldRule2Page() {
   const metrics = [
   { id: 1, title: "Ladies of the Lamp", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 Ladies of the Lamp who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
-  { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Traditionally Tycoon derives from a word that meant great lord, but now it typically means a successful business person. " },
+  { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines." },
   { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and Palatines enjoy the luxury of being able to drive ." },
   { id: 5, title: "Religious Leaders and CARD", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB). There are 16 members of CARD who assist the Ladies of the Lamp with organizing the town." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
@@ -1651,7 +1651,7 @@ function WorldRule2Page() {
 
   const metric3 = [
   { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the Ladies of the Lamp in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. Ladies of the Lamp do fashion for WESHGB KTSHAM, as there is 1 Ladies of the Lamp per department for all of the towns (12, 12 towns = 1 city). Priestesses do their own fashion. Ladies of the Light can choose between Ladies of the Lamp fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the Ladies of the Lamp which total to 23328 different fashion brands worldwide. The Ladies of the Lamp use the city to produce their brand after which they compete with each other worldwide. Her home city will always wear her clothes. I am also including game development as a part of fashion. "},
-  { id: 2, title: "Environment", text:"Each city has a department of Ladies of the Lamp and evangelions tasked with maintaining the environment of the area. Environment is also man made so the style of buildings to an extent although there are parameters they must meet the evangelions will help them to scale it to their ideas. It is a good chance to learn what makes good design."},
+  { id: 2, title: "Entertainment", text:"Each city has a department of Ladies of the Lamp and evangelions tasked with the control of the entertainment of their domain.   "},
   { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
   { id: 4, title: "Test", text:"Test is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test(department of Ladies of the Lamp). Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of towns and cities. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 (on purpose of course) for example and the solution would be to select the most saddening group of people to move to the 42 fail cities. " },
 ]; 
@@ -1676,6 +1676,16 @@ function WorldRule2Page() {
   { id: 10, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
 
 ]; 
+
+const metric6 = [
+  {id: 1, title: "Governance", text: "The " },
+  {id: 2, title: "Infrastructure", text: "The " },
+  {id: 3, title: "Culture", text: "The " },
+  {id: 4, title: "Science", text: "The " },
+  {id: 5, title: "Labour", text: "The " },
+  {id: 6, title: "Population", text: "The " }
+
+];
 
 const blocks4 = Array.from({ length: 4 }).map((_, i) => ({
     id: i,
@@ -1754,37 +1764,37 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 1,
       title: "Governance",
-      text: metric2[0].text,
+      text: metric6[0].text,
       img: "/images/city2.png"
     },
     {
       id: 2,
       title: "Infrastructure",
-      text: metric2[1].text,
+      text: metric6[1].text,
       img: "/images/city3.png"
     },
     {
       id: 3,
       title: "Culture",
-      text: metric2[2].text,
+      text: metric6[2].text,
       img: "/images/city4.jpg"
     },
     {
       id: 4,
       title: "Science",
-      text: metric2[3].text,
+      text: metric6[3].text,
       img: "/images/city5.png"
     },
     {
       id: 5,
       title: "Labour",
-      text: metric2[4].text,
+      text: metric6[4].text,
       img: "/images/city6.png"
     },
     {
       id: 6,
       title: "Population",
-      text: metric5[8].text,
+      text: metric6[5].text,
       img: "/images/city9.png"
     }
   ];
