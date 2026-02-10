@@ -1683,7 +1683,7 @@ const metric6 = [
   {id: 2, title: "Infrastructure", text: "The infrastructure is designed so that each town forms a part of a produce chain as a Cat. Each Cat then is a part of a chain called the Pig (Production Integrated Globe)." },
   {id: 3, title: "Culture", text: "The culture is religious. Entertainment is the work of the ladies of the lamp who oversee sports teams for each town and who select representative musicians for each town. As the culture is designed to be inclusive all people are required to create a song that they can perform every 5 months." },
   {id: 4, title: "Science", text: "Education is completed over a 12 year programme from the age of 5 to 17. Scientific research is done by HAL, POM, and 2. Major scientific projects include Pokemon creation and other novelties for everybodies enjoyment." },
-  {id: 5, title: "Labour", text: "The work pattern is 4 hour and 5 hour shifts with a 3 hour break in between to enjoy the town. Major labour projects include, spaceships, sea villages, sky castles, orbital platforms and trident terraforming spears." },
+  {id: 5, title: "Labour", text: "The work pattern is 4 hour and 5 hour shifts with a 3 hour break in between to enjoy the town. There are no days off apart from religious holidays. Major labour projects include, spaceships, sea villages, sky castles, orbital platforms and trident terraforming spears." },
   {id: 6, title: "Population", text: "The population is controlled everywhere. When the population increases too high a new CAT will be constructed or more will be taken to the 17%. " }
 
 ];
