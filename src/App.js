@@ -1561,7 +1561,7 @@ const carouselItems = bottomThree.map(item => ({
             then the average of their other goodness and then sorted between KTSHAM and WEBSHG by the average of their other life attributes. It works 
             out that the Ladies of the Lamp have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
             This is where trial testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
-            There are 6 religious leaders for each town who the Tycoons of the business communicate with to ensure that production is on target. 
+            There are 6 religious leaders for each town who the Palatines of the business communicate with to ensure that production is on target. 
           </p>
         </div>
       </div>
@@ -1618,6 +1618,8 @@ function WorldRule2Page() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
+  const [openWheelId, setOpenWheelId] = useState(null);
+
 
 
 
@@ -1628,8 +1630,8 @@ function WorldRule2Page() {
   const metrics = [
   { id: 1, title: "Ladies of the Lamp", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 Ladies of the Lamp who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
-  { id: 3, title: "Tycoons", text:"Tycoons are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Tycoons. Traditionally Tycoon derives from a word that meant great lord, but now it typically means a successful business person. " },
-  { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and tycoons enjoy the luxury of being able to drive ." },
+  { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Traditionally Tycoon derives from a word that meant great lord, but now it typically means a successful business person. " },
+  { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and Palatines enjoy the luxury of being able to drive ." },
   { id: 5, title: "Religious Leaders and CARD", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB). There are 16 members of CARD who assist the Ladies of the Lamp with organizing the town." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
 ];
@@ -1670,9 +1672,8 @@ function WorldRule2Page() {
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. They are the homes for the Acolytes who have been designated for labour, hard work and programming in the Hidalgo or tiny work, innovation, factories and laboratories in the Emirate. "},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
-  { id: 9, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
- 
- 
+  { id: 9, title: "Calculations", text:"Using the populations for the former empires of the world which are: Britain, Spain, France, Russia, China, Turkey, India, Germany, Sweden and the Netherlands. I used 84% as the number to be acolyted which equals 3.52 billion I then added 15% from the populations of the other countires. I then subtracted the number of black people in the world 1.2 billion (black people are not to be acolyted). This equalled 2.4693 billion. This is 49% of the populations of the former empires plus 15% of the other nations. I then divided by the number of CATs to get the populations for each town."}, 
+  { id: 10, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
 
 ]; 
 
@@ -1739,6 +1740,50 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     },
     {
       title: "Arx",
+      text: metric5[9].text,
+      img: "/images/city9.png"
+    },
+    {
+      title: "Calculations",
+      text: metric5[8].text,
+      img: "/images/calculator.png"
+    }
+  ];
+
+    const wheelPanels = [
+    {
+      id: 1,
+      title: "Governance",
+      text: metric2[0].text,
+      img: "/images/city2.png"
+    },
+    {
+      id: 2,
+      title: "Infrastructure",
+      text: metric2[1].text,
+      img: "/images/city3.png"
+    },
+    {
+      id: 3,
+      title: "Culture",
+      text: metric2[2].text,
+      img: "/images/city4.jpg"
+    },
+    {
+      id: 4,
+      title: "Science",
+      text: metric2[3].text,
+      img: "/images/city5.png"
+    },
+    {
+      id: 5,
+      title: "Labour",
+      text: metric2[4].text,
+      img: "/images/city6.png"
+    },
+    {
+      id: 6,
+      title: "Population",
       text: metric5[8].text,
       img: "/images/city9.png"
     }
@@ -2034,6 +2079,138 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
             </div>
           </div>
         </div>
+
+              {/* ====================================== */}
+      {/* STEERING WHEEL DASHBOARD — BOTTOM */}
+      {/* ====================================== */}
+
+      <div
+        style={{
+          marginTop: "30rem",
+          paddingBottom: "70em",
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <div
+          style={{
+            position: "relative",
+            width: "560px",
+            height: "560px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle at center, #f7f7f7 0%, #ddd 52%, #aaa 100%)",
+            boxShadow: "0 32px 90px rgba(0,0,0,0.35)",
+            border: "20px solid #222"
+          }}
+        >
+          {/* ================= */}
+          {/* CENTER HUB */}
+          {/* ================= */}
+
+          <div
+            onClick={() => setOpenWheelId(null)}
+            style={{
+              position: "absolute",
+              inset: "190px",
+              borderRadius: "50%",
+              background: "#111",
+              color: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textAlign: "center",
+              fontWeight: 700,
+              fontSize: "18px",
+              letterSpacing: "1px",
+              cursor: "pointer",
+              boxShadow: "0 0 38px rgba(0,0,0,0.6)"
+            }}
+          >
+            WORLD CORE
+          </div>
+
+          {/* ================= */}
+          {/* SPOKES */}
+          {/* ================= */}
+
+          {wheelPanels.map((panel, i) => {
+            const angle = (360 / wheelPanels.length) * i;
+            const isOpen = openWheelId === panel.id;
+
+            return (
+              <div
+                key={panel.id}
+                onClick={() =>
+                  setOpenWheelId(isOpen ? null : panel.id)
+                }
+                style={{
+                  position: "absolute",
+                  top: "40%",
+                  left: "33%",
+                  transform: `
+                  rotate(${angle}deg)
+                  translate(0, -215px)
+                  rotate(-${angle}deg)
+                  scale(${isOpen ? 1.18 : 1})
+`,
+                  transformOrigin: "center",
+                  transition: "all 0.45s cubic-bezier(.22,.61,.36,1)",
+                  cursor: "pointer",
+                  zIndex: isOpen ? 5 : 2
+                }}
+              >
+                {/* PANEL NODE */}
+                <div
+                  style={{
+                    width: "165px",
+                    minHeight: "84px",
+                    background: isOpen
+                      ? "#ffffff"
+                      : "rgba(255,255,255,0.9)",
+                    borderRadius: "18px",
+                    padding: "12px",
+                    boxShadow: isOpen
+                      ? "0 22px 46px rgba(0,0,0,0.4)"
+                      : "0 6px 16px rgba(0,0,0,0.22)",
+                    textAlign: "center"
+                  }}
+                >
+                  <strong>{panel.title}</strong>
+
+                  {isOpen && (
+                    <div style={{ marginTop: "10px" }}>
+                      <img
+                        src={panel.img}
+                        alt={panel.title}
+                        style={{
+                          width: "100%",
+                          height: "95px",
+                          objectFit: "cover",
+                          borderRadius: "12px",
+                          marginBottom: "8px"
+                        }}
+                      />
+
+                      <p
+                        style={{
+                          fontSize: "12px",
+                          lineHeight: 1.45
+                        }}
+                      >
+                        {panel.text}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+
+        
 
     </AnimatedPage>
   );
