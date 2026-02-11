@@ -612,7 +612,7 @@ function LanguagePage() {
           <p style={{ lineHeight: 1.65 }}>
             This wheel links linguistic traditions with sacred geometry and
             religious centers of learning. Select a spoke below to reveal
-            images and commentary, then close the panel to return to the hub. Click o the image of the modal to enlarge the text if it reveals itself to far away.
+            images and commentary, then close the panel to return to the hub. Click on the image of the modal to enlarge the text if it reveals itself to far away.
           </p>
         </div>
 
