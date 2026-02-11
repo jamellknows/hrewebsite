@@ -585,6 +585,55 @@ function LanguagePage() {
         </ol>
       </div>
 
+            {/* INFO BAR ABOVE DHARMA WHEEL */}
+      {/* =============================== */}
+
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          margin: "60px auto 36px",
+          padding: "26px 32px",
+
+          display: "grid",
+          gridTemplateColumns: "2fr 1fr",
+          gap: "26px",
+
+          background: "rgba(255,255,255,0.2)",
+          backdropFilter: "blur(12px)",
+          borderRadius: "22px",
+
+          boxShadow: "0 14px 40px rgba(0,0,0,0.25)"
+        }}
+      >
+        {/* Main Writing */}
+        <div>
+          <h2 style={{ marginBottom: "10px" }}>Sacred Language Hub</h2>
+          <p style={{ lineHeight: 1.65 }}>
+            This wheel links linguistic traditions with sacred geometry and
+            religious centers of learning. Select a spoke below to reveal
+            images and commentary, then close the panel to return to the hub. Click o the image of the modal to enlarge the text if it reveals itself to far away.
+          </p>
+        </div>
+
+        {/* Side Instructions */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.35)",
+            borderRadius: "16px",
+            padding: "16px",
+            fontSize: "14px"
+          }}
+        >
+          <strong>How to use</strong>
+          <ul style={{ marginTop: "8px", paddingLeft: "18px" }}>
+            <li>Click a spoke</li>
+            <li>Tap images for detail</li>
+            <li>Scroll inside panels</li>
+          </ul>
+        </div>
+      </div>
+
 
      {/* ───────────────── DHARMA WHEEL SECTION ───────────────── */}
 
@@ -738,7 +787,7 @@ function LanguagePage() {
                   }}
                   style={{
                     width: "100%",
-                    height: 90,
+                    height: 45,
                     objectFit: "cover",
                     borderRadius: 10,
                     cursor: "zoom-in"
@@ -780,14 +829,16 @@ function LanguagePage() {
   >
     <div
       onClick={(e) => e.stopPropagation()}
-      style={{
-        background: "#111",
-        padding: 26,
-        borderRadius: 20,
-        maxWidth: 520,
-        color: "#fff",
-        boxShadow: "0 0 50px gold"
-      }}
+          style={{
+      background: "#fff",
+      borderRadius: "20px",
+      padding: "22px",
+      width: "520px",
+      maxWidth: "90vw",
+      maxHeight: "60vh",
+      overflowY: "auto",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.45)"
+    }}
     >
       <h2>{activeModal.title}</h2>
 
