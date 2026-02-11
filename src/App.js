@@ -406,6 +406,22 @@ function LanguagePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [showCountries, setShowCountries] = useState(false);
+  const wheelSize = 480;
+
+  const [rotation, setRotation] = useState(0);
+  const [openSpoke, setOpenSpoke] = useState(null);
+  const [velocity, setVelocity] = useState(0);
+  const [activeModal, setActiveModal] = useState(null);
+
+  const dragRef = useRef(false);
+  const lastAngleRef = useRef(0);
+  const rafRef = useRef(null);
+  const lastMoveRef = useRef(0);
+
+
+  
+
+  
 
   const languages = [
     { name: "Italian", img: "/images/italian.jpg", text: "Romance language spoken primarily in Italy: Villa Reale di Monza." },
@@ -432,6 +448,17 @@ function LanguagePage() {
     "San Marino","Switzerland","South Africa","Algeria","Iran","Indonesia","Turkey"
   ];
 
+  const dharmaSpokes = [
+  { id: 1, title: "Vatican City", img: "/images/mandarin.jpg", text: "The Vatican City is the head of the Catholic Church it is where the Brother(Russell) as the Messenger of Righteousness will be based." },
+  { id: 2, title: "The Kaaba", img: "/images/japanese.jpg", text: "Mecca is home to the Kaaba. It is a site dating back to Abraham and then was used for polytheistic worship. As it is known as the house of God I shall be constructing my own house on the site that is larger and looks like the object that is used by the 9 to supervise the world." },
+  { id: 3, title: "12 Lingas", img: "/images/french.jpg", text: "The twelve Jyotirlingas are sacred shrines in India believed to mark places where Shiva manifested as a pillar of divine light. They are spread across different regions, linking pilgrimage routes from the Himalayas to the southern coast. Each site—such as Somnath, Kedarnath, and Rameswaram—has its own legends recorded in Shaiva texts. Together they form one of the most important devotional networks in Hindu religious life." },
+  { id: 4, title: "The 4 Mathas", img: "/images/german.jpg", text: "The four Mathas were monastic centers founded by Adi Shankaracharya to preserve and teach Advaita Vedanta philosophy. They are traditionally located in the four cardinal directions of India: Sringeri (south), Dwarka (west), Puri (east), and Badrinath/Jyotirmath (north). Each Matha is led by a Shankaracharya who oversees spiritual instruction and ritual practice. Collectively they helped standardize learning and pilgrimage across the subcontinent." },
+  { id: 5, title: "Angkor Wat", img: "/images/spanish.jpg", text: "Angkor Wat is a massive temple complex in Cambodia originally built in the 12th century as a Hindu sanctuary dedicated to Vishnu before later becoming Buddhist. Its five central towers symbolize Mount Meru, the cosmic mountain in Indian cosmology. Extensive bas-reliefs line its galleries, depicting epics such as the Ramayana and scenes of royal processions. It is today one of Southeast Asia’s most famous archaeological and religious sites." },
+  { id: 6, title: "Borobudur", img: "/images/italian.jpg", text: "Borobudur in Indonesia is the world’s largest Buddhist monument, constructed in the 9th century under the Sailendra dynasty. The structure is a stepped mandala representing the Buddhist path from the realm of desire to enlightenment. More than 2,600 relief panels and hundreds of Buddha statues decorate its terraces. Pilgrims traditionally circumambulate each level while meditating on the scenes carved in stone." },
+  { id: 7, title: "Shivedagon", img: "/images/hebrew.jpg", text: "The Shwedagon Pagoda in Yangon, Myanmar, is a towering golden stupa regarded as the country’s most sacred Buddhist site. Tradition holds that it enshrines relics of four Buddhas, including hairs of Gautama Buddha. The central spire is covered in gold plates and crowned with a jeweled umbrella studded with diamonds and rubies. It functions as both a pilgrimage destination and a focal point for daily worship." },
+  { id: 8, title: "Lahasa", img: "/images/arabic.jpg", text: "Lhasa is the historic spiritual and political heart of Tibet, long associated with Tibetan Buddhism. The Potala Palace dominates the cityscape and once served as the winter residence of the Dalai Lamas. Major monasteries such as Jokhang and Sera make it a central pilgrimage destination. For centuries it has symbolized religious authority, scholarship, and Himalayan culture." }
+];
+
   const runs = [
     "IAMMEPMVSCSMS",
     "IAMBPVSHIHTH",
@@ -439,6 +466,18 @@ function LanguagePage() {
     "LLNKSFMJZ",
     "ABCCHL(CCNL)"
   ];
+
+    useEffect(() => {
+    if (Math.abs(velocity) < 0.01) return;
+
+    rafRef.current = requestAnimationFrame(() => {
+      setRotation((r) => r + velocity);
+      setVelocity((v) => v * 0.94);
+    });
+
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [velocity]);
+
 
   const visible = [
     currentIndex,
@@ -546,6 +585,228 @@ function LanguagePage() {
           ))}
         </ol>
       </div>
+
+
+     {/* ───────────────── DHARMA WHEEL SECTION ───────────────── */}
+
+<div
+  style={{
+    marginTop: "140px",
+    paddingBottom: "160px",
+    display: "flex",
+    justifyContent: "center",
+    background:
+      "radial-gradient(circle at center, rgba(255,200,80,.25), transparent 70%)"
+  }}
+>
+  <div
+    style={{
+      width: 420,
+      height: 420,
+      position: "relative",
+      cursor: "grab",
+      userSelect: "none"
+    }}
+    onMouseDown={(e) => {
+      dragRef.current = true;
+      setVelocity(0);
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      lastAngleRef.current = Math.atan2(
+        e.clientY - cy,
+        e.clientX - cx
+      );
+
+      lastMoveRef.current = Date.now();
+    }}
+    onMouseMove={(e) => {
+      if (!dragRef.current) return;
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      const angle = Math.atan2(
+        e.clientY - cy,
+        e.clientX - cx
+      );
+
+      const delta =
+        ((angle - lastAngleRef.current) * 180) /
+        Math.PI;
+
+      const now = Date.now();
+      const dt = now - lastMoveRef.current;
+
+      setRotation((r) => r + delta);
+      setVelocity((delta / Math.max(dt, 1)) * 18);
+
+      lastMoveRef.current = now;
+      lastAngleRef.current = angle;
+    }}
+    onMouseUp={() => (dragRef.current = false)}
+    onMouseLeave={() => (dragRef.current = false)}
+  >
+    {/* Lotus Overlay */}
+    <svg
+      viewBox="0 0 500 500"
+      style={{
+        position: "absolute",
+        inset: 0,
+        pointerEvents: "none",
+        opacity: 0.15
+      }}
+    >
+      <circle
+        cx="250"
+        cy="250"
+        r="220"
+        stroke="gold"
+        strokeWidth="4"
+        fill="none"
+      />
+      {[...Array(8)].map((_, i) => (
+        <ellipse
+          key={i}
+          cx="250"
+          cy="110"
+          rx="22"
+          ry="80"
+          fill="gold"
+          transform={`rotate(${(360 / 8) * i} 250 250)`}
+        />
+      ))}
+    </svg>
+       
+    {/* Spokes */}
+    {dharmaSpokes.map((s, i) => {
+      const angle =
+        (360 / dharmaSpokes.length) * i + rotation;
+
+      const isOpen = openSpoke === s.id;
+
+      return (
+        <div
+          key={s.id}
+          style={{
+            position: "absolute",
+            top: "41%",
+            left: "34%",
+            width: 140,
+            transform: `
+              rotate(${angle}deg)
+              translate(0, -170px)
+            `,
+            transformOrigin: "center bottom"
+          }}
+        >
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+
+              const snap =
+                (360 / dharmaSpokes.length) * i;
+
+              setRotation((r) => r - snap);
+              setOpenSpoke(isOpen ? null : s.id);
+            }}
+            style={{
+              background: "#111",
+              color: "white",
+              padding: "8px",
+              borderRadius: "14px",
+              textAlign: "center",
+              cursor: "pointer",
+              boxShadow: isOpen
+                ? "0 0 18px gold"
+                : "0 6px 16px rgba(0,0,0,.4)",
+              transition: "0.3s"
+            }}
+          >
+            <strong>{s.title}</strong>
+
+            {isOpen && (
+              <div style={{ marginTop: 8 }}>
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveModal(s);
+                  }}
+                  style={{
+                    width: "100%",
+                    height: 90,
+                    objectFit: "cover",
+                    borderRadius: 10,
+                    cursor: "zoom-in"
+                  }}
+                />
+
+                <p
+                  style={{
+                    fontSize: 12,
+                    marginTop: 6
+                  }}
+                >
+                  {s.text}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+{/* ───────────── FULLSCREEN IMAGE MODAL ───────────── */}
+
+{activeModal && (
+  <div
+    onClick={() => setActiveModal(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,.75)",
+      backdropFilter: "blur(6px)",
+      zIndex: 999,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        background: "#111",
+        padding: 26,
+        borderRadius: 20,
+        maxWidth: 520,
+        color: "#fff",
+        boxShadow: "0 0 50px gold"
+      }}
+    >
+      <h2>{activeModal.title}</h2>
+
+      <img
+        src={activeModal.img}
+        style={{
+          width: "100%",
+          borderRadius: 16,
+          margin: "12px 0"
+        }}
+      />
+
+      <p>{activeModal.text}</p>
+    </div>
+  </div>
+)}
+
+
     </AnimatedPage>
   );
 }
