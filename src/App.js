@@ -406,7 +406,6 @@ function LanguagePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [showCountries, setShowCountries] = useState(false);
-  const wheelSize = 480;
 
   const [rotation, setRotation] = useState(0);
   const [openSpoke, setOpenSpoke] = useState(null);
@@ -799,6 +798,7 @@ function LanguagePage() {
           borderRadius: 16,
           margin: "12px 0"
         }}
+        alt={activeModal.title}
       />
 
       <p>{activeModal.text}</p>
