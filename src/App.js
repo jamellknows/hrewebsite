@@ -867,6 +867,8 @@ function BusinessPage() {
   const [openSecond, setOpenSecond] = useState(null);
   const [openThird, setOpenThird] = useState(null);
   const [openFourth, setOpenFourth] = useState(null);
+  const [openMetric, setOpenMetric] = useState(null);
+
 
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -877,8 +879,6 @@ function BusinessPage() {
     "/images/photo4.jpg",
     "/images/photo5.jpg",
     "/images/photo6.jpg",
-
-
     
   ];
 
@@ -916,7 +916,7 @@ function BusinessPage() {
     { id: 1, title: "Hospitality, Retail and Fashion", text: "Consumer-facing industries." },
     { id: 2, title: "Engineering, Manufacturing and Research", text: "Industrial systems." },
     { id: 3, title: "IT and Research", text: "Information and Technology Systems." },
-    { id: 4, title: "Logistics and Research", text: "Delivery and Procurement Networks" },
+    { id: 4, title: "Logistics", text: "Delivery and Procurement Networks" },
 
 
   ];
@@ -925,18 +925,18 @@ function BusinessPage() {
     { id: 0, title: "Healthcare and Research", text: "Medical systems and labs." },
     { id: 1, title: "Real Estate", text: "Land and property assets." },
     { id: 2, title: "Construction", text: "Construction development" },
-    { id: 3, title: "Telecommunications", text: "Wireless Infrastructure" }
+    { id: 3, title: "Telecommunications and Research", text: "Wireless Infrastructure" }
 
 
   ];
 
   const metric8 = [
-    { id: 0, title: "Research" },
-    { id: 1, title: "Office" },
-    { id: 2, title: "Board" },
-    { id: 3, title: "Manufacturing" },
-    { id: 4, title: "Sales" },
-    { id: 5, title: "Delivery" }
+    { id: 0, title: "Research", image:"/images/research.png", description:"The research is spread across 5 divisions like the pentateuch and the breath of life. " },
+    { id: 1, title: "Office", image: "/images/office.png",  description: "Offices are either male only or female only. Female offices are staffed and are designed to work optimally with 80 staff. 54 from only fans and 26 with chartered engineering degrees. " },
+    { id: 2, title: "Board", image: "/images/boardroom.png", description: "Boardroom meetings are designed in 2 formats. As 4 people or as 7 people with 3 taking the lead." },
+    { id: 3, title: "Manufacturing", image: "/images/manufacturing.png", description: "Manufacturing is compacted to function cyclically or continuously or both. Global production lines are used only if necessary and most goods sold in market will be produced in their economic zone." },
+    { id: 4, title: "Sales", image: "/images/sales.png", description: "Sales are online through high visibility advertising, mall ownership, brand partnership, bulk, trade, wholesale, treaties, contracts and general commercial supply." },
+    { id: 5, title: "Delivery", image: "/images/delivery.png", description: "Delivery is 'in house'." }
   ];
 
   const metric9 = [
@@ -1194,35 +1194,138 @@ function BusinessPage() {
           ))}
         </div>
 
-        {/* ===== Bottom 6 box grid ===== */}
+    {/* ===== Bottom 6 Premium Flip Card Grid ===== */}
+<div
+  style={{
+    gridArea: "grid",
+    position: "relative"
+  }}
+>
+  {/* Dark Overlay */}
+  {openMetric !== null && (
+  <div
+    onClick={() => setOpenMetric(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.45)", // soft dim only
+      zIndex: 998,
+      transition: "opacity 0.3s ease"
+    }}
+  />
+)}
+
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+      gap: "2em",
+      marginTop: "4em",
+      justifyItems: "center",
+      perspective: "2000px"
+    }}
+  >
+    {metric8.map((m) => {
+      const isOpen = openMetric === m.id;
+
+      return (
         <div
+          key={m.id}
+          onClick={() => setOpenMetric(isOpen ? null : m.id)}
           style={{
-            gridArea: "grid",
-            display: "grid",
-            gridTemplateColumns: "repeat(6, 1fr)",
-            gap: "1em",
-            marginTop: "3em"
+            width: "120px",
+            height: "170px",
+            cursor: "pointer",
+            position: isOpen ? "fixed" : "relative",
+            top: isOpen ? "50%" : "auto",
+            left: isOpen ? "50%" : "auto",
+            transform: isOpen
+              ? "translate(-50%, -50%) scale(2.2)"
+              : "scale(1)",
+            zIndex: isOpen ? 999 : 1,
+            transition: "all 0.6s cubic-bezier(.23,1,.32,1)"
           }}
         >
-          {metric8.map((m) => (
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              transformStyle: "preserve-3d",
+              transition: "transform 0.6s ease",
+              transform: isOpen
+                ? "rotateY(180deg)"
+                : "rotateY(0deg)"
+            }}
+          >
+            {/* FRONT */}
             <div
-              key={m.id}
               style={{
-                ...styles.sketch,
-                padding: "14px",
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                borderRadius: "18px",
+                overflow: "hidden",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center"
+                justifyContent: "flex-end",
+                backgroundImage: `url(${m.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center"
               }}
             >
-              <strong>{m.title}</strong>
+              <div
+                style={{
+                  background: "rgba(0,0,0,0.65)",
+                  color: "#fff",
+                  padding: "10px",
+                  fontWeight: 600,
+                  fontSize: "14px",
+                  textAlign: "center"
+                }}
+              >
+                {m.title}
+              </div>
             </div>
-          ))}
+
+            {/* BACK */}
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+                borderRadius: "18px",
+                padding: "24px",
+                background: "#ffffff",
+                boxShadow: "0 30px 80px rgba(0,0,0,0.5)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                fontSize: "0.5em",
+                lineHeight: 1.6
+              }}
+            >
+              {m.description}
+            </div>
+          </div>
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
+</div>
+
+
     </AnimatedPage>
   );
 }
+
 
 
 function ReligionPage() {
@@ -2108,7 +2211,7 @@ function WorldRule2Page() {
 
 
   const metrics = [
-  { id: 1, title: "Ladies of the Lamp", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of KTSHAM on the side of the 4 (FEST) (materiality and the door to spiritual growth). They can live in any of the 12 towns although their main bases will be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 Ladies of the Lamp who are each given 120 servitor and 5 seraphim evangelions, not including those on the 5 as there are evangelions who help them to run the government on their side (4,FEST) and on the side of 5 (JSPEM)." },
+  { id: 1, title: "Ladies of the Lamp and Ladies of the Wave", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of the arrow and the tooth. Ladies of the Wave are the same but they run the Sea Villages. Ladies of the Lamp work on the side of the 4 (FEST) (Fashion, Entertainment, Science, Test). They can live in any of the 12 towns although their main bases are to be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 Ladies of the Lamp who are who work with 16 Fashion designers and models (4,12) and a team of evangellions within their department and with JSPEM. There are 54160 Ladies of th Wave in total who work FREE (Fashion, Research, Entertainment and  Employement)" },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
   { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines." },
   { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and Palatines enjoy the luxury of being able to drive ." },
