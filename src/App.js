@@ -1366,6 +1366,8 @@ function WorldRule1Page() {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
+  const [openPyramid, setOpenPyramid] = useState(null);
+
 
 
   const imageCarouselItems = [
@@ -1373,6 +1375,46 @@ function WorldRule1Page() {
   "./images/town1.jpg",
   "./images/town2.jpg",
 ];
+
+  const pyramidSections = [
+    {
+      id: 0,
+      title: "Foundation",
+      image: "./images/sv7.jpg",
+      text: "The base of the system provides housing, agriculture, logistics, and population stability across all villages."
+    },
+    {
+      id: 1,
+      title: "Production",
+      image: "./images/sv2.png",
+      text: "Production is to flow through the sea village chain where it is delivered to the land via 2 end points. Sea Villages are self sufficient and only rely on the land for materials for production."
+    },
+    {
+      id: 2,
+      title: "Culture",
+      image: "./images/sv4.png",
+      text: "The culture in the Sea Villages is very religious, the focus is on language building, manners, politeness, etiquette and moral and social responsibility. The sea villages are tasked to invent two writing scripts. Land pilgrimages are permitted 6 times a year every 60 days and last for 3 days with transport and accommodation provided."
+    },
+    {
+      id: 3,
+      title: "Governance",
+      image: "./images/sv1.png",
+      text: "The Sea Villages are special administrative zones run by Evangelions who form JSPEM and 16 Ladies of the Wave. Ladies of the wave are the most beautiful virgin women who are tasked with fashion, research, employment and entertainment (FREE).  "
+    },
+    {
+      id: 4,
+      title: "Judgement",
+      image: "./images/sv3.png",
+      text: "Testing cycles evaluate citizens and redistribute the civilians every five years. Families that have a female family member as a lady of the wave enjoy special privileges in employment.  "
+    },
+    {
+      id: 5,
+      title: "Completion",
+      image: "./images/sv6.jpg",
+      text: "The Sea Villages are home to advanced engineering, to ensure security there are many evangelions. Those who live in the Sea Village will be transferred to live on water worlds when space colonization commences.  "
+    }
+  ];
+
 
   const [imageCarouselIndex, setImageCarouselIndex] = useState(0);
 
@@ -1915,6 +1957,131 @@ const carouselItems = bottomThree.map(item => ({
           <button onClick={nextCarousel} style={styles.btn}>Next</button>
         </div>
       </div>
+
+    {/* =============================== */}
+    {/* PYRAMID SECTION */}
+    {/* =============================== */}
+
+  <div
+  style={{
+    marginTop: "80px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    perspective: "1500px",
+  }}
+>
+  <h2 style={styles.sectionTitle}>Sea Village:Interactive Pyramid</h2>
+
+  <div
+    style={{
+      width: "90%",
+      maxWidth: "600px",
+      display: "flex",
+      flexDirection: "column-reverse", // bottom tier first
+      gap: "12px",
+    }}
+  >
+    {pyramidSections.map((tier, idx) => {
+      const isOpen = openPyramid === tier.id;
+
+      // Bottom tier widest, top tier narrowest
+      const width = 85 + (12- 12*idx); // adjust these numbers for steeper/shallower pyramid
+
+      return (
+        <div
+          key={tier.id}
+          onClick={() => setOpenPyramid(isOpen ? null : tier.id)}
+          style={{
+            margin: "0 auto",
+            width: `${width}%`,
+            cursor: "pointer",
+            position: "relative",
+            zIndex: idx,
+            transition: "all 0.4s ease",
+          }}
+        >
+          {/* TIER BLOCK */}
+          <div
+            style={{
+              background: "#f9fafb",
+              padding: "18px",
+              borderRadius: "18px",
+              textAlign: "center",
+              boxShadow: isOpen
+                ? "0 12px 40px rgba(0,0,0,0.25)"
+                : "0 6px 20px rgba(0,0,0,0.15)",
+              border: "1px solid #e5e7eb",
+              transform: isOpen ? "scale(1.03)" : "scale(1)",
+              transition: "all 0.35s ease",
+              position: "relative",
+              zIndex: idx,
+            }}
+          >
+            <h4
+              style={{
+                margin: 0,
+                fontWeight: 600,
+                fontSize: "18px",
+                color: "#111827",
+                textShadow: "0 0 4px rgba(0,0,0,0.2)",
+              }}
+            >
+              {tier.title}
+            </h4>
+          </div>
+
+          {/* EXPANDABLE CONTENT */}
+          <div
+            style={{
+              maxHeight: isOpen ? "400px" : "0px",
+              overflow: "hidden",
+              transition: "max-height 0.45s ease, padding 0.35s ease",
+              paddingTop: isOpen ? "12px" : "0px",
+            }}
+          >
+            {isOpen && (
+              <div
+                style={{
+                  background: "#fff",
+                  borderRadius: "16px",
+                  padding: "16px",
+                  boxShadow: "0 12px 36px rgba(0,0,0,0.18)",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "12px",
+                }}
+              >
+                {/* IMAGE INSIDE TIER */}
+                <div
+                  style={{
+                    width: "100%",
+                    height: "160px",
+                    backgroundImage: `url(${tier.image})`,
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    borderRadius: "12px",
+                    boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
+                  }}
+                  alt={tier.title}
+                />
+
+                {/* TEXT INSIDE TIER */}
+                <p style={{ fontSize: "15px", lineHeight: 1.6, textAlign: "center" }}>
+                  {tier.text}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+
 
       
 
