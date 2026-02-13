@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import { motion, AnimatePresence, } from "framer-motion";
 import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react";
 import './App.css';
-import { useState, useEffect, useRef  } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import crownImage from './srcImages/crown.jpg'
 
 
@@ -1628,6 +1628,7 @@ function WorldRule1Page() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
   const [openPyramid, setOpenPyramid] = useState(null);
+  const [openTownModal, setOpenTownModal] = useState(null); // NEW modal for town 6-piece view
 
 
 
@@ -1821,58 +1822,75 @@ const carouselItems = bottomThree.map(item => ({
     setCarouselIndex((prev) => (prev - 1 + carouselItems.length) % carouselItems.length);
   };
 
+  const townSections = [
+  { id: 0, name: "Node A", angle: 0 },
+  { id: 1, name: "Node B", angle: 60 },
+  { id: 2, name: "Node C", angle: 120 },
+  { id: 3, name: "Node D", angle: 180 },
+  { id: 4, name: "Node E", angle: 240 },
+  { id: 5, name: "Node F", angle: 300 },
+];
+
   return (
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>World Rule 1</h2>
 
-      {/* Accordion at the top */}
-      <div style={{ display: 'flex', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
-        {accordionItems.map((item) => (
-  <div
-    key={item.id}
-    onClick={() =>
-      setActiveAccordion(activeAccordion === item.id ? null : item.id)
-    }
-    style={{
-      ...styles.card,
-      flex: 1,
-      cursor: 'pointer',
-      padding: '0.5em',
-      borderRadius: '16px',
-      boxShadow: '0 6px 20px rgba(0,0,0,0.1)',
-      backgroundColor: activeAccordion === item.id ? '#f3f4f6' : '#fff',
-      transition: 'all 0.3s ease',
-      marginBottom: '16px',
-      border: '1px solid #e5e7eb',
-    }}
-  >
-    <h4
-      style={{
-        margin: 0,
-        fontSize: '18px',
-        fontWeight: 600,
-        color: '#111827',
-      }}
-    >
-      {item.title}
-    </h4>
+     {/* Accordion at the top (inline toggle version) */}
+<div style={{ display: 'flex', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
+  {accordionItems.map((item) => {
+    const isOpen = activeAccordion === item.id;
+    return (
+      <div
+        key={item.id}
+        onClick={() => setActiveAccordion(isOpen ? null : item.id)}
+        style={{
+          ...styles.card,
+          flex: '1 1 250px',
+          cursor: 'pointer',
+          padding: '1rem',
+          borderRadius: '16px',
+          boxShadow: '0 6px 20px rgba(0,0,0,0.1)',
+          backgroundColor: isOpen ? '#f3f4f6' : '#fff',
+          transition: 'all 0.3s ease',
+          border: '1px solid #e5e7eb',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <h4
+          style={{
+            margin: 0,
+            fontSize: '18px',
+            fontWeight: 600,
+            color: '#111827',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
+          {item.title}
+          <span style={{ opacity: 0.6 }}>{isOpen ? '−' : '+'}</span>
+        </h4>
 
-    <div
-      style={{
-        maxHeight: activeAccordion === item.id ? '500px' : '0',
-        overflow: 'hidden',
-        transition: 'max-height 0.4s ease, padding 0.3s ease',
-        paddingTop: activeAccordion === item.id ? '12px' : '0px',
-        color: '#374151',
-        fontSize: '16px',
-        lineHeight: 1.5,
-      }}
-    >
-      <p style={{ margin: 0 }}>{item.content}</p>
-    </div>
-  </div>
-))}
+        {/* Expandable content */}
+        <div
+          style={{
+            maxHeight: isOpen ? '200px' : '0px',
+            overflow: 'hidden',
+            transition: 'max-height 0.35s ease, padding 0.35s ease',
+            paddingTop: isOpen ? '12px' : '0px',
+            color: '#374151',
+            fontSize: '15px',
+            lineHeight: 1.5,
+          }}
+        >
+          <p style={{ margin: 0 }}>{item.content}</p>
+        </div>
       </div>
+    );
+  })}
+</div>
+
 
       {/* Main layout: Left cards + Right grid */}
       <div style={{
@@ -2342,6 +2360,160 @@ const carouselItems = bottomThree.map(item => ({
   </div>
 </div>
 
+  <h2 style={{ ...styles.sectionTitle, marginTop: "3rem", textAlign: "center" }}>
+    Town Infrastructure: 6 Pieces
+  </h2>
+
+  <div
+    style={{
+      position: "relative",
+      width: "100%",
+      maxWidth: "620px",
+      margin: "2rem auto",
+      aspectRatio: "1 / 1",
+    }}
+  >
+    {/* CENTER HUB */}
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "90px",
+        height: "90px",
+        borderRadius: "50%",
+        background: "#111827",
+        color: "white",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontWeight: 700,
+        letterSpacing: "1px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+        zIndex: 5,
+      }}
+    >
+      TOWN
+    </div>
+
+    {townSections.map((section, idx) => {
+      const angleDeg = idx * 60 - 90;
+      const angle = (angleDeg * Math.PI) / 180;
+      const radius = 46; // % from center
+
+      const x = 50 + radius * Math.cos(angle);
+      const y = 50 + radius * Math.sin(angle);
+
+      return (
+        <React.Fragment key={section.id}>
+          {/* SPOKE LINE */}
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "2px",
+              height: "46%",
+              background: "#9ca3af",
+              transformOrigin: "top center",
+              transform: `rotate(${angleDeg + 90}deg)`,
+              zIndex: 1,
+              opacity: 0.5,
+            }}
+          />
+
+          {/* NODE */}
+          <div
+            onClick={() => setOpenTownModal(section.id)}
+            style={{
+              position: "absolute",
+              top: `${y}%`,
+              left: `${x}%`,
+              transform: "translate(-50%, -50%)",
+              width: "110px",
+              height: "110px",
+              background: "#f3f4f6",
+              borderRadius: "16px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+              cursor: "pointer",
+              boxShadow: "0 8px 24px rgba(0,0,0,0.14)",
+              transition: "all 0.25s ease",
+              zIndex: 4,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1.08)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1)")}
+          >
+            <div style={{ fontSize: "32px" }}>{section.icon}</div>
+            <div style={{ fontSize: "14px", marginTop: "6px", fontWeight: 600 }}>
+              {section.title}
+            </div>
+          </div>
+        </React.Fragment>
+      );
+    })}
+  </div>
+    {openTownModal !== null && (
+  <div
+    onClick={() => setOpenTownModal(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.65)",
+      backdropFilter: "blur(6px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 999,
+      padding: "40px 20px",
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        background: "#ffffff",
+        borderRadius: "18px",
+        width: "100%",
+        maxWidth: "540px",
+        maxHeight: "85vh",
+        overflowY: "auto",
+        padding: "28px",
+        boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+        animation: "fadeIn 0.25s ease",
+      }}
+    >
+      <h3 style={{ fontSize: "24px", marginBottom: "12px" }}>
+        {townSections[openTownModal].icon} {townSections[openTownModal].title}
+      </h3>
+
+      <p style={{ lineHeight: 1.7, fontSize: "16px" }}>
+        {townSections[openTownModal].text}
+      </p>
+
+      <button
+        onClick={() => setOpenTownModal(null)}
+        style={{
+          marginTop: "24px",
+          background: "#111827",
+          color: "white",
+          border: "none",
+          borderRadius: "10px",
+          padding: "10px 18px",
+          cursor: "pointer",
+          fontWeight: 600,
+        }}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
+
+
 
 
       
@@ -2576,41 +2748,48 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>World Rule II</h2>
 
-      {/* === Top: 6 expandable stats boxes === */}
+     {/* === Top: 6 expandable stats boxes (fullscreen-style expand) === */}
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(6, 1fr)",
+    gap: "12px",
+    marginBottom: "24px",
+  }}
+>
+  {stats6.map((stat) => {
+    const isOpen = openStatId === stat.id;
+    return (
       <div
+        key={stat.id}
+        onClick={() => setOpenStatId(isOpen ? null : stat.id)}
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(6, 1fr)",
-          gap: "12px",
-          marginBottom: "24px"
+          ...styles.card,
+          textAlign: "center",
+          cursor: "pointer",
+          background: isOpen ? "#e0f7fa" : "#f9f9f9",
+          transition: "all 0.35s ease",
+          position: "relative",
+          zIndex: isOpen ? 100 : 1,
+          gridColumn: isOpen ? "span 6" : "span 1", // expand to full row
+          padding: isOpen ? "2rem" : "1rem",
+          boxShadow: isOpen
+            ? "0 12px 40px rgba(0,0,0,0.25)"
+            : "0 6px 20px rgba(0,0,0,0.1)",
         }}
       >
-        {stats6.map((stat) => (
-          <div
-            key={stat.id}
-            style={{
-              ...styles.card,
-              textAlign: "center",
-              cursor: "pointer",
-              background: openStatId === stat.id ? "#e0f7fa" : "#f9f9f9",
-              transition: "background 0.2s"
-            }}
-            onClick={() =>
-              setOpenStatId(openStatId === stat.id ? null : stat.id)
-            }
-          >
-            <h4>{stat.title}</h4>
-            {openStatId === stat.id ? (
-              <>
-                <strong style={{ fontSize: "22px" }}>{stat.value}</strong>
-                <p style={{ marginTop: "8px" }}>{stat.text}</p>
-              </>
-            ) : (
-              <strong style={{ fontSize: "22px" }}>{stat.value}</strong>
-            )}
-          </div>
-        ))}
+        <h4 style={{ marginBottom: "8px" }}>{stat.title}</h4>
+        <strong style={{ fontSize: "22px" }}>{stat.value}</strong>
+        {isOpen && (
+          <p style={{ marginTop: "12px", fontSize: "15px", lineHeight: 1.6 }}>
+            {stat.text}
+          </p>
+        )}
       </div>
+    );
+  })}
+</div>
+
 
       {/* === Middle layout === */}
       <div
