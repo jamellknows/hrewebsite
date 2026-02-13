@@ -1612,7 +1612,7 @@ const rightGrid = [
   {
     id: 0,
     title: "A Cat",
-    content: `A Cat is divided into 3 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as an arrow uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. Each city has its own focus, the Hamlet is mixed, the Alber is produce, the Mish is manufacturing, the Kent construction, the Thorpe is produce and the Sea Village is manufacturing.`,
+    content: `There are 12977 Cats, a Cat is divided into 3 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as an arrow uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. Each city has its own focus, the Hamlet is mixed, the Alber is produce, the Mish is manufacturing, the Kent construction, the Thorpe is produce and the Sea Village is manufacturing.`,
     image: "./images/christmas.jpg",
   },
   {
@@ -2202,6 +2202,8 @@ function WorldRule2Page() {
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
   const [openWheelId, setOpenWheelId] = useState(null);
+  const [openCoreImage, setOpenCoreImage] = useState(false);
+
 
 
 
@@ -2211,11 +2213,11 @@ function WorldRule2Page() {
 
 
   const metrics = [
-  { id: 1, title: "Ladies of the Lamp and Ladies of the Wave", text:"Ladies of the Lamp is the title of the women (virgins 21 and 26) who run the government of the arrow and the tooth. Ladies of the Wave are the same but they run the Sea Villages. Ladies of the Lamp work on the side of the 4 (FEST) (Fashion, Entertainment, Science, Test). They can live in any of the 12 towns although their main bases are to be in the Wola as Champions in charge of the Hamlet, Alber and Mish, the Shefa as Deck in charge of the Kent and Thorpe and the GRAD(TH) as Stage in charge of the Sea Village. There are 93312 Ladies of the Lamp who are who work with 16 Fashion designers and models (4,12) and a team of evangellions within their department and with JSPEM. There are 54160 Ladies of th Wave in total who work FREE (Fashion, Research, Entertainment and  Employement)" },
+  { id: 1, title: "Ladies of the Lamp, Amiras of the Alpet, Infantas of the Impagliata and Divines of the Domus", text:"These are the women who hold positions in the 9th Arm. Once the world has been conquered the requirements to enter will be to be a virgin between the ages of 18 and 26 with an academy accepting intake for their training from age 11.  There are 389310 Ladies of the Lamp, 32832 Amiras of the Alper, 180 Infantas of the Impagliata and 6 Divines of the Dommus. " },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who run certain duties within The Priesthood of Melchizedek. Namely the Social Services, the Jurors and 3. Social Services is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
   { id: 3, title: "Palatines", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines." },
-  { id: 4, title: "Ladies of the Light", text:"Ladies of the Light are the heads of state of a christmas, arrow, or a tooth. They are who the Ladies of the Lamp are guided by and they meet with their respective Ladies of the Light in the department of 4 who in turn meet with the Evangelions in the department of 9. There are 1777 Ladies of the Light. Ladies of the Light, Ladies of the Lamp, priestesses, priests and Palatines enjoy the luxury of being able to drive ." },
-  { id: 5, title: "Religious Leaders and FDELM", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB), they each are in charge one of the 6 boroughs of a town. There are 16 members of FDELM for each Town 4 are fashion designers and 12 are models." },
+  { id: 4, title: "Mac", text:"The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town."},
+  { id: 5, title: "Religious Leaders", text:"There are 6 religious leaders for each town. 1 for each religion of (TCIHJB), they each are in charge one of the 6 boroughs of a town. There are 16 members of FDELM for each Town 4 are fashion designers and 12 are models." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
@@ -2697,31 +2699,60 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
             border: "20px solid #222"
           }}
         >
-          {/* ================= */}
-          {/* CENTER HUB */}
-          {/* ================= */}
+        {/* ================= */}
+        {/* CENTER HUB */}
+        {/* ================= */}
 
-          <div
-            onClick={() => setOpenWheelId(null)}
-            style={{
-              position: "absolute",
-              inset: "190px",
-              borderRadius: "50%",
-              background: "#111",
-              color: "#fff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              fontWeight: 700,
-              fontSize: "18px",
-              letterSpacing: "1px",
-              cursor: "pointer",
-              boxShadow: "0 0 38px rgba(0,0,0,0.6)"
-            }}
-          >
-            WORLD CORE
-          </div>
+        <div
+          onClick={() => setOpenCoreImage(true)}
+          style={{
+            position: "absolute",
+            inset: "190px",
+            borderRadius: "50%",
+            background: "#111",
+            color: "#fff",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            fontWeight: 700,
+            fontSize: "18px",
+            letterSpacing: "1px",
+            cursor: "pointer",
+            boxShadow: "0 0 38px rgba(0,0,0,0.6)"
+          }}
+        >
+          WORLD CORE
+        </div>
+
+            {openCoreImage && (
+      <div
+        onClick={() => setOpenCoreImage(false)}
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(0,0,0,0.85)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 9999
+        }}
+      >
+        <img
+          src="/images/tepig.png"
+          alt="World Core"
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            maxWidth: "90%",
+            maxHeight: "90%",
+            borderRadius: "14px",
+            boxShadow: "0 0 40px rgba(0,0,0,0.9)"
+          }}
+        />
+      </div>
+    )}
+
+
 
           {/* ================= */}
           {/* SPOKES */}
