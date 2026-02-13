@@ -11,3 +11,71 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* CLICKABLE SYMBOL */
+.taoSymbol{
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+.taoSymbol:hover{
+  transform: scale(1.08);
+}
+
+/* BACKGROUND BLUR */
+.taoOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn .25s ease;
+}
+
+/* IMAGE CONTAINER */
+.taoModal{
+  position: relative;
+  width: min(85vw, 900px);
+  max-height: 85vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 80px rgba(0,0,0,.6);
+  animation: zoomIn .25s ease;
+}
+
+.taoModal img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* CLOSE BUTTON */
+.taoClose{
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 32px;
+  background: rgba(0,0,0,.5);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.85); opacity:0}
+  to{transform:scale(1); opacity:1}
+}
+

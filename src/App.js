@@ -868,7 +868,9 @@ function BusinessPage() {
   const [openThird, setOpenThird] = useState(null);
   const [openFourth, setOpenFourth] = useState(null);
   const [openMetric, setOpenMetric] = useState(null);
-
+  const [taoOpen, setTaoOpen] = useState(false);
+  const [openTao, setOpenTao] = useState(false);
+  const [taoSide, setTaoSide] = useState(null); // "yin" | "yang" | null
 
   const [slideIndex, setSlideIndex] = useState(0);
 
@@ -881,6 +883,22 @@ function BusinessPage() {
     "/images/photo6.jpg",
     
   ];
+
+const taoContent = {
+  title: "The Catch",
+  text: `
+The Catch is the time and organisation structure that the women who join 2 are in. It works like a clock.
+Every woman that models or works some position of importance is a part of The Catch. The total number of 
+these women will be 1952. 
+`,
+  images: [
+    "/images/clock.png",
+    "/images/Tribes.png",
+    "/images/Hamula.png"
+  ]
+};
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -1320,6 +1338,150 @@ function BusinessPage() {
   </div>
 </div>
 </div>
+    {/* ===== TAO===== */}
+//
+
+<div
+  onClick={() => setOpenTao(true)}
+  style={{
+    gridColumn: "1 / -1",
+    marginTop: "40px",
+    display: "flex",
+    justifyContent: "center"
+  }}
+>
+  <div
+    style={{
+      fontSize: "90px",
+      cursor: "pointer",
+      userSelect: "none",
+      transition: "transform .25s ease",
+      filter: "drop-shadow(0 10px 25px rgba(0,0,0,.35))"
+    }}
+    onMouseEnter={(e)=> e.currentTarget.style.transform="scale(1.15) rotate(12deg)"}
+    onMouseLeave={(e)=> e.currentTarget.style.transform="scale(1) rotate(0deg)"}
+  >
+    ☯
+  </div>
+</div>
+
+<img
+  src="./images/Tao_symbol.svg.png"
+  alt="Tao"
+  className="taoSymbol"
+  onClick={() => setTaoOpen(true)}
+/>
+
+{openTao && (
+  <>
+    {/* Background */}
+    <div
+      onClick={() => setOpenTao(false)}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,.65)",
+        zIndex: 2000
+      }}
+    />
+
+    {/* Panel */}
+    <div
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "min(900px, 92vw)",
+        maxHeight: "90vh",
+        overflowY: "auto",
+        background: "#111",
+        color: "#fff",
+        padding: "40px",
+        borderRadius: "28px",
+        zIndex: 2001,
+        boxShadow: "0 40px 120px rgba(0,0,0,.7)"
+      }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Close */}
+      <div
+        onClick={() => setOpenTao(false)}
+        style={{
+          position: "absolute",
+          top: 18,
+          right: 22,
+          fontSize: "28px",
+          cursor: "pointer",
+          opacity: .7
+        }}
+      >
+        ✕
+      </div>
+
+      <h2 style={{textAlign:"center", marginBottom:"18px"}}>{taoContent.title}</h2>
+
+      <p style={{lineHeight:1.8, textAlign:"center", marginBottom:"28px"}}>
+        {taoContent.text}
+      </p>
+
+      {/* Images */}
+      <div
+        style={{
+          display:"grid",
+          gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",
+          gap:"18px"
+        }}
+      >
+        {taoContent.images.map((img,i)=>(
+          <img
+            key={i}
+            src={img}
+            alt=""
+            style={{
+              width:"100%",
+              height:"180px",
+              objectFit:"cover",
+              borderRadius:"14px"
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  </>
+)}
+
+
+{taoOpen && (
+  <div className="taoOverlay" onClick={() => setTaoOpen(false)}>
+    
+    <button 
+      className="taoClose" 
+      onClick={() => setTaoOpen(false)}
+    >
+      ×
+    </button>
+
+    <div 
+      className="taoScroll"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img 
+        src="./images/Calendar.png" 
+        alt="Calendar Fullscreen"
+        className="taoFullImage"
+      />
+    </div>
+
+  </div>
+)}
+
+
+
+
+
+
+
 
 
     </AnimatedPage>

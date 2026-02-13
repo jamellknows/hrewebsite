@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+/* FULLSCREEN BLUR OVERLAY */
+.taoOverlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 9999;
+  animation: fadeIn .25s ease;
+}
+
+/* SCROLL CONTAINER */
+.taoScroll{
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px 80px;
+}
+
+/* FULLSCREEN IMAGE */
+.taoFullImage{
+  width: 100%;
+  max-width: 1600px; /* optional cap */
+  height: auto;
+  display: block;
+}
+
+/* CLOSE BUTTON (fixed so it doesn't scroll away) */
+.taoClose{
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  font-size: 34px;
+  color: white;
+  background: rgba(0,0,0,.6);
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* animation */
+@keyframes fadeIn{
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
