@@ -1327,7 +1327,7 @@ these women will be 1952.
                 justifyContent: "center",
                 textAlign: "center",
                 fontSize: "0.5em",
-                lineHeight: 1.6
+                lineHeight: 1.6,
               }}
             >
               {m.description}
@@ -1346,7 +1346,7 @@ these women will be 1952.
     gridColumn: "1 / -1",
     marginTop: "40px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   }}
 >
   <div
@@ -1355,7 +1355,8 @@ these women will be 1952.
       cursor: "pointer",
       userSelect: "none",
       transition: "transform .25s ease",
-      filter: "drop-shadow(0 10px 25px rgba(0,0,0,.35))"
+      filter: "drop-shadow(0 10px 25px rgba(0,0,0,.35))",
+    
     }}
     onMouseEnter={(e)=> e.currentTarget.style.transform="scale(1.15) rotate(12deg)"}
     onMouseLeave={(e)=> e.currentTarget.style.transform="scale(1) rotate(0deg)"}
@@ -1826,13 +1827,13 @@ const carouselItems = bottomThree.map(item => ({
   };
 
   const townSections = [
-  { id: 0, name: "Node A", angle: 0 },
-  { id: 1, name: "Node B", angle: 60 },
-  { id: 2, name: "Node C", angle: 120 },
-  { id: 3, name: "Node D", angle: 180 },
-  { id: 4, name: "Node E", angle: 240 },
-  { id: 5, name: "Node F", angle: 300 },
-];
+    { id: 0, title: "Housing & Residential", icon: "🏘️", text: "Residential areas with multi-level flats and public squares." },
+    { id: 1, title: "Agriculture", icon: "🌾", text: "Farms, gardens, and food production integrated into town layout." },
+    { id: 2, title: "Manufacturing & Industry", icon: "🏭", text: "Crafts, workshops, and light industrial zones." },
+    { id: 3, title: "Services & Utilities", icon: "🏥", text: "Hospitals, shops, schools, and public services." },
+    { id: 4, title: "Entertainment & Culture", icon: "🎭", text: "Theaters, music halls, parks, and cultural centers." },
+    { id: 5, title: "Governance & Security", icon: "🏰", text: "Castles, government offices, and security posts." },
+  ];
 
   return (
     <AnimatedPage>
