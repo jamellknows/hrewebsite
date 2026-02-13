@@ -434,9 +434,12 @@ function LanguagePage() {
     { name: "Hebrew", img: "/images/hebrew.jpg", text: "Ancient and revived Semitic language: Caesarea." },
     { name: "Farsi", img: "/images/farsi.jpg", text: "Persian language spoken in Iran: Borazjan Castle." },
     { name: "Sorani", img: "/images/sorani.jpg", text: "Central Kurdish dialect: Sherwana Castle." },
-    { name: "Hindi", img: "/images/hindi.jpg", text: "Major Indo-Aryan language: Ummaid Bhawan - Jodhpur." },
+    { name: "Hindi", img: "/images/hindi.jpg", text: "Major Indo-Aryan language: Ummaid Bhawan: Jodhpur." },
     { name: "Mandarin", img: "/images/mandarin.jpg", text: "Most spoken native language in the world: Forbidden City." },
-    { name: "Japanese", img: "/images/japanese.jpg", text: "Language of Japan with multiple scripts: Himeji Castle." }
+    { name: "Japanese", img: "/images/japanese.jpg", text: "Language of Japan with multiple scripts: Himeji Castle." },
+    { name: "Greek", img: "/images/greek.jpg", text: "Greek is one of the oldest written languages in Europe, with a rich literary and philosophical tradition: Kastello" },
+    { name: "Malay", img: "/images/malay.jpg", text: "Malay is an Austronesian language widely spoken in Malaysia, Brunei, and Indonesia, known for its simplicity and adaptability: Istana Negara" },
+    { name: "Turkish", img: "/images/turkish.jpg", text: "Turkish, a Turkic language, uses a Latin-based alphabet and is rich in literature and poetry: Topkapi Palace." }
   ];
 
   const countries = [
