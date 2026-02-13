@@ -1336,8 +1336,6 @@ these women will be 1952.
   </div>
 </div>
 </div>
-    {/* ===== TAO===== */}
-//
 
 <div
   onClick={() => setOpenTao(true)}
