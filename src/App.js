@@ -870,8 +870,6 @@ function BusinessPage() {
   const [openMetric, setOpenMetric] = useState(null);
   const [taoOpen, setTaoOpen] = useState(false);
   const [openTao, setOpenTao] = useState(false);
-  const [taoSide, setTaoSide] = useState(null); // "yin" | "yang" | null
-
   const [slideIndex, setSlideIndex] = useState(0);
 
   const slides = [
