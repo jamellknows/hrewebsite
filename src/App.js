@@ -1637,7 +1637,7 @@ function WorldRule1Page() {
 
 
   const imageCarouselItems = [
-  "./images/chart.jpg",
+  "./images/town3.jpg",
   "./images/town1.jpg",
   "./images/town2.jpg",
 ];
