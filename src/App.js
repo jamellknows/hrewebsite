@@ -1633,6 +1633,16 @@ function WorldRule1Page() {
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
   const [openPyramid, setOpenPyramid] = useState(null);
   const [openTownModal, setOpenTownModal] = useState(null); // NEW modal for town 6-piece view
+  const [activeLocation, setActiveLocation] = useState(null);
+
+  const hubSection = {
+  id: "hub",
+  name: "Town: Alber",
+  icon: "🏛️",
+  image: "./images/town5.jpg",
+  text: "This is an AI generated image of what an Alber could look like."
+};
+
 
 
 
@@ -1833,6 +1843,8 @@ const carouselItems = bottomThree.map(item => ({
     { id: 3, title: "Services & Utilities", icon: "🏥", text: "Hospitals, shops, schools, and public services." },
     { id: 4, title: "Entertainment & Culture", icon: "🎭", text: "Theaters, music halls, parks, and cultural centers." },
     { id: 5, title: "Governance & Security", icon: "🏰", text: "Castles, government offices, and security posts." },
+    { id: 6, title: "Governance & Security", icon: "🏰", text: "Castles, government offices, and security posts." },
+
   ];
 
   return (
@@ -2074,7 +2086,7 @@ const carouselItems = bottomThree.map(item => ({
             alignItems: "center",
           }}
         >
-          Towns
+          Alber
           <span style={{ opacity: 0.6 }}>
             {openSideBox === "left" ? "−" : "+"}
           </span>
@@ -2377,29 +2389,32 @@ const carouselItems = bottomThree.map(item => ({
       aspectRatio: "1 / 1",
     }}
   >
-    {/* CENTER HUB */}
-    <div
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        width: "90px",
-        height: "90px",
-        borderRadius: "50%",
-        background: "#111827",
-        color: "white",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontWeight: 700,
-        letterSpacing: "1px",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
-        zIndex: 5,
-      }}
-    >
-      TOWN
-    </div>
+{/* CENTER HUB */}
+<div
+  onClick={() => setActiveLocation(hubSection)}
+  style={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "90px",
+    height: "90px",
+    borderRadius: "50%",
+    background: "#111827",
+    color: "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 700,
+    letterSpacing: "1px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+    zIndex: 5,
+    cursor: "pointer"
+  }}
+>
+  TOWN
+</div>
+
 
     {townSections.map((section, idx) => {
       const angleDeg = idx * 60 - 90;
@@ -2429,7 +2444,7 @@ const carouselItems = bottomThree.map(item => ({
 
           {/* NODE */}
           <div
-            onClick={() => setOpenTownModal(section.id)}
+            onClick={() => setActiveLocation(section)}
             style={{
               position: "absolute",
               top: `${y}%`,
@@ -2461,9 +2476,9 @@ const carouselItems = bottomThree.map(item => ({
       );
     })}
   </div>
-    {openTownModal !== null && (
+{activeLocation && (
   <div
-    onClick={() => setOpenTownModal(null)}
+    onClick={() => setActiveLocation(null)}
     style={{
       position: "fixed",
       inset: 0,
@@ -2479,27 +2494,36 @@ const carouselItems = bottomThree.map(item => ({
     <div
       onClick={(e) => e.stopPropagation()}
       style={{
-        background: "#ffffff",
+        background: "#fff",
         borderRadius: "18px",
         width: "100%",
-        maxWidth: "540px",
-        maxHeight: "85vh",
+        maxWidth: "600px",
+        maxHeight: "90vh",
         overflowY: "auto",
         padding: "28px",
         boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
-        animation: "fadeIn 0.25s ease",
       }}
     >
       <h3 style={{ fontSize: "24px", marginBottom: "12px" }}>
-        {townSections[openTownModal].icon} {townSections[openTownModal].title}
+        {activeLocation.icon} {activeLocation.name}
       </h3>
 
+      <img
+        src={activeLocation.image}
+        alt={activeLocation.name}
+        style={{
+          width: "100%",
+          borderRadius: "12px",
+          marginBottom: "16px",
+        }}
+      />
+
       <p style={{ lineHeight: 1.7, fontSize: "16px" }}>
-        {townSections[openTownModal].text}
+        {activeLocation.text}
       </p>
 
       <button
-        onClick={() => setOpenTownModal(null)}
+        onClick={() => setActiveLocation(null)}
         style={{
           marginTop: "24px",
           background: "#111827",
@@ -2516,6 +2540,8 @@ const carouselItems = bottomThree.map(item => ({
     </div>
   </div>
 )}
+
+
 
 
 
