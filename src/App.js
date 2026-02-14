@@ -1738,7 +1738,7 @@ function WorldRule1Page() {
   {
     id: 5,
     title: "Completion: GUM",
-    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role and those of a juror and a social worker."
+    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role as social media worker."
   }
 ];
 
