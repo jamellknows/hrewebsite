@@ -1632,7 +1632,6 @@ function WorldRule1Page() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
   const [openPyramid, setOpenPyramid] = useState(null);
-  const [openTownModal, setOpenTownModal] = useState(null); // NEW modal for town 6-piece view
   const [activeLocation, setActiveLocation] = useState(null);
 
   const hubSection = {
