@@ -1638,7 +1638,7 @@ function WorldRule1Page() {
   id: "hub",
   name: "Town:Alber",
   icon: "🏛️",
-  image: "./images/town5.jpg",
+  image: "/images/town5.png",
   text: "This is an AI generated image of what an Alber could look like."
 };
 
@@ -1646,9 +1646,11 @@ function WorldRule1Page() {
 
 
   const imageCarouselItems = [
-  "./images/town3.jpg",
-  "./images/town1.jpg",
-  "./images/town2.jpg",
+  "/images/town3.jpg",
+  "/images/town1.jpg",
+  "/images/town2.jpg",
+  "/images/town4.png",
+
 ];
 
   const pyramidSections = [
