@@ -1636,7 +1636,7 @@ function WorldRule1Page() {
 
   const hubSection = {
   id: "hub",
-  name: "Town: Alber",
+  name: "Town:Alber",
   icon: "🏛️",
   image: "./images/town5.jpg",
   text: "This is an AI generated image of what an Alber could look like."
