@@ -1633,6 +1633,7 @@ function WorldRule1Page() {
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
   const [openPyramid, setOpenPyramid] = useState(null);
   const [activeLocation, setActiveLocation] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const hubSection = {
   id: "hub",
@@ -1838,15 +1839,78 @@ const carouselItems = bottomThree.map(item => ({
   };
 
   const townSections = [
-    { id: 0, title: "Housing & Residential", icon: "🏘️", text: "Residential areas with multi-level flats and public squares." },
-    { id: 1, title: "Agriculture", icon: "🌾", text: "Farms, gardens, and food production integrated into town layout." },
-    { id: 2, title: "Manufacturing & Industry", icon: "🏭", text: "Crafts, workshops, and light industrial zones." },
-    { id: 3, title: "Services & Utilities", icon: "🏥", text: "Hospitals, shops, schools, and public services." },
-    { id: 4, title: "Entertainment & Culture", icon: "🎭", text: "Theaters, music halls, parks, and cultural centers." },
-    { id: 5, title: "Governance & Security", icon: "🏰", text: "Castles, government offices, and security posts." },
-    { id: 6, title: "Governance & Security", icon: "🏰", text: "Castles, government offices, and security posts." },
+  { 
+    id: 0, 
+    title: "Housing & Residential", 
+    icon: "🏘️", 
+    slides: [
+      { image: "/images/housing1.jpg", text: "Residential areas with multi-level flats and public squares." },
+      { image: "/images/housing2.jpg", text: "Community parks and playgrounds in housing areas." },
+      { image: "/images/housing3.jpg", text: "Modern apartment blocks and streetscapes." }
+    ]
+  },
+  { 
+    id: 1, 
+    title: "Agriculture", 
+    icon: "🌾", 
+    slides: [
+      { image: "/images/agriculture1.jpg", text: "Farms, gardens, and food production integrated into town layout." },
+      { image: "/images/agriculture2.jpg", text: "Local farmers markets and orchards." },
+      { image: "/images/agriculture3.jpg", text: "Irrigation and crop rotation fields." }
+    ]
+  },
+  { 
+    id: 2, 
+    title: "Manufacturing & Industry", 
+    icon: "🏭", 
+    slides: [
+      { image: "/images/industry1.jpg", text: "Crafts, workshops, and light industrial zones." },
+      { image: "/images/industry2.jpg", text: "Warehouses and assembly workshops." },
+      { image: "/images/industry3.jpg", text: "Local manufacturing and artisan production areas." }
+    ]
+  },
+  { 
+    id: 3, 
+    title: "Services & Utilities", 
+    icon: "🏥", 
+    slides: [
+      { image: "/images/services1.jpg", text: "Hospitals, shops, schools, and public services." },
+      { image: "/images/services2.jpg", text: "Electricity and water utilities infrastructure." },
+      { image: "/images/services3.jpg", text: "Public service offices and educational centers." }
+    ]
+  },
+  { 
+    id: 4, 
+    title: "Entertainment & Culture", 
+    icon: "🎭", 
+    slides: [
+      { image: "/images/entertainment1.jpg", text: "Theaters, music halls, parks, and cultural centers." },
+      { image: "/images/entertainment2.jpg", text: "Concerts, festivals, and cultural events." },
+      { image: "/images/entertainment3.jpg", text: "Community art centers and galleries." }
+    ]
+  },
+  { 
+    id: 5, 
+    title: "Governance & Security", 
+    icon: "🏰", 
+    slides: [
+      { image: "/images/governance1.jpg", text: "Castles, government offices, and security posts." },
+      { image: "/images/governance2.jpg", text: "Town hall and administrative centers." },
+      { image: "/images/governance3.jpg", text: "Police posts and safety infrastructure." }
+    ]
+  },
+  { 
+    id: 6, 
+    title: "Transport", 
+    icon: "🚄", 
+    slides: [
+      { image: "/images/transport1.jpg", text: "Electric Hyperloops, AI Orr (Air Transport)." },
+      { image: "/images/transport2.jpg", text: "Bus stations and local transit hubs." },
+      { image: "/images/transport3.jpg", text: "Bike lanes and pedestrian-friendly streets." }
+    ]
+  }
+];
 
-  ];
 
   return (
     <AnimatedPage>
@@ -2381,102 +2445,109 @@ const carouselItems = bottomThree.map(item => ({
     Town Infrastructure: 6 Pieces
   </h2>
 
-  <div
-    style={{
-      position: "relative",
-      width: "100%",
-      maxWidth: "620px",
-      margin: "2rem auto",
-      aspectRatio: "1 / 1",
-    }}
-  >
-{/* CENTER HUB */}
 <div
-  onClick={() => setActiveLocation(hubSection)}
   style={{
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "90px",
-    height: "90px",
-    borderRadius: "50%",
-    background: "#111827",
-    color: "white",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: 700,
-    letterSpacing: "1px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
-    zIndex: 5,
-    cursor: "pointer"
+    position: "relative",
+    width: "100%",
+    maxWidth: "620px",
+    margin: "2rem auto",
+    aspectRatio: "1 / 1",
   }}
 >
-  TOWN
+  {/* CENTER HUB */}
+  <div
+    onClick={() => setActiveLocation({ ...hubSection, slides: hubSection.slides })}
+    style={{
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: "90px",
+      height: "90px",
+      borderRadius: "50%",
+      background: "#111827",
+      color: "white",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontWeight: 700,
+      letterSpacing: "1px",
+      boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+      zIndex: 5,
+      cursor: "pointer",
+    }}
+  >
+    TOWN
+  </div>
+
+  {townSections.map((section, idx) => {
+    const angleDeg = idx * 60 - 90;
+    const angle = (angleDeg * Math.PI) / 180;
+    const radius = 46; // % from center
+
+    const x = 50 + radius * Math.cos(angle);
+    const y = 50 + radius * Math.sin(angle);
+
+    return (
+      <React.Fragment key={section.id}>
+        {/* SPOKE LINE */}
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: "2px",
+            height: "46%",
+            background: "#9ca3af",
+            transformOrigin: "top center",
+            transform: `rotate(${angleDeg + 90}deg)`,
+            zIndex: 1,
+            opacity: 0.5,
+          }}
+        />
+
+        {/* NODE */}
+        <div
+          onClick={() => {
+            setActiveLocation(section);
+            setCurrentSlide(0); // reset slide when opening node
+          }}
+          style={{
+            position: "absolute",
+            top: `${y}%`,
+            left: `${x}%`,
+            transform: "translate(-50%, -50%)",
+            width: "110px",
+            height: "110px",
+            background: "#f3f4f6",
+            borderRadius: "16px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            cursor: "pointer",
+            boxShadow: "0 8px 24px rgba(0,0,0,0.14)",
+            transition: "all 0.25s ease",
+            zIndex: 4,
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1.08)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1)")
+          }
+        >
+          <div style={{ fontSize: "32px" }}>{section.icon}</div>
+          <div style={{ fontSize: "14px", marginTop: "6px", fontWeight: 600 }}>
+            {section.title}
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  })}
 </div>
 
-
-    {townSections.map((section, idx) => {
-      const angleDeg = idx * 60 - 90;
-      const angle = (angleDeg * Math.PI) / 180;
-      const radius = 46; // % from center
-
-      const x = 50 + radius * Math.cos(angle);
-      const y = 50 + radius * Math.sin(angle);
-
-      return (
-        <React.Fragment key={section.id}>
-          {/* SPOKE LINE */}
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              width: "2px",
-              height: "46%",
-              background: "#9ca3af",
-              transformOrigin: "top center",
-              transform: `rotate(${angleDeg + 90}deg)`,
-              zIndex: 1,
-              opacity: 0.5,
-            }}
-          />
-
-          {/* NODE */}
-          <div
-            onClick={() => setActiveLocation(section)}
-            style={{
-              position: "absolute",
-              top: `${y}%`,
-              left: `${x}%`,
-              transform: "translate(-50%, -50%)",
-              width: "110px",
-              height: "110px",
-              background: "#f3f4f6",
-              borderRadius: "16px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              textAlign: "center",
-              cursor: "pointer",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.14)",
-              transition: "all 0.25s ease",
-              zIndex: 4,
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1.08)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "translate(-50%, -50%) scale(1)")}
-          >
-            <div style={{ fontSize: "32px" }}>{section.icon}</div>
-            <div style={{ fontSize: "14px", marginTop: "6px", fontWeight: 600 }}>
-              {section.title}
-            </div>
-          </div>
-        </React.Fragment>
-      );
-    })}
-  </div>
 {activeLocation && (
   <div
     onClick={() => setActiveLocation(null)}
@@ -2503,25 +2574,74 @@ const carouselItems = bottomThree.map(item => ({
         overflowY: "auto",
         padding: "28px",
         boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       <h3 style={{ fontSize: "24px", marginBottom: "12px" }}>
         {activeLocation.icon} {activeLocation.name}
       </h3>
 
-      <img
-        src={activeLocation.image}
-        alt={activeLocation.name}
-        style={{
-          width: "100%",
-          borderRadius: "12px",
-          marginBottom: "16px",
-        }}
-      />
+      {activeLocation.slides && activeLocation.slides.length > 0 && (
+        <div style={{ width: "100%" }}>
+          <img
+            src={activeLocation.slides[currentSlide].image}
+            alt={activeLocation.slides[currentSlide].title}
+            style={{
+              width: "100%",
+              borderRadius: "12px",
+              marginBottom: "16px",
+            }}
+          />
+          <p style={{ lineHeight: 1.7, fontSize: "16px" }}>
+            {activeLocation.slides[currentSlide].text}
+          </p>
 
-      <p style={{ lineHeight: 1.7, fontSize: "16px" }}>
-        {activeLocation.text}
-      </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "12px",
+            }}
+          >
+            <button
+              onClick={() =>
+                setCurrentSlide(
+                  (prev) => (prev - 1 + activeLocation.slides.length) % activeLocation.slides.length
+                )
+              }
+              style={{
+                background: "#111827",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                padding: "8px 16px",
+                cursor: "pointer",
+              }}
+            >
+              Previous
+            </button>
+            <button
+              onClick={() =>
+                setCurrentSlide(
+                  (prev) => (prev + 1) % activeLocation.slides.length
+                )
+              }
+              style={{
+                background: "#111827",
+                color: "white",
+                border: "none",
+                borderRadius: "10px",
+                padding: "8px 16px",
+                cursor: "pointer",
+              }}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
 
       <button
         onClick={() => setActiveLocation(null)}
@@ -2541,6 +2661,7 @@ const carouselItems = bottomThree.map(item => ({
     </div>
   </div>
 )}
+
 
 
 
