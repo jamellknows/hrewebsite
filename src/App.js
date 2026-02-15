@@ -328,7 +328,8 @@ function HomePage() {
     <li>⭐ Chakravarti Samrat चक्रवर्ती सम्राट</li>
     <li>⭐ Maharajadhiraja महाराजाधिराज</li>
     <li>⭐ The Supreme Sultan السلطان الأعظم</li>
-    <li>⭐ Basileus Mega βασιλεύς μέγας</li>
+    <li>⭐ Basileus Megas kai Autokrator Βασιλεὺς Μέγας καὶ Αὐτοκράτωρ βασιλεύς</li>
+    <li>⭐ Imperator i Samoderzhets Император и Самодержец</li>
     <li>⭐ Padishah پادشاه </li>
     <li>⭐ Chinggis Khaan Чингис хаан</li>
     <li>⭐ Shahanshah Aryamehr شاهنشاه آریامهر</li>
