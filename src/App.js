@@ -326,10 +326,12 @@ function HomePage() {
     <li>⭐ King of France Roi de France</li>
     <li>⭐ Huangdi 黄帝</li>
     <li>⭐ Chakravarti Samrat चक्रवर्ती सम्राट</li>
+    <li>⭐ Maharajadhiraja महाराजाधिराज</li>
+    <li>⭐ The Supreme Sultan السلطان الأعظم</li>
     <li>⭐ Basileus Mega βασιλεύς μέγας</li>
     <li>⭐ Padishah پادشاه </li>
-    <li>⭐ Padishah پادشاه </li>
     <li>⭐ Chinggis Khaan Чингис хаан</li>
+    <li>⭐ Shahanshah Aryamehr شاهنشاه آریامهر</li>
     <li>⭐ Tennō 天皇</li>
   </ul>
 
