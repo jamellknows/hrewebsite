@@ -1035,7 +1035,7 @@ const cosmology = [
           },
           {
             title: "The Buddha Wheel",
-            description: " ",
+            description: "THhe Buddha Wheel is a vehicle manufacturing and stroage building that is also employee housing. The Vehicles are produced in a circle using a technique I know for sure will work. The housing is in the outer circles and the storage is in the spokes. ",
             images: ["./images/sketches/buddhawheel.png"],
             children: []
           }
