@@ -1017,16 +1017,23 @@ const cosmology = [
         children: [
           {
             title: "The Saddle",
-            description: "Primary residential complex",
+            description: "The Saddle serves as the home for models in San Marino. It has a capacity of 160, photostudios.",
             images: ["./images/sketches/saddle4.jpg"],
             children: []
           },
           {
             title: "The Sandwiches",
-            description: "Stacked housing units",
+            description: "Triangular housing units for the residents of San Marino. Each is to have a capacity of 300.",
             images: ["./images/sketches/sandwiches.png"],
             children: []
+          },
+          {
+            title: "The Crucifix",
+            description: "The Crucifix is the main building of the business. It is a home and a mass manufacturer and reseach center. ",
+            images: ["./images/sketches/cross2.png"],
+            children: []
           }
+
         ]
       },
 
@@ -1070,9 +1077,29 @@ const cosmology = [
             children: []
           }
         ]
+      },
+      {
+        title: "Gemini Conjecture",
+        description: "This is what Gemini conjectured from information about buildings it is not correct, but it is a good inference. ",
+        images: ["./images/sketches/gemini.png"],
+        children:[
+          {
+          title: "Page 1",
+          description: "First Page",
+          images: ["./images/sketches/GC1.jpg"],
+          children:[]
+          },
+          {
+          title: "Page 2",
+          description: "Second Page",
+          images: ["./images/sketches/GC2.jpg"],
+          children:[]
+          }
+        ],
       }
 
     ]
+    
   }
 ];
 
