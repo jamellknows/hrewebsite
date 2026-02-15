@@ -325,7 +325,11 @@ function HomePage() {
     <li>⭐ Holy Roman Emperor Sancte Romane Imperatoris</li>
     <li>⭐ King of France Roi de France</li>
     <li>⭐ Huangdi 黄帝</li>
-    <li>⭐ Maharajadhiraja महाराजाधिराज</li>
+    <li>⭐ Chakravarti Samrat चक्रवर्ती सम्राट</li>
+    <li>⭐ Basileus Mega βασιλεύς μέγας</li>
+    <li>⭐ Padishah پادشاه </li>
+    <li>⭐ Padishah پادشاه </li>
+    <li>⭐ Chinggis Khaan Чингис хаан</li>
     <li>⭐ Tennō 天皇</li>
   </ul>
 
