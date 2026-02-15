@@ -1589,14 +1589,42 @@ const cosmology = [
   {/* BACK BUTTON */}
   {nodeStack.length > 1 && (
     <button
-      onClick={()=>{
-        setNodeStack(s=>s.slice(0,-1));
-        setActiveIndex(0);
-      }}
-      style={{marginBottom:"0.5em"}}
-    >
-      ← Back Level
-    </button>
+  onClick={() => {
+    setNodeStack(s => s.slice(0, -1));
+    setActiveIndex(0);
+  }}
+  style={{
+    marginBottom: "0.8em",
+    padding: "10px 22px",
+    borderRadius: "14px",
+    border: "1px solid rgba(255,255,255,0.2)",
+    background: "linear-gradient(135deg, #1f2937, #111827)",
+    color: "#fff",
+    fontWeight: "600",
+    letterSpacing: "0.5px",
+    backdropFilter: "blur(8px)",
+    cursor: "pointer",
+    transition: "all 0.25s ease",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.boxShadow = "0 0 18px rgba(99,102,241,0.8)";
+    e.currentTarget.style.transform = "translateY(-2px)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.35)";
+    e.currentTarget.style.transform = "translateY(0px)";
+  }}
+  onMouseDown={(e) => {
+    e.currentTarget.style.transform = "scale(0.96)";
+  }}
+  onMouseUp={(e) => {
+    e.currentTarget.style.transform = "translateY(-2px)";
+  }}
+>
+  ← Back Level
+</button>
+
   )}
 
   <div
