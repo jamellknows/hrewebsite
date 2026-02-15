@@ -1017,7 +1017,7 @@ const cosmology = [
         children: [
           {
             title: "The Saddle",
-            description: "The Saddle serves as the home for models in San Marino. It has a capacity of 160, photostudios.",
+            description: "The Saddle serves as the home for models in San Marino. It has a capacity of 160, photostudios, gyms and other entertainment such as a miniature golf course, pools and indoor cinema and cabins that are suppoused to go on the roof.",
             images: ["./images/sketches/saddle4.jpg"],
             children: []
           },
@@ -1029,8 +1029,14 @@ const cosmology = [
           },
           {
             title: "The Crucifix",
-            description: "The Crucifix is the main building of the business. It is a home and a mass manufacturer and reseach center. ",
+            description: "The Crucifix is the main building of the business. It is a home, a mass manufacturer and reseach center. The AI was unable to get the crucifix shape correct and the building is of a larger height and more European in architecture, but it does have Asian attributes in style. It is located on the site of the San Marino Stadium ",
             images: ["./images/sketches/cross2.png"],
+            children: []
+          },
+          {
+            title: "The Buddha Wheel",
+            description: " ",
+            images: ["./images/sketches/buddhawheel.png"],
             children: []
           }
 
@@ -1044,14 +1050,20 @@ const cosmology = [
         images: ["/images/sketch/commercial.png"],
         children: [
           {
-            title: "Markets",
-            description: "Daily trade and retail",
-            images: ["/images/market.png"],
+            title: "KKKlub",
+            description: "This is one of the clubs in San Marino. It is named the KKKlub. It is a fusion of the ideas of a children's day care center, a night club and Kim Kardashian.",
+            images: ["./images/sketches/kkklub2.png"],
             children: []
           },
           {
-            title: "Offices",
-            description: "Administrative and service work",
+            title: "The Bag",
+            description: "This is the bag, where models and only fans artists go to work in offices and studios, it is located next to the Saddle.",
+            images: ["/images/sketches/bag2.png"],
+            children: []
+          },
+          {
+            title: "Atlas",
+            description: "Atlas is a hospital, wellness center and medical research center based in the south of San Marino.",
             images: ["/images/office.png"],
             children: []
           }
