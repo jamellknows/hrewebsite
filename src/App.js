@@ -875,6 +875,10 @@ function BusinessPage() {
   const [openTao, setOpenTao] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
 
+
+
+
+
   const slides = [
     "/images/photo1.jpg",
     "/images/photo2.jpg",
@@ -990,6 +994,110 @@ these women will be 1952.
     { id: 1, title: "BIGP", text: "BOSONS: Think. IONS: Image, GASSERS: Word. PAPILO: Foot" },
     { id: 2, title: "CATCH", text: "Calendar: 36 day plan. Ayin: Attractiveness groupings (BB), Tribe: STEM, MOLE, LAMB. Clan: BIGP. Hamula: BB" }
   ];
+
+const cosmology = [
+  {
+    title: "Buildings",
+    description: "Buildings used during the business phase with a future prospect of San Marino.",
+    images: ["./images/sketches/sanmarino.png"],
+    children: [
+
+      // ---------- RESIDENTIAL ----------
+      {
+        title: "Residential",
+        description: "Accommodation for employees and citizens",
+        images: ["./images/sketches/saddle6.jpg"],
+        children: [
+          {
+            title: "The Saddle",
+            description: "Primary residential complex",
+            images: ["./images/sketches/saddle4.jpg"],
+            children: []
+          },
+          {
+            title: "The Sandwiches",
+            description: "Stacked housing units",
+            images: ["./images/sketches/sandwiches.png"],
+            children: []
+          }
+        ]
+      },
+
+      // ---------- COMMERCIAL ----------
+      {
+        title: "Commercial",
+        description: "Shops, services and public interaction buildings",
+        images: ["/images/sketch/commercial.png"],
+        children: [
+          {
+            title: "Markets",
+            description: "Daily trade and retail",
+            images: ["/images/market.png"],
+            children: []
+          },
+          {
+            title: "Offices",
+            description: "Administrative and service work",
+            images: ["/images/office.png"],
+            children: []
+          }
+        ]
+      },
+
+      // ---------- INDUSTRIAL ----------
+      {
+        title: "Industrial",
+        description: "Production and technical facilities",
+        images: ["/images/sketch/industrial.png"],
+        children: [
+          {
+            title: "Workshops",
+            description: "Craft and manufacturing",
+            images: ["/images/workshop.png"],
+            children: []
+          },
+          {
+            title: "Processing Plants",
+            description: "Large scale production",
+            images: ["/images/factory.png"],
+            children: []
+          }
+        ]
+      }
+
+    ]
+  }
+];
+
+
+  const [nodeStack, setNodeStack] = useState([cosmology]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
+  const currentNodes = nodeStack[nodeStack.length -1];
+  const activeNode = currentNodes[activeIndex];
+  const [lightbox, setLightbox] = useState(null);
+
+
+    useEffect(() => {
+      const idle = setInterval(() => {
+        setRotation(r => r - 0.05);
+      }, 16);
+
+      return () => clearInterval(idle);
+    }, []);
+
+      useEffect(() => {
+    if (!activeNode?.images?.length) return;
+
+    const imgTimer = setInterval(() => {
+      setImageIndex(i => (i + 1) % activeNode.images.length);
+    }, 3500);
+
+    return () => clearInterval(imgTimer);
+  }, [activeNode]);
+
+
 
   return (
     <AnimatedPage>
@@ -1476,6 +1584,150 @@ these women will be 1952.
   </div>
 )}
 
+<div style={{gridColumn:"1 / -1", marginTop:"90px"}}>
+
+  {/* BACK BUTTON */}
+  {nodeStack.length > 1 && (
+    <button
+      onClick={()=>{
+        setNodeStack(s=>s.slice(0,-1));
+        setActiveIndex(0);
+      }}
+      style={{marginBottom:"0.5em"}}
+    >
+      ← Back Level
+    </button>
+  )}
+
+  <div
+    style={{
+      position:"relative",
+      width:"520px",
+      height:"520px",
+      margin:"auto",
+      transform:`rotate(${rotation}deg)`,
+      transition:"transform .8s cubic-bezier(.22,1,.36,1)"
+    }}
+  >
+
+    {/* CENTER */}
+    <div
+      style={{
+        position:"absolute",
+        top:"50%",
+        left:"50%",
+        transform:"translate(-50%,-50%)",
+        width:"180px",
+        height:"180px",
+        borderRadius:"50%",
+        background:"#0f172a",
+        color:"#fff",
+        display:"flex",
+        flexDirection:"column",
+        justifyContent:"center",
+        alignItems:"center",
+        textAlign:"center",
+        padding:"18px",
+        zIndex:10
+      }}
+    >
+      <h3>{activeNode.title}</h3>
+      <p style={{fontSize:"12px"}}>{activeNode.description}</p>
+
+      {/* IMAGE SLIDER */}
+      {activeNode.images?.length > 0 && (
+        <img
+          src={activeNode.images[imageIndex]}
+          alt=""
+          onClick={() => setLightbox(activeNode.images[imageIndex])}
+          style={{
+            width: "120px",
+            height: "80px",
+            objectFit: "cover",
+            borderRadius: "10px",
+            marginTop: "8px",
+            cursor: "pointer"
+          }}
+        />
+      )}
+
+
+    {/* ORBITING NODES */}
+    {currentNodes.map((node,i)=>{
+      const angle = (i/currentNodes.length)*360;
+      const radius = 230;
+
+      return (
+        <div
+          key={i}
+          onClick={()=>{
+            setActiveIndex(i);
+            setRotation(-angle);
+
+            if(node.children?.length){
+              setTimeout(()=>{
+                setNodeStack(s=>[...s,node.children]);
+                setActiveIndex(0);
+              },500);
+            }
+          }}
+          style={{
+            position:"absolute",
+            top:"50%",
+            left:"50%",
+            transform:`
+              rotate(${angle}deg)
+              translate(${radius}px)
+              rotate(${-angle}deg)
+            `,
+            padding:"12px 18px",
+            borderRadius:"14px",
+            background:i===activeIndex?"#111":"#e5e7eb",
+            color:i===activeIndex?"#fff":"#000",
+            cursor:"pointer",
+            fontWeight:600
+          }}
+        >
+          {node.title}
+        </div>
+      )
+    })}
+
+  </div>
+</div>
+</div>
+
+{/* LIGHTBOX MODAL */}
+{lightbox && (
+  <div
+    onClick={() => setLightbox(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.85)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 999
+    }}
+  >
+    <img
+      src={lightbox}
+      alt=""
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        maxWidth: "90%",
+        maxHeight: "90%",
+        borderRadius: "14px",
+        boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
+      }}
+    />
+  </div>
+)}
+
+
+
+
 
 
 
@@ -1793,7 +2045,7 @@ const rightGrid = [
   {
     id: 1,
     title: "Society",
-    content: "The social order is headed by Hearing and Light which is the head of the NIFTY59ER and Bucknor Wisdom in the Samuels family, BWITS is a clan of the NIFTY59ER. The government here is in a [37,3,4] format to efficiently govern all 444 settlements like a super computer. Society is then shaped like a cross with the Priesthood of Melchizidek underneath, 2 which is the business to its left and 9 the Ladies of the Light governing body to the right. They are able to employ people from the bottom part of society who still wish to live in capitalism. The Ladies of the Lamp govern the bottom societies along with the priestesses.",
+    content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed. ",
     image: "./images/cross.jpg",
   },
   {
@@ -1840,17 +2092,17 @@ const carouselItems = bottomThree.map(item => ({
 
   const townSections = [
   { 
-    id: 0, 
+    id: 1, 
     title: "Housing & Residential", 
     icon: "🏘️", 
     slides: [
-      { image: "/images/housing1.jpg", text: "Residential areas with multi-level flats and public squares." },
-      { image: "/images/housing2.jpg", text: "Community parks and playgrounds in housing areas." },
-      { image: "/images/housing3.jpg", text: "Modern apartment blocks and streetscapes." }
+      { image: "/images/sketches/saddle4.jpg", text: "The Saddle: This is the first concept for housing based of a building previously built in San Marino. It is smaller in scale for the towns and has a capcaity of 38 for a family feel. The building in San Marino has capacity of 160 people." },
+      { image: "/images/sketches/sandwiches.png", text: "The Sandwich: This is the Sandwich platter complex that is also based of housing used in San Marino. Each sandwich has a capacity of 123 people. " },
+      { image: "/images/sketches/crescent.png", text: "The Crescent: This is the third housing design taken from the 11 houses I have planned to build in Socotra. It will house 54 people when built when I rule the world and 189 people when built in Socotra." }
     ]
   },
   { 
-    id: 1, 
+    id: 2, 
     title: "Agriculture", 
     icon: "🌾", 
     slides: [
@@ -1860,7 +2112,7 @@ const carouselItems = bottomThree.map(item => ({
     ]
   },
   { 
-    id: 2, 
+    id: 3, 
     title: "Manufacturing & Industry", 
     icon: "🏭", 
     slides: [
@@ -1870,7 +2122,7 @@ const carouselItems = bottomThree.map(item => ({
     ]
   },
   { 
-    id: 3, 
+    id: 4, 
     title: "Services & Utilities", 
     icon: "🏥", 
     slides: [
@@ -1880,7 +2132,7 @@ const carouselItems = bottomThree.map(item => ({
     ]
   },
   { 
-    id: 4, 
+    id: 5, 
     title: "Entertainment & Culture", 
     icon: "🎭", 
     slides: [
@@ -1890,23 +2142,13 @@ const carouselItems = bottomThree.map(item => ({
     ]
   },
   { 
-    id: 5, 
+    id: 6, 
     title: "Governance & Security", 
     icon: "🏰", 
     slides: [
       { image: "/images/governance1.jpg", text: "Castles, government offices, and security posts." },
       { image: "/images/governance2.jpg", text: "Town hall and administrative centers." },
       { image: "/images/governance3.jpg", text: "Police posts and safety infrastructure." }
-    ]
-  },
-  { 
-    id: 6, 
-    title: "Transport", 
-    icon: "🚄", 
-    slides: [
-      { image: "/images/transport1.jpg", text: "Electric Hyperloops, AI Orr (Air Transport)." },
-      { image: "/images/transport2.jpg", text: "Bus stations and local transit hubs." },
-      { image: "/images/transport3.jpg", text: "Bike lanes and pedestrian-friendly streets." }
     ]
   }
 ];
