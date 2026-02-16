@@ -1139,9 +1139,9 @@ const cosmology = [
           children:[]
           },
           {
-          title: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
-          description: "Second Page",
-          images: ["./images/sketches/GC2.jpg"],
+          title: "The Malachim",
+          description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
+          images: ["./images/sketches/evangellion1.png"],
           children:[]
           }
         ],
