@@ -1147,7 +1147,7 @@ const cosmology = [
           {
             title: "The Hierachy of the Angels",
             description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
-            images: ["./images/72ShemHaMephorash-1.jpg", "./images/72ShemHaMephorash-2.jpg", "./images/72ShemHaMephorash-3.jpg", "./images/72ShemHaMephorash-4.jpg", "./images/72ShemHaMephorash-5.jpg"],
+            images: ["./images/72ShemHaMephorash-1.jpg", "./images/72ShemHaMephorash-2.jpg", "./images/72ShemHaMephorash-3.jpg", "./images/72ShemHaMephorash-4.jpg"],
             children:[]
           }
         ],
@@ -1909,7 +1909,7 @@ useEffect(() => {
         gridTemplateColumns: "1.4fr 1fr",
         maxWidth: "1200px",
         width: "100%",
-        maxHeight: "90vh",
+        maxHeight: "100vh",
         background: "#020617",
         borderRadius: "18px",
         overflow: "hidden",
@@ -1925,7 +1925,7 @@ useEffect(() => {
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "contain"
+            objectFit: "cover"
           }}
         />
 
