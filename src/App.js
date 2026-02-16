@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import { motion, AnimatePresence, } from "framer-motion";
 import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react";
 import './App.css';
-import React, { useState, useEffect, useRef  } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import crownImage from './srcImages/crown.jpg'
 
 
@@ -1180,28 +1180,35 @@ const cosmology = [
     return () => clearInterval(imgTimer);
   }, [activeNode]);
 
-    const nextImage = () => {
-  if (!lightbox) return;
-  const newIndex = (lightbox.index + 1) % lightbox.images.length;
-  setLightbox({
-    ...lightbox,
-    index: newIndex,
-    src: lightbox.images[newIndex]
-  });
-};
+   const nextImage = useCallback(() => {
+  setLightbox(lb => {
+    if (!lb) return lb;
 
-const prevImage = () => {
-  if (!lightbox) return;
-  const newIndex =
-    (lightbox.index - 1 + lightbox.images.length) %
-    lightbox.images.length;
+    const newIndex = (lb.index + 1) % lb.images.length;
 
-  setLightbox({
-    ...lightbox,
-    index: newIndex,
-    src: lightbox.images[newIndex]
+    return {
+      ...lb,
+      index: newIndex,
+      src: lb.images[newIndex]
+    };
   });
-};
+}, []);
+
+const prevImage = useCallback(() => {
+  setLightbox(lb => {
+    if (!lb) return lb;
+
+    const newIndex =
+      (lb.index - 1 + lb.images.length) % lb.images.length;
+
+    return {
+      ...lb,
+      index: newIndex,
+      src: lb.images[newIndex]
+    };
+  });
+}, []);
+
 
 const arrowStyle = (side) => ({
   position: "absolute",
@@ -1223,13 +1230,16 @@ const arrowStyle = (side) => ({
 useEffect(() => {
   const handler = (e) => {
     if (!lightbox) return;
+
     if (e.key === "Escape") setLightbox(null);
     if (e.key === "ArrowRight") nextImage();
     if (e.key === "ArrowLeft") prevImage();
   };
+
   window.addEventListener("keydown", handler);
   return () => window.removeEventListener("keydown", handler);
-}, [lightbox]);
+}, [lightbox, nextImage, prevImage]);
+
 
 
 
