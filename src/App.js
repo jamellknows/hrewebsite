@@ -1909,7 +1909,7 @@ useEffect(() => {
         gridTemplateColumns: "1.4fr 1fr",
         maxWidth: "1200px",
         width: "100%",
-        maxHeight: "100vh",
+        maxHeight: "90vh",
         background: "#020617",
         borderRadius: "18px",
         overflow: "hidden",
@@ -1925,7 +1925,7 @@ useEffect(() => {
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "cover"
+            objectFit: "contain"
           }}
         />
 
