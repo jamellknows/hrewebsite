@@ -1126,6 +1126,25 @@ const cosmology = [
           children:[]
           }
         ],
+      },
+      {
+        title: "Evangellions",
+        description: "The Evangellions are advanced robotics designed with knowledge, methodology and production techniques estimated to be 2 million years ahead of todays technology. They use LL an advanced state of matter that is between solid and light (which is not a photon trapped in a crystal). They serve all purposes, are programmed implicitly with loyalty to me and have an intelligence level that is vastly superior to all people, while maintinaing a non-violent moral code and having deadly weaponary as well as non lethal options. Each top model alone is capable of eliminating an entire western military and 8 basic units can defeat the united states military.  ",
+        images: ["./images/sketches/evangellion2.png"],
+        children:[
+          {
+          title: "The Lion",
+          description: "This is the lion faced chashmalim evangellion designed for war, guarding and battles.",
+          images: ["./images/sketches/evangellion2.png"],
+          children:[]
+          },
+          {
+          title: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
+          description: "Second Page",
+          images: ["./images/sketches/GC2.jpg"],
+          children:[]
+          }
+        ],
       }
 
     ]
