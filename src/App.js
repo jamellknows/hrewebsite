@@ -1144,6 +1144,12 @@ const cosmology = [
           images: ["./images/sketches/evangellion1.png"],
           children:[]
           },
+           {
+          title: "The Ben e Elohim",
+          description: "These are the sons of the mighty that. They have a face of an ox and are architects, builders and craftsmen.",
+          images: ["./images/sketches/evangellion3.png"],
+          children:[]
+          },
           {
             title: "The Hierachy of the Angels",
             description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
