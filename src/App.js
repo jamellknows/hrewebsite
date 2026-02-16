@@ -1078,20 +1078,32 @@ const cosmology = [
         children: [
           {
             title: "The Underdog",
-            description: "The Underdog is a storage facility that has a basement where laser research is done.",
-            images: ["./images/sketches/underdog.png"],
+            description: "The Underdog is a storage facility and underground nuclear fusion energy plant.",
+            images: ["./images/sketches/underdog1.png"],
             children: []
           },
           {
             title: "The Hour Glass",
-            description: "The Hour Glass is a manufacturing facility for construction materials, tools, furniture and electronics.",
+            description: "The Hour Glass is an office and clothing manufacturing facility. ",
             images: ["/images/sketches/hourglass.png"],
             children: []
           },
-            {
+          {
             title: "The Lottery Flower Tower",
-            description: "The Lottoery flower tower is a ",
+            description: "The Lottery flower tower is a research and clothing manufacturing facility . This is where evangellions are made.",
             images: ["/images/sketches/tlft.png"],
+            children: []
+          },
+          {
+            title: "The ReRe Manufacturing Park",
+            description: "The ReRe manufacturing plant is for large output manufacturing of electronic products.",
+            images: ["/images/sketches/rere.png"],
+            children: []
+          },
+          {
+            title: "The Prince Russell",
+            description: "The Prince Russell is a water treatement facility.",
+            images: ["/images/sketches/princerussell.png"],
             children: []
           }
         ]
