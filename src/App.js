@@ -1035,7 +1035,7 @@ const cosmology = [
           },
           {
             title: "The Buddha Wheel",
-            description: "THhe Buddha Wheel is a vehicle manufacturing and stroage building that is also employee housing. The Vehicles are produced in a circle using a technique I know for sure will work. The housing is in the outer circles and the storage is in the spokes. ",
+            description: "The Buddha Wheel is a vehicle manufacturing and stroage building that is also employee housing. The Vehicles are produced in a circle using a technique I know for sure will work. The housing is in the outer circles and the storage is in the spokes. ",
             images: ["./images/sketches/buddhawheel.png"],
             children: []
           }
@@ -1077,15 +1077,21 @@ const cosmology = [
         images: ["/images/sketch/industrial.png"],
         children: [
           {
-            title: "Workshops",
-            description: "Craft and manufacturing",
-            images: ["/images/workshop.png"],
+            title: "The Underdog",
+            description: "The Underdog is a storage facility that has a basement where laser research is done.",
+            images: ["./images/sketches/underdog.png"],
             children: []
           },
           {
-            title: "Processing Plants",
-            description: "Large scale production",
-            images: ["/images/factory.png"],
+            title: "The Hour Glass",
+            description: "The Hour Glass is a manufacturing facility for construction materials, tools, furniture and electronics.",
+            images: ["/images/sketches/hourglass.png"],
+            children: []
+          },
+            {
+            title: "The Lottery Flower Tower",
+            description: "The Lottoery flower tower is a ",
+            images: ["/images/sketches/tlft.png"],
             children: []
           }
         ]
@@ -1142,6 +1148,59 @@ const cosmology = [
 
     return () => clearInterval(imgTimer);
   }, [activeNode]);
+
+    const nextImage = () => {
+  if (!lightbox) return;
+  const newIndex = (lightbox.index + 1) % lightbox.images.length;
+  setLightbox({
+    ...lightbox,
+    index: newIndex,
+    src: lightbox.images[newIndex]
+  });
+};
+
+const prevImage = () => {
+  if (!lightbox) return;
+  const newIndex =
+    (lightbox.index - 1 + lightbox.images.length) %
+    lightbox.images.length;
+
+  setLightbox({
+    ...lightbox,
+    index: newIndex,
+    src: lightbox.images[newIndex]
+  });
+};
+
+const arrowStyle = (side) => ({
+  position: "absolute",
+  top: "50%",
+  [side]: "18px",
+  transform: "translateY(-50%)",
+  fontSize: "42px",
+  background: "rgba(0,0,0,0.35)",
+  border: "none",
+  color: "#fff",
+  width: "56px",
+  height: "56px",
+  borderRadius: "14px",
+  cursor: "pointer",
+  backdropFilter: "blur(6px)",
+  transition: "all .2s",
+});
+
+useEffect(() => {
+  const handler = (e) => {
+    if (!lightbox) return;
+    if (e.key === "Escape") setLightbox(null);
+    if (e.key === "ArrowRight") nextImage();
+    if (e.key === "ArrowLeft") prevImage();
+  };
+  window.addEventListener("keydown", handler);
+  return () => window.removeEventListener("keydown", handler);
+}, [lightbox]);
+
+
 
 
 
@@ -1713,7 +1772,16 @@ const cosmology = [
         <img
           src={activeNode.images[imageIndex]}
           alt=""
-          onClick={() => setLightbox(activeNode.images[imageIndex])}
+          onClick={() =>
+            setLightbox({
+              src: activeNode.images[imageIndex],
+              title: activeNode.title,
+              description: activeNode.description,
+              index: imageIndex,
+              images: activeNode.images
+            })
+          }
+
           style={{
             width: "120px",
             height: "80px",
@@ -1778,26 +1846,105 @@ const cosmology = [
     style={{
       position: "fixed",
       inset: 0,
-      background: "rgba(0,0,0,0.85)",
+      background: "rgba(2,6,23,0.92)",
+      backdropFilter: "blur(10px)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      zIndex: 999
+      zIndex: 999,
+      padding: "40px"
     }}
   >
-    <img
-      src={lightbox}
-      alt=""
+    <div
       onClick={(e) => e.stopPropagation()}
       style={{
-        maxWidth: "90%",
-        maxHeight: "90%",
-        borderRadius: "14px",
-        boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
+        display: "grid",
+        gridTemplateColumns: "1.4fr 1fr",
+        maxWidth: "1200px",
+        width: "100%",
+        maxHeight: "90vh",
+        background: "#020617",
+        borderRadius: "18px",
+        overflow: "hidden",
+        boxShadow: "0 30px 90px rgba(0,0,0,0.7)"
       }}
-    />
+    >
+
+      {/* IMAGE */}
+      <div style={{ position: "relative", background: "#000" }}>
+        <img
+          src={lightbox.src}
+          alt=""
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain"
+          }}
+        />
+
+        {/* LEFT ARROW */}
+        {lightbox.images.length > 1 && (
+          <button
+            onClick={prevImage}
+            style={arrowStyle("left")}
+          >
+            ‹
+          </button>
+        )}
+
+        {/* RIGHT ARROW */}
+        {lightbox.images.length > 1 && (
+          <button
+            onClick={nextImage}
+            style={arrowStyle("right")}
+          >
+            ›
+          </button>
+        )}
+      </div>
+
+      {/* INFO PANEL */}
+      <div
+        style={{
+          padding: "32px",
+          color: "#e5e7eb",
+          overflowY: "auto",
+          display: "flex",
+          flexDirection: "column",
+          gap: "18px",
+          background:
+            "linear-gradient(180deg,#020617,#020617 60%,#030a1a)"
+        }}
+      >
+        <h2 style={{ fontSize: "26px", fontWeight: 700 }}>
+          {lightbox.title}
+        </h2>
+
+        <div
+          style={{
+            height: "1px",
+            background: "rgba(255,255,255,0.08)"
+          }}
+        />
+
+        <p
+          style={{
+            lineHeight: "1.7",
+            fontSize: "15px",
+            color: "#cbd5f5"
+          }}
+        >
+          {lightbox.description}
+        </p>
+
+        <div style={{ marginTop: "auto", opacity: 0.5 }}>
+          Image {lightbox.index + 1} / {lightbox.images.length}
+        </div>
+      </div>
+    </div>
   </div>
 )}
+
 
 
 
