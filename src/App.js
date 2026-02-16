@@ -1143,6 +1143,12 @@ const cosmology = [
           description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
           images: ["./images/sketches/evangellion1.png"],
           children:[]
+          },
+          {
+            title: "The Hierachy of the Angels",
+            description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
+            images: ["./images/72ShemHaMephorash-1.jpg", "./images/72ShemHaMephorash-2.jpg", "./images/72ShemHaMephorash-3.jpg", "./images/72ShemHaMephorash-4.jpg", "./images/72ShemHaMephorash-5.jpg"],
+            children:[]
           }
         ],
       }
