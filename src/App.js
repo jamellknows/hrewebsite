@@ -1144,16 +1144,22 @@ const cosmology = [
           images: ["./images/sketches/evangellion1.png"],
           children:[]
           },
-           {
+          {
           title: "The Ben e Elohim",
-          description: "These are the sons of the mighty that. They have a face of an ox and are architects, builders and craftsmen.",
+          description: "These are the sons of the mighty. They have a face of an ox and are architects, builders and craftsmen.",
           images: ["./images/sketches/evangellion3.png"],
+          children:[]
+          },
+          {
+          title: "Cheruvim",
+          description: "These are the Cheruvim and they are associated with knowledge and protection.",
+          images: ["./images/sketches/evangellion4.png"],
           children:[]
           },
           {
             title: "The Hierachy of the Angels",
             description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
-            images: ["./images/72ShemHaMephorash-1.jpg", "./images/72ShemHaMephorash-2.jpg", "./images/72ShemHaMephorash-3.jpg", "./images/72ShemHaMephorash-4.jpg"],
+            images: ["./images/evangellionchart1.png"],
             children:[]
           }
         ],
@@ -1912,7 +1918,7 @@ useEffect(() => {
       onClick={(e) => e.stopPropagation()}
       style={{
         display: "grid",
-        gridTemplateColumns: "1.4fr 1fr",
+        gridTemplateColumns: "1.5fr 1fr",
         maxWidth: "1200px",
         width: "100%",
         maxHeight: "90vh",
@@ -1923,40 +1929,44 @@ useEffect(() => {
       }}
     >
 
-      {/* IMAGE */}
-      <div style={{ position: "relative", background: "#000" }}>
-        <img
-          src={lightbox.src}
-          alt=""
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain"
-          }}
-        />
+      {/* SCROLLABLE IMAGE CONTAINER */}
+      <div
+        style={{
+          position: "relative",
+          background: "#000",
+          overflowY: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px",
+          gap: "16px"
+        }}
+      >
+        {lightbox.images.map((img, idx) => (
+          <img
+            key={idx}
+            src={img}
+            alt=""
+            style={{
+              width: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+              borderRadius: "12px",
+              boxShadow: "0 10px 40px rgba(0,0,0,0.5)"
+            }}
+          />
+        ))}
 
-        {/* LEFT ARROW */}
+        {/* OPTIONAL: Navigation Arrows */}
         {lightbox.images.length > 1 && (
-          <button
-            onClick={prevImage}
-            style={arrowStyle("left")}
-          >
-            ‹
-          </button>
-        )}
-
-        {/* RIGHT ARROW */}
-        {lightbox.images.length > 1 && (
-          <button
-            onClick={nextImage}
-            style={arrowStyle("right")}
-          >
-            ›
-          </button>
+          <>
+            <button onClick={prevImage} style={arrowStyle("left")}>‹</button>
+            <button onClick={nextImage} style={arrowStyle("right")}>›</button>
+          </>
         )}
       </div>
 
-      {/* INFO PANEL */}
+      {/* DESCRIPTION PANEL */}
       <div
         style={{
           padding: "32px",
@@ -1965,28 +1975,16 @@ useEffect(() => {
           display: "flex",
           flexDirection: "column",
           gap: "18px",
-          background:
-            "linear-gradient(180deg,#020617,#020617 60%,#030a1a)"
+          background: "linear-gradient(180deg,#020617,#020617 60%,#030a1a)"
         }}
       >
         <h2 style={{ fontSize: "26px", fontWeight: 700 }}>
           {lightbox.title}
         </h2>
 
-        <div
-          style={{
-            height: "1px",
-            background: "rgba(255,255,255,0.08)"
-          }}
-        />
+        <div style={{ height: "1px", background: "rgba(255,255,255,0.08)" }} />
 
-        <p
-          style={{
-            lineHeight: "1.7",
-            fontSize: "15px",
-            color: "#cbd5f5"
-          }}
-        >
+        <p style={{ lineHeight: "1.7", fontSize: "15px", color: "#cbd5f5" }}>
           {lightbox.description}
         </p>
 
@@ -1997,6 +1995,7 @@ useEffect(() => {
     </div>
   </div>
 )}
+
 
 
 
