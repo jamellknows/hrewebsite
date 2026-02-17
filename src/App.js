@@ -2416,8 +2416,8 @@ const carouselItems = bottomThree.map(item => ({
     title: "Entertainment & Culture", 
     icon: "🎭", 
     slides: [
-      { image: "/images/sketches/potalapalacefuturistic.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST. The image here is the KKKlub which is a part of San Marino. It will not be in every town but is a placeholder. Only the very best get to go to the KKKlub and even then it will only be myself and women and Russell. " },
-      { image: "/images/sketches/finger2.png", text: "Concerts, festivals, and cultural events. Concerts are banned. Festivals are allowed as organised processions. Modern art pieces and installations will be based on my bored doodles." },
+      { image: "/images/sketches/potalapalacefuturistic.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST. It is intended for there to be one 'Tibet' for each AT(Arrow,Tooth). This is outside of the towns and is wher epeople who live in different regions come to met with each other. It is also the only place where alcohol and gambling is allowed." },
+      { image: "/images/sketches/finger2.png", text: "Concerts, festivals, and cultural events. Concerts are banned. Festivals are allowed as organised processions. Modern art pieces and installations will be based on my bored doodles. As there is no money all gambling will be the wagering of time off work. Thise in debt will owe significant hours of work and those with large winnings will not have to work much. All people will still have the same living standards." },
       { image: "/images/sketches/NiftyClub.png", text: "Community art centers and galleries. Lots of Art centers." }
     ]
   },
