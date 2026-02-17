@@ -1105,7 +1105,14 @@ const cosmology = [
             description: "The Prince Russell is a water treatement facility.",
             images: ["/images/sketches/princerussell.png"],
             children: []
-          }
+          },
+          {
+            title: "SOIF NANTE",
+            description: "This is a design for a nuclear fusion plant. Although I will be doing fusion in the underdog I also have this SOIF NANTE idea which is more of a pun about how nuclear fusion works. It is most likely safer to build fusion plants underground what this building will become is yet to be determined.",
+            images: ["/images/sketches/soifnante.png"],
+            children: []
+          },
+
         ]
       },
       {
@@ -2409,9 +2416,9 @@ const carouselItems = bottomThree.map(item => ({
     title: "Entertainment & Culture", 
     icon: "🎭", 
     slides: [
-      { image: "/images/entertainment1.jpg", text: "Theaters, music halls, parks, and cultural centers." },
-      { image: "/images/entertainment2.jpg", text: "Concerts, festivals, and cultural events." },
-      { image: "/images/entertainment3.jpg", text: "Community art centers and galleries." }
+      { image: "/images/sketches/KKKlub.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST." },
+      { image: "/images/sketches/finger2.png", text: "Concerts, festivals, and cultural events. Concerts are banned. Festivals are allowed as organised processions. Modern art pieces and installations will be based on my bored doodles." },
+      { image: "/images/sketches/NiftyClub.png", text: "Community art centers and galleries. Lots of Art centers." }
     ]
   },
   { 
