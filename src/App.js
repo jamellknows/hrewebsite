@@ -2416,7 +2416,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Entertainment & Culture", 
     icon: "🎭", 
     slides: [
-      { image: "/images/sketches/KKKlub.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST." },
+      { image: "/images/sketches/KKKlub.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST. The image here is the KKKlub which is a part of San Marino. It will not be in every town but is a placeholder. Only the very best get to go to the KKKlub and even then it will only be myself and women and Russell. " },
       { image: "/images/sketches/finger2.png", text: "Concerts, festivals, and cultural events. Concerts are banned. Festivals are allowed as organised processions. Modern art pieces and installations will be based on my bored doodles." },
       { image: "/images/sketches/NiftyClub.png", text: "Community art centers and galleries. Lots of Art centers." }
     ]
