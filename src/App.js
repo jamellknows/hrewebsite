@@ -2386,9 +2386,9 @@ const carouselItems = bottomThree.map(item => ({
     title: "Agriculture", 
     icon: "🌾", 
     slides: [
-      { image: "/images/agriculture1.jpg", text: "Farms, gardens, and food production integrated into town layout." },
-      { image: "/images/agriculture2.jpg", text: "Local farmers markets and orchards." },
-      { image: "/images/agriculture3.jpg", text: "Irrigation and crop rotation fields." }
+      { image: "/images/aa1.png", text: "Farms, gardens, and food production integrated into town layout." },
+      { image: "/images/aa2.png", text: "Local farmers markets and orchards." },
+      { image: "/images/aa3.png", text: "Irrigation and crop rotation fields." }
     ]
   },
   { 
@@ -2396,9 +2396,9 @@ const carouselItems = bottomThree.map(item => ({
     title: "Manufacturing & Industry", 
     icon: "🏭", 
     slides: [
-      { image: "/images/industry1.jpg", text: "Crafts, workshops, and light industrial zones." },
-      { image: "/images/industry2.jpg", text: "Warehouses and assembly workshops." },
-      { image: "/images/industry3.jpg", text: "Local manufacturing and artisan production areas." }
+      { image: "/images/manufuturist.png", text: "All manufacturing is CAT integrated to completion. It is then traded for what other CATS produce as a part of the economy." },
+      { image: "/images/manumodern.png", text: "Warehouses and assembly workshops." },
+      { image: "/images/manuclassic.png", text: "Local manufacturing and artisan production areas." }
     ]
   },
   { 
@@ -2406,9 +2406,9 @@ const carouselItems = bottomThree.map(item => ({
     title: "Services & Utilities", 
     icon: "🏥", 
     slides: [
-      { image: "/images/services1.jpg", text: "Hospitals, shops, schools, and public services." },
-      { image: "/images/services2.jpg", text: "Electricity and water utilities infrastructure." },
-      { image: "/images/services3.jpg", text: "Public service offices and educational centers." }
+      { image: "/images/sketches/atlas.png", text: "Hospitals, shops, schools, and public services. All these services will be place within the walls of the towns. " },
+      { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CAT has one electricity producer and one water producer." },
+      { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }
     ]
   },
   { 
