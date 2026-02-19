@@ -2193,7 +2193,7 @@ useEffect(() => {
   "/images/town1.jpg",
   "/images/town2.jpg",
   "/images/town4.png",
-  "/images/thedoubleu.png"
+  "/images/thelv.png"
 
 ];
 
