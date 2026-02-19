@@ -2419,7 +2419,10 @@ const carouselItems = bottomThree.map(item => ({
     slides: [
       { image: "/images/sketches/atlas.png", text: "Hospitals, shops, schools, and public services. All these services will be place within the walls of the towns. " },
       { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CAT has one electricity producer and one water producer." },
-      { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }
+      { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }, 
+      { image: "/images/kharvees.png", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival." }, 
+      { image: "/images/Eshtion.png", text: "The Eshtions are the AI depots and hubs where kharvees can be stored and charged if needed and also serves as training locations." }, 
+      
     ]
   },
   { 
@@ -2768,7 +2771,8 @@ const CarouselContent = ({ large = false }) => (
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
             Each letter of HAM KT S WE SHG B aka KTSHAM WEBSHG represents a town. The towns are female only with men living in mobile apartments connected via an 
-            inter loop/rail system. Each apartment is attachable to each other and is road and rail/loop compatible. The only men in each 
+            inter loop/rail system. Each apartment is attachable to each other and is road and rail/loop compatible. The population of a town is 29542 women and children. 
+            
             These towns are made up of 6 villages designed to hold 4560 people in saddles or 4380 people in triangles/sandwiches. 
             They are livestock centered with the outside zones being for manufacturing. 
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
@@ -3324,8 +3328,9 @@ function WorldRule2Page() {
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. They are the homes for the Acolytes who have been designated for labour, hard work and programming in the Hidalgo or tiny work, innovation, factories and laboratories in the Emirate. "},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
-  { id: 9, title: "Calculations", text:"Using the populations for the former empires of the world which are: Britain, Spain, France, Russia, China, Turkey, India, Germany, Sweden and the Netherlands. I used 84% as the number to be acolyted which equals 3.52 billion I then added 15% from the populations of the other countires. I then subtracted the number of black people in the world 1.2 billion (black people are not to be acolyted). This equalled 2.4693 billion. This is 49% of the populations of the former empires plus 15% of the other nations. I then divided by the number of CATs to get the populations for each town."}, 
-  { id: 10, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
+  { id: 9, title: "Calculations", text:""}, 
+  { id: 10, title: "Basics", text:"Town population (women and children): 29542 (women: 17210, children: 12332). CLIT population: 531756-309778. "}, 
+  { id: 11, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
 
 ]; 
 
