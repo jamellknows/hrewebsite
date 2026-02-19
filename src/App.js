@@ -2329,8 +2329,8 @@ useEffect(() => {
 const rightGrid = [
   {
     id: 0,
-    title: "A Cat",
-    content: `There are 12977 Cats, a Cat is divided into 3 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as an arrow uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. Each city has its own focus, the Hamlet is mixed, the Alber is produce, the Mish is manufacturing, the Kent construction, the Thorpe is produce and the Sea Village is manufacturing.`,
+    title: "A CLIT",
+    content: `There are 12977 Clits, a Clit is divided into 3 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as a Lamp uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. The fourth part is the integration which is the male loop/rail network that connects a CLIT. Men live in mobile apartments called khanes that move between towns as required. Each town has its own prodcution focus with men moving between places and working the land outside of the clit as well as coming into the clit to work in the factories. `,
     image: "./images/christmas.jpg",
   },
   {
