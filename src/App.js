@@ -2753,7 +2753,7 @@ const CarouselContent = ({ large = false }) => (
             alignItems: "center",
           }}
         >
-          Alber
+          Towns
           <span style={{ opacity: 0.6 }}>
             {openSideBox === "left" ? "−" : "+"}
           </span>
@@ -2767,13 +2767,15 @@ const CarouselContent = ({ large = false }) => (
           }}
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
-            Each letter of HAM KT S WE SHG B aka KTSHAM WEBSHG represents a town. 
+            Each letter of HAM KT S WE SHG B aka KTSHAM WEBSHG represents a town. The towns are female only with men living in mobile apartments connected via an 
+            inter loop/rail system. Each apartment is attachable to each other and is road and rail/loop compatible. The only men in each 
             These towns are made up of 6 villages designed to hold 4560 people in saddles or 4380 people in triangles/sandwiches. 
-            They are agriculture centered with the outside zones being for manufacturing. 
+            They are livestock centered with the outside zones being for manufacturing. 
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
             On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
-            There are 8 castles that serve as government buildings and Ladies of the Lamp residences. 
-            This is where the members of FDELM will also go to work. 
+            There are 8 castles that serve as government buildings and Ladies of the Lamp/Gal residences. Men live as a part of the Interrail and travel between towns 
+            working as maggots, skoulikia or hati depending on their attainment. 
+            
             The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and FDELM.
           </p>
         </div>
@@ -2847,10 +2849,12 @@ const CarouselContent = ({ large = false }) => (
           }}
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
-            There are 20 Ladies of the Lamp per city and 12 towns per city and the total number of Ladies of the Lamp is 93312 worldwide. 
+            There are 30 Ladies of the Lamp per lamp and a Lamp is 6 towns. There are 15 Ladies of the Gal per Tooth and a Tooth is 6 towns. A Lamp and a Tooth come 
+            together with a Christmas and the Interrail to form a CLIT (clit). There are 12977 clits in total and they form the PIG (production integrated globe). 
+
             The Ladies of the Lamp will move about often. The total population of a city is 354504 and a Town is 29542. 
             Saddles can contain 38 people and are built in neighborhoods of 120 and sandwiches can contain 60 people and are built in neighborhoods of 73. 
-            Priestesses are shared between 4 cities. Hospitals are a service and within the walls. 
+            Priestesses live with a Rus and move about as needed within a CLIT. Hospitals are a service and within the walls. 
             There will be local health facilities and convenience stores at each residential area serviced by people and evangelions. 
             Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these categories. 
             People are sorted based on a test which ranks their best goodness, then their worst attribute in life, followed by their worst attribute in goodness, 
