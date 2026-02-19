@@ -2183,6 +2183,7 @@ function WorldRule1Page() {
   "/images/town1.jpg",
   "/images/town2.jpg",
   "/images/town4.png",
+  "/images/thedoubleu.png"
 
 ];
 
