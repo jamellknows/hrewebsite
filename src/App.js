@@ -2420,7 +2420,7 @@ const carouselItems = bottomThree.map(item => ({
       { image: "/images/sketches/atlas.png", text: "Hospitals, shops, schools, and public services. All these services will be place within the walls of the towns. " },
       { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CAT has one electricity producer and one water producer." },
       { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }, 
-      { image: "/images/kharvees.jpg", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival. There will be 26200 per Eshtion." }, 
+      { image: "/images/kharvees.jpg", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival. There will be 26200 per Eshtion and 314402 Kharvees per CLIT." }, 
       { image: "/images/Eshtion.jpg", text: "The Eshtions are the AI depots and hubs where kharvees can be stored and charged if needed and also serves as training locations. There will be 12 Eshtions per CLIT." }, 
       
     ]
