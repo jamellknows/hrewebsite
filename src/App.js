@@ -2360,8 +2360,8 @@ const rightGrid = [
   const bottomThree = [
   { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
   { id: 1, title: "Queer", text: "Anybody who falls within the category of queer will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Queers can kiss their partner, but they can not cause the ejaculation of their partner." },
-  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. Acolytes can be male or female and have the right to marry and have children. They live in the EMPORIUM and wear electronic braces made from LL or ceramic on their arms and legs. Acolytes work as labourers and have the option of pitching a business idea to work half time on." },
-  { id: 3, title: "FDELM", text:"FDELM stands for fashion designer, evangellion, lady of the lamp and models. Each town has 16 people who are members of FDELM. This is the 4 that goes against the PMSEC 5. This is 4 fashion designers and 12 models." }
+  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. All men apart from priests are automatically acolytes at age 18. Acolytes can be male or female, although a female acolyte is a female that has failed the 89. Acolytes work pathways designated to them by the nature of the fail and their ability. All acolytes wear  either braces made from LL or ceramic on their arms and legs or a collar made from the same material." },
+  { id: 3, title: "MAGGOTS, SKOULIKIA AND HATI", text:"Men (and women who failed the 89(commiting a crime)) are put into one of 3 groups. Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Depending on behaviour they are fitted with braces or collars. " }
 ];
 
 const carouselItems = bottomThree.map(item => ({
@@ -2774,7 +2774,7 @@ const CarouselContent = ({ large = false }) => (
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
             On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
             There are 8 castles that serve as government buildings and Ladies of the Lamp/Gal residences. Men live as a part of the Interrail and travel between towns 
-            working as maggots, skoulikia or hati depending on their attainment. 
+            working as maggots, skoulikia or hati depending on their attainment. All men apart from priests are acolytes. 
             
             The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and FDELM.
           </p>
