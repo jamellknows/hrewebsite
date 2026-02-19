@@ -2166,6 +2166,16 @@ function WorldRule1Page() {
   const [openPyramid, setOpenPyramid] = useState(null);
   const [activeLocation, setActiveLocation] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+
+useEffect(() => {
+  const handleEsc = (e) => {
+    if (e.key === "Escape") setExpanded(false);
+  };
+  window.addEventListener("keydown", handleEsc);
+  return () => window.removeEventListener("keydown", handleEsc);
+}, []);
+
 
   const hubSection = {
   id: "hub",
@@ -2434,6 +2444,75 @@ const carouselItems = bottomThree.map(item => ({
   }
 ];
 
+const CarouselContent = ({ large = false }) => (
+  <div
+    onClick={() => !large && setExpanded(true)}
+    style={{
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: large ? "0px" : "22px",
+      height: large ? "100%" : "320px",
+      width: "100%",
+      cursor: large ? "default" : "zoom-in",
+      background: "#000",
+      boxShadow: large ? "none" : "0 10px 30px rgba(0,0,0,0.15)",
+    }}
+  >
+    {imageCarouselItems.map((img, idx) => (
+      <div
+        key={idx}
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${img})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          transition: "opacity 0.6s ease",
+          opacity: idx === imageCarouselIndex ? 1 : 0,
+        }}
+      />
+    ))}
+
+    {/* LEFT */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        prevImageSlide();
+      }}
+      style={{
+        ...styles.btn,
+        position: "absolute",
+        left: "12px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        fontSize: large ? "38px" : "22px",
+      }}
+    >
+      ‹
+    </button>
+
+    {/* RIGHT */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        nextImageSlide();
+      }}
+      style={{
+        ...styles.btn,
+        position: "absolute",
+        right: "12px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        fontSize: large ? "38px" : "22px",
+      }}
+    >
+      ›
+    </button>
+  </div>
+);
+
+
 
   return (
     <AnimatedPage>
@@ -2700,58 +2779,37 @@ const carouselItems = bottomThree.map(item => ({
         </div>
       </div>
 
-      {/* CENTER IMAGE CAROUSEL */}
-      <div
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          borderRadius: "22px",
-          height: "320px",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-        }}
-      >
-        {imageCarouselItems.map((img, idx) => (
-          <div
-            key={idx}
-            style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage: `url(${img})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              transition: "opacity 0.6s ease",
-              opacity: idx === imageCarouselIndex ? 1 : 0,
-            }}
-          />
-        ))}
+     {/* CENTER IMAGE CAROUSEL */}
+    <CarouselContent />
+    {expanded && (
+  <div
+    onClick={() => setExpanded(false)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.92)",
+      backdropFilter: "blur(8px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999,
+      animation: "fadeIn 0.25s ease",
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "95vw",
+        height: "95vh",
+        maxWidth: "1600px",
+      }}
+    >
+      <CarouselContent large />
+    </div>
+  </div>
+)}
 
-        <button
-          onClick={prevImageSlide}
-          style={{
-            ...styles.btn,
-            position: "absolute",
-            left: "12px",
-            top: "50%",
-            transform: "translateY(-50%)",
-          }}
-        >
-          ‹
-        </button>
 
-        <button
-          onClick={nextImageSlide}
-          style={{
-            ...styles.btn,
-            position: "absolute",
-            right: "12px",
-            top: "50%",
-            transform: "translateY(-50%)",
-          }}
-        >
-          ›
-        </button>
-      </div>
 
       {/* RIGHT BOX */}
       <div
