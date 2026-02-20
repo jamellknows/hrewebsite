@@ -1294,8 +1294,8 @@ useEffect(() => {
           style={{
             gridArea: "accordion",
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "12px"
+            gridTemplateColumns: "repeat(3, 0.5fr)",
+            gap: "0.25em"
           }}
         >
           {metric5.map((m, i) => (
@@ -1305,7 +1305,7 @@ useEffect(() => {
               style={{
                 ...styles.card,
                 cursor: "pointer",
-                padding: "16px",
+                padding: "0.5em",
                 background: openTop === i ? "#eef6ff" : undefined
               }}
             >
@@ -1446,7 +1446,7 @@ useEffect(() => {
             gridArea: "third",
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "14px"
+            gap: "0.5em"
           }}
         >
           {metric10.map((m, i) => (
@@ -1456,7 +1456,7 @@ useEffect(() => {
               style={{
                 ...styles.card,
                 cursor: "pointer",
-                padding: "14px",
+                padding: "10px",
                 background: openThird === i ? "#fff8ec" : undefined
               }}
             >
@@ -2358,10 +2358,11 @@ const rightGrid = [
   const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
-  { id: 0, title: "PMSEC", text: "PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 1, title: "Queer", text: "Anybody who falls within the category of queer will be taken to live in the THANA and be given an electronic collar made of LL. They will be given a range of tasks from innovation of products to running a business to entertainment. Civilians from WE SHG B can come to visit the EMPORIUM and browse their goods. Queers can kiss their partner, but they can not cause the ejaculation of their partner." },
-  { id: 2, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. All men apart from priests are automatically acolytes at age 18. Acolytes can be male or female, although a female acolyte is a female that has failed the 89. Acolytes work pathways designated to them by the nature of the fail and their ability. All acolytes wear  either braces made from LL or ceramic on their arms and legs or a collar made from the same material." },
-  { id: 3, title: "MAGGOTS, SKOULIKIA AND HATI", text:"Men (and women who failed the 89(commiting a crime)) are put into one of 3 groups. Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Depending on behaviour they are fitted with braces or collars. " }
+  { id: 0, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. All men apart from priests are automatically acolytes at age 18. Acolytes can be male or female, although a female acolyte is a female that has failed the 89. Acolytes work pathways designated to them by the nature of the fail and their ability. All acolytes wear either braces made from LL or ceramic on their arms and legs or a collar made from the same material." },
+  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Men (and women who failed the 89(commiting a crime)) are put into one of 3 groups. Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make. " },
+  { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLIT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
+  { id: 3, title: "THE 114", text:"The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 boy and 2 girls to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
+
 ];
 
 const carouselItems = bottomThree.map(item => ({
@@ -2873,7 +2874,7 @@ const CarouselContent = ({ large = false }) => (
 
 
       {/* Carousel at the bottom */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5em' }}>
         <div style={{ display: 'flex', gap: '16px', overflow: 'hidden', justifyContent: 'center', width: '100%', maxWidth: '340rem' }}>
           {carouselItems.map((item, idx) => {
             const offset = (idx - carouselIndex + carouselItems.length) % carouselItems.length;
@@ -3328,8 +3329,8 @@ function WorldRule2Page() {
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. They are the homes for the Acolytes who have been designated for labour, hard work and programming in the Hidalgo or tiny work, innovation, factories and laboratories in the Emirate. "},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
-  { id: 9, title: "Calculations", text:""}, 
-  { id: 10, title: "Basics", text:"Town population (women and children): 29542 (women: 17210, children: 12332). CLIT population: 531756-309778. "}, 
+  { id: 9, title: "Calculations", text:"To be added."}, 
+  { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLIT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLIT: 26,200`},
   { id: 11, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
 
 ]; 
@@ -3406,15 +3407,21 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       img: "/images/city6.png"
     },
     {
-      title: "Arx",
-      text: metric5[9].text,
-      img: "/images/city9.png"
-    },
-    {
       title: "Calculations",
       text: metric5[8].text,
       img: "/images/calculator.png"
+    },
+    {
+      title: "Basics",
+      text: metric5[9].text,
+      img: "/images/boxsky.png"
+    },
+    {
+      title: "Arx",
+      text: metric5[10].text,
+      img: "/images/city9.png"
     }
+   
   ];
 
     const wheelPanels = [
