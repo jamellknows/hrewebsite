@@ -2459,7 +2459,7 @@ const mainCards = [
     title: "Christmas",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The Clitoral Hood is the head office of the HATI the men who work inside and outside the Christmas region. These men work entertainment, services and construction.", image: "https://via.placeholder.com/200x150" },
+      { id: 11, text: "The Hood is the head office of the HATI the men who work inside and outside the Christmas region. These men work entertainment, services and construction.", image: "https://via.placeholder.com/200x150" },
       { id: 12, text: "Within a Christmas production is handled by mass priduced evangellion units known as elves. ", image: "https://via.placeholder.com/200x150" },
       { id: 13, text: "Sub-card 1C", image: "https://via.placeholder.com/200x150" },
       { id: 14, text: "Sub-card 1D", image: "https://via.placeholder.com/200x150" },
