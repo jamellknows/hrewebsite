@@ -2363,7 +2363,7 @@ const rightGrid = [
   { id: 0, title: "ACOLYTES", text: "ACOLYTES are those who failed the 89 exam and therefore have been put into a lifetime of servitude for the 9, the priesthood of Melchizedek or Hearing and Light. All men apart from priests are automatically acolytes at age 18. Acolytes can be male or female, although a female acolyte is a female that has failed the 89. Acolytes work pathways designated to them by the nature of the fail and their ability. All acolytes wear either braces made from LL or ceramic on their arms and legs or a collar made from the same material." },
   { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Men (and women who failed the 89(commiting a crime)) are put into one of 3 groups. Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make. " },
   { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLIT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire." },
-  { id: 3, title: "THE 114", text:"The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 boy and 2 girls to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
+  { id: 3, title: "THE 114", text:"The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
 
 ];
 
@@ -2459,8 +2459,8 @@ const mainCards = [
     title: "Christmas",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The Clitoral Hood is the head office of the HATI.", image: "https://via.placeholder.com/200x150" },
-      { id: 12, text: "Men that work services and entertainment must still work a job that produces. ", image: "https://via.placeholder.com/200x150" },
+      { id: 11, text: "The Clitoral Hood is the head office of the HATI the men who work inside and outside the Christmas region. These men work entertainment, services and construction.", image: "https://via.placeholder.com/200x150" },
+      { id: 12, text: "Within a Christmas production is handled by mass priduced evangellion units known as elves. ", image: "https://via.placeholder.com/200x150" },
       { id: 13, text: "Sub-card 1C", image: "https://via.placeholder.com/200x150" },
       { id: 14, text: "Sub-card 1D", image: "https://via.placeholder.com/200x150" },
     ],
@@ -2470,8 +2470,8 @@ const mainCards = [
     title: "Lamp",
     image: "/images/lamp.png",
     subCards: [
-      { id: 21, text: "Sub-card 2A", image: "https://via.placeholder.com/200x150" },
-      { id: 22, text: "Sub-card 2B", image: "https://via.placeholder.com/200x150" },
+      { id: 21, text: "People are allowed to move between towns of equal rank outside of a clit for the purpose of things such as a holiday. Tour groups are organised for visits to relic cities and towns outside of a womanàs catagory.", image: "https://via.placeholder.com/200x150" },
+      { id: 22, text: "Males up to the age of 18 live in towns with their mother. They are not restricted from having sex but at the age of 19 they become an acolyte and are removed from the town. ", image: "https://via.placeholder.com/200x150" },
       { id: 23, text: "Sub-card 2C", image: "https://via.placeholder.com/200x150" },
       { id: 24, text: "Sub-card 2D", image: "https://via.placeholder.com/200x150" },
     ],
@@ -2483,7 +2483,7 @@ const mainCards = [
     subCards: [
       { id: 31, text: "Kharvees are autonomous and manual moveable apartments first made during the business phase of the plan. They are similar to RVs and can drive on road, loop or rail. ", image: "/images/kharvee.jpg" },
       { id: 32, text: "The Labia is a research route that promotes the helpful research of men with an interest in developing something new. Men who work the Labia along with their job are rewarded with sex. The research is varied and can be performed independetly or in a team. It is similar to booking a studio session for music. ", image: "https://via.placeholder.com/200x150" },
-      { id: 33, text: "Sex is a reward for men that work 4 jobs and have completed teaching 4 jobs (44). They must also have produced something useful in the Labia worthy of merit. On attainment of these goals they are permitted to enter a given town with an electronic condom to have sex with any woman willing, although not any woman of rank. From then they must maintain productivity and will be able to have sex twice a year.", image: "https://via.placeholder.com/200x150" },
+      { id: 33, text: "Sex is a reward for men that work 4 jobs and have completed teaching 4 jobs (44). They must also have produced something useful in the Labia worthy of merit. On attainment of these goals they are permitted to enter a given town with an electronic condom to have sex with any woman willing, although not any woman of rank such as ladies. From then they must maintain productivity and will be able to have sex twice a year on Christmas and Easter.", image: "https://via.placeholder.com/200x150" },
       { id: 34, text: "Work for all people is paired. There is one job that teach and another job that they learn. Once they learn a job it becomes the job they teach and they are given a new job to learn. The goal is to be able to teach 4 jobs. All people must work a job that produces.", image: "https://via.placeholder.com/200x150" },
     ],
   },
@@ -3368,7 +3368,7 @@ const CarouselContent = ({ large = false }) => (
                   display: "flex",
                   alignItems: "flex-end",
                   padding: "10px",
-                  color: "#fff",
+                  color: "#000",
                   fontWeight: "bold",
                   cursor: "pointer",
                   textShadow: "0 1px 4px rgba(0,0,0,0.6)",
