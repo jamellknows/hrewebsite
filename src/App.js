@@ -2167,6 +2167,8 @@ function WorldRule1Page() {
   const [activeLocation, setActiveLocation] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [activeMain, setActiveMain] = useState(null);
+  const [expandedImage, setExpandedImage] = useState(null);
 
 useEffect(() => {
   const handleEsc = (e) => {
@@ -2365,6 +2367,8 @@ const rightGrid = [
 
 ];
 
+
+
 const carouselItems = bottomThree.map(item => ({
   id: item.id,
   title: item.title,
@@ -2446,6 +2450,54 @@ const carouselItems = bottomThree.map(item => ({
       { image: "/images/governance3.jpg", text: "Police posts and safety infrastructure." }
     ]
   }
+];
+
+
+const mainCards = [
+  {
+    id: 1,
+    title: "Christmas",
+    image: "/images/christmas2.png",
+    subCards: [
+      { id: 11, text: "The Clitoral Hood is the head office of the HATI.", image: "https://via.placeholder.com/200x150" },
+      { id: 12, text: "Men that work services and entertainment must still work a job that produces. ", image: "https://via.placeholder.com/200x150" },
+      { id: 13, text: "Sub-card 1C", image: "https://via.placeholder.com/200x150" },
+      { id: 14, text: "Sub-card 1D", image: "https://via.placeholder.com/200x150" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Lamp",
+    image: "/images/lamp.png",
+    subCards: [
+      { id: 21, text: "Sub-card 2A", image: "https://via.placeholder.com/200x150" },
+      { id: 22, text: "Sub-card 2B", image: "https://via.placeholder.com/200x150" },
+      { id: 23, text: "Sub-card 2C", image: "https://via.placeholder.com/200x150" },
+      { id: 24, text: "Sub-card 2D", image: "https://via.placeholder.com/200x150" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Integral",
+    image: "/images/Eshtion.jpg",
+    subCards: [
+      { id: 31, text: "Kharvees are autonomous and manual moveable apartments first made during the business phase of the plan. They are similar to RVs and can drive on road, loop or rail. ", image: "/images/kharvee.jpg" },
+      { id: 32, text: "The Labia is a research route that promotes the helpful research of men with an interest in developing something new. Men who work the Labia along with their job are rewarded with sex. The research is varied and can be performed independetly or in a team. It is similar to booking a studio session for music. ", image: "https://via.placeholder.com/200x150" },
+      { id: 33, text: "Sex is a reward for men that work 4 jobs and have completed teaching 4 jobs (44). They must also have produced something useful in the Labia worthy of merit. On attainment of these goals they are permitted to enter a given town with an electronic condom to have sex with any woman willing, although not any woman of rank. From then they must maintain productivity and will be able to have sex twice a year.", image: "https://via.placeholder.com/200x150" },
+      { id: 34, text: "Work for all people is paired. There is one job that teach and another job that they learn. Once they learn a job it becomes the job they teach and they are given a new job to learn. The goal is to be able to teach 4 jobs. All people must work a job that produces.", image: "https://via.placeholder.com/200x150" },
+    ],
+  },
+  {
+    id: 4,
+    title: "Tooth",
+    image: "/images/tooth.png",
+    subCards: [
+      { id: 41, text: "Sub-card 4A", image: "https://via.placeholder.com/200x150" },
+      { id: 42, text: "Sub-card 4B", image: "https://via.placeholder.com/200x150" },
+      { id: 43, text: "Sub-card 4C", image: "https://via.placeholder.com/200x150" },
+      { id: 44, text: "Sub-card 4D", image: "https://via.placeholder.com/200x150" },
+    ],
+  },
 ];
 
 const CarouselContent = ({ large = false }) => (
@@ -3251,6 +3303,108 @@ const CarouselContent = ({ large = false }) => (
     </div>
   </div>
 )}
+
+<div style={{ padding: "20px" }}>
+      {/* Main 2x2 Grid */}
+      {!activeMain && (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+          {mainCards.map((card) => (
+            <div
+              key={card.id}
+              onClick={() => setActiveMain(card)}
+              style={{
+                height: "200px",
+                backgroundImage: `url(${card.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                borderRadius: "12px",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+                textAlign: "center",
+              }}
+            >
+              {card.title}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Sub-cards */}
+      {activeMain && (
+        <div>
+          <button
+            onClick={() => setActiveMain(null)}
+            style={{
+              marginBottom: "20px",
+              padding: "8px 16px",
+              borderRadius: "6px",
+              border: "none",
+              background: "#333",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            Back
+          </button>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+            {activeMain.subCards.map((sub) => (
+              <div
+                key={sub.id}
+                onClick={() => setExpandedImage(sub.image)}
+                style={{
+                  height: "180px",
+                  backgroundImage: `url(${sub.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  borderRadius: "10px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  padding: "10px",
+                  color: "#fff",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  textShadow: "0 1px 4px rgba(0,0,0,0.6)",
+                }}
+              >
+                {sub.text}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen expanded image */}
+      {expandedImage && (
+        <div
+          onClick={() => setExpandedImage(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.95)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+            cursor: "zoom-out",
+          }}
+        >
+          <img
+            src={expandedImage}
+            alt="Expanded"
+            style={{ maxWidth: "90%", maxHeight: "90%", borderRadius: "12px" }}
+          />
+        </div>
+      )}
+    </div>
+  
 
 
 
