@@ -2492,7 +2492,7 @@ const mainCards = [
     title: "Tooth",
     image: "/images/tooth.png",
     subCards: [
-      { id: 41, text: "Sub-card 4A", image: "https://via.placeholder.com/200x150" },
+      { id: 41, text: "In Freestyle Manufacturing, the factory stops being a rigid assembly line and starts acting like a Creative Printer. Instead of having one machine for a phone and another for a wrench, the entire facility is built around the mastery of a specific Core Material (like advanced carbon-fiber composites, recycled polymers, or powdered titanium). By focusing on one material, the factory can achieve ultimate versatility.", image: "/images/freestylemanufacturing.png" },
       { id: 42, text: "Sub-card 4B", image: "https://via.placeholder.com/200x150" },
       { id: 43, text: "Sub-card 4C", image: "https://via.placeholder.com/200x150" },
       { id: 44, text: "Sub-card 4D", image: "https://via.placeholder.com/200x150" },
