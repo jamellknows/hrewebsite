@@ -2168,6 +2168,7 @@ function WorldRule1Page() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const [activeMain, setActiveMain] = useState(null);
+  const [expandedText, setExpandedText] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
 
 useEffect(() => {
@@ -2492,8 +2493,8 @@ const mainCards = [
     title: "Tooth",
     image: "/images/tooth.png",
     subCards: [
-      { id: 41, text: "In Freestyle Manufacturing, the factory stops being a rigid assembly line and starts acting like a Creative Printer. Instead of having one machine for a phone and another for a wrench, the entire facility is built around the mastery of a specific Core Material (like advanced carbon-fiber composites, recycled polymers, or powdered titanium). By focusing on one material, the factory can achieve ultimate versatility.", image: "" },
-      { id: 42, text: "", image: "/images/freestylemanufacturing.png" },
+      { id: 41, text: "In Freestyle Manufacturing, the factory stops being a rigid assembly line and starts acting like a Creative Printer. Instead of having one machine for a phone and another for a wrench, the entire facility is built around the mastery of a specific Core Material (like advanced carbon-fiber composites, recycled polymers, or powdered titanium). By focusing on one material, the factory can achieve ultimate versatility.", image: "/images/freestylemanufacturing.png" },
+      { id: 42, text: "", image: "" },
       { id: 43, text: "Sub-card 4C", image: "https://via.placeholder.com/200x150" },
       { id: 44, text: "Sub-card 4D", image: "https://via.placeholder.com/200x150" },
     ],
@@ -3304,29 +3305,28 @@ const CarouselContent = ({ large = false }) => (
   </div>
 )}
 
-<div style={{ padding: "20px" }}>
-      {/* Main 2x2 Grid */}
+
+    <div style={{ padding: 20 }}>
       {!activeMain && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-          {mainCards.map((card) => (
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+          {mainCards.map(card => (
             <div
               key={card.id}
               onClick={() => setActiveMain(card)}
               style={{
-                height: "200px",
+                height: 220,
+                borderRadius: 14,
                 backgroundImage: `url(${card.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#fff",
-                fontSize: "1.5rem",
+                color: "white",
                 fontWeight: "bold",
+                fontSize: 22,
                 cursor: "pointer",
-                borderRadius: "12px",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-                textAlign: "center",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.25)",
               }}
             >
               {card.title}
@@ -3335,75 +3335,72 @@ const CarouselContent = ({ large = false }) => (
         </div>
       )}
 
-      {/* Sub-cards */}
       {activeMain && (
         <div>
-          <button
-            onClick={() => setActiveMain(null)}
-            style={{
-              marginBottom: "20px",
-              padding: "8px 16px",
-              borderRadius: "6px",
-              border: "none",
-              background: "#333",
-              color: "#fff",
-              cursor: "pointer",
-            }}
-          >
-            Back
-          </button>
+          <button onClick={() => setActiveMain(null)} style={{ marginBottom: 20 }}>Back</button>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-            {activeMain.subCards.map((sub) => (
-              <div
-                key={sub.id}
-                onClick={() => setExpandedImage(sub.image)}
-                style={{
-                  height: "180px",
-                  backgroundImage: `url(${sub.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+            {activeMain.subCards.map(sub => {
+              const textOpen = expandedText === sub.id;
+              const imageOpen = expandedImage === sub.id;
+
+              return (
+                <div key={sub.id} style={{
                   display: "flex",
-                  alignItems: "flex-end",
-                  padding: "10px",
-                  color: "#000",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  textShadow: "0 1px 4px rgba(0,0,0,0.6)",
-                }}
-              >
-                {sub.text}
-              </div>
-            ))}
+                  borderRadius: 14,
+                  overflow: "hidden",
+                  background: "#0f172a",
+                  color: "white",
+                  minHeight: textOpen || imageOpen ? 220 : 120,
+                  transition: "all .3s ease",
+                  boxShadow: "0 8px 18px rgba(0,0,0,.25)"
+                }}>
+
+                  {/* LEFT IMAGE */}
+                  <div
+                    onClick={() => setExpandedImage(imageOpen ? null : sub.id)}
+                    style={{
+                      width: imageOpen ? "50%" : "35%",
+                      backgroundImage: `url(${sub.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      cursor: "pointer",
+                      transition: "all .3s ease"
+                    }}
+                  />
+
+                  {/* RIGHT TEXT */}
+                  <div
+                    onClick={() => setExpandedText(textOpen ? null : sub.id)}
+                    style={{
+                      padding: 14,
+                      width: imageOpen ? "50%" : "65%",
+                      display: "flex",
+                      alignItems: "center",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <div style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: textOpen ? "unset" : 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                      fontSize: 14,
+                      lineHeight: 1.4
+                    }}>
+                      {sub.text}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
-
-      {/* Fullscreen expanded image */}
-      {expandedImage && (
-        <div
-          onClick={() => setExpandedImage(null)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,0.95)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 9999,
-            cursor: "zoom-out",
-          }}
-        >
-          <img
-            src={expandedImage}
-            alt="Expanded"
-            style={{ maxWidth: "90%", maxHeight: "90%", borderRadius: "12px" }}
-          />
-        </div>
-      )}
     </div>
+  
+
+
   
 
 
