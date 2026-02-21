@@ -2474,7 +2474,7 @@ const mainCards = [
       { id: 21, text: "People are allowed to move between towns of equal rank outside of a clit for the purpose of things such as a holiday. Tour groups are organised for visits to relic cities and towns outside of a woman's catagory.", image: "/images/tour.png" },
       { id: 22, text: "Males up to the age of 18 live in towns with their mother. They are not restricted from having sex but at the age of 19 (holiness and cycles of time) they become an acolyte and are removed from the town. Females that perform well on tests at a young age are given the choice of becoming a priestess or lady the criteria to become one is being a virgin and the intake begins at 14. Women are able to apply to become a priestess or a lady as long as they remain virgins. Males under the age of 19 are given free electronic condoms. They must use them as any unauthorised pregnancy or unprotected sex will result in the male being acolyted immediately. If the woman becomes pregnant she is to carry the child to term after which she will be acolyted to the priestesses. The child will then be adopted by a family within the town.", image: "/images/acolyte1.png" },
       { id: 23, text: "", image: "https://via.placeholder.com/200x150" },
-      { id: 24, text: "Women live in famalies of 3", image: "https://via.placeholder.com/200x150" },
+      { id: 24, text: "Women live in families of 3", image: "https://via.placeholder.com/200x150" },
     ],
   },
   {
