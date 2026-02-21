@@ -3472,7 +3472,7 @@ function WorldRule2Page() {
   ];
   
    const metric5 = [
-  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. In the same shape of a pyramid. This can be done by laying a flat plate with a door and then completing the sides full of water and using aquatic robots to open the door and drill a hole which will allow the water to flow out and then completing the underground pyramid."},
+  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the same under the sea bed."},
   { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a Cat. They are designed to have a capacity of 75244 people from the Queer social class. The Emporium is a business and town and the Thana is for agriculture."},
   { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
   { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
@@ -3518,7 +3518,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
 
     const carouselSlides = [
     {
-      title: "Sea Villiage",
+      title: "Sea Village",
       text: metric5[0].text,
       img: "/images/seavillage.jpg"
     },
