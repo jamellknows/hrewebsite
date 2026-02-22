@@ -1939,7 +1939,7 @@ useEffect(() => {
         maxHeight: "90vh",
         background: "#020617",
         borderRadius: "18px",
-        overflow: "scroll",
+        overflow: "auto",
         boxShadow: "0 30px 90px rgba(0,0,0,0.7)"
       }}
     >
@@ -1999,7 +1999,7 @@ useEffect(() => {
 
         <div style={{ height: "1px", background: "rgba(255,255,255,0.08)" }} />
 
-        <p style={{ lineHeight: "1.7", fontSize: "15px", color: "#cbd5f5",overflowY: "scroll", }}>
+        <p style={{ lineHeight: "1.7", fontSize: "15px", color: "#cbd5f5" }}>
           {lightbox.description}
         </p>
 
