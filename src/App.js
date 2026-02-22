@@ -882,6 +882,9 @@ function BusinessPage() {
   const [openTao, setOpenTao] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
 
+  
+
+
 
 
 
@@ -1063,8 +1066,14 @@ const cosmology = [
           },
           {
             title: "Atlas",
-            description: "Atlas is a hospital, wellness center and medical research center based in the south of San Marino.",
+            description: "Atlas is a hospital, wellness center and medical research center based in the south of San Marino and Italy.",
             images: ["/images/office.png"],
+            children: []
+          },
+           {
+            title: "Vapovere",
+            description: "The Aethelgard Shell Port is a marvel of bio-mimetic architecture, featuring a spiraling structure that mimics the natural geometry of a conch shell to efficiently manage vertical space. The facility utilizes a tiered system where passenger services like check-in and duty-free are located at the base, while aircraft are stored in the central decks and transported via internal ramps to the summit for takeoff. This vertical design allows for a significantly smaller land footprint while providing a seamless, multi-level flow for both futuristic aircraft and high-speed ground transport.",
+            images: ["/images/vapovere1.png"],
             children: []
           }
         ]
@@ -1831,7 +1840,6 @@ useEffect(() => {
       }}
     >
       <h3>{activeNode.title}</h3>
-      <p style={{fontSize:"12px"}}>{activeNode.description}</p>
 
       {/* IMAGE SLIDER */}
       {activeNode.images?.length > 0 && (
