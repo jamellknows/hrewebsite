@@ -986,13 +986,13 @@ these women will be 1952.
         id: "1b",
         title: "Poseidon Bucknor",
         img: "/images/companies/poseidonbucknor.png",
-        desc: "Store operations, sales, and merchandising strategies."
+        desc: "Poseidon Bucknor is the Supra for retail. It owns companies such as the Atalanta mall in San Marino."
       },
       {
         id: "1c",
         title: "Ivan Samuels Mélange",
         img: "/images/companies/ivansamuelsmelange.png",
-        desc: "Design, production, and fashion industry trends."
+        desc: "This is the supra company for fashion it owns the following brands. Prix, Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana and Prada"
       }
     ]
   },
@@ -1015,10 +1015,17 @@ these women will be 1952.
       },
       {
         id: "2c",
-        title: "Research",
-        img: "/images/companies/writebooks.png",
+        title: "Script Inventor",
+        img: "/images/companies/scriptinventor.png",
         desc: "Innovation and development in industrial tech."
+      },
+       {
+        id: "2d",
+        title: "Bookmaker",
+        img: "/images/companies/bookmaker.png",
+        desc: "Makers of the Bookmaker and the Rainwatch watch series. "
       }
+
     ]
   },
   {
@@ -1028,9 +1035,9 @@ these women will be 1952.
     slides: [
       {
         id: "3a",
-        title: "IT Systems",
-        img: "/placeholder/it.jpg",
-        desc: "Software, hardware, and network infrastructures."
+        title: "World Scroll",
+        img: "/images/companies/worldscroll.png",
+        desc: "Artificial Intelligence, Software from the operating system and hardware designers. "
       },
       {
         id: "3b",
