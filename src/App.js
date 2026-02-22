@@ -3915,7 +3915,7 @@ function WorldRule2Page() {
   
    const metric5 = [
   { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the same under the sea bed."},
-  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a Cat. They are designed to have a capacity of 75244 people from the Queer social class. The Emporium is a business and town and the Thana is for agriculture."},
+  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a Cat. They are designed to have a capacity of 75244 people  The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
   { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
   { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
   { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
