@@ -1083,17 +1083,17 @@ these women will be 1952.
     carousel: [
       {
         id: 0,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/atlasrapha.png",
         text: "Advanced hospital systems integrating AI diagnostics, patient data analytics, and research-driven medical innovation."
       },
       {
         id: 1,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/aspenbirsha.png",
         text: "Clinical laboratory environments focused on biomedical research, pharmaceutical trials, and scientific collaboration."
       },
       {
         id: 2,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/jivakabhesajja.png",
         text: "Healthcare infrastructure supporting emergency care networks, public health systems, and preventative medicine initiatives."
       }
     ]
@@ -1105,17 +1105,17 @@ these women will be 1952.
     carousel: [
       {
         id: 0,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/38.png",
         text: "Commercial property portfolios including office developments, retail centers, and mixed-use infrastructure."
       },
       {
         id: 1,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/38j.png",
         text: "Residential development projects designed for urban expansion and sustainable living environments."
       },
       {
         id: 2,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/38p.png",
         text: "Strategic land acquisition and long-term asset management for large-scale investment growth."
       }
     ]
@@ -1127,18 +1127,8 @@ these women will be 1952.
     carousel: [
       {
         id: 0,
-        image: "https://via.placeholder.com/600x400",
+        image: "/images/companies/bertian.png",
         text: "Large-scale civil engineering projects including bridges, roads, and public infrastructure."
-      },
-      {
-        id: 1,
-        image: "https://via.placeholder.com/600x400",
-        text: "Commercial and industrial construction integrating advanced materials and modern building techniques."
-      },
-      {
-        id: 2,
-        image: "https://via.placeholder.com/600x400",
-        text: "Sustainable construction practices focused on environmental efficiency and long-term durability."
       }
     ]
   },
@@ -1149,18 +1139,8 @@ these women will be 1952.
     carousel: [
       {
         id: 0,
-        image: "https://via.placeholder.com/600x400",
-        text: "Next-generation wireless networks including 5G deployment and fiber-optic backbone systems."
-      },
-      {
-        id: 1,
-        image: "https://via.placeholder.com/600x400",
-        text: "Satellite communications research and global data transmission infrastructure."
-      },
-      {
-        id: 2,
-        image: "https://via.placeholder.com/600x400",
-        text: "Telecommunications R&D focused on signal optimization, cybersecurity, and scalable connectivity."
+        image: "/images/companies/lavitang.png",
+        text: "Lavitangesherhamechadertechilah Telecommunications"
       }
     ]
   }
@@ -1830,7 +1810,7 @@ useEffect(() => {
               style={{
                 width: "100%",
                 height: "300px",
-                objectFit: "cover",
+                objectFit: "contain",
                 borderRadius: "8px"
               }}
             />
