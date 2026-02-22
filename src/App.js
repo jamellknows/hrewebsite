@@ -1003,13 +1003,13 @@ these women will be 1952.
     slides: [
       {
         id: "2a",
-        title: "Engineering",
+        title: "Albereyam",
         img: "/images/companies/albereyam.png",
         desc: "Mechanical, civil, and electrical engineering projects."
       },
       {
         id: "2b",
-        title: "Manufacturing",
+        title: "Yammek",
         img: "/images/companies/yammek.png",
         desc: "Industrial production processes and workflows."
       },
@@ -1023,7 +1023,13 @@ these women will be 1952.
         id: "2d",
         title: "Bookmaker",
         img: "/images/companies/bookmaker.png",
-        desc: "Makers of the Bookmaker and the Rainwatch watch series. "
+        desc: "Makers of the Bookmaker and the Rainwatch watch series. Sub company of manufacturing I just like the names.  "
+      },
+      {
+        id: "2e",
+        title: "Kwame Eclipse",
+        img: "/images/companies/kwameeclipse.png",
+        desc: "Optics and lasers manuafcturers."
       }
 
     ]
@@ -1041,9 +1047,9 @@ these women will be 1952.
       },
       {
         id: "3b",
-        title: "Research",
-        img: "/placeholder/research_it.jpg",
-        desc: "Advanced studies in computer science and tech."
+        title: "Resh Research",
+        img: "/images/companies/reshresearch.png",
+        desc: "Authoritative research in super, hyper, ultra and mega technology."
       }
     ]
   },
@@ -1054,16 +1060,11 @@ these women will be 1952.
     slides: [
       {
         id: "4a",
-        title: "Transport",
-        img: "/placeholder/transport.jpg",
+        title: "Nobela",
+        img: "/images/companies/nobela.png",
         desc: "Supply chain and fleet management."
       },
-      {
-        id: "4b",
-        title: "Procurement",
-        img: "/placeholder/procurement.jpg",
-        desc: "Sourcing, inventory, and supplier operations."
-      }
+  
     ]
   }
 ];
