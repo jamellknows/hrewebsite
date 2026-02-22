@@ -881,6 +881,7 @@ function BusinessPage() {
   const [taoOpen, setTaoOpen] = useState(false);
   const [openTao, setOpenTao] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
+  
 
   
 
@@ -944,15 +945,127 @@ these women will be 1952.
     }
   ];
 
-  const metric6 = [
-    { id: 0, title: "Mining, Agriculture, Fishing and Research", text: "Primary sector operations." },
-    { id: 1, title: "Hospitality, Retail and Fashion", text: "Consumer-facing industries." },
-    { id: 2, title: "Engineering, Manufacturing and Research", text: "Industrial systems." },
-    { id: 3, title: "IT and Research", text: "Information and Technology Systems." },
-    { id: 4, title: "Logistics", text: "Delivery and Procurement Networks" },
-
-
-  ];
+ const metric6 = [
+  {
+    id: 0,
+    title: "Mining, Agriculture, Fishing and Research",
+    text: "Primary sector operations.",
+    slides: [
+      {
+        id: "0a",
+        title: "Mining",
+        img: "/placeholder/mining.jpg",
+        desc: "Overview of mining operations and techniques."
+      },
+      {
+        id: "0b",
+        title: "Agriculture",
+        img: "/placeholder/agriculture.jpg",
+        desc: "Farming methods and crop management."
+      },
+      {
+        id: "0c",
+        title: "Fishing",
+        img: "/placeholder/fishing.jpg",
+        desc: "Commercial and sustainable fishing practices."
+      },
+      {
+        id: "0d",
+        title: "Research",
+        img: "/placeholder/research.jpg",
+        desc: "Studies in primary sector innovation."
+      }
+    ]
+  },
+  {
+    id: 1,
+    title: "Hospitality, Retail and Fashion",
+    text: "Consumer-facing industries.",
+    slides: [
+      {
+        id: "1a",
+        title: "Hospitality",
+        img: "/placeholder/hospitality.jpg",
+        desc: "Hotels, restaurants and customer service management."
+      },
+      {
+        id: "1b",
+        title: "Retail",
+        img: "/placeholder/retail.jpg",
+        desc: "Store operations, sales, and merchandising strategies."
+      },
+      {
+        id: "1c",
+        title: "Fashion",
+        img: "/placeholder/fashion.jpg",
+        desc: "Design, production, and fashion industry trends."
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Engineering, Manufacturing and Research",
+    text: "Industrial systems.",
+    slides: [
+      {
+        id: "2a",
+        title: "Engineering",
+        img: "/placeholder/engineering.jpg",
+        desc: "Mechanical, civil, and electrical engineering projects."
+      },
+      {
+        id: "2b",
+        title: "Manufacturing",
+        img: "/placeholder/manufacturing.jpg",
+        desc: "Industrial production processes and workflows."
+      },
+      {
+        id: "2c",
+        title: "Research",
+        img: "/placeholder/research_industrial.jpg",
+        desc: "Innovation and development in industrial tech."
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "IT and Research",
+    text: "Information and Technology Systems.",
+    slides: [
+      {
+        id: "3a",
+        title: "IT Systems",
+        img: "/placeholder/it.jpg",
+        desc: "Software, hardware, and network infrastructures."
+      },
+      {
+        id: "3b",
+        title: "Research",
+        img: "/placeholder/research_it.jpg",
+        desc: "Advanced studies in computer science and tech."
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Logistics",
+    text: "Delivery and Procurement Networks",
+    slides: [
+      {
+        id: "4a",
+        title: "Transport",
+        img: "/placeholder/transport.jpg",
+        desc: "Supply chain and fleet management."
+      },
+      {
+        id: "4b",
+        title: "Procurement",
+        img: "/placeholder/procurement.jpg",
+        desc: "Sourcing, inventory, and supplier operations."
+      }
+    ]
+  }
+];
 
   const metric7 = [
     { id: 0, title: "Healthcare and Research", text: "Medical systems and labs." },
@@ -1194,6 +1307,9 @@ const cosmology = [
   const currentNodes = nodeStack[nodeStack.length -1];
   const activeNode = currentNodes[activeIndex];
   const [lightbox, setLightbox] = useState(null);
+  const [carousel, setCarousel] = useState(null); 
+const [activeSlide, setActiveSlide] = useState(null);
+const [index, setIndex] = useState(0);
 
 
     useEffect(() => {
@@ -1279,6 +1395,8 @@ useEffect(() => {
 
 
 
+
+
   return (
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>The Business: 2</h2>
@@ -1351,21 +1469,125 @@ useEffect(() => {
         </div>
 
         {/* ===== Sidebar ===== */}
+  <>
+      {/* Sidebar Cards */}
+      <div className="sidebar-carousel-wrapper" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      {/* Sidebar Cards */}
+      {metric6.map((m) => (
         <div
+          key={m.id}
+          className="sidebar-card"
           style={{
-            gridArea: "sidebar",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px"
+            borderRadius: '16px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            padding: '16px',
+            backgroundColor: '#fff',
+            cursor: 'pointer'
           }}
+          onClick={() => { setCarousel(m.slides); setIndex(0); setActiveSlide(null); }}
         >
-          {metric6.map((m) => (
-            <div key={m.id} style={styles.card}>
-              <h4>{m.title}</h4>
-              <p>{m.text}</p>
-            </div>
-          ))}
+          <h4>{m.title}</h4>
+          <p>{m.text}</p>
         </div>
+      ))}
+
+      {/* Carousel Modal */}
+      {carousel && (
+        <div
+          className="carousel-modal-overlay"
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(2,6,23,0.85)",
+            backdropFilter: "blur(10px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999
+          }}
+          onClick={() => { setCarousel(null); setActiveSlide(null); }}
+        >
+          <div
+            className="carousel-modal-box"
+            style={{
+              width: "900px",
+              height: "420px",
+              background: "#020617",
+              borderRadius: "20px",
+              position: "relative",
+              overflow: "hidden",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              style={{ position: "absolute", top: 10, right: 10, cursor: "pointer", fontSize: "20px", color: "#fff", background: "transparent", border: "none" }}
+              onClick={() => setCarousel(null)}
+            >
+              ✕
+            </button>
+
+            {/* Arrows */}
+            <button
+              style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", cursor: "pointer", fontSize: "24px", color: "#fff", background: "transparent", border: "none" }}
+              onClick={() => setIndex((i) => (i - 1 + carousel.length) % carousel.length)}
+            >
+              ◀
+            </button>
+            <button
+              style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", cursor: "pointer", fontSize: "24px", color: "#fff", background: "transparent", border: "none" }}
+              onClick={() => setIndex((i) => (i + 1) % carousel.length)}
+            >
+              ▶
+            </button>
+
+            {/* Carousel Slides */}
+            <div style={{ display: "flex", gap: "30px", alignItems: "center", transition: "0.35s" }}>
+              {carousel.map((card, i) => (
+                <div
+                  key={card.id}
+                  style={{
+                    width: "200px",
+                    height: "160px",
+                    background: "#0f172a",
+                    borderRadius: "14px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    transition: "0.35s",
+                    color: "#fff",
+                    textAlign: "center",
+                    padding: "8px",
+                    transform: `scale(${i === index ? 1 : 0.8})`,
+                    opacity: i === index ? 1 : 0.4
+                  }}
+                  onClick={() => setActiveSlide(card)}
+                >
+                  <h3>{card.title}</h3>
+                </div>
+              ))}
+            </div>
+
+            {/* Slide Viewer */}
+            {activeSlide && (
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "180px", background: "#020617", borderTop: "1px solid #1e293b", display: "grid", gridTemplateColumns: "220px 1fr" }}>
+                <img src={activeSlide.img} style={{ width: "100%", height: "100%", objectFit: "cover" }} alt={activeSlide.title} />
+                <div style={{ padding: "18px", overflowY: "auto", color: "#fff" }}>
+                  <h3>{activeSlide.title}</h3>
+                  <p>{activeSlide.desc}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+
+    </>
 
         {/* ===== CENTER IMAGE SLIDER ===== */}
         <div
