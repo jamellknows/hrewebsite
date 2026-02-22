@@ -881,6 +881,10 @@ function BusinessPage() {
   const [taoOpen, setTaoOpen] = useState(false);
   const [openTao, setOpenTao] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
+  const [activeCarousel, setActiveCarousel] = useState(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+  
   
 
   
@@ -1071,14 +1075,96 @@ these women will be 1952.
   }
 ];
 
-  const metric7 = [
-    { id: 0, title: "Healthcare and Research", text: "Medical systems and labs." },
-    { id: 1, title: "Real Estate", text: "Land and property assets." },
-    { id: 2, title: "Construction", text: "Construction development" },
-    { id: 3, title: "Telecommunications and Research", text: "Wireless Infrastructure" }
-
-
-  ];
+ const metric7 = [
+  {
+    id: 0,
+    title: "Healthcare and Research",
+    preview: "Medical systems and labs.",
+    carousel: [
+      {
+        id: 0,
+        image: "https://via.placeholder.com/600x400",
+        text: "Advanced hospital systems integrating AI diagnostics, patient data analytics, and research-driven medical innovation."
+      },
+      {
+        id: 1,
+        image: "https://via.placeholder.com/600x400",
+        text: "Clinical laboratory environments focused on biomedical research, pharmaceutical trials, and scientific collaboration."
+      },
+      {
+        id: 2,
+        image: "https://via.placeholder.com/600x400",
+        text: "Healthcare infrastructure supporting emergency care networks, public health systems, and preventative medicine initiatives."
+      }
+    ]
+  },
+  {
+    id: 1,
+    title: "Real Estate",
+    preview: "Land and property assets.",
+    carousel: [
+      {
+        id: 0,
+        image: "https://via.placeholder.com/600x400",
+        text: "Commercial property portfolios including office developments, retail centers, and mixed-use infrastructure."
+      },
+      {
+        id: 1,
+        image: "https://via.placeholder.com/600x400",
+        text: "Residential development projects designed for urban expansion and sustainable living environments."
+      },
+      {
+        id: 2,
+        image: "https://via.placeholder.com/600x400",
+        text: "Strategic land acquisition and long-term asset management for large-scale investment growth."
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Construction",
+    preview: "Construction development.",
+    carousel: [
+      {
+        id: 0,
+        image: "https://via.placeholder.com/600x400",
+        text: "Large-scale civil engineering projects including bridges, roads, and public infrastructure."
+      },
+      {
+        id: 1,
+        image: "https://via.placeholder.com/600x400",
+        text: "Commercial and industrial construction integrating advanced materials and modern building techniques."
+      },
+      {
+        id: 2,
+        image: "https://via.placeholder.com/600x400",
+        text: "Sustainable construction practices focused on environmental efficiency and long-term durability."
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Telecommunications and Research",
+    preview: "Wireless infrastructure.",
+    carousel: [
+      {
+        id: 0,
+        image: "https://via.placeholder.com/600x400",
+        text: "Next-generation wireless networks including 5G deployment and fiber-optic backbone systems."
+      },
+      {
+        id: 1,
+        image: "https://via.placeholder.com/600x400",
+        text: "Satellite communications research and global data transmission infrastructure."
+      },
+      {
+        id: 2,
+        image: "https://via.placeholder.com/600x400",
+        text: "Telecommunications R&D focused on signal optimization, cybersecurity, and scalable connectivity."
+      }
+    ]
+  }
+];
 
   const metric8 = [
     { id: 0, title: "Research", image:"/images/research.png", description:"The research is spread across 5 divisions like the pentateuch and the breath of life. " },
@@ -1658,22 +1744,164 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* ===== Right column ===== */}
+
+    <>
+   {/* ===== Right Column ===== */}
+   
+      <div
+        style={{
+          gridArea: "right",
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px"
+        }}
+      >
+        {metric7.map((m) => (
+          <div
+            key={m.id}
+            onClick={() => {
+              setActiveCarousel(m);
+              setCarouselIndex(0);
+              setExpanded(false);
+            }}
+            style={{
+              borderRadius: '16px',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+              padding: '4rem',
+              backgroundColor: '#fff',
+              cursor: 'pointer'
+            }}
+          >
+            <h4 style={{ margin: "0 0 6px 0" }}>{m.title}</h4>
+            <p style={{ margin: 0, fontSize: "14px", opacity: 0.8 }}>
+              {m.preview}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* ===== Carousel Modal ===== */}
+      {activeCarousel && (
         <div
+          onClick={() => setActiveCarousel(null)}
           style={{
-            gridArea: "right",
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
             display: "flex",
-            flexDirection: "column",
-            gap: "12px"
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999
           }}
         >
-          {metric7.map((m) => (
-            <div key={m.id} style={styles.card}>
-              <h4>{m.title}</h4>
-              <p>{m.text}</p>
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "800px",
+              maxWidth: "90%",
+              maxHeight: "90vh",
+              background: "#0f172a",
+              borderRadius: "12px",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "15px"
+            }}
+          >
+            {/* Close */}
+            <button
+              onClick={() => setActiveCarousel(null)}
+              style={{
+                alignSelf: "flex-end",
+                background: "transparent",
+                border: "none",
+                color: "white",
+                fontSize: "18px",
+                cursor: "pointer"
+              }}
+            >
+              ✕
+            </button>
+
+            {/* Image */}
+            <img
+              src={activeCarousel.carousel[carouselIndex].image}
+              alt=""
+              style={{
+                width: "100%",
+                height: "300px",
+                objectFit: "cover",
+                borderRadius: "8px"
+              }}
+            />
+
+            {/* Text */}
+            <div style={{ color: "white", fontSize: "14px" }}>
+              <p>
+                {expanded
+                  ? activeCarousel.carousel[carouselIndex].text
+                  : activeCarousel.carousel[carouselIndex].text.slice(0, 120) +
+                    "..."}
+              </p>
+
+              <button
+                onClick={() => setExpanded(!expanded)}
+                style={{
+                  marginTop: "8px",
+                  padding: "6px 12px",
+                  borderRadius: "6px",
+                  border: "none",
+                  background: "#2563eb",
+                  color: "white",
+                  cursor: "pointer"
+                }}
+              >
+                {expanded ? "Collapse" : "Expand"}
+              </button>
             </div>
-          ))}
+
+            {/* Navigation */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: "10px",
+                color: "white"
+              }}
+            >
+              <button
+                disabled={carouselIndex === 0}
+                onClick={() => {
+                  setCarouselIndex((i) => i - 1);
+                  setExpanded(false);
+                }}
+              >
+                ◀
+              </button>
+
+              <span>
+                {carouselIndex + 1} / {activeCarousel.carousel.length}
+              </span>
+
+              <button
+                disabled={
+                  carouselIndex ===
+                  activeCarousel.carousel.length - 1
+                }
+                onClick={() => {
+                  setCarouselIndex((i) => i + 1);
+                  setExpanded(false);
+                }}
+              >
+                ▶
+              </button>
+            </div>
+          </div>
         </div>
+           )}
+    </>
+    
 
         {/* ===== Third accordion row (3) ===== */}
         <div
