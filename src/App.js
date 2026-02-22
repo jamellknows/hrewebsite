@@ -1106,17 +1106,17 @@ these women will be 1952.
       {
         id: 0,
         image: "/images/companies/38.png",
-        text: "Commercial property portfolios including office developments, retail centers, and mixed-use infrastructure."
+        text: "European real estate company: "
       },
       {
         id: 1,
         image: "/images/companies/38j.png",
-        text: "Residential development projects designed for urban expansion and sustainable living environments."
+        text: "Asian real estate company: "
       },
       {
         id: 2,
         image: "/images/companies/38p.png",
-        text: "Strategic land acquisition and long-term asset management for large-scale investment growth."
+        text: "American real estate company: "
       }
     ]
   },
