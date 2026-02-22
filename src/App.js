@@ -978,19 +978,19 @@ these women will be 1952.
     slides: [
       {
         id: "1a",
-        title: "Hospitality",
+        title: "Las Wisdom",
         img: "/images/companies/laswisdom.png",
         desc: "Hotels, restaurants and customer service management."
       },
       {
         id: "1b",
-        title: "Retail",
+        title: "Poseidon Bucknor",
         img: "/images/companies/poseidonbucknor.png",
         desc: "Store operations, sales, and merchandising strategies."
       },
       {
         id: "1c",
-        title: "Fashion",
+        title: "Ivan Samuels Mélange",
         img: "/images/companies/ivansamuelsmelange.png",
         desc: "Design, production, and fashion industry trends."
       }
@@ -1004,19 +1004,19 @@ these women will be 1952.
       {
         id: "2a",
         title: "Engineering",
-        img: "/placeholder/engineering.jpg",
+        img: "/images/companies/albereyam.png",
         desc: "Mechanical, civil, and electrical engineering projects."
       },
       {
         id: "2b",
         title: "Manufacturing",
-        img: "/placeholder/manufacturing.jpg",
+        img: "/images/companies/yammek.png",
         desc: "Industrial production processes and workflows."
       },
       {
         id: "2c",
         title: "Research",
-        img: "/placeholder/research_industrial.jpg",
+        img: "/images/companies/writebooks.png",
         desc: "Innovation and development in industrial tech."
       }
     ]
