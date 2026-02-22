@@ -948,7 +948,7 @@ these women will be 1952.
  const metric6 = [
   {
     id: 0,
-    title: "Mining, Agriculture, Fishing and Research",
+    title: "Mining, Agriculture, Fishing",
     text: "Primary sector operations.",
     slides: [
       {
@@ -1019,18 +1019,8 @@ these women will be 1952.
         img: "/images/companies/scriptinventor.png",
         desc: "Innovation and development in industrial tech."
       },
-       {
-        id: "2d",
-        title: "Bookmaker",
-        img: "/images/companies/bookmaker.png",
-        desc: "Makers of the Bookmaker and the Rainwatch watch series. Sub company of manufacturing I just like the names.  "
-      },
-      {
-        id: "2e",
-        title: "Kwame Eclipse",
-        img: "/images/companies/kwameeclipse.png",
-        desc: "Optics and lasers manuafcturers."
-      }
+      
+    
 
     ]
   },
@@ -1055,7 +1045,7 @@ these women will be 1952.
   },
   {
     id: 4,
-    title: "Logistics",
+    title: "Logistics, Lasers and Horology",
     text: "Delivery and Procurement Networks",
     slides: [
       {
@@ -1064,6 +1054,18 @@ these women will be 1952.
         img: "/images/companies/nobela.png",
         desc: "Supply chain and fleet management."
       },
+      {
+        id: "4b",
+        title: "Kwame Eclipse",
+        img: "/images/companies/kwameeclipse.png",
+        desc: "Optics and lasers manuafcturers."
+      },
+       {
+        id: "4c",
+        title: "Bookmaker",
+        img: "/images/companies/bookmaker.png",
+        desc: "Makers of the Bookmaker and the Rainwatch watch series. Sub company of manufacturing I just like the names.  "
+      }
   
     ]
   }
