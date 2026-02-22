@@ -954,8 +954,8 @@ these women will be 1952.
       {
         id: "0a",
         title: "Mining",
-        img: "/placeholder/mining.jpg",
-        desc: "Overview of mining operations and techniques."
+        img: "/images/companies/daylot.png",
+        desc: "Daylot is the name of the mining company. It is initiated by purchasing these companies valued in £ millions: Argentina Lithium & Energy Corp £15, Agrimetal S.A.I £20, Paranapanema S.A. £11M, Ligas de Alumino S.S £59 to £149."
       },
       {
         id: "0b",
