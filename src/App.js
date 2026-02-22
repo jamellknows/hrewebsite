@@ -955,19 +955,19 @@ these women will be 1952.
         id: "0a",
         title: "Daylot",
         img: "/images/companies/daylot.png",
-        desc: "Daylot is the name of the mining company. It is initiated by purchasing these companies valued in £ millions: Argentina Lithium & Energy Corp £15, Paranapanema S.A. £11, Ligas de Alumino S.S £59 to £149."
+        desc: "Daylot is the name of the mining company. It is initiated by purchasing these companies valued in £ millions: Argentina Lithium & Energy Corp £15, Paranapanema S.A. £11, Ligas de Alumino S.S £59 to £149. This only covers the South America leg."
       },
       {
         id: "0b",
         title: "Bishop Russell",
         img: "/images/companies/bishoprussell.png",
-        desc: "Bishop Russell is the name of the Agriculture company. It is initiated by the purchasing of these companies valued in £ millions: Agrimetal S.A.I £20, Agrogalaxy Participacoes £11, Agricola Framparque S.P.A £4.3, Agrofrozen S.P.A £4.6, Agricola Altamaia Limiteda £4.9 Vina Matetic £9.5, Compania Agricola San Felipe S.A £4.3"
+        desc: "Bishop Russell is the name of the Agriculture company. It is initiated by the purchasing of these companies valued in £ millions: Agrimetal S.A.I £20, Agrogalaxy Participacoes £11, Agricola Framparque S.P.A £4.3, Agrofrozen S.P.A £4.6, Agricola Altamaia Limiteda £4.9 Vina Matetic £9.5, Compania Agricola San Felipe S.A £4.3. This only covers the South America leg."
       },
       {
         id: "0c",
         title: "Yavanuh",
         img: "/images/companies/yavanuh.png",
-        desc: "Commercial and sustainable fishing practices."
+        desc: "I have not researched fishing companies yet."
       },
     ]
   },
@@ -979,19 +979,19 @@ these women will be 1952.
       {
         id: "1a",
         title: "Hospitality",
-        img: "/placeholder/hospitality.jpg",
+        img: "/images/companies/laswisdom.png",
         desc: "Hotels, restaurants and customer service management."
       },
       {
         id: "1b",
         title: "Retail",
-        img: "/placeholder/retail.jpg",
+        img: "/images/companies/poseidonbucknor.png",
         desc: "Store operations, sales, and merchandising strategies."
       },
       {
         id: "1c",
         title: "Fashion",
-        img: "/placeholder/fashion.jpg",
+        img: "/images/companies/ivansamuelsmelange.png",
         desc: "Design, production, and fashion industry trends."
       }
     ]
