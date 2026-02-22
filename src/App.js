@@ -953,28 +953,22 @@ these women will be 1952.
     slides: [
       {
         id: "0a",
-        title: "Mining",
+        title: "Daylot",
         img: "/images/companies/daylot.png",
-        desc: "Daylot is the name of the mining company. It is initiated by purchasing these companies valued in £ millions: Argentina Lithium & Energy Corp £15, Agrimetal S.A.I £20, Paranapanema S.A. £11M, Ligas de Alumino S.S £59 to £149."
+        desc: "Daylot is the name of the mining company. It is initiated by purchasing these companies valued in £ millions: Argentina Lithium & Energy Corp £15, Paranapanema S.A. £11, Ligas de Alumino S.S £59 to £149."
       },
       {
         id: "0b",
-        title: "Agriculture",
-        img: "/placeholder/agriculture.jpg",
-        desc: "Farming methods and crop management."
+        title: "Bishop Russell",
+        img: "/images/companies/bishoprussell.png",
+        desc: "Bishop Russell is the name of the Agriculture company. It is initiated by the purchasing of these companies valued in £ millions: Agrimetal S.A.I £20, Agrogalaxy Participacoes £11, Agricola Framparque S.P.A £4.3, Agrofrozen S.P.A £4.6, Agricola Altamaia Limiteda £4.9 Vina Matetic £9.5, Compania Agricola San Felipe S.A £4.3"
       },
       {
         id: "0c",
-        title: "Fishing",
-        img: "/placeholder/fishing.jpg",
+        title: "Yavanuh",
+        img: "/images/companies/yavanuh.png",
         desc: "Commercial and sustainable fishing practices."
       },
-      {
-        id: "0d",
-        title: "Research",
-        img: "/placeholder/research.jpg",
-        desc: "Studies in primary sector innovation."
-      }
     ]
   },
   {
