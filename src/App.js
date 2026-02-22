@@ -1054,7 +1054,7 @@ const cosmology = [
         children: [
           {
             title: "KKKlub",
-            description: "This is one of the clubs in San Marino. It is named the KKKlub. It is a fusion of the ideas of a children's day care center, a night club and Kim Kardashian.",
+            description: "This is one of the clubs in San Marino. It is named the KKKlub. It is a fusion of the ideas of a children's day care center, a night club and Kim Kardashian. Rising from the quiet elegance of San Marino like a monument to sound itself, The KKKlub isn’t just a nightclub — it feels like stepping inside music. From the outside, the building already breaks reality: a massive sculptural structure resembling glossy black Kim K butt cheeks and thighs, glowing softly with electric cyan outlines of a hand and a foot — symbolizing rhythm and movement in black glass. People gather around it before even entering, because the place feels alive long before the first bass drop. Inside, the atmosphere shifts instantly. You walk through a low-lit corridor where the floor subtly vibrates with the beat leaking from within — not loud, but felt in your chest. Then the space opens. The main hall is enormous yet intimate, wrapped in dark mirrored surfaces that reflect moving neon waves instead of plain light. The ceiling behaves like a living equalizer — panels pulse in sync with the music, reacting to every kick drum and hi-hat. The DJ booth floats in the center like an altar, surrounded by a circular dance floor so nobody stands behind the energy — everyone is inside it. The sound system is unreal. Not just loud — precise. Every layer of hip hop comes through: sub-bass you feel in your bones, crisp snares snapping around the room, vocals hovering almost physically in the air. You don’t hear tracks here… you inhabit them. The most iconic feature is the bar. Shaped like a gigantic pair of studio headphones, it wraps around the dance floor in a glowing arc. The “ear cups” serve as cocktail stations, while the “headband” forms a sleek glass counter lit from within by liquid-looking light. Bartenders move with choreographed speed, mixing drinks that arrive smoking, sparkling, or color-shifting depending on the beat currently playing. Upstairs lounges overlook the floor through smoked glass balconies. Velvet seating, soft blue ambient glow, and tables that subtly vibrate with bass allow you to rest without ever leaving the music. Even conversations feel cinematic — nobody shouts, because the acoustics somehow keep voices clear while the music stays powerful. By 2am, the place transforms completely. Strangers dance like friends. The DJ reads the room like a mind. The lights, the sound, the architecture — everything syncs into one continuous experience. People don’t say they went to a club. They say they went to the KKKlub.",
             images: ["./images/sketches/kkklub2.png"],
             children: []
           },
@@ -1939,7 +1939,7 @@ useEffect(() => {
         maxHeight: "90vh",
         background: "#020617",
         borderRadius: "18px",
-        overflow: "hidden",
+        overflow: "scroll",
         boxShadow: "0 30px 90px rgba(0,0,0,0.7)"
       }}
     >
@@ -1999,7 +1999,7 @@ useEffect(() => {
 
         <div style={{ height: "1px", background: "rgba(255,255,255,0.08)" }} />
 
-        <p style={{ lineHeight: "1.7", fontSize: "15px", color: "#cbd5f5" }}>
+        <p style={{ lineHeight: "1.7", fontSize: "15px", color: "#cbd5f5",overflowY: "scroll", }}>
           {lightbox.description}
         </p>
 
