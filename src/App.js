@@ -4063,31 +4063,31 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       id: 1,
       title: "Cetiya of the Chitta",
       image: "/images/religious/cetiya.png",
-      text: "Architecture shapes civilization through structure, design, and cultural identity."
+      text: "The Cettiya of the Chitta is the Buddhist order in charge of women who pilot Kharvees."
     },
     {
       id: 2,
       title: "Rabat of the Relics",
       image: "/images/religious/rabat2.png",
-      text: "Philosophy explores truth, ethics, metaphysics, and the foundations of knowledge."
+      text: "The Rabat of the Relics is the Islamic order in charge of Relic cities which are the former cities of the previous world still occupied by priests."
     },
     {
       id: 3,
       title: "Oikos of the Oikodrome",
       image: "/images/religious/oikos.png",
-      text: "Economics studies production, distribution, and the systems that govern wealth."
+      text: "The Oikos of the Oikodrome is the Greek order in charge of the men who pilot Kharvees."
     },
     {
       id: 4,
       title: "Synagogue of the Sefer",
       image: "/images/religious/synagogue2.png",
-      text: "Spirituality reflects the human search for meaning, transcendence, and connection."
+      text: "The Synagogue of the Sefer is the Jewish religious order in charge of research and knowledge."
     },
     {
       id: 5,
       title: "Sanctuary of the Sea",
       image: "/images/religious/sanctuary.png",
-      text: "Science investigates the laws of nature through experimentation and observation."
+      text: "The Sanctuary of the Sea is the Catholic religious order for the towns and contains the branch of Social Services."
     }
   ];
 
