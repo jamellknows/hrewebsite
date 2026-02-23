@@ -3901,151 +3901,202 @@ function DualCarouselCards() {
   };
 
   return (
+   <div
+  style={{
+    padding: "60px 5vw",
+    background: "transparent", // inherit page gradient
+    minHeight: "35vh",
+    fontFamily: "Inter, sans-serif",
+    color: "#e2e8f0"
+  }}
+>
+  {/* MAIN CARDS */}
+  <div
+    style={{
+      display: "flex",
+      gap: "40px",
+      justifyContent: "center",
+      flexWrap: "wrap"
+    }}
+  >
     <div
+      onClick={() => openCarousel("one")}
       style={{
-        padding: "40px",
-        background: "#0f172a",
-        minHeight: "35vh",
-        fontFamily: "Arial",
-        color: "white"
+        width: "280px",
+        height: "190px",
+        background: "rgba(15, 23, 42, 0.75)",
+        backdropFilter: "blur(16px)",
+        borderRadius: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        fontSize: "20px",
+        fontWeight: 600,
+        letterSpacing: "0.4px",
+        border: "1px solid rgba(148,163,184,0.12)",
+        boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+        transition: "all 0.3s cubic-bezier(.2,.8,.2,1)"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-6px)";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "none";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.12)";
       }}
     >
-      {/* MAIN CARDS */}
+      Male Classes
+    </div>
+
+    <div
+      onClick={() => openCarousel("two")}
+      style={{
+        width: "280px",
+        height: "190px",
+        background: "rgba(15, 23, 42, 0.75)",
+        backdropFilter: "blur(16px)",
+        borderRadius: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        fontSize: "20px",
+        fontWeight: 600,
+        letterSpacing: "0.4px",
+        border: "1px solid rgba(148,163,184,0.12)",
+        boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+        transition: "all 0.3s cubic-bezier(.2,.8,.2,1)"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-6px)";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "none";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.12)";
+      }}
+    >
+      Female Classes
+    </div>
+  </div>
+
+  {/* MODAL CAROUSEL */}
+  {activeCarousel && (
+    <div
+      onClick={closeCarousel}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(2,6,23,0.88)", // matches page base
+        backdropFilter: "blur(16px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1000,
+        padding: "40px"
+      }}
+    >
       <div
+        onClick={(e) => e.stopPropagation()}
         style={{
-          display: "flex",
-          gap: "30px",
-          justifyContent: "center"
+          width: "90%",
+          maxWidth: "950px",
+          background: "rgba(15,23,42,0.95)",
+          borderRadius: "28px",
+          overflow: "hidden",
+          border: "1px solid rgba(148,163,184,0.15)",
+          boxShadow: "0 40px 100px rgba(0,0,0,0.75)",
+          position: "relative"
         }}
       >
-        <div
-          onClick={() => openCarousel("one")}
+        {/* IMAGE */}
+        <img
+          src={carousels[activeCarousel][index].img}
+          alt=""
           style={{
-            width: "260px",
-            height: "180px",
-            background: "#1e293b",
-            borderRadius: "16px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            fontSize: "20px",
-            fontWeight: "bold",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
-            transition: "0.3s"
+            width: "100%",
+            height: "70vh",
+            objectFit: "contain",
+            background: "#0f172a"
           }}
-        >
-          Male Classes
-        </div>
+        />
 
-        <div
-          onClick={() => openCarousel("two")}
-          style={{
-            width: "260px",
-            height: "180px",
-            background: "#1e293b",
-            borderRadius: "16px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            fontSize: "20px",
-            fontWeight: "bold",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
-            transition: "0.3s"
-          }}
-        >
-          Female Classes
-        </div>
-      </div>
-
-      {/* MODAL CAROUSEL */}
-      {activeCarousel && (
-        <div
-          onClick={closeCarousel}
-          style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,0.85)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 1000
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
+        {/* TEXT */}
+        <div style={{ padding: "40px" }}>
+          <h2
             style={{
-              width: "90%",
-              maxWidth: "900px",
-              background: "#1e293b",
-              borderRadius: "20px",
-              overflow: "hidden",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
-              position: "relative"
+              fontSize: "24px",
+              fontWeight: 700,
+              marginBottom: "14px",
+              color: "#f8fafc"
             }}
           >
-            {/* IMAGE */}
-            <img
-              src={carousels[activeCarousel][index].img}
-              alt=""
-              style={{
-                width: "100%",
-                height: "400px",
-                objectFit: "contain"
-              }}
-            />
+            {carousels[activeCarousel][index].title}
+          </h2>
 
-            {/* TEXT */}
-            <div style={{ padding: "30px" }}>
-              <h2>{carousels[activeCarousel][index].title}</h2>
-              <p style={{ marginTop: "10px", lineHeight: "1.6" }}>
-                {carousels[activeCarousel][index].text}
-              </p>
-            </div>
-
-            {/* ARROWS */}
-            <button
-              onClick={prevSlide}
-              style={{
-                position: "absolute",
-                top: "50%",
-                left: "10px",
-                transform: "translateY(-50%)",
-                background: "rgba(0,0,0,0.6)",
-                border: "none",
-                color: "white",
-                fontSize: "24px",
-                padding: "10px 15px",
-                cursor: "pointer",
-                borderRadius: "8px"
-              }}
-            >
-              ‹
-            </button>
-
-            <button
-              onClick={nextSlide}
-              style={{
-                position: "absolute",
-                top: "50%",
-                right: "10px",
-                transform: "translateY(-50%)",
-                background: "rgba(0,0,0,0.6)",
-                border: "none",
-                color: "white",
-                fontSize: "24px",
-                padding: "10px 15px",
-                cursor: "pointer",
-                borderRadius: "8px"
-              }}
-            >
-              ›
-            </button>
-          </div>
+          <p
+            style={{
+              lineHeight: "1.9",
+              fontSize: "15.5px",
+              color: "#94a3b8"
+            }}
+          >
+            {carousels[activeCarousel][index].text}
+          </p>
         </div>
-      )}
+
+        {/* ARROWS */}
+        <button
+          onClick={prevSlide}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "15px",
+            transform: "translateY(-50%)",
+            background: "rgba(15,23,42,0.8)",
+            border: "1px solid rgba(148,163,184,0.2)",
+            color: "#e2e8f0",
+            fontSize: "22px",
+            padding: "10px 16px",
+            cursor: "pointer",
+            borderRadius: "12px",
+            backdropFilter: "blur(8px)",
+            transition: "0.2s"
+          }}
+        >
+          ‹
+        </button>
+
+        <button
+          onClick={nextSlide}
+          style={{
+            position: "absolute",
+            top: "50%",
+            right: "15px",
+            transform: "translateY(-50%)",
+            background: "rgba(15,23,42,0.8)",
+            border: "1px solid rgba(148,163,184,0.2)",
+            color: "#e2e8f0",
+            fontSize: "22px",
+            padding: "10px 16px",
+            cursor: "pointer",
+            borderRadius: "12px",
+            backdropFilter: "blur(8px)",
+            transition: "0.2s"
+          }}
+        >
+          ›
+        </button>
+      </div>
     </div>
+  )}
+</div>
   );
 }
 
@@ -4714,7 +4765,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
                         style={{
                           width: "100%",
                           height: "95px",
-                          objectFit: "cover",
+                          objectFit: "contain",
                           borderRadius: "12px",
                           marginBottom: "8px"
                         }}
@@ -4737,116 +4788,149 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
         </div>
       </div>
       {/* 5 Cards for social order*/}
+     <div
+  style={{
+    width: "100%",
+    padding: "60px 5vw",
+    boxSizing: "border-box",
+    background: "transparent", // inherit page gradient
+    color: "#e2e8f0",
+    fontFamily: "Inter, sans-serif",
+    marginTop: "-60rem"
+  }}
+>
+  {/* SLIDER */}
+  <div
+    style={{
+      display: "flex",
+      gap: "28px",
+      overflowX: "auto",
+      scrollSnapType: "x mandatory",
+      paddingBottom: "30px"
+    }}
+  >
+    {cards.map((card) => (
       <div
-      style={{
-        width: "100%",
-        padding: "40px",
-        boxSizing: "border-box",
-        background: "#0f172a",
-        color: "white",
-        fontFamily: "Arial",
-        marginTop:"-60rem"
-      }}
-    >
-      {/* SLIDER */}
-      <div
+        key={card.id}
+        onClick={() => setActiveCard(card)}
         style={{
-          display: "flex",
-          gap: "20px",
-          overflowX: "auto",
-          scrollSnapType: "x mandatory",
-          paddingBottom: "20px"
+          minWidth: "260px",
+          height: "340px",
+          background: "rgba(15, 23, 42, 0.75)", // darker slate
+          backdropFilter: "blur(18px)",
+          borderRadius: "24px",
+          cursor: "pointer",
+          flexShrink: 0,
+          scrollSnapAlign: "start",
+          border: "1px solid rgba(148,163,184,0.12)", // subtle slate border
+          boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+          transition: "all 0.35s cubic-bezier(.2,.8,.2,1)",
+          overflow: "hidden"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-8px)";
+          e.currentTarget.style.border =
+            "1px solid rgba(148,163,184,0.25)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "none";
+          e.currentTarget.style.border =
+            "1px solid rgba(148,163,184,0.12)";
         }}
       >
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            onClick={() => setActiveCard(card)}
-            style={{
-              minWidth: "250px",
-              height: "320px",
-              background: "#1e293b",
-              borderRadius: "16px",
-              cursor: "pointer",
-              flexShrink: 0,
-              scrollSnapAlign: "start",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-              transition: "transform 0.3s ease",
-              overflow: "hidden"
-            }}
-          >
-            <img
-              src={card.image}
-              alt={card.title}
-              style={{
-                width: "100%",
-                height: "200px",
-                objectFit: "cover"
-              }}
-            />
-            <div
-              style={{
-                padding: "20px",
-                fontSize: "18px",
-                fontWeight: "bold",
-                textAlign: "center"
-              }}
-            >
-              {card.title}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* EXPANDED VIEW */}
-      {activeCard && (
-        <div
-          onClick={() => setActiveCard(null)}
+        <img
+          src={card.image}
+          alt={card.title}
           style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(0,0,0,0.85)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "20px",
-            zIndex: 1000
+            width: "100%",
+            height: "210px",
+            objectFit: "cover",
+            filter: "brightness(0.9) contrast(1.05)"
+          }}
+        />
+
+        <div
+          style={{
+            padding: "22px",
+            fontSize: "17px",
+            fontWeight: 600,
+            letterSpacing: "0.4px",
+            textAlign: "center",
+            color: "#f1f5f9"
           }}
         >
-          <div
-            onClick={(e) => e.stopPropagation()}
+          {card.title}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* EXPANDED VIEW */}
+  {activeCard && (
+    <div
+      onClick={() => setActiveCard(null)}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(2,6,23,0.88)", // matches page base
+        backdropFilter: "blur(16px)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "40px",
+        zIndex: 1000
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          background: "rgba(15,23,42,0.95)",
+          width: "100%",
+          maxWidth: "900px",
+          borderRadius: "28px",
+          overflow: "hidden",
+          border: "1px solid rgba(148,163,184,0.15)",
+          boxShadow: "0 40px 100px rgba(0,0,0,0.75)",
+          transition: "all 0.3s ease"
+        }}
+      >
+        <img
+          src={activeCard.image}
+          alt={activeCard.title}
+          style={{
+            width: "100%",
+            height: "380px",
+            objectFit: "scale-down",
+            background: "#0f172a"
+          }}
+        />
+
+        <div style={{ padding: "40px" }}>
+          <h2
             style={{
-              background: "#1e293b",
-              width: "100%",
-              maxWidth: "800px",
-              borderRadius: "20px",
-              overflow: "hidden",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.6)",
-              animation: "fadeIn 0.3s ease"
+              marginBottom: "18px",
+              fontSize: "26px",
+              fontWeight: 700,
+              color: "#f8fafc"
             }}
           >
-            <img
-              src={activeCard.image}
-              alt={activeCard.title}
-              style={{
-                width: "100%",
-                height: "350px",
-                objectFit: "cover"
-              }}
-            />
+            {activeCard.title}
+          </h2>
 
-            <div style={{ padding: "30px" }}>
-              <h2 style={{ marginBottom: "20px" }}>
-                {activeCard.title}
-              </h2>
-              <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
-                {activeCard.text}
-              </p>
-            </div>
-          </div>
+          <p
+            style={{
+              fontSize: "15.5px",
+              lineHeight: "1.9",
+              color: "#94a3b8" // slate-400 tone
+            }}
+          >
+            {activeCard.text}
+          </p>
         </div>
-      )}
+      </div>
     </div>
+  )}
+</div>
 
 
 
