@@ -3868,6 +3868,8 @@ function WorldRule2Page() {
   const touchStartX = useRef(null);
   const [openWheelId, setOpenWheelId] = useState(null);
   const [openCoreImage, setOpenCoreImage] = useState(false);
+  const [activeCard, setActiveCard] = useState(null);
+
 
 
 
@@ -3915,7 +3917,7 @@ function WorldRule2Page() {
   
    const metric5 = [
   { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the same under the sea bed."},
-  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLIT. They are designed to have a capacity of 75244 people(currently). The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
+  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLIT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
   { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
   { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
   { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
@@ -4053,6 +4055,39 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       title: "Population",
       text: metric6[5].text,
       img: "/images/city9.png"
+    }
+  ];
+
+   const cards = [
+    {
+      id: 1,
+      title: "Cetiya of the Chitta",
+      image: "https://picsum.photos/400/300?random=1",
+      text: "Architecture shapes civilization through structure, design, and cultural identity."
+    },
+    {
+      id: 2,
+      title: "Rabat of the Relics",
+      image: "https://picsum.photos/400/300?random=2",
+      text: "Philosophy explores truth, ethics, metaphysics, and the foundations of knowledge."
+    },
+    {
+      id: 3,
+      title: "Oikos of the Oikodrome",
+      image: "https://picsum.photos/400/300?random=3",
+      text: "Economics studies production, distribution, and the systems that govern wealth."
+    },
+    {
+      id: 4,
+      title: "Synagogue of the Sefer",
+      image: "https://picsum.photos/400/300?random=4",
+      text: "Spirituality reflects the human search for meaning, transcendence, and connection."
+    },
+    {
+      id: 5,
+      title: "Sanctuary of the Sea",
+      image: "https://picsum.photos/400/300?random=5",
+      text: "Science investigates the laws of nature through experimentation and observation."
     }
   ];
 
@@ -4511,6 +4546,117 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           })}
         </div>
       </div>
+      {/* 5 Cards for social order*/}
+      <div
+      style={{
+        width: "100%",
+        padding: "40px",
+        boxSizing: "border-box",
+        background: "#0f172a",
+        color: "white",
+        fontFamily: "Arial",
+        marginTop:"-60rem"
+      }}
+    >
+      {/* SLIDER */}
+      <div
+        style={{
+          display: "flex",
+          gap: "20px",
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          paddingBottom: "20px"
+        }}
+      >
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            onClick={() => setActiveCard(card)}
+            style={{
+              minWidth: "250px",
+              height: "320px",
+              background: "#1e293b",
+              borderRadius: "16px",
+              cursor: "pointer",
+              flexShrink: 0,
+              scrollSnapAlign: "start",
+              boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
+              transition: "transform 0.3s ease",
+              overflow: "hidden"
+            }}
+          >
+            <img
+              src={card.image}
+              alt={card.title}
+              style={{
+                width: "100%",
+                height: "200px",
+                objectFit: "cover"
+              }}
+            />
+            <div
+              style={{
+                padding: "20px",
+                fontSize: "18px",
+                fontWeight: "bold",
+                textAlign: "center"
+              }}
+            >
+              {card.title}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* EXPANDED VIEW */}
+      {activeCard && (
+        <div
+          onClick={() => setActiveCard(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "20px",
+            zIndex: 1000
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              background: "#1e293b",
+              width: "100%",
+              maxWidth: "800px",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.6)",
+              animation: "fadeIn 0.3s ease"
+            }}
+          >
+            <img
+              src={activeCard.image}
+              alt={activeCard.title}
+              style={{
+                width: "100%",
+                height: "350px",
+                objectFit: "cover"
+              }}
+            />
+
+            <div style={{ padding: "30px" }}>
+              <h2 style={{ marginBottom: "20px" }}>
+                {activeCard.title}
+              </h2>
+              <p style={{ fontSize: "16px", lineHeight: "1.6" }}>
+                {activeCard.text}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
 
 
         
