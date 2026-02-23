@@ -4061,9 +4061,9 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
    const cards = [
     {
       id: 1,
-      title: "Cetiya of the Chitta",
+      title: "Cetiya of the Upasikyo",
       image: "/images/religious/cetiya.png",
-      text: "The Cettiya of the Chitta is the Buddhist order in charge of women who pilot Kharvees."
+      text: "The Cettiya of the Upasikyo is the Buddhist order in charge of women who pilot Kharvees."
     },
     {
       id: 2,
