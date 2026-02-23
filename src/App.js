@@ -3865,17 +3865,17 @@ function DualCarouselCards() {
 
   const carousels = {
     one: [
-      { title: "Queer", text: "Content 1", img: "https://picsum.photos/800/400?1" },
-      { title: "Emporati", text: "Content 2", img: "https://picsum.photos/800/400?2" },
-      { title: "Acolyte", text: "Content 3", img: "https://picsum.photos/800/400?3" },
-      { title: "Slave", text: "Content 4", img: "https://picsum.photos/800/400?4" }
+      { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research.", img: "https://picsum.photos/800/400?1" },
+      { title: "Emporati", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums", img: "https://picsum.photos/800/400?2" },
+      { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN..", img: "https://picsum.photos/800/400?3" },
+      { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "https://picsum.photos/800/400?4" }
     ],
     two: [
-      { title: "Townie", text: "Content A", img: "https://picsum.photos/800/400?5" },
-      { title: "Emporati", text: "Content B", img: "https://picsum.photos/800/400?6" },
-      { title: "Acolyte", text: "Content C", img: "https://picsum.photos/800/400?7" },
-      { title: "Slave", text: "Content D", img: "https://picsum.photos/800/400?8" },
-      { title: "Queer", text: "Content E", img: "https://picsum.photos/800/400?9" }
+      { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "https://picsum.photos/800/400?5" },
+      { title: "Emporati", text: "Emporati are women who scored very well on the 89 and are employed to livee and work in the semi-autonomous Emporium.", img: "https://picsum.photos/800/400?6" },
+      { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "https://picsum.photos/800/400?7" },
+      { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work in bondage at the Emirate", img: "https://picsum.photos/800/400?8" },
+      { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "https://picsum.photos/800/400?9" }
     ]
   };
 
