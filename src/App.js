@@ -3866,16 +3866,18 @@ function DualCarouselCards() {
   const carousels = {
     one: [
       { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%).", img: "/images/classes/priest.png" },
+      { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Emporati", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums", img: "/images/classes/emporati.png"},
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN..", img: "/images/classes/acolyte.png" },
       { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
     two: [
+      { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" },
+      { title: "Emporati", text: "Emporati are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
-      { title: "Emporati", text: "Emporati are women who scored very well on the 89 and are employed to livee and work in the semi-autonomous Emporium.", img: "/images/classes/femaleemporati.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
-      { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work in bondage at the Emirate", img: "/images/classes/femaleslave.png" },
-      { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" }
+      { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work in bondage at the Emirate", img: "/images/classes/femaleslave.png" }
     ]
   };
 
@@ -4153,7 +4155,7 @@ function WorldRule2Page() {
     const metric4 = [
     { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 12977 CLITs there is a structure of 1 Woman Divine Huriyya to 6 Arch Angel Divines of the Domus 180 Women Infantas, 32832 Amiras and 389310 Ladies of the Lamp and 194655 Ladies of the Gal." },
     { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of the town or the emporium and therefore have been conscripted to the Oikos of the Oikodrome. They are fitted with a electronic LL or ceramic braces and trained how to drive a Kharvee. They work the MSHN. Male acolytes drive from CLIT to CLIT around the world in what is known as the EPIC and female acolytes drive around their home CLIT and once a year in an event known as the Pacchāgamana"},
-    { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities. These are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
+    { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities and the bishops live in the Rus. The Relic cities are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
   ];
   
    const metric5 = [
