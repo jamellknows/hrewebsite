@@ -3866,8 +3866,8 @@ function DualCarouselCards() {
   const carousels = {
     one: [
       { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%).", img: "/images/classes/priest.png" },
-      { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Emporati", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums", img: "/images/classes/emporati.png"},
+      { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN..", img: "/images/classes/acolyte.png" },
       { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
