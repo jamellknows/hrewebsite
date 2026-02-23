@@ -2756,7 +2756,7 @@ useEffect(() => {
   {
     id: 3,
     title: "Entertainment",
-    summary: "Entertainment will be open source with everybody having access to a studio, theatre etc at one on the 12 towns in their locality. There is also the Queer entertainment from the THANA.",
+    summary: "Entertainment will be open source with everybody having access to a studio, theatre etc at one on the 12 towns in their locality. ",
     details:
       "The available industries with the entertainment industry are TV and Film, Music, Sports, Games, Live Entertainment and Publishing and Print",
   },
@@ -2803,7 +2803,7 @@ const rightGrid = [
   const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
-  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves or queers are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLIT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
+  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLIT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
   { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Together with N which stands for novelise this forms the MSHN. Novelise is to write a book, innovate something new, write three songs, make three visual art pieces, score three goals in three sports, write a film script, act in a stage play and a film and other creative endeavours. Men work the MSHN across the globe in what is called the EPIC. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make.  " },
   { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLIT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire. The goal is the MSHN. Which is to learn and teach the most skilled jobs as a MAGGOT, SKOULIKIA and HATI and then to novelise. Novelise is to innovate something new, write a research paper, write a fiction novel and a separate play or film script, make three good songs and 3 good works of visual art. Once these goals have been completed a male is ellgibile to have sex. " },
   { id: 3, title: "THE 89 & THE 114", text:"The 89 is the sorting test that determines what CLIT a person lives in. It is based on how they performed in life and their goodness. The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
@@ -4113,7 +4113,7 @@ function WorldRule2Page() {
   { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated entirely by evangellions and the Emirate is a town populated by slaves."},
-  { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
+  { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Calculations", text:"To be added."}, 
   { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLIT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLIT: 26,200`},
   { id: 11, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
@@ -4848,38 +4848,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       )}
     </div>
 
-    <div
-  style={{
-    margin: "80px 0",
-    padding: "60px 20px",
-    background: "linear-gradient(135deg, #0f172a, #1e293b)",
-    borderRadius: "20px",
-    textAlign: "center",
-    boxShadow: "0 20px 60px rgba(0,0,0,0.4)"
-  }}
->
-  <h2
-    style={{
-      fontSize: "36px",
-      fontWeight: "700",
-      letterSpacing: "1px",
-      color: "#f1f5f9",
-      margin: 0
-    }}
-  >
-    Common Male and Female Social Classes
-  </h2>
 
-  <div
-    style={{
-      width: "80px",
-      height: "4px",
-      background: "#38bdf8",
-      margin: "20px auto 0",
-      borderRadius: "2px"
-    }}
-  />
-</div>
 
   <DualCarouselCards/>
 
