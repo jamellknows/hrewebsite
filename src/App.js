@@ -2803,8 +2803,8 @@ const rightGrid = [
   const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
-  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males from the age of 19. All men are acolytes to the Priesthood of Melchizedek. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. Women that commit crimes are also inducted as acolytes to the priesthood as labour to the priestesses and ladies. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
-  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make.  " },
+  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves or queers are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLIT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
+  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Together with N which stands for novelise this forms the MSHN. Novelise is to write a book, innovate something new, write three songs, make three visual art pieces, score three goals in three sports, write a film script, act in a stage play and a film and other creative endeavours. Men work the MSHN across the globe in what is called the EPIC. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make.  " },
   { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLIT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire. The goal is the MSHN. Which is to learn and teach the most skilled jobs as a MAGGOT, SKOULIKIA and HATI and then to novelise. Novelise is to innovate something new, write a research paper, write a fiction novel and a separate play or film script, make three good songs and 3 good works of visual art. Once these goals have been completed a male is ellgibile to have sex. " },
   { id: 3, title: "THE 89 & THE 114", text:"The 89 is the sorting test that determines what CLIT a person lives in. It is based on how they performed in life and their goodness. The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
 
@@ -3859,6 +3859,196 @@ const CarouselContent = ({ large = false }) => (
   );
 }
 
+function DualCarouselCards() {
+  const [activeCarousel, setActiveCarousel] = useState(null);
+  const [index, setIndex] = useState(0);
+
+  const carousels = {
+    one: [
+      { title: "Queer", text: "Content 1", img: "https://picsum.photos/800/400?1" },
+      { title: "Emporati", text: "Content 2", img: "https://picsum.photos/800/400?2" },
+      { title: "Acolyte", text: "Content 3", img: "https://picsum.photos/800/400?3" },
+      { title: "Slave", text: "Content 4", img: "https://picsum.photos/800/400?4" }
+    ],
+    two: [
+      { title: "Townie", text: "Content A", img: "https://picsum.photos/800/400?5" },
+      { title: "Emporati", text: "Content B", img: "https://picsum.photos/800/400?6" },
+      { title: "Acolyte", text: "Content C", img: "https://picsum.photos/800/400?7" },
+      { title: "Slave", text: "Content D", img: "https://picsum.photos/800/400?8" },
+      { title: "Queer", text: "Content E", img: "https://picsum.photos/800/400?9" }
+    ]
+  };
+
+  const openCarousel = (key) => {
+    setActiveCarousel(key);
+    setIndex(0);
+  };
+
+  const closeCarousel = () => {
+    setActiveCarousel(null);
+  };
+
+  const nextSlide = () => {
+    setIndex((prev) =>
+      prev === carousels[activeCarousel].length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setIndex((prev) =>
+      prev === 0 ? carousels[activeCarousel].length - 1 : prev - 1
+    );
+  };
+
+  return (
+    <div
+      style={{
+        padding: "40px",
+        background: "#0f172a",
+        minHeight: "35vh",
+        fontFamily: "Arial",
+        color: "white"
+      }}
+    >
+      {/* MAIN CARDS */}
+      <div
+        style={{
+          display: "flex",
+          gap: "30px",
+          justifyContent: "center"
+        }}
+      >
+        <div
+          onClick={() => openCarousel("one")}
+          style={{
+            width: "260px",
+            height: "180px",
+            background: "#1e293b",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            fontSize: "20px",
+            fontWeight: "bold",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+            transition: "0.3s"
+          }}
+        >
+          Male Classes
+        </div>
+
+        <div
+          onClick={() => openCarousel("two")}
+          style={{
+            width: "260px",
+            height: "180px",
+            background: "#1e293b",
+            borderRadius: "16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            fontSize: "20px",
+            fontWeight: "bold",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+            transition: "0.3s"
+          }}
+        >
+          Female Classes
+        </div>
+      </div>
+
+      {/* MODAL CAROUSEL */}
+      {activeCarousel && (
+        <div
+          onClick={closeCarousel}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "90%",
+              maxWidth: "900px",
+              background: "#1e293b",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+              position: "relative"
+            }}
+          >
+            {/* IMAGE */}
+            <img
+              src={carousels[activeCarousel][index].img}
+              alt=""
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover"
+              }}
+            />
+
+            {/* TEXT */}
+            <div style={{ padding: "30px" }}>
+              <h2>{carousels[activeCarousel][index].title}</h2>
+              <p style={{ marginTop: "10px", lineHeight: "1.6" }}>
+                {carousels[activeCarousel][index].text}
+              </p>
+            </div>
+
+            {/* ARROWS */}
+            <button
+              onClick={prevSlide}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "10px",
+                transform: "translateY(-50%)",
+                background: "rgba(0,0,0,0.6)",
+                border: "none",
+                color: "white",
+                fontSize: "24px",
+                padding: "10px 15px",
+                cursor: "pointer",
+                borderRadius: "8px"
+              }}
+            >
+              ‹
+            </button>
+
+            <button
+              onClick={nextSlide}
+              style={{
+                position: "absolute",
+                top: "50%",
+                right: "10px",
+                transform: "translateY(-50%)",
+                background: "rgba(0,0,0,0.6)",
+                border: "none",
+                color: "white",
+                fontSize: "24px",
+                padding: "10px 15px",
+                cursor: "pointer",
+                borderRadius: "8px"
+              }}
+            >
+              ›
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 
 function WorldRule2Page() {
   const [highlightIndex, setHighlightIndex] = useState(0);
@@ -3880,9 +4070,9 @@ function WorldRule2Page() {
 
 
   const metrics = [
-  { id: 1, title: "Ladies of the Lamp, Amiras of the Alpet, Infantas of the Impagliata", text:"These are the women who hold positions in the 9th Arm. Education for these can begin as young as 14 but they start between the ages 18 to 26. They must be a virgin. There are 389310 Ladies of the Lamp, 32832 Amiras of the Alper and 180 Infantas of the Impagliata. Ladies of the L" },
+  { id: 1, title: "Ladies of the Lamp, Amiras of the Alpet, Infantas of the Impagliata", text:"These are the women who hold positions in the 9th Arm. Education for these can begin as young as 14 but they start between the ages 18 to 26. They must be a virgin. There are 389310 Ladies of the Lamp, 32832 Amiras of the Alper and 180 Infantas of the Impagliata." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who work within The Priesthood of Melchizedek for the Social Services. The Social Services is split between divisions of GSM, Juror and 3. GSM is the global social media, calling, messaging and entertainment service provider. Jurors are the maintainers of temples, readers, organizers of my audience and people's pilgrimage and advisers. 3 run GUM, giving, understanding and movement a government branch based in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries and also have acolytes and evangelions to help them manage their tasks and their land. They split their time between running SS3 half of the year in cities and as a juror in temples the other half." },
-  { id: 3, title: "Palatines and Proedros", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Proedros are men who are sons of women that belong to NIFTY59HALER, they are in charge of an Emporium and run it as an independent city state focuses on comerce. They are allowed to employ men and women that have passed the 89 test." },
+  { id: 3, title: "Palatines and Proedros", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Proedros are men who are sons of women that belong to NIFTY59HALER, they are in charge of an Emporium and run it as an independent city state focuses on commerce. They are allowed to employ men and women that have passed the 89 test." },
   { id: 4, title: "Mac", text:"The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town."},
   { id: 5, title: "Divines of the Domus", text:"Divines of the Domus are 6 Arch Angels, Michael, Gabriel, Metatron, Raphael, Uriel, Sandalaphon." },
   { id: 5, title: "Priest", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
@@ -3911,7 +4101,7 @@ function WorldRule2Page() {
 
     const metric4 = [
     { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 12977 CLITs there is a structure of 1 Woman Divine Huriyya to 6 Arch Angel Divines of the Domus 180 Women Infantas, 32832 Amiras and 389310 Ladies of the Lamp and 194655 Ladies of the Gal." },
-    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of KTSHAM(ming) or WEBSHG(ing) and therefore have been conscripted to being the property of myself or any other member of NIFTY59ER. They are fitted with a electronic LL or ceramic braces and perform labour. Some live in moving studio apartments to ensure they can get from job to job in time. I am considering 1 Evangelion for every 6 acolytes as a redundancy to ensure cooperation."},
+    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of the town or the emporium and therefore have been conscripted to the Oikos of the Oikodrome. They are fitted with a electronic LL or ceramic braces and trained how to drive a Kharvee. They work the MSHN. Male acolytes drive from CLIT to CLIT around the world in what is known as the EPIC and female acolytes drive around their home CLIT and once a year in an event known as the Pacchāgamana"},
     { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities. These are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
   ];
   
@@ -4658,8 +4848,41 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       )}
     </div>
 
+    <div
+  style={{
+    margin: "80px 0",
+    padding: "60px 20px",
+    background: "linear-gradient(135deg, #0f172a, #1e293b)",
+    borderRadius: "20px",
+    textAlign: "center",
+    boxShadow: "0 20px 60px rgba(0,0,0,0.4)"
+  }}
+>
+  <h2
+    style={{
+      fontSize: "36px",
+      fontWeight: "700",
+      letterSpacing: "1px",
+      color: "#f1f5f9",
+      margin: 0
+    }}
+  >
+    Common Male and Female Social Classes
+  </h2>
 
-        
+  <div
+    style={{
+      width: "80px",
+      height: "4px",
+      background: "#38bdf8",
+      margin: "20px auto 0",
+      borderRadius: "2px"
+    }}
+  />
+</div>
+
+  <DualCarouselCards/>
+
 
     </AnimatedPage>
   );
@@ -4681,6 +4904,8 @@ function AnimatedRoutes() {
     </AnimatePresence>
   );
 }
+
+
 
 export default function App() {
   return (
