@@ -4062,31 +4062,31 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 1,
       title: "Cetiya of the Chitta",
-      image: "https://picsum.photos/400/300?random=1",
+      image: "/images/religious/cetiya.png",
       text: "Architecture shapes civilization through structure, design, and cultural identity."
     },
     {
       id: 2,
       title: "Rabat of the Relics",
-      image: "https://picsum.photos/400/300?random=2",
+      image: "/images/religious/rabat2.png",
       text: "Philosophy explores truth, ethics, metaphysics, and the foundations of knowledge."
     },
     {
       id: 3,
       title: "Oikos of the Oikodrome",
-      image: "https://picsum.photos/400/300?random=3",
+      image: "/images/religious/oikos.png",
       text: "Economics studies production, distribution, and the systems that govern wealth."
     },
     {
       id: 4,
       title: "Synagogue of the Sefer",
-      image: "https://picsum.photos/400/300?random=4",
+      image: "/images/religious/synagogue2.png",
       text: "Spirituality reflects the human search for meaning, transcendence, and connection."
     },
     {
       id: 5,
       title: "Sanctuary of the Sea",
-      image: "https://picsum.photos/400/300?random=5",
+      image: "/images/religious/sanctuary.png",
       text: "Science investigates the laws of nature through experimentation and observation."
     }
   ];
