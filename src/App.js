@@ -3878,7 +3878,17 @@ function DualCarouselCards() {
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work in bondage at the Emirate", img: "/images/classes/femaleslave.png" }
+    ], 
+    three: [
+      { title: "Servitude", text: "", img: "/images/classes/priestswife.png" },
+      { title: "Abode", text: "",  img: "/images/classes/femaleemporati.png"},
+      { title: "Movement", text: "", img: "/images/classes/deaconwife.png" },
+      { title: "Entertainment", text: "", img: "/images/classes/townie.png" },
+      { title: "Technology", text: "", img: "/images/classes/femaleacolyte.png" },
+      { title: "Vacation", text: "", img: "/images/classes/femaleslave.png" }
     ]
+
+
   };
 
   const openCarousel = (key) => {
@@ -3985,6 +3995,38 @@ function DualCarouselCards() {
       }}
     >
       Female Classes
+    </div>
+    <div
+      onClick={() => openCarousel("three")}
+      style={{
+        width: "280px",
+        height: "190px",
+        background: "rgba(15, 23, 42, 0.75)",
+        backdropFilter: "blur(16px)",
+        borderRadius: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        fontSize: "20px",
+        fontWeight: 600,
+        letterSpacing: "0.4px",
+        border: "1px solid rgba(148,163,184,0.12)",
+        boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+        transition: "all 0.3s cubic-bezier(.2,.8,.2,1)"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-6px)";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "none";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.12)";
+      }}
+    >
+      Living Standards
     </div>
   </div>
 
