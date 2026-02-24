@@ -2902,9 +2902,9 @@ const mainCards = [
     title: "Christmas",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "https://via.placeholder.com/200x150" },
-      { id: 12, text: "There are elves that live in the hidalgo. They are a form of evangellion(ivangellion, ivorgellion). ", image: "https://via.placeholder.com/200x150" },
-      { id: 13, text: "", image: "https://via.placeholder.com/200x150" },
+      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "/images/christmascity.png" },
+      { id: 12, text: "There are robotic elves that live in the emir and work alongside the slaves. ", image: "/images/robotelf.png" },
+      { id: 13, text: "A daughter is a category consisting of two types of women. The first are the biological daughters of myself, Russell or Kwame that live in the hidalgo with the evangellions. The second are the children of townies who have been fertilised with the semen of a slave. ", image: "https://via.placeholder.com/200x150" },
       { id: 14, text: "Sub-card 1D", image: "https://via.placeholder.com/200x150" },
     ],
   },
@@ -3779,7 +3779,40 @@ const CarouselContent = ({ large = false }) => (
 
       {activeMain && (
         <div>
-          <button onClick={() => setActiveMain(null)} style={{ marginBottom: 20 }}>Back</button>
+          <button
+  onClick={() => setActiveLocation(null)}
+  style={{
+    marginTop: "28px",
+    background: "rgba(15, 23, 42, 0.85)",
+    color: "#f8fafc",
+    border: "1px solid rgba(148,163,184,0.2)",
+    borderRadius: "14px",
+    padding: "12px 22px",
+    cursor: "pointer",
+    fontWeight: 600,
+    fontSize: "14px",
+    letterSpacing: "0.4px",
+    backdropFilter: "blur(8px)",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
+    transition: "all 0.25s ease"
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateY(-2px)";
+    e.currentTarget.style.border =
+      "1px solid rgba(148,163,184,0.4)";
+    e.currentTarget.style.boxShadow =
+      "0 12px 28px rgba(0,0,0,0.5)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "none";
+    e.currentTarget.style.border =
+      "1px solid rgba(148,163,184,0.2)";
+    e.currentTarget.style.boxShadow =
+      "0 8px 20px rgba(0,0,0,0.35)";
+  }}
+>
+  Close
+</button>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {activeMain.subCards.map(sub => {
