@@ -3866,23 +3866,23 @@ function DualCarouselCards() {
   const carousels = {
     one: [
       { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%).", img: "/images/classes/priest.png" },
-      { title: "Emporati", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums", img: "/images/classes/emporati.png"},
+      { title: "Emporati", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums. ", img: "/images/classes/emporati.png"},
       { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
-      { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN..", img: "/images/classes/acolyte.png" },
+      { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN.", img: "/images/classes/acolyte.png" },
       { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
     two: [
       { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" },
       { title: "Emporati", text: "Emporati are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
-      { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon.", img: "/images/classes/deaconwife.png" },
+      { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
-      { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work in bondage at the Emirate", img: "/images/classes/femaleslave.png" }
+      { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
     three: [
-      { title: "Servitude", text: "", img: "/images/classes/priestswife.png" },
-      { title: "Abode", text: "",  img: "/images/classes/femaleemporati.png"},
-      { title: "Movement", text: "", img: "/images/classes/deaconwife.png" },
+      { title: "Servitude", text: "Priests, Priestesses, Bishops, Amiras, Infantas and the higher Royal classes can own slaves. Otherwise slavery is prohibited.", img: "/images/classes/priestswife.png" },
+      { title: "Abode", text: "Priests live in houses, Deacons live in flats, Emporati live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Emporati have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.       ", img: "/images/classes/deaconwife.png" },
       { title: "Entertainment", text: "", img: "/images/classes/townie.png" },
       { title: "Technology", text: "", img: "/images/classes/femaleacolyte.png" },
       { title: "Vacation", text: "", img: "/images/classes/femaleslave.png" }
