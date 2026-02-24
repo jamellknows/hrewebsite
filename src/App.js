@@ -2774,25 +2774,25 @@ useEffect(() => {
 const rightGrid = [
   {
     id: 0,
-    title: "New Land Settlements",
+    title: "New Land Settlements and Old Land Settlements",
     content: `There are 12977 Clits, a Clit is divided into 4 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as a Lamp uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. The fourth part is the integration which is the male loop/rail network that connects a CLIT. Men live in mobile apartments called khanes that move between towns as required. Each town has its own prodcution focus with men moving between places and working the land outside of the clit as well as coming into the clit to work in the factories. `,
     image: "./images/christmas.jpg",
   },
   {
     id: 1,
-    title: "Society",
+    title: "Nomads and Slaves",
     content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed. ",
     image: "./images/cross.jpg",
   },
   {
     id: 2,
-    title: "Test",
+    title: "Sea Village and Sky Turtles(Beyblades, Castles)",
     content: "The Test is a series of tests that test a persons life metrics (8) and their goodness metrics (9). These are used to place a person within a category like: Best 9->Worst 8-> Worst 9->avg(other 9's)->avg(other 8's). The final metric determines if a person lives in KTSHAM(bottom,low score) or WEBSHG(top, high score). The test is administered every 5 years. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualization of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livlihood and sustenance, divine power and transformation of which there are 2, faithfulness and continuation of life, potential and actualization, the future and hope, and the pentateuch and the breath of life or dedication and the fulfillment of vows. ",
     image: "./images/card.jpg",
   },
   {
     id: 3,
-    title: "Payment and Process",
+    title: "",
     content: "The general process is that each part of society produces what is required of it under my leadership and gives to others in return for what they produce. There is no money required, working a certain number fo hours entitles somebody to a certain amount fo goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe is a necessity of having. This is because money is 360 degrees or 50x13 or 63 which means it is and requires support and protection, needs the hidden righteousness of sustainer and functions that it stays within a water (race, community, class). My method adds 25 which is a grace and favour and I can probably explain this better but its the difference between 675 and 360. In the society common people will be expected to work a job in every sub group of production, manufacturing, services,entertainment and construction in order to actualize their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.  ",
     image: "./images/tet.jpg",
   },
@@ -3057,7 +3057,7 @@ const CarouselContent = ({ large = false }) => (
         {/* Expandable content */}
         <div
           style={{
-            maxHeight: isOpen ? '30rem' : '0px',
+            maxHeight: isOpen ? '40rem' : '0px',
             overflow: 'hidden',
             transition: 'max-height 0.35s ease, padding 0.35s ease',
             paddingTop: isOpen ? '12px' : '0px',
