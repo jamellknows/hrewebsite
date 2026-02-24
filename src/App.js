@@ -2775,28 +2775,28 @@ useEffect(() => {
 const rightGrid = [
   {
     id: 0,
-    title: "New Land Settlements and Old Land Settlements",
+    title: "New land settlements and old land settlements",
     frontImage: "./images/christmas.jpg",
     backImage: "./images/christmas-back.jpg", // you can use same image or a different one
     content: "The new land settlements are organised into groups of towns called a CLT.",
   },
   {
     id: 1,
-    title: "Routes and Nomads and Slaves",
+    title: "Routes and nomads and slaves",
     frontImage: "./images/cross.jpg",
     backImage: "./images/cross-back.jpg",
     content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed.",
   },
   {
     id: 2,
-    title: "Sea Village and Sky Turtles (Beyblades, Castles)",
+    title: "Sea villages, sky turtles (beyblades, castles) and Africa and the Caribbean.",
     frontImage: "./images/card.jpg",
     backImage: "./images/card-back.jpg",
     content: "The Test is a series of tests that test a person's life metrics (8) and their goodness metrics (9). These are used to place a person within a category like: Best 9 -> Worst 8 -> Worst 9 -> avg(other 9's) -> avg(other 8's). The final metric determines if a person lives in KTSHAM (bottom, low score) or WEBSHG (top, high score). The test is administered every 5 years. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualization of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livelihood and sustenance, divine power and transformation of which there are 2, faithfulness and continuation of life, potential and actualization, the future and hope, and the pentateuch and the breath of life or dedication and the fulfillment of vows.",
   },
   {
     id: 3,
-    title: "Society Structure & Economy",
+    title: "The Moon, other planets and space",
     frontImage: "./images/tet.jpg",
     backImage: "./images/tet-back.jpg",
     content: "The general process is that each part of society produces what is required of it under leadership and gives to others in return for what they produce. There is no money required; working a certain number of hours entitles somebody to a certain amount of goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe. In society, common people are expected to work a job in every subgroup of production, manufacturing, services, entertainment, and construction in order to actualize their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.",
