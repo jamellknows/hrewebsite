@@ -3866,14 +3866,14 @@ function DualCarouselCards() {
   const carousels = {
     one: [
       { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%).", img: "/images/classes/priest.png" },
-      { title: "Roman", text: "Emporati are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums. ", img: "/images/classes/emporati.png"},
+      { title: "Roman", text: "Romans are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums. ", img: "/images/classes/emporati.png"},
       { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN.", img: "/images/classes/acolyte.png" },
       { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
     two: [
       { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" },
-      { title: "Roman", text: "Emporati are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Roman", text: "Romans are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
       { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
@@ -3881,11 +3881,11 @@ function DualCarouselCards() {
     ], 
     three: [
       { title: "Servitude", text: "Priests, Priestesses, Bishops, Amiras, Infantas and the higher Royal classes can own slaves. Otherwise slavery is prohibited.", img: "/images/classes/priestswife.png" },
-      { title: "Abode", text: "Priests live in houses, Deacons live in flats, Emporati live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
-      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Emporati have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
-      { title: "Entertainment", text: "  ", img: "/images/classes/townie.png" },
-      { title: "Technology", text: "", img: "/images/classes/femaleacolyte.png" },
-      { title: "Vacation", text: "", img: "/images/classes/femaleslave.png" }
+      { title: "Abode", text: "Priests live in houses, Deacons live in flats, Romans live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Romans have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
+      { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
+      { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/femaleacolyte.png" },
+      { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
     ]
 
 
@@ -4188,7 +4188,7 @@ function WorldRule2Page() {
 
   const metric3 = [
   { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the Ladies of the Lamp in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. Ladies of the Lamp do fashion for WESHGB KTSHAM, as there is 1 Ladies of the Lamp per department for all of the towns (12, 12 towns = 1 city). Priestesses do their own fashion. Ladies of the Light can choose between Ladies of the Lamp fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the Ladies of the Lamp which total to 23328 different fashion brands worldwide. The Ladies of the Lamp use the city to produce their brand after which they compete with each other worldwide. Her home city will always wear her clothes. I am also including game development as a part of fashion. "},
-  { id: 2, title: "Entertainment", text:"Each city has a department of Ladies of the Lamp and evangelions tasked with the control of the entertainment of their domain.   "},
+  { id: 2, title: "Entertainment", text:"Each Lamp and Tooth has a department of Ladies of the Lamp and evangelions tasked with the control of the entertainment of their domain.   "},
   { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
   { id: 4, title: "Test", text:"Test is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test(department of Ladies of the Lamp). Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of towns and cities. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 (on purpose of course) for example and the solution would be to select the most saddening group of people to move to the 42 fail cities. " },
 ]; 
