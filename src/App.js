@@ -3777,101 +3777,111 @@ const CarouselContent = ({ large = false }) => (
         </div>
       )}
 
-      {activeMain && (
-        <div>
-          <button
-  onClick={() => setActiveLocation(null)}
-  style={{
-    marginTop: "28px",
-    background: "rgba(15, 23, 42, 0.85)",
-    color: "#f8fafc",
-    border: "1px solid rgba(148,163,184,0.2)",
-    borderRadius: "14px",
-    padding: "12px 22px",
-    cursor: "pointer",
-    fontWeight: 600,
-    fontSize: "14px",
-    letterSpacing: "0.4px",
-    backdropFilter: "blur(8px)",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
-    transition: "all 0.25s ease"
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-2px)";
-    e.currentTarget.style.border =
-      "1px solid rgba(148,163,184,0.4)";
-    e.currentTarget.style.boxShadow =
-      "0 12px 28px rgba(0,0,0,0.5)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "none";
-    e.currentTarget.style.border =
-      "1px solid rgba(148,163,184,0.2)";
-    e.currentTarget.style.boxShadow =
-      "0 8px 20px rgba(0,0,0,0.35)";
-  }}
->
-  Close
-</button>
+  {activeMain && (
+  <div>
+    <button
+      onClick={() => {
+        setActiveMain(null);
+        setExpandedText(null);
+        setExpandedImage(null);
+      }}
+      style={{
+        marginBottom: "20px",
+        background: "rgba(15, 23, 42, 0.9)",
+        color: "#f8fafc",
+        border: "1px solid rgba(148,163,184,0.25)",
+        borderRadius: "12px",
+        padding: "10px 20px",
+        cursor: "pointer",
+        fontWeight: 600,
+        fontSize: "14px",
+        transition: "all 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-2px)";
+        e.currentTarget.style.boxShadow =
+          "0 10px 24px rgba(0,0,0,0.4)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "none";
+        e.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      ← Back
+    </button>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-            {activeMain.subCards.map(sub => {
-              const textOpen = expandedText === sub.id;
-              const imageOpen = expandedImage === sub.id;
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 18,
+      }}
+    >
+      {activeMain.subCards.map((sub) => {
+        const textOpen = expandedText === sub.id;
+        const imageOpen = expandedImage === sub.id;
 
-              return (
-                <div key={sub.id} style={{
-                  display: "flex",
-                  borderRadius: 14,
+        return (
+          <div
+            key={sub.id}
+            style={{
+              display: "flex",
+              borderRadius: 14,
+              overflow: "hidden",
+              background: "#0f172a",
+              color: "white",
+              minHeight: textOpen || imageOpen ? 220 : 120,
+              transition: "all .3s ease",
+              boxShadow: "0 8px 18px rgba(0,0,0,.25)",
+            }}
+          >
+            {/* LEFT IMAGE */}
+            <div
+              onClick={() =>
+                setExpandedImage(imageOpen ? null : sub.id)
+              }
+              style={{
+                width: imageOpen ? "50%" : "35%",
+                backgroundImage: `url(${sub.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                cursor: "pointer",
+                transition: "all .3s ease",
+              }}
+            />
+
+            {/* RIGHT TEXT */}
+            <div
+              onClick={() =>
+                setExpandedText(textOpen ? null : sub.id)
+              }
+              style={{
+                padding: 14,
+                width: imageOpen ? "50%" : "65%",
+                display: "flex",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              <div
+                style={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: textOpen ? "unset" : 3,
+                  WebkitBoxOrient: "vertical",
                   overflow: "hidden",
-                  background: "#0f172a",
-                  color: "white",
-                  minHeight: textOpen || imageOpen ? 220 : 120,
-                  transition: "all .3s ease",
-                  boxShadow: "0 8px 18px rgba(0,0,0,.25)"
-                }}>
-
-                  {/* LEFT IMAGE */}
-                  <div
-                    onClick={() => setExpandedImage(imageOpen ? null : sub.id)}
-                    style={{
-                      width: imageOpen ? "50%" : "35%",
-                      backgroundImage: `url(${sub.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      cursor: "pointer",
-                      transition: "all .3s ease"
-                    }}
-                  />
-
-                  {/* RIGHT TEXT */}
-                  <div
-                    onClick={() => setExpandedText(textOpen ? null : sub.id)}
-                    style={{
-                      padding: 14,
-                      width: imageOpen ? "50%" : "65%",
-                      display: "flex",
-                      alignItems: "center",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <div style={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: textOpen ? "unset" : 3,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      fontSize: 14,
-                      lineHeight: 1.4
-                    }}>
-                      {sub.text}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                  fontSize: 14,
+                  lineHeight: 1.4,
+                }}
+              >
+                {sub.text}
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })}
+    </div>
+  </div>
+)}
     </div>
   
 
