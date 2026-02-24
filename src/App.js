@@ -2610,8 +2610,9 @@ function WorldRule1Page() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const [activeMain, setActiveMain] = useState(null);
-  const [expandedText, setExpandedText] = useState(null);
+  const [flippedCard, setFlippedCard] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
+  const [expandedText, setExpandedText] = useState(null);
 
 useEffect(() => {
   const handleEsc = (e) => {
@@ -2727,7 +2728,7 @@ useEffect(() => {
   {
     id: 5,
     title: "Completion: GUM, FEST, Celebrities, Pokemon and entertainment.",
-    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role as social media worker. FEST stands for Fashion, Entertainment, Science(espionage) and Test. It is ran by ladies of the lamp of which there are 30 per CLIT. This ensures each region has a different cultural identity while also being religiously correct. All celebrities are the children of myself, Russell or Kwame or an adopted daughter. Pokemon will be in the world and the number of Pokemon a person has will be decided by their 89 score. All entertainment venues will be outside of towns i.e discos, stadiums, theatres, gambling etc. Inside of towns will be community centers for group meetings of arts and crafts, yoga and meditation, zoos, gyms, spas, reading groups and play areas which are spaces where women go to play tag, climb walls etc. There are no parks."
+    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role as social media worker. FEST stands for Fashion, Entertainment, Science(espionage) and Test. It is ran by ladies of the lamp of which there are 30 per CLT. This ensures each region has a different cultural identity while also being religiously correct. All celebrities are the children of myself, Russell or Kwame or an adopted daughter. Pokemon will be in the world and the number of Pokemon a person has will be decided by their 89 score. All entertainment venues will be outside of towns i.e discos, stadiums, theatres, gambling etc. Inside of towns will be community centers for group meetings of arts and crafts, yoga and meditation, zoos, gyms, spas, reading groups and play areas which are spaces where women go to play tag, climb walls etc. There are no parks."
   }
 ];
 
@@ -2775,26 +2776,30 @@ const rightGrid = [
   {
     id: 0,
     title: "New Land Settlements and Old Land Settlements",
-    content: `There are 12977 Clits, a Clit is divided into 4 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as a Lamp uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. The fourth part is the integration which is the male loop/rail network that connects a CLIT. Men live in mobile apartments called khanes that move between towns as required. Each town has its own prodcution focus with men moving between places and working the land outside of the clit as well as coming into the clit to work in the factories. `,
-    image: "./images/christmas.jpg",
+    frontImage: "./images/christmas.jpg",
+    backImage: "./images/christmas-back.jpg", // you can use same image or a different one
+    content: "The new land settlements are organised into groups of towns called a CLT.",
   },
   {
     id: 1,
     title: "Nomads and Slaves",
-    content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed. ",
-    image: "./images/cross.jpg",
+    frontImage: "./images/cross.jpg",
+    backImage: "./images/cross-back.jpg",
+    content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed.",
   },
   {
     id: 2,
-    title: "Sea Village and Sky Turtles(Beyblades, Castles)",
-    content: "The Test is a series of tests that test a persons life metrics (8) and their goodness metrics (9). These are used to place a person within a category like: Best 9->Worst 8-> Worst 9->avg(other 9's)->avg(other 8's). The final metric determines if a person lives in KTSHAM(bottom,low score) or WEBSHG(top, high score). The test is administered every 5 years. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualization of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livlihood and sustenance, divine power and transformation of which there are 2, faithfulness and continuation of life, potential and actualization, the future and hope, and the pentateuch and the breath of life or dedication and the fulfillment of vows. ",
-    image: "./images/card.jpg",
+    title: "Sea Village and Sky Turtles (Beyblades, Castles)",
+    frontImage: "./images/card.jpg",
+    backImage: "./images/card-back.jpg",
+    content: "The Test is a series of tests that test a person's life metrics (8) and their goodness metrics (9). These are used to place a person within a category like: Best 9 -> Worst 8 -> Worst 9 -> avg(other 9's) -> avg(other 8's). The final metric determines if a person lives in KTSHAM (bottom, low score) or WEBSHG (top, high score). The test is administered every 5 years. The 8 are wisdom, the Name of God, righteousness and humility, potential and actualization of which there are 3 of and 2 of eyes insight and perception. The 9 are a combination of spiritual and physical realms, patience and faith, livelihood and sustenance, divine power and transformation of which there are 2, faithfulness and continuation of life, potential and actualization, the future and hope, and the pentateuch and the breath of life or dedication and the fulfillment of vows.",
   },
   {
     id: 3,
-    title: "",
-    content: "The general process is that each part of society produces what is required of it under my leadership and gives to others in return for what they produce. There is no money required, working a certain number fo hours entitles somebody to a certain amount fo goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe is a necessity of having. This is because money is 360 degrees or 50x13 or 63 which means it is and requires support and protection, needs the hidden righteousness of sustainer and functions that it stays within a water (race, community, class). My method adds 25 which is a grace and favour and I can probably explain this better but its the difference between 675 and 360. In the society common people will be expected to work a job in every sub group of production, manufacturing, services,entertainment and construction in order to actualize their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.  ",
-    image: "./images/tet.jpg",
+    title: "Society Structure & Economy",
+    frontImage: "./images/tet.jpg",
+    backImage: "./images/tet-back.jpg",
+    content: "The general process is that each part of society produces what is required of it under leadership and gives to others in return for what they produce. There is no money required; working a certain number of hours entitles somebody to a certain amount of goods and there are quotas of production for each part. The mathematics of this is 675 degrees which is 13x50+25 and therefore loving and not cruel as the current economics wishes people to believe. In society, common people are expected to work a job in every subgroup of production, manufacturing, services, entertainment, and construction in order to actualize their potential. This is 6 complete cycles of trial testing and transformation and 3 redemptions and divine presences.",
   },
 ];
 
@@ -2803,10 +2808,10 @@ const rightGrid = [
   const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
-  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLIT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
-  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Together with N which stands for novelise this forms the MSHN. Novelise is to write a book, innovate something new, write three songs, make three visual art pieces, score three goals in three sports, write a film script, act in a stage play and a film and other creative endeavours. Men work the MSHN across the globe in what is called the EPIC. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLIT and their reward is to have double of what the other men (Acolytes) make.  " },
-  { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLIT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire. The goal is the MSHN. Which is to learn and teach the most skilled jobs as a MAGGOT, SKOULIKIA and HATI and then to novelise. Novelise is to innovate something new, write a research paper, write a fiction novel and a separate play or film script, make three good songs and 3 good works of visual art. Once these goals have been completed a male is ellgibile to have sex. " },
-  { id: 3, title: "THE 89 & THE 114", text:"The 89 is the sorting test that determines what CLIT a person lives in. It is based on how they performed in life and their goodness. The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
+  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
+  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Together with N which stands for novelise this forms the MSHN. Novelise is to write a book, innovate something new, write three songs, make three visual art pieces, score three goals in three sports, write a film script, act in a stage play and a film and other creative endeavours. Men work the MSHN across the globe in what is called the EPIC. Depending on behaviour they are fitted with braces or collars. Stunt Doubles are men chosen to lead the Kharvees along the routes. There are 12 stunt doubles per CLT and their reward is to have double of what the other men (Acolytes) make.  " },
+  { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLT. Along this route are all the eshtions, services and utilities available to men. Men are expected to work at their destination and along the route they aquire extra points for performing research(optional). Men who do not do research do not have sex. PMSEC stands for produce, manufacturing, services, entertainment and construction. It is the typical category for a civilian of the world empire. The goal is the MSHN. Which is to learn and teach the most skilled jobs as a MAGGOT, SKOULIKIA and HATI and then to novelise. Novelise is to innovate something new, write a research paper, write a fiction novel and a separate play or film script, make three good songs and 3 good works of visual art. Once these goals have been completed a male is ellgibile to have sex. " },
+  { id: 3, title: "THE 89 & THE 114", text:"The 89 is the sorting test that determines what CLT a person lives in. It is based on how they performed in life and their goodness. The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
 
 ];
 
@@ -2868,8 +2873,8 @@ const carouselItems = bottomThree.map(item => ({
       { image: "/images/sketches/atlas.png", text: "Hospitals, shops, schools, and public services. All these services will be place within the walls of the towns. " },
       { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CAT has one electricity producer and one water producer." },
       { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }, 
-      { image: "/images/kharvees.jpg", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival. There will be 26200 per Eshtion and 314402 Kharvees per CLIT." }, 
-      { image: "/images/Eshtion.jpg", text: "The Eshtions are the AI depots and hubs where kharvees can be stored and charged if needed and also serves as training locations. There will be 12 Eshtions per CLIT." }, 
+      { image: "/images/kharvees.jpg", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival. There will be 26200 per Eshtion and 314402 Kharvees per CLT." }, 
+      { image: "/images/Eshtion.jpg", text: "The Eshtions are the AI depots and hubs where kharvees can be stored and charged if needed and also serves as training locations. There will be 12 Eshtions per CLT." }, 
       
     ]
   },
@@ -2903,7 +2908,7 @@ const mainCards = [
     image: "/images/christmas2.png",
     subCards: [
       { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "/images/christmascity.png" },
-      { id: 12, text: "There are robotic elves that live in the emir and work alongside the slaves. ", image: "/images/robotelf.png" },
+      { id: 12, text: "There are robotic elves that live in the emir and work alongside the male slaves. ", image: "/images/robotelf.png" },
       { id: 13, text: "A daughter is a category consisting of two types of women. The first are the biological daughters of myself, Russell or Kwame that live in the hidalgo with the evangellions. The second are the children of townies who have been fertilised with the semen of a slave. They raise the child in the town and then when the child turns 18 they are moved to the hidalgo to be friends with my biological daughters. There they are celebrities of some form I will work it out. ", image: "/images/daughters.png" },
       { id: 14, text: "All stadiums, theatres, amusement parks, discos, clubs, spectator venues and any othe type of entertainment venue are outside of the settlement.", image: "/images/entertainment1.png" },
     ],
@@ -2913,7 +2918,7 @@ const mainCards = [
     title: "Lamp",
     image: "/images/lamp.png",
     subCards: [
-      { id: 21, text: "People are allowed to move between towns of equal rank (failed 9) outside of a clit for the purpose of things such as a holiday, this is equal to there being 20 CLITS. Tour groups are organised for visits to relic cities and towns outside of a woman's catagory.", image: "/images/tour.png" },
+      { id: 21, text: "People are allowed to move between towns of equal rank (failed 9) outside of a clit for the purpose of things such as a holiday, this is equal to there being 20 CLTS. Tour groups are organised for visits to relic cities and towns outside of a woman's catagory.", image: "/images/tour.png" },
       { id: 22, text: "Males up to the age of 19 (pre acolyteship, deaconhood, hellenisation or slavery if very bad) live in towns with their mother. They are not restricted from having sex but at the age of 19 (holiness and cycles of time) they become an acolyte and are removed from the town. Females that perform well on tests at a young age are given the choice of becoming a priestess or lady the criteria to become one is being a virgin and the intake begins at 14. Women are able to apply to become a priestess or a lady as long as they remain virgins. Males under the age of 19 are given free electronic condoms. They must use them as any unauthorised pregnancy or unprotected sex will result in the male being acolyted immediately. If the woman becomes pregnant she is to carry the child to term after which she will be acolyted to the priestesses. The child will then be adopted by a family within the town.", image: "/images/acolyte1.png" },
       { id: 23, text: "", image: "https://via.placeholder.com/200x150" },
       { id: 24, text: "Women live in families of 3 head members, 4 tit members and 5  batty members. They live in a house (saddle) that can accomodate 38 people. They collaborate on childcare and can have 26 children maximum at a time.", image: "https://via.placeholder.com/200x150" },
@@ -3168,54 +3173,140 @@ const CarouselContent = ({ large = false }) => (
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: "14px",
+    perspective: "1200px",
   }}
 >
-  {rightGrid.map((item) => (
-  <div
-    key={item.id}
-    style={{
-      ...styles.card,
-      cursor: "pointer",
-      padding: "8px",
-      position: "relative",
-    }}
-    onClick={() =>
-      setOpenGridImage(openGridImage === item.id ? null : item.id)
-    }
-  >
-    {/* Optional Image when expanded */}
-    {openGridImage === item.id && item.image && (
-      <div
-        style={{
-          height: "15em",
-          backgroundImage: `url(${item.image})`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          borderRadius: "1em",
-          marginBottom: "1em",
-        }}
-      />
-    )}
+  {rightGrid.map((item) => {
+    const isFlipped = flippedCard === item.id;
+    const imageOpen = expandedImage === item.id;
+    const textOpen = expandedText === item.id;
 
-    <h4>{item.title}</h4>
-
-    {/* Expanded Content */}
-    {openGridImage === item.id && (
+    return (
       <div
+        key={item.id}
         style={{
-          marginTop: "12px",
-          padding: "12px",
-          backgroundColor: "#f3f4f6",
-          borderRadius: "12px",
+          height: "260px",
+          position: "relative",
         }}
       >
-        <p>{item.content}</p>
-      </div>
-    )}
-  </div>
-))}
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            transformStyle: "preserve-3d",
+            transition: "transform 0.6s ease",
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          }}
+        >
 
+          {/* FRONT */}
+          <div
+            onClick={() => setFlippedCard(item.id)}
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backfaceVisibility: "hidden",
+              borderRadius: "16px",
+              overflow: "hidden",
+              cursor: "pointer",
+              backgroundImage: `url(${item.frontImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              display: "flex",
+              alignItems: "flex-end",
+              padding: "16px",
+              color: "white",
+              fontWeight: 600,
+              fontSize: "18px",
+              backgroundBlendMode: "overlay",
+              boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+            }}
+          >
+            <div
+              style={{
+                background: "rgba(0,0,0,0.5)",
+                padding: "8px 12px",
+                borderRadius: "10px",
+              }}
+            >
+              {item.title}
+            </div>
+          </div>
+
+          {/* BACK */}
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+              borderRadius: "16px",
+              background: "#0f172a",
+              color: "white",
+              padding: "14px",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+            }}
+          >
+            {/* Click to flip back */}
+            <div
+              style={{
+                fontSize: "12px",
+                opacity: 0.6,
+                cursor: "pointer",
+              }}
+              onClick={() => setFlippedCard(null)}
+            >
+              ← Back
+            </div>
+
+            {/* Expandable Image */}
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                setExpandedImage(imageOpen ? null : item.id);
+              }}
+              style={{
+                height: imageOpen ? "160px" : "80px",
+                backgroundImage: `url(${item.backImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                borderRadius: "10px",
+                cursor: "pointer",
+                transition: "all .3s ease",
+              }}
+            />
+
+            {/* Expandable Text */}
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                setExpandedText(textOpen ? null : item.id);
+              }}
+              style={{
+                overflow: "hidden",
+                cursor: "pointer",
+                fontSize: "14px",
+                lineHeight: 1.4,
+                display: "-webkit-box",
+                WebkitLineClamp: textOpen ? "unset" : 3,
+                WebkitBoxOrient: "vertical",
+              }}
+            >
+              {item.content}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    );
+  })}
 </div>
 
       </div>
@@ -3350,7 +3441,7 @@ const CarouselContent = ({ large = false }) => (
         >
           <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
             There are 30 Ladies of the Lamp per lamp and a Lamp is 6 towns. There are 15 Ladies of the Gal per Tooth and a Tooth is 6 towns. A Lamp and a Tooth come 
-            together with a Christmas and the Interrail to form a CLIT (clit). There are 12977 clits in total and they form the PIG (production integrated globe). 
+            together with a Christmas and the Interrail to form a CLT (clit). There are 12977 clits in total and they form the PIG (production integrated globe). 
 
             The Ladies of the Lamp will move about often. The total population of a city is 354504 and a Town is 29542. 
             Saddles can contain 38 people and are built in neighborhoods of 120 and sandwiches can contain 60 people and are built in neighborhoods of 73. 
@@ -3919,13 +4010,13 @@ function DualCarouselCards() {
       { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
       { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
-      { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
+      { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLT.", img: "/images/classes/femaleacolyte.png" },
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
     three: [
       { title: "Servitude", text: "Priests, Priestesses, Bishops, Amiras, Infantas and the higher Royal classes can own slaves. Otherwise slavery is prohibited.", img: "/images/classes/priestswife.png" },
       { title: "Abode", text: "Priests live in houses, Deacons live in flats, Polītai live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
-      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Polītai have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
+      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Polītai have freedom of movement to 20 other CLTS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
       { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
       { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/femaleacolyte.png" },
       { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
@@ -4209,7 +4300,7 @@ function WorldRule2Page() {
 
   const metrics = [
   { id: 1, title: "Ladies of the Lamp, Amiras of the Alpet, Infantas of the Impagliata", text:"These are the women who hold positions in the 9th Arm. Education for these can begin as young as 14 but they start between the ages 18 to 26. They must be a virgin. There are 389310 Ladies of the Lamp, 32832 Amiras of the Alper and 180 Infantas of the Impagliata." },
-  { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who work within The Priesthood of the Melchizedek for the Sanctuary of the Sea. The Sanctuary of the Sea contains the Social Services which is split between divisions of GSMS, and 3. GSMS is the global social media, calling, messaging and entertainment service.  3 run GUM, giving, understanding and movement a government branch based that also has a base in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries outside of the CLIT and also have slaves and evangelions to help them manage their tasks and their land. They split their time between running the Sanctuary of the Sea as a priestess who duties include preaching and overseeing certain religious sites half of the year and as members of the Social Services in the other half of the year." },
+  { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who work within The Priesthood of the Melchizedek for the Sanctuary of the Sea. The Sanctuary of the Sea contains the Social Services which is split between divisions of GSMS, and 3. GSMS is the global social media, calling, messaging and entertainment service.  3 run GUM, giving, understanding and movement a government branch based that also has a base in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries outside of the CLT and also have slaves and evangelions to help them manage their tasks and their land. They split their time between running the Sanctuary of the Sea as a priestess who duties include preaching and overseeing certain religious sites half of the year and as members of the Social Services in the other half of the year." },
   { id: 3, title: "Palatines and Proedros", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Proedros are men who are sons of women that belong to NIFTY59HALER, they are in charge of an Emporium and run it as an independent city state focuses on commerce. They are allowed to employ men and women that have passed the 89 test." },
   { id: 4, title: "Mac", text:"The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town."},
   { id: 5, title: "Bishops and Divines of the Domus", text:"Bishops are the sons of Russell who lead the Priesthood of the Melchizidek. They work within 3 of the division, the Rabat, the Oikos and the Synagogue. Divines of the Domus are 6 Arch Angels, Michael, Gabriel, Metatron, Raphael, Uriel, Sandalaphon." },
@@ -4238,14 +4329,14 @@ function WorldRule2Page() {
 
 
     const metric4 = [
-    { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 12977 CLITs there is a structure of 1 Woman Divine Huriyya to 6 Arch Angel Divines of the Domus 180 Women Infantas, 32832 Amiras and 389310 Ladies of the Lamp and 194655 Ladies of the Gal." },
-    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of the town or the emporium and therefore have been conscripted to the Oikos of the Oikodrome. They are fitted with a electronic LL or ceramic braces and trained how to drive a Kharvee. They work the MSHN. Male acolytes drive from CLIT to CLIT around the world in what is known as the EPIC and female acolytes drive around their home CLIT and once a year in an event known as the Pacchāgamana"},
+    { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 12977 CLTs there is a structure of 1 Woman Divine Huriyya to 6 Arch Angel Divines of the Domus 180 Women Infantas, 32832 Amiras and 389310 Ladies of the Lamp and 194655 Ladies of the Gal." },
+    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of the town or the emporium and therefore have been conscripted to the Oikos of the Oikodrome. They are fitted with a electronic LL or ceramic braces and trained how to drive a Kharvee. They work the MSHN. Male acolytes drive from CLT to CLT around the world in what is known as the EPIC and female acolytes drive around their home CLT and once a year in an event known as the Pacchāgamana"},
     { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities and the bishops live in the Rus. The Relic cities are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
   ];
   
    const metric5 = [
   { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the same under the sea bed."},
-  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLIT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
+  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
   { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
   { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
   { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
@@ -4253,7 +4344,7 @@ function WorldRule2Page() {
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated entirely by evangellions and the Emirate is a town populated by slaves."},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Calculations", text:"To be added."}, 
-  { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLIT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLIT: 26,200`},
+  { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
   { id: 11, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
 
 ]; 
