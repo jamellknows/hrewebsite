@@ -2782,7 +2782,7 @@ const rightGrid = [
   },
   {
     id: 1,
-    title: "Nomads and Slaves",
+    title: "Routes and Nomads and Slaves",
     frontImage: "./images/cross.jpg",
     backImage: "./images/cross-back.jpg",
     content: "The social order is a Patriarchal Matriarchy which means that at the very top are 2 men, the Holy Emperor and the Pope and the other positions are filled by women. There are 3 arms of government and a head, the Head is NIFTYFIVENINEHALER and the arms are TWO, the Priesthood of Melchizedek and NINE. Governance is done in collaboration with evangellions. All people live in walled settlements that strictly forbid the keeping of natural organisms as pets although Pokemon will be allowed.",
