@@ -2726,8 +2726,8 @@ useEffect(() => {
   },
   {
     id: 5,
-    title: "Completion: GUM",
-    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role as social media worker."
+    title: "Completion: GUM, FEST, Celebrities, Pokemon and entertainment.",
+    content: "GUM stands for giving, understanding and movement. It is a sub branch of 3(The priesthood of Melchizedek). It is composed of priestesses who rotate between this role as social media worker. FEST stands for Fashion, Entertainment, Science(espionage) and Test. It is ran by ladies of the lamp of which there are 30 per CLIT. This ensures each region has a different cultural identity while also being religiously correct. All celebrities are the children of myself, Russell or Kwame. Pokemon will be in the world and the number of Pokemon a person has will be decided by their 89 score. All entertainment venues will be outside of towns i.e discos, stadiums, theatres, gambling etc. Inside of towns will be community centers for group meetings of arts and crafts, yoga and meditation, zoos, gyms, spas, reading groups and play areas which are spaces where women go to play tag, climb walls etc. There are no parks."
   }
 ];
 
