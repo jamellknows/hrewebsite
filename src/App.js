@@ -2700,28 +2700,28 @@ useEffect(() => {
   const accordionItems = [
   {
     id: 0,
-    title: "Love: Service",
-    content: "It has remained determined a compatibility metric governed more by materiality than spirituality. With materiality fulfilled love shall be determined by a persons spiritual journey with mandatory pairings by age 24."
+    title: "Love: Women, sex, companionship, dating, pairing",
+    content: "Marriage is a right of priests, deacons, polītai, proedros, and members of NIFTY59HALER. Marriage partners for priests and deacons are found using a dating app. Women that live in the towns are free to have sex with the boys from age 16 to 19(when they leave). Women of the MSHN(acolytes) are free to have sex with men who themselves are acolytes when their routes intersect. Men that are slaves do not have sex, but donate sperm. The laws regarding sex for Polītai are mostly governed by the Proedros of that Emporium, however some laws will still be in effect."
   },
   {
     id: 1,
-    title: "Language: Zoo's and Ham",
-    content: "Language is to be polite. Every settlement will contain a zoo that is integrated into the size of the settlement so that no matter where you are you are not far from wild animals. Secondly everybody is to learn Hindi as the new common tongue." // Second item
+    title: "Language: People, Zoos and the mandatory second language",
+    content: "The mandatory second language of a zone(town, route) will depend on the result of their 89 test. Currently I am thinking Hindi, Mandarin, Armenian, Arabic, Hebrew, Persian and Greek (MAPSHAG). People will live in towns or routes and will have varying levels of rights and life styles depending on this. Where a person lives is determined by their 89 score, gender and race(ethnic background). All towns will have a zoo and I am considering putting zoos along routes." // Second item
   },
   {
     id: 2,
-    title: "Leadership: Evangelions(Angels)",
-    content: "Evangelions can be described as droids or robots. They are designed to be as powerful as biblical angels and are also useful servants, governors, constructors and more. They are built using LL(Lavore Luce) a state of matter between a photon and a fermion. Some will be made of a very durable ceramic, some will have the face of a lion, ox, eagle or a shawl. Others will look like men."
+    title: "Leadership: NIFTY59HALER and Evangelions(Angels)",
+    content: " The Leadership is headed by myself from the NIFTY59HALER, there are 3 sub branches of government the leading is the Priesthood of the Melchizidek, then the Three Domus of the House of Bucknor Wisdom, then it is mega company 2. The priesthood is led by Bishops with the aid of priests, deacons and priestesses. 2 is run by evangellions, women known as palatines and children of NIFTY59HALER, and the three Domus is led by my wife the Divine Hurriya with evangellions and women titled called ladies, amiras and infantas. Evangelions can be described as droids or robots. They are designed to be as powerful as biblical angels and are also useful servants, governors, constructors and more. They are built using LL(Lavore Luce) a state of matter between a photon and a fermion. Some will be made of a very durable ceramic, some will have the face of a lion, ox, eagle or a shawl. Others will look like men."
   },
   {
     id: 3,
-    title: "Cause: FEST",
-    content: "FEST stands for Fashion, Environment, Science and Test. It is the sub-branch of 4 which in turn is the sub-branch of 9 and is governed by the Ladies of the Lamp. The duties include designing the fashion for their region, modelling, curating the entertainment, monitoring the society (espionage), designing an education curriculum that meets the requirements and testing and training the population. "
+    title: "Cause: Priesthood",
+    content: " The priesthood of the Melchizedek has 5 branches together they oversee the whole globe. Current priests will be recruited and new priests will be made across all religions. Priests live in relic cities overseen by the Rabat of the Relics. Priests are tasked with purifying these cities starting again from the holiest sites. The 5 branches are the Cetiya of the Upasikayo (female acolytes), Rabat of the Relic (Relic Cities), Oikos of the Oikodrome (male acolytes), the Synagogue of the Sefer (Science) and the Sanctuary of the Sea (Towns). "
   },
   {
     id: 4,
-    title: "Justice: JSPEM",
-    content: "JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decisions about FEST.",
+    title: "Justice: Test, Payment and JSPEM",
+    content: "To ensure society is fair all people will be tested according to their life (8) and their goodness and concealed goodness (9) togther this is an 89 (celebration of preservation against evil). A person is paid by their living standards and this is determined by where they live which is decided by their race(ethnicity), gender and 89 result. They must then commit to a 114. JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decisions about FEST.",
     fontSize: "0.5em"
   },
   {
@@ -2774,7 +2774,7 @@ useEffect(() => {
 const rightGrid = [
   {
     id: 0,
-    title: "A CLIT",
+    title: "New Land Settlements",
     content: `There are 12977 Clits, a Clit is divided into 4 parts, The capital region known as a christmas is composed of ARX(1: Hearing and Light), HIDALGO(3: Social Services branch of 3), EMIRATE(2: Business), EMPORIUM(9: Ladies of the Light), RUS(3: The Priesthood of Melchizedek (Head of 3)), THANA(Jurors: A branch of 3) it uses 17% of the land. The middle part known as a Lamp uses 15% of the land and is the Wola (Champions 4vs5), Eshkol (Disc 3), Shefa (Deck 4vs5), Hromoda (Card 3), Grad (Stage 4vs5) and the Burg (Level 3). The bottom section known as a tooth uses 48% of the land. It is the Hamlet, Alber, Mish, Kent, Thorpe and Sea Village. The fourth part is the integration which is the male loop/rail network that connects a CLIT. Men live in mobile apartments called khanes that move between towns as required. Each town has its own prodcution focus with men moving between places and working the land outside of the clit as well as coming into the clit to work in the factories. `,
     image: "./images/christmas.jpg",
   },
@@ -3057,7 +3057,7 @@ const CarouselContent = ({ large = false }) => (
         {/* Expandable content */}
         <div
           style={{
-            maxHeight: isOpen ? '200px' : '0px',
+            maxHeight: isOpen ? '30rem' : '0px',
             overflow: 'hidden',
             transition: 'max-height 0.35s ease, padding 0.35s ease',
             paddingTop: isOpen ? '12px' : '0px',
@@ -3916,7 +3916,7 @@ function DualCarouselCards() {
     ],
     two: [
       { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" },
-      { title: "Roman", text: "Romans are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
       { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLIT.", img: "/images/classes/femaleacolyte.png" },
@@ -3924,8 +3924,8 @@ function DualCarouselCards() {
     ], 
     three: [
       { title: "Servitude", text: "Priests, Priestesses, Bishops, Amiras, Infantas and the higher Royal classes can own slaves. Otherwise slavery is prohibited.", img: "/images/classes/priestswife.png" },
-      { title: "Abode", text: "Priests live in houses, Deacons live in flats, Romans live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
-      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Romans have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
+      { title: "Abode", text: "Priests live in houses, Deacons live in flats, Polītai live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
+      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Polītai have freedom of movement to 20 other CLITS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
       { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
       { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/femaleacolyte.png" },
       { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
