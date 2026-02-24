@@ -3185,13 +3185,14 @@ const CarouselContent = ({ large = false }) => (
       <div
         key={item.id}
         style={{
-          height: "260px",
-          position: "relative",
+          height: "30rem",
+          position: "relative"
+    
         }}
       >
         <div
           style={{
-            width: "100%",
+            width: "90%",
             height: "100%",
             position: "relative",
             transformStyle: "preserve-3d",
@@ -3239,7 +3240,7 @@ const CarouselContent = ({ large = false }) => (
           <div
             style={{
               position: "absolute",
-              width: "100%",
+              width: "90%",
               height: "100%",
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
