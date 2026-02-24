@@ -2902,9 +2902,9 @@ const mainCards = [
     title: "Christmas",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The Hood is the head office of the HATI the men who work inside and outside the Christmas region. These men work entertainment, services and construction.", image: "https://via.placeholder.com/200x150" },
-      { id: 12, text: "Within a Christmas production is handled by mass priduced evangellion units known as elves. ", image: "https://via.placeholder.com/200x150" },
-      { id: 13, text: "Sub-card 1C", image: "https://via.placeholder.com/200x150" },
+      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "https://via.placeholder.com/200x150" },
+      { id: 12, text: "There are elves that live in the hidalgo. They are a form of evangellion(ivangellion, ivorgellion). ", image: "https://via.placeholder.com/200x150" },
+      { id: 13, text: "", image: "https://via.placeholder.com/200x150" },
       { id: 14, text: "Sub-card 1D", image: "https://via.placeholder.com/200x150" },
     ],
   },
