@@ -2467,6 +2467,8 @@ useEffect(() => {
 function ReligionPage() {
   // State for the top accordion
   const [activeAccordion, setActiveAccordion] = useState(null);
+  const [flippedLetter, setFlippedLetter] = useState(null);
+  const carouselRef = useRef(null);
 
   // State for expanded grid items
   const [expandedGrid, setExpandedGrid] = useState(null);
@@ -2515,6 +2517,56 @@ function ReligionPage() {
     content: "Buddhism is a spiritual path focused on ending suffering by attaining enlightenment and understanding the true nature of reality. It follows the Four Noble Truths and the Eightfold Path, which advocate for mindfulness, ethical conduct, and mental discipline. By practicing meditation and compassion, followers strive to reach a state of Nirvana, free from the cycle of craving and attachment."
   }
 ];
+
+const cardFrontStyle = {
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backfaceVisibility: "hidden",
+  background: "#0f172a",
+  color: "white",
+  borderRadius: "18px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "60px",
+  fontWeight: "bold",
+  boxShadow: "0 10px 25px rgba(0,0,0,.35)",
+  transition: "all .3s ease",
+};
+
+const cardBackStyle = {
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backfaceVisibility: "hidden",
+  transform: "rotateY(180deg)",
+  background: "linear-gradient(135deg,#1e293b,#0f172a)",
+  color: "white",
+  borderRadius: "18px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  boxShadow: "0 10px 25px rgba(0,0,0,.35)",
+};
+
+const arrowStyle = (side) => ({
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  [side]: "10px",
+  zIndex: 10,
+  background: "#0f172a",
+  color: "white",
+  border: "none",
+  borderRadius: "50%",
+  width: "40px",
+  height: "40px",
+  cursor: "pointer",
+  fontSize: "22px",
+  boxShadow: "0 6px 18px rgba(0,0,0,.3)",
+});
 
 
   return (
@@ -2597,6 +2649,127 @@ function ReligionPage() {
           </div>
         ))}
       </div>
+
+      {/* Hebrew Carousel */}
+<div style={{ marginTop: "70px" }}>
+  <h3
+    style={{
+      textAlign: "center",
+      marginBottom: "24px",
+      fontSize: "24px",
+      fontWeight: 700,
+    }}
+  >
+    The Hebrew Alpha Numeral System
+  </h3>
+
+  <div style={{ position: "relative" }}>
+    
+    {/* Left Arrow */}
+    <button
+      onClick={() => {
+        carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      }}
+      style={arrowStyle("left")}
+    >
+      ‹
+    </button>
+
+    {/* Scroll Container */}
+    <div
+      ref={carouselRef}
+      style={{
+        display: "flex",
+        overflowX: "auto",
+        gap: "18px",
+        padding: "20px 60px",
+        scrollSnapType: "x mandatory",
+        cursor: "grab",
+      }}
+    >
+      {[
+        { l: "א", n: 1, name: "Aleph" },
+        { l: "ב", n: 2, name: "Bet" },
+        { l: "ג", n: 3, name: "Gimel" },
+        { l: "ד", n: 4, name: "Dalet" },
+        { l: "ה", n: 5, name: "He" },
+        { l: "ו", n: 6, name: "Vav" },
+        { l: "ז", n: 7, name: "Zayin" },
+        { l: "ח", n: 8, name: "Chet" },
+        { l: "ט", n: 9, name: "Tet" },
+        { l: "י", n: 10, name: "Yod" },
+        { l: "כ", n: 20, name: "Kaf" },
+        { l: "ל", n: 30, name: "Lamed" },
+        { l: "מ", n: 40, name: "Mem" },
+        { l: "נ", n: 50, name: "Nun" },
+        { l: "ס", n: 60, name: "Samekh" },
+        { l: "ע", n: 70, name: "Ayin" },
+        { l: "פ", n: 80, name: "Pe" },
+        { l: "צ", n: 90, name: "Tsadi" },
+        { l: "ק", n: 100, name: "Qof" },
+        { l: "ר", n: 200, name: "Resh" },
+        { l: "ש", n: 300, name: "Shin" },
+        { l: "ת", n: 400, name: "Tav" },
+      ].map((item, index) => {
+        const flipped = flippedLetter === index;
+
+        return (
+          <div
+            key={index}
+            onClick={() =>
+              setFlippedLetter(flipped ? null : index)
+            }
+            style={{
+              minWidth: "140px",
+              height: "180px",
+              perspective: "1000px",
+              scrollSnapAlign: "start",
+              cursor: "pointer",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "relative",
+                transformStyle: "preserve-3d",
+                transition: "transform .6s ease",
+                transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+              }}
+            >
+
+              {/* FRONT */}
+              <div style={cardFrontStyle}>
+                {item.l}
+              </div>
+
+              {/* BACK */}
+              <div style={cardBackStyle}>
+                <div style={{ fontSize: "20px", fontWeight: 600 }}>
+                  {item.name}
+                </div>
+                <div style={{ marginTop: "10px", fontSize: "18px" }}>
+                  {item.n}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Right Arrow */}
+    <button
+      onClick={() => {
+        carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      }}
+      style={arrowStyle("right")}
+    >
+      ›
+    </button>
+  </div>
+</div>
     </AnimatedPage>
   );
 }
