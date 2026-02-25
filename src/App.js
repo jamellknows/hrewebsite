@@ -2790,14 +2790,14 @@ const rightGrid = [
   {
     id: 2,
     title: "Sea villages, sky turtles (beyblades, castles) and Africa and the Caribbean.",
-    frontImage: "seaandsky.png",
+    frontImage: "/images/seaandsky.png",
     backImage: "./images/card-back.jpg",
     content: "",
   },
   {
     id: 3,
     title: "The Moon, other planets and space",
-    frontImage: "./images/tet.jpg",
+    frontImage: "./images/moonvenusspace.png",
     backImage: "./images/tet-back.jpg",
     content: "",
   },
