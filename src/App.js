@@ -3366,7 +3366,7 @@ const CarouselContent = ({ large = false }) => (
             Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
             On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
             There are 8 castles that serve as government buildings and Ladies of the Lamp/Gal residences. Men live as a part of the Interrail and travel between towns 
-            working as maggots, skoulikia or hati depending on their attainment. All men apart from priests are acolytes. 
+            working as maggots, skoulikia or hati depending on their attainment. 
             
             The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and FDELM.
           </p>
@@ -4305,7 +4305,7 @@ function WorldRule2Page() {
   { id: 3, title: "Palatines and Proedros", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Proedros are men who are sons of women that belong to NIFTY59HALER, they are in charge of an Emporium and run it as an independent city state focuses on commerce. They are allowed to employ men and women that have passed the 89 test." },
   { id: 4, title: "Mac", text:"The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town."},
   { id: 5, title: "Bishops and Divines of the Domus", text:"Bishops are the sons of Russell who lead the Priesthood of the Melchizidek. They work within 3 of the division, the Rabat, the Oikos and the Synagogue. Divines of the Domus are 6 Arch Angels, Michael, Gabriel, Metatron, Raphael, Uriel, Sandalaphon." },
-  { id: 5, title: "Priests", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598."}
+  { id: 5, title: "Priests and Deacons", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598. Deacons live in the Rus with the bishops. Priests can visit the Rus and some may live there for some time."}
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
     id: i,
