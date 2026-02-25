@@ -3293,7 +3293,7 @@ const CarouselContent = ({ large = false }) => (
                 overflow: "hidden",
                 cursor: "pointer",
                 fontSize: "14px",
-                lineHeight: 1.4,
+                lineHeight: 1.2,
                 display: "-webkit-box",
                 WebkitLineClamp: textOpen ? "unset" : 3,
                 WebkitBoxOrient: "vertical",
