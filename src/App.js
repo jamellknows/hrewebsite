@@ -2789,7 +2789,7 @@ const rightGrid = [
   },
   {
     id: 2,
-    title: "Sea villages, sky turtles (beyblades, castles) and Africa and the Caribbean.",
+    title: "Sea villages, sky turtles (beyblades, castles).",
     frontImage: "/images/seaandsky.png",
     backImage: "./images/card-back.jpg",
     content: "",
