@@ -2666,13 +2666,13 @@ useEffect(() => {
       id: 3,
       title: "Governance",
       image: "./images/sv1.png",
-      text: "The Sea Villages are special administrative zones run by Evangelions who form JSPEM and 16 Ladies of the Wave. Ladies of the wave are the most beautiful virgin women who are tasked with fashion, research, employment and entertainment (FREE).  "
+      text: "The Sea Villages are special administrative zones run by Evangelions who form JSPEM and 16 Ladies of the Wave. Ladies of the gal are the most beautiful virgin women who are tasked with fashion, research, employment and entertainment (FREE).  "
     },
     {
       id: 4,
       title: "Judgement",
       image: "./images/sv3.png",
-      text: "Testing cycles evaluate citizens and redistribute the civilians every five years. Families that have a female family member as a lady of the wave enjoy special privileges in employment.  "
+      text: "Testing cycles evaluate citizens and redistribute the civilians every five years. Families that have a female family member as a lady of the gal enjoy special privileges in employment.  "
     },
     {
       id: 5,
@@ -2805,7 +2805,6 @@ const rightGrid = [
 
 
 
-  const [openGridImage, setOpenGridImage] = useState(null);
 
   const bottomThree = [
   { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLT and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The goal for all male acolytes is to complete the MSHN. "},
