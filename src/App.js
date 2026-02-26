@@ -2564,6 +2564,7 @@ function ReligionPage() {
   const [flippedLetter, setFlippedLetter] = useState(null);
   const carouselRef = useRef(null);
   const [openSefirot, setOpenSefirot] = useState(false);
+  const [openHindi, setOpenHindi] = useState(false);
 
   // State for expanded grid items
   const [expandedGrid, setExpandedGrid] = useState(null);
@@ -3009,6 +3010,141 @@ const arrowStyle = (side) => ({
           );
         })}
       </div>
+    </div>
+  )}
+</div>
+
+{/* Hindi Alphabet Expandable Section */}
+<div style={{ marginTop: "90px" }}>
+  <div
+    onClick={() => setOpenHindi(!openHindi)}
+    style={{
+      ...styles.card,
+      cursor: "pointer",
+      padding: "20px",
+      textAlign: "center",
+      fontWeight: 600,
+      fontSize: "18px"
+    }}
+  >
+    {openHindi ? "Close Hindi Alphabet ▲" : "Hindi (Devanagari) Alphabet ▼"}
+  </div>
+
+  {openHindi && (
+    <div
+      style={{
+        marginTop: "20px",
+        padding: "30px",
+        borderRadius: "18px",
+        background: "#f8fafc",
+        lineHeight: 1.8,
+        fontSize: "15px"
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>The Devanagari Script</h3>
+
+      <p>
+        The Hindi alphabet is written in Devanagari. Unlike Hebrew, it is an
+        abugida — each consonant carries an inherent vowel sound unless modified.
+        The script is traditionally viewed as sacred in Hindu philosophy,
+        associated with mantra, vibration, and sacred sound (Śabda).
+      </p>
+
+      {/* Vowels */}
+      <h4>Vowels (Svar)</h4>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+          gap: "12px",
+          marginTop: "12px"
+        }}
+      >
+        {[
+          { l: "अ", name: "A", meaning: "Primordial sound, beginning" },
+          { l: "आ", name: "Ā", meaning: "Expansion of being" },
+          { l: "इ", name: "I", meaning: "Directed consciousness" },
+          { l: "ई", name: "Ī", meaning: "Extended awareness" },
+          { l: "उ", name: "U", meaning: "Containment, depth" },
+          { l: "ऊ", name: "Ū", meaning: "Expansion of depth" },
+          { l: "ऋ", name: "Ṛ", meaning: "Cosmic rhythm" },
+          { l: "ए", name: "E", meaning: "Integration" },
+          { l: "ऐ", name: "Ai", meaning: "Creative insight" },
+          { l: "ओ", name: "O", meaning: "Completion" },
+          { l: "औ", name: "Au", meaning: "Full manifestation" }
+        ].map((v, i) => (
+          <div
+            key={i}
+            style={{
+              padding: "10px",
+              borderRadius: "12px",
+              background: "white",
+              textAlign: "center",
+              boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+            }}
+          >
+            <div style={{ fontSize: "32px", fontWeight: 600 }}>{v.l}</div>
+            <div style={{ fontSize: "13px", opacity: 0.8 }}>{v.name}</div>
+            <div style={{ fontSize: "12px", opacity: 0.65 }}>
+              {v.meaning}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Consonants */}
+      <h4 style={{ marginTop: "30px" }}>Consonants (Vyanjan)</h4>
+
+      <p>
+        Consonants are grouped by place of articulation — throat, palate,
+        retroflex, dental, and labial. This systematic structure reflects
+        the scientific phonetic organization of Sanskrit and Hindi.
+      </p>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(60px, 1fr))",
+          gap: "10px",
+          marginTop: "16px"
+        }}
+      >
+        {[
+          "क","ख","ग","घ","ङ",
+          "च","छ","ज","झ","ञ",
+          "ट","ठ","ड","ढ","ण",
+          "त","थ","द","ध","न",
+          "प","फ","ब","भ","म",
+          "य","र","ल","व",
+          "श","ष","स","ह"
+        ].map((c, i) => (
+          <div
+            key={i}
+            style={{
+              padding: "12px",
+              borderRadius: "12px",
+              background: "white",
+              textAlign: "center",
+              fontSize: "26px",
+              fontWeight: 600,
+              boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+            }}
+          >
+            {c}
+          </div>
+        ))}
+      </div>
+
+      {/* Symbolic Note */}
+      <h4 style={{ marginTop: "30px" }}>Spiritual Significance</h4>
+
+      <p>
+        In Hindu philosophy, sound (Nāda) is considered the origin of creation.
+        The syllable "ॐ" (Om) is regarded as the primordial vibration from
+        which all letters and existence emerge. The structure of the alphabet
+        reflects ordered manifestation — from subtle vibration to articulated speech.
+      </p>
     </div>
   )}
 </div>
