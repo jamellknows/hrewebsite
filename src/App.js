@@ -4636,7 +4636,7 @@ function DualCarouselCards() {
       { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
     ],
     four: [
-      { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to townies. Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe. Deacons, preists and politai can also reproduce with their spouse." , img: "/images/spermdonate.png"},
+      { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to Townies(WE SHG B HAM). Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe(SKT). Deacons, preists and politai can also reproduce with their spouse." , img: "/images/spermdonate.png"},
       { title: "Segregation", text: "Society is strictly segregated into two there is no mixing physically or virtually.",  img: "/images/segregation.png"},
     ]
      
