@@ -2544,10 +2544,13 @@ const cardBackStyle = {
   background: "linear-gradient(135deg,#1e293b,#0f172a)",
   color: "white",
   borderRadius: "18px",
+  padding: "16px",
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
   justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
+  gap: "6px",
   boxShadow: "0 10px 25px rgba(0,0,0,.35)",
 };
 
@@ -2688,29 +2691,29 @@ const arrowStyle = (side) => ({
       }}
     >
       {[
-        { l: "א", n: 1, name: "Aleph" },
-        { l: "ב", n: 2, name: "Bet" },
-        { l: "ג", n: 3, name: "Gimel" },
-        { l: "ד", n: 4, name: "Dalet" },
-        { l: "ה", n: 5, name: "He" },
-        { l: "ו", n: 6, name: "Vav" },
-        { l: "ז", n: 7, name: "Zayin" },
-        { l: "ח", n: 8, name: "Chet" },
-        { l: "ט", n: 9, name: "Tet" },
-        { l: "י", n: 10, name: "Yod" },
-        { l: "כ", n: 20, name: "Kaf" },
-        { l: "ל", n: 30, name: "Lamed" },
-        { l: "מ", n: 40, name: "Mem" },
-        { l: "נ", n: 50, name: "Nun" },
-        { l: "ס", n: 60, name: "Samekh" },
-        { l: "ע", n: 70, name: "Ayin" },
-        { l: "פ", n: 80, name: "Pe" },
-        { l: "צ", n: 90, name: "Tsadi" },
-        { l: "ק", n: 100, name: "Qof" },
-        { l: "ר", n: 200, name: "Resh" },
-        { l: "ש", n: 300, name: "Shin" },
-        { l: "ת", n: 400, name: "Tav" },
-      ].map((item, index) => {
+  { l: "א", n: 1, name: "Aleph", meaning: "Unity, origin, divine oneness [36,120,26]." },
+  { l: "ב", n: 2, name: "Bet", meaning: "House, duality, creation [36 or 120,16]." },
+  { l: "ג", n: 3, name: "Gimel", meaning: "Kindness, movement, giving [120,26 or 46]." },
+  { l: "ד", n: 4, name: "Dalet", meaning: "Door, humility, entry [120, 16 or 120, 11]." },
+  { l: "ה", n: 5, name: "He", meaning: "Breath, revelation, life [120,11 or 16[120, 2*16] or [120,11,16]]." },
+  { l: "ו", n: 6, name: "Vav", meaning: "Connection, union, continuity [16]." },
+  { l: "ז", n: 7, name: "Zayin", meaning: "Completion, spiritual struggle [26 or 16,26]." },
+  { l: "ח", n: 8, name: "Chet", meaning: "Life, transcendence [16,111]." },
+  { l: "ט", n: 9, name: "Tet", meaning: "Hidden goodness [16,36]." },
+  { l: "י", n: 10, name: "Yod", meaning: "Divine spark, potential [0 or 1]." },
+  { l: "כ", n: 20, name: "Kaf", meaning: "Also 11. Potential, power in action [11,11,11,16,18,32,42]." },
+  { l: "ל", n: 30, name: "Lamed", meaning: "Also 12. Learning, aspiration [26,120 or 26,26 or 9,35,40,45]." },
+  { l: "מ", n: 40, name: "Mem", meaning: "Also 13. Water, wisdom, flow [30,50 or 5,16 or 40,50 or 4[16+40]]." },
+  { l: "נ", n: 50, name: "Nun", meaning: "Also 14. Faithfulness, continuation [36,46,56 or [26,120,120,120]]." },
+  { l: "ס", n: 60, name: "Samekh", meaning: "Also 15. Support, protection [21: 46,16 or 32:[16,36]]." },
+  { l: "ע", n: 70, name: "Ayin", meaning: "Also 16. Insight, perception [50(8,21,42)=16,16,46 | 2*50(21,38,42) = 20,20,4*16]." },
+  { l: "פ", n: 80, name: "Pe", meaning: "Also 17. Speech, expression [[T(21), X(16,120,120), Y(111)],[T(6*31), X(6,14,120),Y (2*50)],[T(2*50(21,34)), X(6,6,11), Y(2,11)]]." },
+  { l: "צ", n: 90, name: "Tsadi", meaning: "Also 18. Righteousness [T(3*50(11,42), X(5,6,20), Y(4,22,50)][T(2*50(4,12), X(3,6,16,20,36), Y(11,22,50))], [T(4,31), X(16,20,26), Y(2,21,50)]]." },
+  { l: "ק", n: 100, name: "Qof", meaning: "Also 19. Holiness, elevation.[T(16,26), X(21), Y(22)]" },
+  { l: "ר", n: 200, name: "Resh", meaning: "Also 20. Head, beginning. [11,22,33,44,55,66,77,etc]" },
+  { l: "ש", n: 300, name: "Shin", meaning: "Also 21. Fire, transformation [T(1), X(46), Y(4)]." },
+  { l: "ת", n: 400, name: "Tav", meaning: "Also 22. Completion, truth. [T(2,12), X(36,120), Y(2,11)],[T(5,12), X(11,26), Y(1,2)]]" },
+].map((item, index) => {
         const flipped = flippedLetter === index;
 
         return (
@@ -2744,14 +2747,29 @@ const arrowStyle = (side) => ({
               </div>
 
               {/* BACK */}
-              <div style={cardBackStyle}>
-                <div style={{ fontSize: "20px", fontWeight: 600 }}>
-                  {item.name}
-                </div>
-                <div style={{ marginTop: "10px", fontSize: "18px" }}>
-                  {item.n}
-                </div>
-              </div>
+<div style={cardBackStyle}>
+  <div style={{ fontSize: "20px", fontWeight: 600 }}>
+    {item.name}
+  </div>
+
+  <div style={{ fontSize: "18px", opacity: 0.85 }}>
+    {item.n}
+  </div>
+
+  <div
+    style={{
+      marginTop: "8px",
+      fontSize: "13px",
+      lineHeight: 1.4,
+      opacity: 0.75,
+      maxHeight: "60px",
+      overflowY: "auto",
+      padding: "0 4px"
+    }}
+  >
+    {item.meaning}
+  </div>
+</div>
 
             </div>
           </div>
