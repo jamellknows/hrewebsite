@@ -3519,7 +3519,7 @@ const mainCards = [
     title: "Christmas",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "/images/christmascity.png" },
+      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty or those invited, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "/images/christmascity.png" },
       { id: 12, text: "There are robotic elves that live in the emir and work alongside the male slaves. ", image: "/images/robotelf.png" },
       { id: 13, text: "A daughter is a category consisting of two types of women. The first are the biological daughters of myself, Russell or Kwame that live in the hidalgo with the evangellions. The second are the children of townies who have been fertilised with the semen of a slave. They raise the child in the town and then when the child turns 18 they are moved to the hidalgo to be friends with my biological daughters. There they are celebrities of some form I will work it out. ", image: "/images/daughters.png" },
       { id: 14, text: "All stadiums, theatres, amusement parks, discos, clubs, spectator venues and any other type of entertainment venue are outside of the settlement. Entertainment follows the duality principle those that live along routes have a seperate entertainment industry and culture to those that live inside towns.", image: "/images/entertainment1.png" },
@@ -5026,7 +5026,7 @@ function WorldRule2Page() {
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Calculations", text:"To be added."}, 
   { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
-  { id: 11, title: "Arx", text:"The Arx is the capital town of a Cat. It is where the official royal residence is and the home of the Ladies of the Light. It is where the 9 meet and where the 2 business is centered and where the head cathedra is."}, 
+  { id: 11, title: "Arx", text:"The Arx is the capital town of a CLT. It is where the official royal residence is and the home of the Ladies of the Lamp and those invited. It is where the 9 meet and where the 2 businesses are centered."}, 
 
 ]; 
 
