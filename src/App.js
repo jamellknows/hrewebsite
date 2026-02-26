@@ -3472,7 +3472,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Manufacturing & Industry", 
     icon: "🏭", 
     slides: [
-      { image: "/images/manufuturist.png", text: "All manufacturing is CAT integrated to completion. It is then traded for what other CATS produce as a part of the economy." },
+      { image: "/images/manufuturist.png", text: "All manufacturing is CLT integrated to completion. It is then traded for what other CLTs produce as a part of the economy." },
       { image: "/images/manumodern.png", text: "Warehouses and assembly workshops." },
       { image: "/images/manuclassic.png", text: "Local manufacturing and artisan production areas." }
     ]
@@ -3483,7 +3483,7 @@ const carouselItems = bottomThree.map(item => ({
     icon: "🏥", 
     slides: [
       { image: "/images/sketches/atlas.png", text: "Hospitals, shops, schools, and public services. All these services will be place within the walls of the towns. " },
-      { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CAT has one electricity producer and one water producer." },
+      { image: "/images/sketches/princerussell.png", text: "Electricity and water utilities infrastructure. Electricity and water run through the walls and are produced in undeground plants outside of the towns. An entire CLT has one electricity producer and one water producer." },
       { image: "/images/sketches/hourglass2.png", text: "Public service offices and educational centers. Public services and offices are all on the wall. Education is in the center." }, 
       { image: "/images/kharvees.jpg", text: "The Kharvees are the autonomous mobile trackable habitable living units for men. They function on tracks, loops and road. They are fitted with studio accomodation and AI to transport men to where they are needed to work and they can provide support and assistance with training to prepare men for work on arival. There will be 26200 per Eshtion and 314402 Kharvees per CLT." }, 
       { image: "/images/Eshtion.jpg", text: "The Eshtions are the AI depots and hubs where kharvees can be stored and charged if needed and also serves as training locations. There will be 12 Eshtions per CLT." }, 
@@ -4636,7 +4636,7 @@ function DualCarouselCards() {
       { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
     ],
     four: [
-      { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to Townies(WE SHG B HAM). Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe(SKT). Deacons, preists and politai can also reproduce with their spouse." , img: "/images/spermdonate.png"},
+      { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to Townies(WE SHG B HAM). Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe(SKT). Deacons, preists and politai can also reproduce with their spouse. Female acolytes don't reproduce. Priestesses, Ladies of the Lamp and Palatines reproduce within the NIFTY59ER family. Seamen and eggs are checked for genetic compatability etc to ensure the best offspring with a 6 generation goal to rebalance humanity." , img: "/images/spermdonate.png"},
       { title: "Segregation", text: "Society is strictly segregated into two there is no mixing physically or virtually.",  img: "/images/segregation.png"},
     ]
      
@@ -5016,12 +5016,12 @@ function WorldRule2Page() {
   ];
   
    const metric5 = [
-  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the same under the sea bed."},
-  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros and the Thana is for agriculture."},
-  { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 but after accounting for the test they will be filled with 26436 people." },
-  { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
-  { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
-  { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
+  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). It is populated by blacks. "},
+  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros  and populated by Polites and the Thana is an agriculture town populated by preistesses, female slaves and daughters and ladies in training."},
+  { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 The Wola is yellow, the Eshkol is yellow, the Shefa is white and yellow, the Hromada is white and yellow the Grad is white and yellow and the Burg is white." },
+  { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a CLT. It is where those who scored in the lower half of the avergae of other 8s metric reside. It is where browns live.  " },
+  { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion. They also manufacture. It is where browns and blacks live."},
+  { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the bishops and deacons live with their families. "},
   { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated by evangellions and daughters and the Emirate is a town populated by male slaves and city girls."},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Calculations", text:"To be added."}, 
@@ -5036,7 +5036,7 @@ const metric6 = [
   {id: 3, title: "Culture", text: "The culture is religious. Entertainment is the work of the ladies of the lamp who oversee sports teams for each town and who select representative musicians for each town. As the culture is designed to be inclusive all people are required to create a song that they can perform every 5 months." },
   {id: 4, title: "Science", text: "Education is completed over a 12 year programme from the age of 5 to 17. Scientific research is done by HAL, POM, and 2. Major scientific projects include Pokemon creation and other novelties for everybodies enjoyment." },
   {id: 5, title: "Labour", text: "The work pattern is 4 hour and 5 hour shifts with a 3 hour break in between to enjoy the town. There are no days off apart from religious holidays. Major labour projects include, spaceships, sea villages, sky castles, orbital platforms and trident terraforming spears." },
-  {id: 6, title: "Population", text: "The population is controlled everywhere. When the population increases too high a new CAT will be constructed or more will be taken to the 17%. " }
+  {id: 6, title: "Population", text: "The population is controlled everywhere. When the population increases too high a new CLT will be constructed or more will be taken to the 17%. " }
 
 ];
 
