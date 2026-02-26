@@ -3142,7 +3142,7 @@ const arrowStyle = (side) => ({
 
   { letter: "ट", number: 43 },
   { letter: "ठ", number: 44 },
-  { letter: "ड", number: null },
+  { letter: "ड", number: 26 },
   { letter: "ढ", number: 8 },
   { letter: "ण", number: 17 },
 
