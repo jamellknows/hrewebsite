@@ -4425,6 +4425,7 @@ function DualCarouselCards() {
       { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are women who scored very well on the 89 and are employed to live and work in the semi-autonomous Emporium.",  img: "/images/classes/femaleemporati.png"},
       { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
+      { title: "City girl", text: "'City girls' are women that didn't get a high enough score to remain a townie but do not want to be an acolyte. They can apply to live in the Emirate and be a bearer of 6 daughters. They must also work, but they are assited by the male slaves and evangellions. The daughters are raised in the Hidalgo and educated at the Thana before living in the Towns.", img: "/images/classes/citygirl.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLT.", img: "/images/classes/femaleacolyte.png" },
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
@@ -4435,7 +4436,13 @@ function DualCarouselCards() {
       { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
       { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/femaleacolyte.png" },
       { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
+    ],
+    four: [
+      { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to townies. Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe. Deacons, preists and politai can also reproduce with their spouse." , img: "/images/spermdonate.png"},
+      { title: "Segregation", text: "Society is strictly segregated into two there is no mixing physically or virtually.",  img: "/images/segregation.png"},
     ]
+     
+
 
 
   };
@@ -4591,6 +4598,38 @@ function DualCarouselCards() {
       }}
     >
       Living Standards
+    </div>
+     <div
+      onClick={() => openCarousel("four")}
+      style={{
+        width: "280px",
+        height: "190px",
+        background: "rgba(15, 23, 42, 0.75)",
+        backdropFilter: "blur(16px)",
+        borderRadius: "24px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        fontSize: "20px",
+        fontWeight: 600,
+        letterSpacing: "0.4px",
+        border: "1px solid rgba(148,163,184,0.12)",
+        boxShadow: "0 20px 45px rgba(0,0,0,0.55)",
+        transition: "all 0.3s cubic-bezier(.2,.8,.2,1)"
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-6px)";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.25)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "none";
+        e.currentTarget.style.border =
+          "1px solid rgba(148,163,184,0.12)";
+      }}
+    >
+      Customs
     </div>
   </div>
 
@@ -4785,7 +4824,7 @@ function WorldRule2Page() {
   { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a Cat. It is where those who scored in the lower half of the avergae of other 8s metric reside. " },
   { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion."},
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the priestesses of a Cat reside between travelling. I am considering using the priests like the priestesses where they spend a half or third of the year in a Rus and the rest at the Relic city."},
-  { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated entirely by evangellions and the Emirate is a town populated by slaves."},
+  { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated by evangellions and daughters and the Emirate is a town populated by male slaves and city girls."},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Calculations", text:"To be added."}, 
   { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
