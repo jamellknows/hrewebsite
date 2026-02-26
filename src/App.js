@@ -996,7 +996,7 @@ these women will be 1952.
         id: "1c",
         title: "Ivan Samuels Mélange",
         img: "/images/companies/ivansamuelsmelange.png",
-        desc: "This is the supra company for fashion it owns the following brands. Prix, Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana($2 billion evaluation) and Prada($4 billion evalauation)"
+        desc: "This is the supra company for fashion it owns the following brands. Prix(A dick), Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana($2 billion evaluation) and Prada($4 billion evalauation)"
       }, 
       {
         id: "1d",
