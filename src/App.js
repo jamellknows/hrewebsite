@@ -2563,6 +2563,7 @@ function ReligionPage() {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [flippedLetter, setFlippedLetter] = useState(null);
   const carouselRef = useRef(null);
+  const [openSefirot, setOpenSefirot] = useState(false);
 
   // State for expanded grid items
   const [expandedGrid, setExpandedGrid] = useState(null);
@@ -2881,6 +2882,135 @@ const arrowStyle = (side) => ({
       ›
     </button>
   </div>
+</div>
+
+{/* Sefirot & Gematria Expandable Section */}
+<div style={{ marginTop: "90px" }}>
+  <div
+    onClick={() => setOpenSefirot(!openSefirot)}
+    style={{
+      ...styles.card,
+      cursor: "pointer",
+      padding: "20px",
+      textAlign: "center",
+      fontWeight: 600,
+      fontSize: "18px"
+    }}
+  >
+    {openSefirot ? "Close Sefirot & Gematria ▲" : "Sefirot & Gematria ▼"}
+  </div>
+
+  {openSefirot && (
+    <div
+      style={{
+        marginTop: "20px",
+        padding: "30px",
+        borderRadius: "18px",
+        background: "#f8fafc",
+        lineHeight: 1.8,
+        fontSize: "15px"
+      }}
+    >
+      <h3 style={{ marginTop: 0 }}>The Sefirot</h3>
+      <p>
+        The Sefirot are the ten divine emanations through which the Infinite
+        reveals and structures reality. They represent attributes of divine
+        interaction and stages of spiritual refinement:
+      </p>
+
+      <ol>
+        <li><strong>Keter</strong> – Crown (Divine Will)</li>
+        <li><strong>Chokhmah</strong> – Wisdom</li>
+        <li><strong>Binah</strong> – Understanding</li>
+        <li><strong>Chesed</strong> – Kindness</li>
+        <li><strong>Gevurah</strong> – Strength / Judgment</li>
+        <li><strong>Tiferet</strong> – Harmony / Beauty</li>
+        <li><strong>Netzach</strong> – Endurance</li>
+        <li><strong>Hod</strong> – Humility / Splendor</li>
+        <li><strong>Yesod</strong> – Foundation</li>
+        <li><strong>Malkhut</strong> – Kingship / Presence</li>
+      </ol>
+
+      <h3>Gematria</h3>
+      <p>
+        Gematria is the interpretive system in which Hebrew letters correspond
+        to numerical values. Through these values, connections are drawn between
+        words, ideas, and spiritual concepts.
+      </p>
+
+      <h4>Number Meanings (1–50)</h4>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "8px",
+          marginTop: "12px"
+        }}
+      >
+        {Array.from({ length: 50 }, (_, i) => {
+          const meanings = {
+            1: "Unity, Divine Oneness [God, Unity and Primacy]",
+            2: "Duality, Balance [Duality and the world made with wisdom]",
+            3: "Harmony, Kindness [Kindness, giving and the balance between giving and receiving]",
+            4: "Foundation, Structure [Materiality and the door to spiritual growth]",
+            5: "Revelation, Breath [The Pentateuch and the breath of life]",
+            6: "Connection, Union [Connection and conjunction]",
+            7: "Completion, Spiritual Cycle [Completion and spiritual struggle]",
+            8: "Transcendence [Life and the transcendance of natural limitations]",
+            9: "Hidden Goodness [Goodness and concealed goodness]",
+            10: "Divine Order [A point of energy and the 10 divine emanations]",
+            11: "Transition, Excess [Potential and the nurturing process]",
+            12: "Governance, Tribes [Teaching and learning and the aspiration to go beyond]",
+            13: "Unity (Love) [Water, womb and the hidden and revealed aspects of existence]",
+            14: "Deliverance [Faithfulness and the continuation of life]",
+            15: "Sacred Name Value [Support and protection]",
+            16: "Light, Insight [Eyes, insight and perception]",
+            17: "Victory [Mouth, speech and expression]",
+            18: "Life (Chai) [Righteousness and humility]",
+            19: "Faith[Holiness and cycles of time]",
+            20: "Potential [Head, authority and the begining]",
+            21: "Divine Name Expansion [Divine power and transformation]",
+            22: "Completion of Letters [Truth, completion and the oath]",
+            23: "Integration [Divine providence and the union of God's name]",
+            24: "Cycles [Priesthood and the distribution of blessings]",
+            25: "Grace Multiplied [Grace and favour]",
+            26: "Tetragrammaton (YHWH)",
+            27: "Hidden Wisdom [Divine intervention and light]",
+            28: "Power [Power and strength]",
+            29: "Movement [Potential and the nurturing process]",
+            30: "Learning [Dedication and the fulfillment of vows]",
+            31: "Heart [The future and hope]",
+            32: "Paths of Wisdom [32 paths of wisdom]",
+            33: "Revelation Through Structure [Hidden divine light and the completion of creation]",
+            34: "Growth [Balance of spiritual and material realms]",
+            35: "Balance Extended [Transition and change]",
+            36: "Hidden Light [Hidden righteousness of sustainers]",
+            37: "Expansion [Spiritual insight and divine wisdom]",
+            38: "Spiritual Influence [Livlihood and sustenance]",
+            39: "Refinement [Preservation and guarding against evil]",
+            40: "Transformation [Trial, testing and transformation]",
+            41: "New Cycle [Renewal and new beginings]",
+            42: "Creative Power [42 letter Name of God]",
+            43: "Progression [Healing and recovery]",
+            44: "Material Stability [Patience and faith]",
+            45: "Humanity (Adam value) [Redemption and divine presence]",
+            46: "Spiritual-Physical Unity [Combination of spiritual and material realms]",
+            47: "Development [Divine wisdom and the unfolding of mysteries]",
+            48: "Endurance of Wisdom [Acquisition of wisdom and the Torah]",
+            49: "Completion of Cycle [Preperation and anticipation]",
+            50: "Jubilee, Liberation [Freedom, jubilee and the completion of cycles]"
+          };
+
+          return (
+            <div key={i} style={{ padding: "6px 0" }}>
+              <strong>{i + 1}</strong> — {meanings[i + 1]}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )}
 </div>
     </AnimatedPage>
   );
