@@ -3061,36 +3061,53 @@ const arrowStyle = (side) => ({
           marginTop: "12px"
         }}
       >
-        {[
-          { l: "अ", name: "A", meaning: "Primordial sound, beginning" },
-          { l: "आ", name: "Ā", meaning: "Expansion of being" },
-          { l: "इ", name: "I", meaning: "Directed consciousness" },
-          { l: "ई", name: "Ī", meaning: "Extended awareness" },
-          { l: "उ", name: "U", meaning: "Containment, depth" },
-          { l: "ऊ", name: "Ū", meaning: "Expansion of depth" },
-          { l: "ऋ", name: "Ṛ", meaning: "Cosmic rhythm" },
-          { l: "ए", name: "E", meaning: "Integration" },
-          { l: "ऐ", name: "Ai", meaning: "Creative insight" },
-          { l: "ओ", name: "O", meaning: "Completion" },
-          { l: "औ", name: "Au", meaning: "Full manifestation" }
-        ].map((v, i) => (
-          <div
-            key={i}
-            style={{
-              padding: "10px",
-              borderRadius: "12px",
-              background: "white",
-              textAlign: "center",
-              boxShadow: "0 4px 12px rgba(0,0,0,.08)"
-            }}
-          >
-            <div style={{ fontSize: "32px", fontWeight: 600 }}>{v.l}</div>
-            <div style={{ fontSize: "13px", opacity: 0.8 }}>{v.name}</div>
-            <div style={{ fontSize: "12px", opacity: 0.65 }}>
-              {v.meaning}
-            </div>
-          </div>
-        ))}
+       {[
+  { letter: "अ", number: 1, name: "A", meaning: "Primordial sound, beginning" },
+  { letter: "आ", number: 2, name: "Ā", meaning: "Expansion of being" },
+  { letter: "इ", number: 15, name: "I", meaning: "Directed consciousness" },
+  { letter: "ई", number: 15, name: "Ī", meaning: "Extended awareness" },
+  { letter: "उ", number: 34, name: "U", meaning: "Containment, depth" },
+  { letter: "ऊ", number: 41, name: "Ū", meaning: "Expansion of depth" },
+  { letter: "ऋ", number: 35, name: "Ṛ", meaning: "Cosmic rhythm" },
+  { letter: "ए", number: 33, name: "E", meaning: "Integration" },
+  { letter: "ऐ", number: 7, name: "Ai", meaning: "Creative insight" },
+  { letter: "ओ", number: 37, name: "O", meaning: "Completion" },
+  { letter: "औ", number: 39, name: "Au", meaning: "Full manifestation" }
+].map((v, i) => (
+  <div
+    key={i}
+    style={{
+      padding: "14px",
+      borderRadius: "14px",
+      background: "white",
+      textAlign: "center",
+      boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+    }}
+  >
+    <div style={{ fontSize: "34px", fontWeight: 600 }}>
+      {v.letter}
+    </div>
+
+    <div
+      style={{
+        fontSize: "14px",
+        fontWeight: 600,
+        color: "#0f172a",
+        marginTop: "4px"
+      }}
+    >
+      {v.number}
+    </div>
+
+    <div style={{ fontSize: "13px", opacity: 0.8 }}>
+      {v.name}
+    </div>
+
+    <div style={{ fontSize: "12px", opacity: 0.65 }}>
+      {v.meaning}
+    </div>
+  </div>
+))}
       </div>
 
       {/* Consonants */}
@@ -3110,30 +3127,75 @@ const arrowStyle = (side) => ({
           marginTop: "16px"
         }}
       >
-        {[
-          "क","ख","ग","घ","ङ",
-          "च","छ","ज","झ","ञ",
-          "ट","ठ","ड","ढ","ण",
-          "त","थ","द","ध","न",
-          "प","फ","ब","भ","म",
-          "य","र","ल","व",
-          "श","ष","स","ह"
-        ].map((c, i) => (
-          <div
-            key={i}
-            style={{
-              padding: "12px",
-              borderRadius: "12px",
-              background: "white",
-              textAlign: "center",
-              fontSize: "26px",
-              fontWeight: 600,
-              boxShadow: "0 4px 12px rgba(0,0,0,.08)"
-            }}
-          >
-            {c}
-          </div>
-        ))}
+       {[
+  { letter: "क", number: 11 },
+  { letter: "ख", number: 12 },
+  { letter: "ग", number: 21 },
+  { letter: "घ", number: 19 },
+  { letter: "ङ", number: 26 },
+
+  { letter: "च", number: 24 },
+  { letter: "छ", number: 31 },
+  { letter: "ज", number: 36 },
+  { letter: "झ", number: 10 },
+  { letter: "ञ", number: null },
+
+  { letter: "ट", number: 43 },
+  { letter: "ठ", number: 44 },
+  { letter: "ड", number: null },
+  { letter: "ढ", number: 8 },
+  { letter: "ण", number: 17 },
+
+  { letter: "त", number: 42 },
+  { letter: "थ", number: 18 },
+  { letter: "द", number: 9 },
+  { letter: "ध", number: null },
+  { letter: "न", number: 20 },
+
+  { letter: "प", number: 19 },
+  { letter: "फ", number: 23 },
+  { letter: "ब", number: 45 },
+  { letter: "भ", number: 30 },
+  { letter: "म", number: 13 },
+
+  { letter: "य", number: 40 },
+  { letter: "र", number: 3 },
+  { letter: "ल", number: 25 },
+  { letter: "व", number: 29 },
+
+  { letter: "श", number: 38 },
+  { letter: "ष", number: null },
+  { letter: "स", number: 6 },
+  { letter: "ह", number: 16 }
+].map((c, i) => (
+  <div
+    key={i}
+    style={{
+      padding: "12px",
+      borderRadius: "14px",
+      background: "white",
+      textAlign: "center",
+      boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+    }}
+  >
+    <div style={{ fontSize: "28px", fontWeight: 600 }}>
+      {c.letter}
+    </div>
+
+    {c.number && (
+      <div
+        style={{
+          fontSize: "13px",
+          marginTop: "4px",
+          fontWeight: 600,
+          color: "#0f172a"
+        }}
+      >
+        {c.number}
+      </div>
+    )}
+  </div>
+))}
       </div>
 
       {/* Symbolic Note */}
