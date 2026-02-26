@@ -1168,25 +1168,24 @@ these women will be 1952.
   ];
 
   const metric10 = [
-    {
-      id: 0,
-      title: "Female Business Structure",
-      text:
-        "A->C->CLI, Arch->CEO's->Computer, Laboratory, Integrity (Labour, Internal, Affairs, Network, Procurement)."
-    },
-    {
-      id: 1,
-      title: "Male Business Structure",
-      text:
-        "P->M->S,P,L. Performance(7 women from the female side) -> Managers -> Security, Payments, Produce(Labour, Safety, Office, Marketing, Procurement)."
-    },
-    {
-      id: 2,
-      title: "My Daily Run",
-      text:
-        "GRACEN->PST, Government & GIB, Research, Arch & Agriculture, COS & Construction."
-    }
-  ];
+  {
+    id: 0,
+    title: "Female Business Structure",
+    img: "/images/companies/femalebusinessstructure.jpg", // replace with your real image path
+  },
+  {
+    id: 1,
+    title: "Male Business Structure",
+    img: "/images/male-structure.jpg", // replace with your real image path
+    desc: "P → M → S, P, L. Performance (7 women from the female side) → Managers → Security, Payments, Produce (Labour, Safety, Office, Marketing, Procurement)."
+  },
+  {
+    id: 2,
+    title: "My Daily Run",
+    img: "/images/daily-run.jpg", // replace with your real image path
+    desc: "GRACEN → PST. Government & GIB, Research, Arch & Agriculture, COS & Construction."
+  }
+];
 
   // ===== NEW METRIC =====
   const metric11 = [
@@ -1385,8 +1384,10 @@ const cosmology = [
   const activeNode = currentNodes[activeIndex];
   const [lightbox, setLightbox] = useState(null);
   const [carousel, setCarousel] = useState(null); 
-const [activeSlide, setActiveSlide] = useState(null);
-const [index, setIndex] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(null);
+  const [index, setIndex] = useState(0);
+  const [activeImage, setActiveImage] = useState(null);
+  const [zoomed, setZoomed] = useState(false);
 
 
     useEffect(() => {
@@ -1918,30 +1919,76 @@ useEffect(() => {
     
 
         {/* ===== Third accordion row (3) ===== */}
-        <div
-          style={{
-            gridArea: "third",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "0.5em"
-          }}
-        >
-          {metric10.map((m, i) => (
-            <div
-              key={m.id}
-              onClick={() => setOpenThird(openThird === i ? null : i)}
-              style={{
-                ...styles.card,
-                cursor: "pointer",
-                padding: "10px",
-                background: openThird === i ? "#fff8ec" : undefined
-              }}
-            >
-              <h4>{m.title}</h4>
-              {openThird === i && <p>{m.text}</p>}
-            </div>
-          ))}
-        </div>
+<div
+  style={{
+    gridArea: "third",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+    gap: "0.75em"
+  }}
+>
+  {metric10.map((m, i) => (
+    <div
+      key={m.id}
+      onClick={() => setActiveImage(m.img)}
+      style={{
+        ...styles.card,
+        cursor: "pointer",
+        padding: "12px",
+        transition: "all 0.3s ease",
+      }}
+      onMouseEnter={(e) => e.currentTarget.style.transform = "scale(1.03)"}
+      onMouseLeave={(e) => e.currentTarget.style.transform = "scale(1)"}
+    >
+      <h4>{m.title}</h4>
+    </div>
+  ))}
+</div>
+
+{/* ===== Image Modal ===== */}
+{activeImage && (
+  <div
+    onClick={() => {
+      setActiveImage(null);
+      setZoomed(false);
+    }}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.85)",
+      backdropFilter: "blur(8px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999,
+      animation: "fadeIn 0.3s ease"
+    }}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        maxWidth: "90%",
+        maxHeight: "90%",
+        overflow: "hidden",
+        borderRadius: "16px",
+        cursor: "zoom-in"
+      }}
+    >
+      <img
+        src={activeImage}
+        alt=""
+        onClick={() => setZoomed((z) => !z)}
+        style={{
+          width: "100%",
+          height: "90vh",
+          transition: "transform 0.4s ease",
+          transform: zoomed ? "scale(1.8)" : "scale(1)",
+          cursor: zoomed ? "zoom-out" : "zoom-in"
+        }}
+      />
+    </div>
+  </div>
+)}
 
         {/* ===== NEW Accordion above grid (SML / BIGP / CATCH) ===== */}
         <div
@@ -4526,8 +4573,8 @@ function WorldRule2Page() {
   const metrics = [
   { id: 1, title: "Ladies of the Lamp, Amiras of the Alpet, Infantas of the Impagliata", text:"These are the women who hold positions in the 9th Arm. Education for these can begin as young as 14 but they start between the ages 18 to 26. They must be a virgin. There are 389310 Ladies of the Lamp, 32832 Amiras of the Alper and 180 Infantas of the Impagliata." },
   { id: 2, title: "Priestess", text:"Priestess is the title for the women (virgins 16 and 20) who work within The Priesthood of the Melchizedek for the Sanctuary of the Sea. The Sanctuary of the Sea contains the Social Services which is split between divisions of GSMS, and 3. GSMS is the global social media, calling, messaging and entertainment service.  3 run GUM, giving, understanding and movement a government branch based that also has a base in the Eshkol as the Disc, the Hromoda as the Card and the Burg as the Level. There are 23328 priestesses. Priestesses live in temples and nunneries outside of the CLT and also have slaves and evangelions to help them manage their tasks and their land. They split their time between running the Sanctuary of the Sea as a priestess who duties include preaching and overseeing certain religious sites half of the year and as members of the Social Services in the other half of the year." },
-  { id: 3, title: "Palatines and Proedros", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines. Proedros are men who are sons of women that belong to NIFTY59HALER, they are in charge of an Emporium and run it as an independent city state focuses on commerce. They are allowed to employ men and women that have passed the 89 test." },
-  { id: 4, title: "Mac", text:"The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town."},
+  { id: 4, title: "Proedros and Emir ", text:" Proedros are children of NIFTY59HALER who  are in charge of an Emporium and run it as an independent city state focuses on commerce. They are allowed to employ men and women that have performed well on the 89 test who become Polites."},
+  { id: 3, title: "Palatines and Mac", text:"Palatines are women (unmarried between the ages of 26 and 32) who run the business 2. There are 23976 Palatines.  The Mac are the women responsible for recieving the instructions and goods from the Palatines. They ensure that each city manufactures, produces and constructs as requested and handle trade between 2 and their town. There are 12 Macs per town." },
   { id: 5, title: "Bishops and Divines of the Domus", text:"Bishops are the sons of Russell who lead the Priesthood of the Melchizidek. They work within 3 of the division, the Rabat, the Oikos and the Synagogue. Divines of the Domus are 6 Arch Angels, Michael, Gabriel, Metatron, Raphael, Uriel, Sandalaphon." },
   { id: 5, title: "Priests and Deacons", text:"Priests live in relic cities which are the cities of this time that have been scaled down for their number with only the most important and sacred buildings kept. Usually this would be the city center. The outside area is converted to farmland for animals and manufacturing. The number of priests are Catholic: 570595, Eastern Orthodox: 1.1 million, Anglican 76001, Lutherian: 93002, Islam: 2 million, Hinduism: 6 million, Buddhism: 1.5 million, Judaism: 50000, Sikhism: 100000, this totals to 11489598. Deacons live in the Rus with the bishops. Priests can visit the Rus and some may live there for some time."}
 ];
