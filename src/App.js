@@ -997,7 +997,14 @@ these women will be 1952.
         title: "Ivan Samuels Mélange",
         img: "/images/companies/ivansamuelsmelange.png",
         desc: "This is the supra company for fashion it owns the following brands. Prix, Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana and Prada"
+      }, 
+      {
+        id: "1d",
+        title: "Coüilla",
+        img: "/images/companies/couilla.png",
+        desc: ""
       }
+
     ]
   },
   {
@@ -1538,126 +1545,153 @@ useEffect(() => {
           ))}
         </div>
 
-        {/* ===== Sidebar ===== */}
-  <>
-      {/* Sidebar Cards */}
-      <div className="sidebar-carousel-wrapper" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      {/* Sidebar Cards */}
-      {metric6.map((m) => (
-        <div
-          key={m.id}
-          className="sidebar-card"
-          style={{
-            borderRadius: '16px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            padding: '16px',
-            backgroundColor: '#fff',
-            cursor: 'pointer'
-          }}
-          onClick={() => { setCarousel(m.slides); setIndex(0); setActiveSlide(null); }}
-        >
-          <h4>{m.title}</h4>
-          <p>{m.text}</p>
-        </div>
-      ))}
+      {/* ===== Sidebar Carousel ===== */}
+<>
+  <div className="sidebar-carousel-wrapper" style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+    {metric6.map((m) => (
+      <div
+        key={m.id}
+        className="sidebar-card"
+        style={{
+          borderRadius: '16px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          padding: '16px',
+          backgroundColor: '#fff',
+          cursor: 'pointer',
+          transition: 'transform 0.3s ease',
+        }}
+        onClick={() => { setCarousel(m.slides); setIndex(0); setActiveSlide(null); }}
+        onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        <h4>{m.title}</h4>
+        <p>{m.text}</p>
+      </div>
+    ))}
 
-      {/* Carousel Modal */}
-      {carousel && (
+    {carousel && (
+      <div
+        className="carousel-modal-overlay"
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: "rgba(2,6,23,0.85)",
+          backdropFilter: "blur(10px)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 9999,
+        }}
+        onClick={() => { setCarousel(null); setActiveSlide(null); }}
+      >
         <div
-          className="carousel-modal-overlay"
+          className="carousel-modal-box"
           style={{
-            position: "fixed",
-            inset: 0,
-            background: "rgba(2,6,23,0.85)",
-            backdropFilter: "blur(10px)",
+            width: "90%",
+            maxWidth: "1000px",
+            height: "500px",
+            background: "#020617",
+            borderRadius: "20px",
+            position: "relative",
+            overflow: "hidden",
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 9999
+            padding: "20px",
           }}
-          onClick={() => { setCarousel(null); setActiveSlide(null); }}
+          onClick={(e) => e.stopPropagation()}
         >
-          <div
-            className="carousel-modal-box"
-            style={{
-              width: "900px",
-              height: "420px",
-              background: "#020617",
-              borderRadius: "20px",
-              position: "relative",
-              overflow: "hidden",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-            onClick={(e) => e.stopPropagation()}
+          {/* Close Button */}
+          <button
+            style={{ position: "absolute", top: 10, right: 10, fontSize: "24px", color: "#fff", background: "transparent", border: "none", cursor: "pointer" }}
+            onClick={() => setCarousel(null)}
           >
-            {/* Close button */}
-            <button
-              style={{ position: "absolute", top: 10, right: 10, cursor: "pointer", fontSize: "20px", color: "#fff", background: "transparent", border: "none" }}
-              onClick={() => setCarousel(null)}
-            >
-              ✕
-            </button>
+            ✕
+          </button>
 
-            {/* Arrows */}
-            <button
-              style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", cursor: "pointer", fontSize: "24px", color: "#fff", background: "transparent", border: "none" }}
-              onClick={() => setIndex((i) => (i - 1 + carousel.length) % carousel.length)}
-            >
-              ◀
-            </button>
-            <button
-              style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", cursor: "pointer", fontSize: "24px", color: "#fff", background: "transparent", border: "none" }}
-              onClick={() => setIndex((i) => (i + 1) % carousel.length)}
-            >
-              ▶
-            </button>
+          {/* Carousel Arrows */}
+          <button
+            style={{ position: "absolute", left: 10, top: "50%", transform: "translateY(-50%)", fontSize: "30px", color: "#fff", background: "transparent", border: "none", cursor: "pointer" }}
+            onClick={() => setIndex((i) => (i - 1 + carousel.length) % carousel.length)}
+          >
+            ◀
+          </button>
+          <button
+            style={{ position: "absolute", right: 10, top: "50%", transform: "translateY(-50%)", fontSize: "30px", color: "#fff", background: "transparent", border: "none", cursor: "pointer" }}
+            onClick={() => setIndex((i) => (i + 1) % carousel.length)}
+          >
+            ▶
+          </button>
 
-            {/* Carousel Slides */}
-            <div style={{ display: "flex", gap: "30px", alignItems: "center", transition: "0.35s" }}>
-              {carousel.map((card, i) => (
-                <div
-                  key={card.id}
-                  style={{
-                    width: "200px",
-                    height: "160px",
-                    background: "#0f172a",
-                    borderRadius: "14px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    transition: "0.35s",
-                    color: "#fff",
-                    textAlign: "center",
-                    padding: "8px",
-                    transform: `scale(${i === index ? 1 : 0.8})`,
-                    opacity: i === index ? 1 : 0.4
-                  }}
-                  onClick={() => setActiveSlide(card)}
-                >
-                  <h3>{card.title}</h3>
-                </div>
-              ))}
-            </div>
-
-            {/* Slide Viewer */}
-            {activeSlide && (
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "180px", background: "#020617", borderTop: "1px solid #1e293b", display: "grid", gridTemplateColumns: "220px 1fr" }}>
-                <img src={activeSlide.img} style={{ width: "100%", height: "100%", objectFit: "cover" }} alt={activeSlide.title} />
-                <div style={{ padding: "18px", overflowY: "auto", color: "#fff" }}>
-                  <h3>{activeSlide.title}</h3>
-                  <p>{activeSlide.desc}</p>
-                </div>
+          {/* Carousel Slides */}
+          <div
+            style={{
+              display: "flex",
+              gap: "24px",
+              alignItems: "center",
+              overflowX: "auto",
+              scrollSnapType: "x mandatory",
+              padding: "10px 0",
+              width: "100%",
+            }}
+          >
+            {carousel.map((card, i) => (
+              <div
+                key={card.id}
+                style={{
+                  flex: "0 0 auto",
+                  width: "220px",
+                  height: "160px",
+                  borderRadius: "16px",
+                  backgroundImage: `url(${card.img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  cursor: "pointer",
+                  scrollSnapAlign: "center",
+                  transition: "transform 0.35s, opacity 0.35s",
+                  transform: `scale(${i === index ? 1 : 0.85})`,
+                  opacity: i === index ? 1 : 0.5,
+                  display: "flex",
+                  alignItems: "flex-end",
+                  justifyContent: "center",
+                  color: "#fff",
+                  textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                  padding: "8px",
+                }}
+                onClick={() => setActiveSlide(card)}
+              >
+                <h3>{card.title}</h3>
               </div>
-            )}
+            ))}
           </div>
-        </div>
-      )}
-    </div>
 
-    </>
+          {/* Active Slide Viewer */}
+          {activeSlide && (
+            <div style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: "200px",
+              background: "rgba(2,6,23,0.95)",
+              borderTop: "1px solid #1e293b",
+              display: "grid",
+              gridTemplateColumns: "220px 1fr",
+              overflow: "hidden",
+            }}>
+              <img src={activeSlide.img} style={{ width: "100%", height: "100%", objectFit: "cover" }} alt={activeSlide.title} />
+              <div style={{ padding: "18px", overflowY: "auto", color: "#fff" }}>
+                <h3>{activeSlide.title}</h3>
+                <p>{activeSlide.desc}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    )}
+  </div>
+</>
 
         {/* ===== CENTER IMAGE SLIDER ===== */}
         <div
