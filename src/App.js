@@ -4288,7 +4288,7 @@ function DualCarouselCards() {
       { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums. ", img: "/images/classes/emporati.png"},
       { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN.", img: "/images/classes/acolyte.png" },
-      { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of servitude in the Emirate.", img: "/images/classes/maleslave.png" }
+      { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
     two: [
       { title: "Priest's wife", text: "Priests' wives are women that have chosen to be given, matched, paired with a Priest to be their wife and live in the Relic Cities. They must have a good 89 score and may need to meet certain other requirements depending on the wishes of the priest.", img: "/images/classes/priestswife.png" },
@@ -4299,7 +4299,7 @@ function DualCarouselCards() {
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
     three: [
-      { title: "Servitude", text: "Priests, Priestesses, Bishops, Amiras, Infantas and the higher Royal classes can own slaves. Otherwise slavery is prohibited.", img: "/images/classes/priestswife.png" },
+      { title: "Servitude", text: "All slaves are owned by NIFTY59ER and are given as needed to the people. Slaves will remain within the Christmas and the Relic Cities usually, but can also be extrapolated to work at extraction sites. Collars and braces are electronic LL mechanisms used to monitor, guide, and support the wearer. Designed for comfort and produced in various sizes, they are mandatory for slaves, while acolytes are required to wear at least leg braces. Surveillance measures include vehicle cameras for acolytes and in-home audio devices for town residents. The current image is only conceptual; future designs will be less bulky, with braces that do not cover the hands or wrists. These devices are non-removable." , img: "/images/control.png"},
       { title: "Abode", text: "Priests live in houses, Deacons live in flats, Polītai live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
       { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Polītai have freedom of movement to 20 other CLTS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
       { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
@@ -4330,6 +4330,21 @@ function DualCarouselCards() {
       prev === 0 ? carousels[activeCarousel].length - 1 : prev - 1
     );
   };
+  const arrowStyle = (side) => ({
+  position: "absolute",
+  top: "50%",
+  [side]: "18px",
+  transform: "translateY(-50%)",
+  background: "rgba(15,23,42,0.85)",
+  border: "1px solid rgba(148,163,184,0.25)",
+  color: "#e2e8f0",
+  fontSize: "24px",
+  padding: "12px 18px",
+  cursor: "pointer",
+  borderRadius: "14px",
+  backdropFilter: "blur(8px)",
+  transition: "all 0.2s ease"
+});
 
   return (
    <div
@@ -4450,115 +4465,129 @@ function DualCarouselCards() {
   </div>
 
   {/* MODAL CAROUSEL */}
-  {activeCarousel && (
+  {activeCarousel && carousels?.[activeCarousel]?.[index] && (
+  <div
+    onClick={closeCarousel}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(2,6,23,0.9)",
+      backdropFilter: "blur(18px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 1000,
+      padding: "40px"
+    }}
+  >
     <div
-      onClick={closeCarousel}
+      onClick={(e) => e.stopPropagation()}
       style={{
-        position: "fixed",
-        inset: 0,
-        background: "rgba(2,6,23,0.88)", // matches page base
-        backdropFilter: "blur(16px)",
+        width: "92%",
+        maxWidth: "1000px",
+        height: "90vh",
+        background: "rgba(15,23,42,0.97)",
+        borderRadius: "30px",
+        overflow: "hidden",
+        border: "1px solid rgba(148,163,184,0.15)",
+        boxShadow: "0 50px 120px rgba(0,0,0,0.8)",
+        position: "relative",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 1000,
-        padding: "40px"
+        flexDirection: "column"
       }}
     >
-      <div
-        onClick={(e) => e.stopPropagation()}
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={closeCarousel}
         style={{
-          width: "90%",
-          maxWidth: "950px",
-          background: "rgba(15,23,42,0.95)",
-          borderRadius: "28px",
-          overflow: "hidden",
-          border: "1px solid rgba(148,163,184,0.15)",
-          boxShadow: "0 40px 100px rgba(0,0,0,0.75)",
-          position: "relative"
+          position: "absolute",
+          top: "18px",
+          right: "20px",
+          background: "rgba(15,23,42,0.8)",
+          border: "1px solid rgba(148,163,184,0.25)",
+          color: "#e2e8f0",
+          fontSize: "16px",
+          padding: "6px 12px",
+          borderRadius: "10px",
+          cursor: "pointer",
+          backdropFilter: "blur(6px)"
         }}
       >
-        {/* IMAGE */}
-        <img
-          src={carousels[activeCarousel][index].img}
-          alt=""
-          style={{
-            width: "100%",
-            height: "70vh",
-            objectFit: "contain",
-            background: "#0f172a"
-          }}
-        />
+        ✕
+      </button>
 
-        {/* TEXT */}
-        <div style={{ padding: "40px" }}>
-          <h2
-            style={{
-              fontSize: "24px",
-              fontWeight: 700,
-              marginBottom: "14px",
-              color: "#f8fafc"
-            }}
-          >
-            {carousels[activeCarousel][index].title}
-          </h2>
+      {/* IMAGE */}
+      <div
+  style={{
+    background: "#0f172a",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "30px 0"
+  }}
+>
+  <img
+    src={carousels[activeCarousel][index].img}
+    alt=""
+    style={{
+      width: "45vw",
+      maxHeight: "45vh",
+      objectFit: "contain"
+    }}
+  />
+</div>
 
-          <p
-            style={{
-              lineHeight: "1.9",
-              fontSize: "15.5px",
-              color: "#94a3b8"
-            }}
-          >
-            {carousels[activeCarousel][index].text}
-          </p>
-        </div>
+      {/* CONTENT */}
+     <div
+  style={{
+    padding: "28px 40px 40px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "12px",
+    maxHeight: "35vh",
+    overflowY: "auto"
+  }}
+>
+  <h2
+    style={{
+      fontSize: "24px",
+      fontWeight: 700,
+      color: "#f8fafc",
+      margin: 0
+    }}
+  >
+    {carousels[activeCarousel][index].title}
+  </h2>
 
-        {/* ARROWS */}
-        <button
-          onClick={prevSlide}
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "15px",
-            transform: "translateY(-50%)",
-            background: "rgba(15,23,42,0.8)",
-            border: "1px solid rgba(148,163,184,0.2)",
-            color: "#e2e8f0",
-            fontSize: "22px",
-            padding: "10px 16px",
-            cursor: "pointer",
-            borderRadius: "12px",
-            backdropFilter: "blur(8px)",
-            transition: "0.2s"
-          }}
-        >
-          ‹
-        </button>
+  <p
+    style={{
+      lineHeight: "1.75",
+      fontSize: "1rem",
+      color: "#94a3b8",
+      margin: 0,
+      whiteSpace: "pre-wrap"
+    }}
+  >
+    {carousels[activeCarousel][index].text}
+  </p>
+</div>
+      {/* ARROWS */}
+      <button
+        onClick={prevSlide}
+        style={arrowStyle("left")}
+      >
+        ‹
+      </button>
 
-        <button
-          onClick={nextSlide}
-          style={{
-            position: "absolute",
-            top: "50%",
-            right: "15px",
-            transform: "translateY(-50%)",
-            background: "rgba(15,23,42,0.8)",
-            border: "1px solid rgba(148,163,184,0.2)",
-            color: "#e2e8f0",
-            fontSize: "22px",
-            padding: "10px 16px",
-            cursor: "pointer",
-            borderRadius: "12px",
-            backdropFilter: "blur(8px)",
-            transition: "0.2s"
-          }}
-        >
-          ›
-        </button>
-      </div>
+      <button
+        onClick={nextSlide}
+        style={arrowStyle("right")}
+      >
+        ›
+      </button>
     </div>
-  )}
+  </div>
+)}
 </div>
   );
 }
