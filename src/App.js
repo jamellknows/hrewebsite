@@ -875,6 +875,7 @@ function LanguagePage() {
 function BusinessPage() {
   const [openTop, setOpenTop] = useState(null);
   const [openSecond, setOpenSecond] = useState(null);
+  const [openFourth, setOpenFourth] = useState(null);
   const [openMetric, setOpenMetric] = useState(null);
   const [taoOpen, setTaoOpen] = useState(false);
   const [openTao, setOpenTao] = useState(false);
