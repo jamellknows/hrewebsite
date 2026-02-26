@@ -1176,14 +1176,13 @@ these women will be 1952.
   {
     id: 1,
     title: "Male Business Structure",
-    img: "/images/male-structure.jpg", // replace with your real image path
-    desc: "P → M → S, P, L. Performance (7 women from the female side) → Managers → Security, Payments, Produce (Labour, Safety, Office, Marketing, Procurement)."
+    img: "/images/companies/malebusinessstructure.jpg", // replace with your real image path
   },
   {
     id: 2,
     title: "My Daily Run",
-    img: "/images/daily-run.jpg", // replace with your real image path
-    desc: "GRACEN → PST. Government & GIB, Research, Arch & Agriculture, COS & Construction."
+    img: "/images/companies/mydailyrun.jpg", // replace with your real image path
+
   }
 ];
 
