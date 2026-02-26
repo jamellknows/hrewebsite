@@ -1186,11 +1186,26 @@ these women will be 1952.
 ];
 
   // ===== NEW METRIC =====
-  const metric11 = [
-    { id: 0, title: "SML", text: "STEM: Science, Technology, Engineering, Medicine. MOLE: Marketing, Office, Logistics, Entrepreneurship. LAMB: Law, Accounting, Modelling, Banking." },
-    { id: 1, title: "BIGP", text: "BOSONS: Think. IONS: Image, GASSERS: Word. PAPILO: Foot" },
-    { id: 2, title: "CATCH", text: "Calendar: 36 day plan. Ayin: Attractiveness groupings (BB), Tribe: STEM, MOLE, LAMB. Clan: BIGP. Hamula: BB" }
-  ];
+ const metric11 = [
+  {
+    id: 0,
+    title: "SML",
+    img: "/images/sml.jpg", // replace with real image
+    desc: "Strategic Management Layer – overseeing structure, coordination and execution."
+  },
+  {
+    id: 1,
+    title: "BIGP",
+    img: "/images/bigp.jpg",
+    desc: "Business Integration & Growth Platform – expansion, partnerships and scaling."
+  },
+  {
+    id: 2,
+    title: "CATCH",
+    img: "/images/catch.jpg",
+    desc: "Core Alignment, Technology, Construction & Holdings."
+  }
+];
 
 const cosmology = [
   {
@@ -3029,7 +3044,7 @@ useEffect(() => {
     title: "Entertainment",
     summary: "Entertainment will be open source with everybody having access to a studio, theatre etc at one on the 12 towns in their locality. ",
     details:
-      "The available industries with the entertainment industry are TV and Film, Music, Sports, Games, Live Entertainment and Publishing and Print",
+      "The available industries with the entertainment industry are TV and Film, Music, Sports, Games, Live Entertainment and Publishing and Print. Most forms of viewable entertainment will still be around in some form although religious values will be applied. Entertainment usues a duality principle with the towns and the routes having different media and celebrities.",
   },
   {
     id: 4,
@@ -4592,7 +4607,7 @@ function WorldRule2Page() {
 
   const metric3 = [
   { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the Ladies of the Lamp in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. Ladies of the Lamp do fashion for WESHGB KTSHAM, as there is 1 Ladies of the Lamp per department for all of the towns (12, 12 towns = 1 city). Priestesses do their own fashion. Ladies of the Light can choose between Ladies of the Lamp fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the Ladies of the Lamp which total to 23328 different fashion brands worldwide. The Ladies of the Lamp use the city to produce their brand after which they compete with each other worldwide. Her home city will always wear her clothes. I am also including game development as a part of fashion. "},
-  { id: 2, title: "Entertainment", text:"Each Lamp and Tooth has a department of Ladies of the Lamp and evangelions tasked with the control of the entertainment of their domain.   "},
+  { id: 2, title: "Entertainment", text: "Culture and entertainment operate according to a principle of duality. Broadly, they are divided into two distinct cultural spheres: the Sphere of the Town and the Sphere of the Routes. Within the Towns, prominence belongs to the children of NIFTY59HALER, who embody established cultural identity and institutional influence. Along the Routes, recognition is earned—celebrity arises from the acolytes whose performance and merit distinguish them above their peers. Within the Towns each Lamp and each Tooth maintains its own cultural authority, governed by the Ladies of the Lamp and the Evangelions. These bodies are entrusted with overseeing, curating, and regulating the entertainment within their respective domains. On the routes Stunt Doubles and evenagellions decide who is worthy of being a celebrity with Stunt Doubles being celebrities themselves."},
   { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
   { id: 4, title: "Test", text:"Test is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test(department of Ladies of the Lamp). Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of towns and cities. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 (on purpose of course) for example and the solution would be to select the most saddening group of people to move to the 42 fail cities. " },
 ]; 
