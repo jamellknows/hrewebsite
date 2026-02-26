@@ -996,13 +996,13 @@ these women will be 1952.
         id: "1c",
         title: "Ivan Samuels Mélange",
         img: "/images/companies/ivansamuelsmelange.png",
-        desc: "This is the supra company for fashion it owns the following brands. Prix(A dick), Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana($2 billion evaluation) and Prada($4 billion evalauation)"
+        desc: "This is the supra company for fashion it owns the following brands. Prix(Costs a dick), Kurt Geiger, Joules, Wales Bonner, Dolce and Gabbana($2 billion evaluation) and Prada($4 billion evalauation)"
       }, 
       {
         id: "1d",
         title: "Coüilla",
         img: "/images/companies/couilla.png",
-        desc: "Coüilla is the model management company. It owns the contracts of models, female CEO's and top level female staff all of whom can function doubly as models if needed."
+        desc: "Coüilla is a premier model management company representing models, visionary female CEOs, and top-tier female executives—professionals who embody style, influence, and versatility."
       }
 
     ]
