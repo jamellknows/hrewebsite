@@ -5036,7 +5036,7 @@ const metric6 = [
   {id: 2, title: "Infrastructure"},
   {id: 3, title: "Culture"},
   {id: 4, title: "Feminism"},
-  {id: 5, title: "Labour"},
+  {id: 5, title: "Traditionalism"},
   {id: 6, title: "Population"}
 
 ];
@@ -5124,37 +5124,31 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 1,
       title: "Governance",
-      text: metric6[0].text,
       img: "/images/city2.png"
     },
     {
       id: 2,
       title: "Infrastructure",
-      text: metric6[1].text,
       img: "/images/city3.png"
     },
     {
       id: 3,
-      title: "Culture",
-      text: metric6[2].text,
+      title: "Celebritocracy and Royalty",
       img: "/images/city4.jpg"
     },
     {
       id: 4,
       title: "Feminism",
-      text: metric6[3].text,
       img: "/images/felp.png"
     },
     {
       id: 5,
-      title: "Labour",
-      text: metric6[4].text,
-      img: "/images/city6.png"
+      title: "Traditionalism",
+      img: "/images/melp.png"
     },
     {
       id: 6,
       title: "Population",
-      text: metric6[5].text,
       img: "/images/city9.png"
     }
   ];
