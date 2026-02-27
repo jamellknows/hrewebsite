@@ -4966,9 +4966,10 @@ function WorldRule2Page() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
-  const [openWheelId, setOpenWheelId] = useState(null);
+  const [openWheelImage, setOpenWheelImage] = useState(null);
   const [openCoreImage, setOpenCoreImage] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
+  
 
 
 
@@ -5031,12 +5032,12 @@ function WorldRule2Page() {
 ]; 
 
 const metric6 = [
-  {id: 1, title: "Governance", text: "Governance is localised while maintaining a strict heirachy. It is a matriarchal society with only women in direct leadership all of whom have taken a pledge to only give themselves to the Father or the Brother." },
-  {id: 2, title: "Infrastructure", text: "The infrastructure is designed so that each town forms a part of a produce chain as a Cat. Each Cat then is a part of a chain called the Pig (Production Integrated Globe)." },
-  {id: 3, title: "Culture", text: "The culture is religious. Entertainment is the work of the ladies of the lamp who oversee sports teams for each town and who select representative musicians for each town. As the culture is designed to be inclusive all people are required to create a song that they can perform every 5 months." },
-  {id: 4, title: "Science", text: "Education is completed over a 12 year programme from the age of 5 to 17. Scientific research is done by HAL, POM, and 2. Major scientific projects include Pokemon creation and other novelties for everybodies enjoyment." },
-  {id: 5, title: "Labour", text: "The work pattern is 4 hour and 5 hour shifts with a 3 hour break in between to enjoy the town. There are no days off apart from religious holidays. Major labour projects include, spaceships, sea villages, sky castles, orbital platforms and trident terraforming spears." },
-  {id: 6, title: "Population", text: "The population is controlled everywhere. When the population increases too high a new CLT will be constructed or more will be taken to the 17%. " }
+  {id: 1, title: "Governance"},
+  {id: 2, title: "Infrastructure"},
+  {id: 3, title: "Culture"},
+  {id: 4, title: "Feminism"},
+  {id: 5, title: "Labour"},
+  {id: 6, title: "Population"}
 
 ];
 
@@ -5140,9 +5141,9 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     },
     {
       id: 4,
-      title: "Science",
+      title: "Feminism",
       text: metric6[3].text,
-      img: "/images/city5.png"
+      img: "/images/felp.png"
     },
     {
       id: 5,
@@ -5489,163 +5490,197 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           </div>
         </div>
 
-              {/* ====================================== */}
+      {/* ====================================== */}
       {/* STEERING WHEEL DASHBOARD — BOTTOM */}
       {/* ====================================== */}
 
       <div
-        style={{
-          marginTop: "30rem",
-          paddingBottom: "70em",
-          display: "flex",
-          justifyContent: "center"
-        }}
-      >
-        <div
-          style={{
-            position: "relative",
-            width: "560px",
-            height: "560px",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle at center, #f7f7f7 0%, #ddd 52%, #aaa 100%)",
-            boxShadow: "0 32px 90px rgba(0,0,0,0.35)",
-            border: "20px solid #222"
-          }}
-        >
-        {/* ================= */}
-        {/* CENTER HUB */}
-        {/* ================= */}
+  style={{
+    marginTop: "30rem",
+    paddingBottom: "70em",
+    display: "flex",
+    justifyContent: "center"
+  }}
+>
+  <div
+    style={{
+      position: "relative",
+      width: "560px",
+      height: "560px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle at center, #f7f7f7 0%, #ddd 52%, #aaa 100%)",
+      boxShadow: "0 32px 90px rgba(0,0,0,0.35)",
+      border: "20px solid #222"
+    }}
+  >
+    {/* CENTER HUB */}
+    <div
+      onClick={() => setOpenCoreImage(true)}
+      style={{
+        position: "absolute",
+        inset: "190px",
+        borderRadius: "50%",
+        background: "#111",
+        color: "#fff",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        fontWeight: 700,
+        fontSize: "18px",
+        letterSpacing: "1px",
+        cursor: "pointer",
+        boxShadow: "0 0 38px rgba(0,0,0,0.6)"
+      }}
+    >
+      WORLD CORE
+    </div>
 
-        <div
-          onClick={() => setOpenCoreImage(true)}
-          style={{
-            position: "absolute",
-            inset: "190px",
-            borderRadius: "50%",
-            background: "#111",
-            color: "#fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            fontWeight: 700,
-            fontSize: "18px",
-            letterSpacing: "1px",
-            cursor: "pointer",
-            boxShadow: "0 0 38px rgba(0,0,0,0.6)"
-          }}
-        >
-          WORLD CORE
-        </div>
+    {/* SPOKES */}
+    {wheelPanels.map((panel, i) => {
+  const angle = (360 / wheelPanels.length) * i;
 
-            {openCoreImage && (
+  return (
+    <div
+      key={panel.id}
+      onClick={() => setOpenWheelImage(panel)}
+      style={{
+        position: "absolute",
+        top: "40%",
+        left: "33%",
+        transform: `
+          rotate(${angle}deg)
+          translate(0, -215px)
+          rotate(-${angle}deg)
+        `,
+        transformOrigin: "center",
+        transition: "all 0.45s cubic-bezier(.22,.61,.36,1)",
+        cursor: "pointer",
+        zIndex: 2
+      }}
+    >
       <div
-        onClick={() => setOpenCoreImage(false)}
         style={{
-          position: "fixed",
-          inset: 0,
-          background: "rgba(0,0,0,0.85)",
+          width: "165px",
+          height: "84px",
+          background: "rgba(255,255,255,0.95)",
+          borderRadius: "18px",
+          padding: "12px",
+          boxShadow: "0 10px 28px rgba(0,0,0,0.25)",
+          textAlign: "center",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          zIndex: 9999
+          fontWeight: 600
         }}
       >
-        <img
-          src="/images/tepig.png"
-          alt="World Core"
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            maxWidth: "90%",
-            maxHeight: "90%",
-            borderRadius: "14px",
-            boxShadow: "0 0 40px rgba(0,0,0,0.9)"
-          }}
-        />
+        {panel.title}
       </div>
-    )}
+    </div>
+  );
+})}
+  </div>
+</div>
+
+{/* CORE MODAL */}
+{openCoreImage && (
+  <div
+    onClick={() => setOpenCoreImage(false)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.85)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999
+    }}
+  >
+    <img
+      src="/images/tepig.png"
+      alt="World Core"
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        maxWidth: "90%",
+        maxHeight: "90%",
+        borderRadius: "14px",
+        boxShadow: "0 0 40px rgba(0,0,0,0.9)"
+      }}
+    />
+  </div>
+)}
+
+{/* PANEL IMAGE MODAL */}
+{openWheelImage && (
+  <div
+    onClick={() => setOpenWheelImage(null)}
+    style={{
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.92)",
+      backdropFilter: "blur(6px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999
+    }}
+  >
+    <div
+      style={{ position: "relative" }}
+      onClick={(e) => e.stopPropagation()}
+    >
+      <img
+        src={openWheelImage.img}
+        alt={openWheelImage.title}
+        style={{
+          width: "92vw",
+          height: "92vh",
+          objectFit: "contain",
+          borderRadius: "20px",
+          boxShadow: "0 40px 120px rgba(0,0,0,0.8)"
+        }}
+      />
+
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={() => setOpenWheelImage(null)}
+        style={{
+          position: "absolute",
+          top: "-18px",
+          right: "-18px",
+          width: "40px",
+          height: "40px",
+          borderRadius: "50%",
+          border: "none",
+          background: "#ffffff",
+          color: "#000",
+          fontSize: "18px",
+          fontWeight: "bold",
+          cursor: "pointer",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.6)",
+          transition: "all 0.25s ease"
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.1)";
+          e.currentTarget.style.background = "#f1f1f1";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.background = "#ffffff";
+        }}
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+)}
+        
+  
 
 
 
-          {/* ================= */}
-          {/* SPOKES */}
-          {/* ================= */}
 
-          {wheelPanels.map((panel, i) => {
-            const angle = (360 / wheelPanels.length) * i;
-            const isOpen = openWheelId === panel.id;
-
-            return (
-              <div
-                key={panel.id}
-                onClick={() =>
-                  setOpenWheelId(isOpen ? null : panel.id)
-                }
-                style={{
-                  position: "absolute",
-                  top: "40%",
-                  left: "33%",
-                  transform: `
-                  rotate(${angle}deg)
-                  translate(0, -215px)
-                  rotate(-${angle}deg)
-                  scale(${isOpen ? 1.18 : 1})
-`,
-                  transformOrigin: "center",
-                  transition: "all 0.45s cubic-bezier(.22,.61,.36,1)",
-                  cursor: "pointer",
-                  zIndex: isOpen ? 5 : 2
-                }}
-              >
-                {/* PANEL NODE */}
-                <div
-                  style={{
-                    width: "165px",
-                    minHeight: "84px",
-                    background: isOpen
-                      ? "#ffffff"
-                      : "rgba(255,255,255,0.9)",
-                    borderRadius: "18px",
-                    padding: "12px",
-                    boxShadow: isOpen
-                      ? "0 22px 46px rgba(0,0,0,0.4)"
-                      : "0 6px 16px rgba(0,0,0,0.22)",
-                    textAlign: "center"
-                  }}
-                >
-                  <strong>{panel.title}</strong>
-
-                  {isOpen && (
-                    <div style={{ marginTop: "10px" }}>
-                      <img
-                        src={panel.img}
-                        alt={panel.title}
-                        style={{
-                          width: "100%",
-                          height: "95px",
-                          objectFit: "contain",
-                          borderRadius: "12px",
-                          marginBottom: "8px"
-                        }}
-                      />
-
-                      <p
-                        style={{
-                          fontSize: "12px",
-                          lineHeight: 1.45
-                        }}
-                      >
-                        {panel.text}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
       {/* 5 Cards for social order*/}
      <div
   style={{
