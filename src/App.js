@@ -1385,6 +1385,12 @@ const cosmology = [
 
     ]
     
+  },
+  {
+    title: "Routes",
+    description: "Transport routes, entrepreneurship routes, running routes",
+    images: ["./images/sanmarinokingdom/train2.png"],
+    children: []
   }
 ];
 
