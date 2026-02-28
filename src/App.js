@@ -4632,10 +4632,10 @@ function DualCarouselCards() {
     three: [
       { title: "Servitude", text: "All slaves are owned by NIFTY59ER and are given as needed to the people. Slaves will remain within the Christmas and the Relic Cities usually, but can also be extrapolated to work at extraction sites. Collars and braces are electronic LL mechanisms used to monitor, guide, and support the wearer. Designed for comfort and produced in various sizes, they are mandatory for slaves, while acolytes are required to wear at least leg braces. Surveillance measures include vehicle cameras for acolytes and in-home audio devices for town residents. The current image is only conceptual; future designs will be less bulky, with braces that do not cover the hands or wrists. These devices are non-removable." , img: "/images/control.png"},
       { title: "Abode", text: "Priests live in houses, Deacons live in flats, Polītai live at the discretion of their proedros, Ladies live in castles, Priestesses live in temples, acolytes live in kharvees, Royalty live in palaces, Townies live in saddles.",  img: "/images/classes/femaleemporati.png"},
-      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies, Deacons and Polītai have freedom of movement to 20 other CLTS that are in various locations of the world and share the same 9 (failed) category. Priests can move between any Relic City, Holy City and Rus. Ladies, palatines and priestesses can move between their failed 8 catagory. Bishops and royalty can move anywhere.", img: "/images/classes/deaconwife.png" },
-      { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/townie.png" },
-      { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/femaleacolyte.png" },
-      { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/femaleslave.png" }
+      { title: "Freedom of Movement", text: "Slaves live in their allocated town and do not move unless moved. Acolytes move along their route. Townies have freedom of movement to 20 other CLTS at the discretion of a priestess that are in various locations of the world and share the same 9 (failed) category. All vacations require the consent of a priestess within the sanctuary of the sea. Deacons serve terms (6 years) at a Rus and then can apply to be moved  remain, they can move to any Holy City, Rus or Relic for 3 days at a time then must return. All vacations are the domain of the sanctuary of the sea.  Priests can move between any Relic City, Holy City and Rus and remain for 6 days at a time before requiring a permit. Ladies, palatines and priestesses etc can move within their Alpet, but will require permission to move elsewhere. Amiras can freely move within their Impagliata and Infantas can freely move within their Domus.", img: "/images/classes/fom.png" },
+      { title: "Entertainment", text: "Entertainment is still being decided exactly how it works but the anagram is PROMISS using a Christ, Krishna->Krishi, Brahma, Alvah loop on 2 5's of virtual, read, sound, movement, still and movement, sound, still, under physical and recording with a 2 of doing and viewing. A person's 89 will also be a contributing factor. Additionally all the celebrities will be the children of the ARK (NIFTY59HALER) and there will be some religious input with priestess oversight or vetting. ", img: "/images/classes/ent3.png" },
+      { title: "Technology", text: " Technology is tiered, some forms of technology will not be available to all. The number of Pokemon will be different based on a person's social class. No Pokemon for slaves. 3 maximum for acolytes (based on 89), 6 maximum for townies, 9 maximum for deacons, 12 maximum for romans and 15 maximum for priests.", img: "/images/classes/ent.png" },
+      { title: "Vacation", text: "Vacations are based on time off available which is a form of imbursement. Time off can be gambled. Slaves and Acolytes have no time off. ", img: "/images/classes/vacation.png" }
     ],
     four: [
       { title: "Reproduction", text: "Male slaves sperm donate to 'city girls'(female residents of the Emirate). Priests, politai and deacons sperm donate to Townies(WE SHG B HAM). Male acolytes sperm donate to the Sea Village, the Kent and the Thorpe(SKT). Deacons, preists and politai can also reproduce with their spouse. Female acolytes don't reproduce. Priestesses, Ladies of the Lamp and Palatines reproduce within the NIFTY59ER family. Seamen and eggs are checked for genetic compatability etc to ensure the best offspring with a 6 generation goal to rebalance humanity." , img: "/images/spermdonate.png"},
@@ -5117,17 +5117,17 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     const wheelPanels = [
     {
       id: 1,
-      title: "Governance",
+      title: "The Ruling class and Slavery",
       img: "/images/city2.png"
     },
     {
       id: 2,
-      title: "Exiles",
+      title: "Materiality",
       img: "/images/motorbike.png"
     },
     {
       id: 3,
-      title: "Celebritocracy and Royalty",
+      title: "Religious Service and Movement",
       img: "/images/city4.jpg"
     },
     {
@@ -5142,7 +5142,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     },
     {
       id: 6,
-      title: "Population",
+      title: "Teaching and learning",
       img: "/images/city9.png"
     }
   ];
