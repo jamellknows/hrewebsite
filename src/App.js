@@ -46,6 +46,111 @@ function SanMarinoMap() {
   );
 }
 
+const oldTestamentBooks = [
+  "Genesis",
+  "Exodus",
+  "Leviticus",
+  "Numbers",
+  "Deuteronomy",
+  "Joshua",
+  "Judges",
+  "Ruth",
+  "1 Samuel",
+  "2 Samuel",
+  "Psalms",
+  "1 Kings[1:12]",
+  "Proverbs",
+  "Songs of Solomon",
+  "Ecclesiastes",
+  "1 Kings[13:22]",
+  "2 Kings[1:14]",
+  "Jonah",
+  "Amos",
+  "Isaiah",
+  "Hosea",
+  "2 Kings[15:16]",
+  "Micah",
+  "Nahum",
+  "2 Kings[17:21]",
+  "Jeremiah",
+  "Zepheniah",
+  "2 Kings[22:25]",
+  "Job",
+  "Joel",
+  "Lamentations",
+  "Daniel",
+  "Ezekiel",
+  "Haggai",
+  "Zechariah",
+  "Ezra",
+  "Nehemiah",
+  "Habbakuk",
+  "Obadiah",
+  "Malachi",
+  "Esther",
+  "1 Chronicles",
+  "2 Chronicles",
+];
+
+const bibleStyles = {
+  container: {
+    padding: "2rem",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    background: "#f5f5f5",
+    minHeight: "100vh",
+  },
+  title: {
+    textAlign: "center",
+    fontSize: "2rem",
+    marginBottom: "1.5rem",
+    color: "#333",
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+    gap: "1rem",
+  },
+  card: {
+    background: "white",
+    padding: "1rem",
+    borderRadius: "12px",
+    textAlign: "center",
+    fontWeight: 600,
+    fontSize: "1rem",
+    color: "#222",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+    transition: "transform 0.3s, box-shadow 0.3s",
+    cursor: "pointer",
+  },
+};
+
+function OldTestamentList() {
+  return (
+    <div style={bibleStyles.container}>
+      <h2 style={bibleStyles.title}>Old Testament Books</h2>
+      <div style={bibleStyles.grid}>
+        {oldTestamentBooks.map((book, index) => (
+          <div
+            key={index}
+            style={bibleStyles.card}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow = "0 12px 30px rgba(0,0,0,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.1)";
+            }}
+          >
+            {book}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 
 // Added inline CSS to replace missing App.css
 const styles = {
@@ -3273,6 +3378,8 @@ const arrowStyle = (side) => ({
     </div>
   )}
 </div>
+
+<OldTestamentList/>
     </AnimatedPage>
   );
 }
