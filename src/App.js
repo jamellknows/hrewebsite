@@ -4,7 +4,47 @@ import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react"
 import './App.css';
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import crownImage from './srcImages/crown.jpg'
+import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import L from "leaflet";
 
+// Fix marker icon issue in Leaflet (important)
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+});
+
+// Center coordinates of San Marino
+const sanMarinoCenter = [43.9424, 12.4578];
+
+function SanMarinoMap() {
+  return (
+    <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
+      <MapContainer
+        center={sanMarinoCenter}
+        zoom={13}
+        scrollWheelZoom={true}
+        style={{ height: "100%", width: "100%" }}
+      >
+        <TileLayer
+          attribution='&copy; OpenStreetMap contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        <Marker position={sanMarinoCenter}>
+          <Popup>
+            City of San Marino <br />
+            Capital of San Marino
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </div>
+  );
+}
 
 
 // Added inline CSS to replace missing App.css
@@ -2559,6 +2599,8 @@ useEffect(() => {
     </div>
   </div>
 )}
+
+<SanMarinoMap/>
 
 
 
