@@ -4,7 +4,7 @@ import { Home, Building2, PenTool, Earth, EarthLock, Cross } from "lucide-react"
 import './App.css';
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import crownImage from './srcImages/crown.jpg'
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 // Fix marker icon issue in Leaflet (important)
