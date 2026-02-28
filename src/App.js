@@ -1390,7 +1390,22 @@ const cosmology = [
     title: "Routes",
     description: "Transport routes, entrepreneurship routes, running routes",
     images: ["./images/sanmarinokingdom/train2.png"],
+    children: [
+     {
+    title: "JD Sports",
+    description: "Bezalel, son of Uri and grandson of Hur of the tribe of Judah and Oholiab, son of Ahisamach, of the tribe of Dan.",
+    images: ["./images/sanmarinokingdom/bo1.jpg"],
     children: []
+      },
+      {
+      title: "San Marino Public Transport",
+      description: "San Marino’s public transport is primarily centered around a dedicated bus network and its iconic aerial cable car, the Funivia. Eight domestic bus routes connect the capital to major towns like Borgo Maggiore and Serravalle, while a frequent international coach service links the Republic to the nearby Italian city of Rimini. The Funivia di San Marino offers a scenic two-minute journey between the lower markets of Borgo Maggiore and the historic mountain-top center, carrying over half a million passengers annually. While there is currently no active railway, a small section of the historic Rimini–San Marino line was restored in 2012 as a heritage attraction for tourists. For those arriving from further abroad, the state relies on shuttle connections to Italy’s Federico Fellini International Airport and the Rimini railway station.",
+      images: ["./images/sanmarinokingdom/cablecar.jpg"],
+      children: []
+      }
+      ]
+
+
   }
 ];
 
