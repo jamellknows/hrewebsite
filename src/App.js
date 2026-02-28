@@ -4688,8 +4688,8 @@ function DualCarouselCards() {
       { title: "Deacon's Wife", text: "Deacon's wifes are women that have been matched to be the wife of a deacon. They live in the Rus and work the same PMSEC roles, but have a higher standard of living.", img: "/images/classes/deaconwife.png" },
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114. They live in the towns where they raise thier children. Townies are obligated to have a 6 children 3 boys and 3 girls.", img: "/images/classes/townie.png" },
       { title: "City girl", text: "'City girls' are women that didn't get a high enough score to remain a townie but do not want to be an acolyte it is a secondary path available after the results of the WALTP. They can apply to live in the Emirate and be a bearer of 6 daughters. They must also work, but they do not work in production or manufacturing as the slaves do they work in entertainment and services. The daughters are raised in the Hidalgo and educated at the Thana before living in the Towns.", img: "/images/classes/citygirl.png" },
-      { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLT.", img: "/images/classes/femaleacolyte.png" },
-      { title: "Exiles", text:"Exile women are those that had sex before the age of 20 and have been paired for life with the male they had sex with to live in a motorbike for 6 years before living in a kharvee together, they are unable to progress above acolyte unless recruited to be a Polítēs with their partner,should she have sexual relations with another man on the route she will reclassed as a slave to work for the Priestesses in the Thana. This rule also applies to female acolytes who have sex before 20. If her partner progresses to Sexton she is not counted as one of his three wives.", img: "/images/classes/exile.png" },
+      { title: "Acolyte", text: "Acolytes are women that scored below the required score to stay in the town or progress to college and were not recruited to be a Polítēs. ", img: "/images/classes/femaleacolyte.png" },
+      { title: "Exiles", text:"Exile women are those that had sex before the age of 20 and have been paired for life with the male they had sex with to live in a motorbike for 6 years before living in a kharvee together, they are unable to progress above acolyte unless recruited to be a Polítēs with their partner,should she have sexual relations with another man on the route she will reclassed as a slave to work for the Priestesses in the Thana. This rule also applies to female acolytes who have sex before 20. If her partner progresses to Sexton she is not counted as one of his three wives. If she reaches the rank of a Reader she is allowed to return to the Town to be a Tit Wife.", img: "/images/classes/exile.png" },
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
     three: [
@@ -5206,7 +5206,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 6,
       title: "Teaching and learning",
-      img: "/images/city9.png"
+      img: "/images/srou.png"
     }
   ];
 
