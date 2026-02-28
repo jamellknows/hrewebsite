@@ -5134,7 +5134,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 3,
       title: "Religious Service and Movement",
-      img: "/images/city4.jpg"
+      img: "/images/ap.png"
     },
     {
       id: 4,
