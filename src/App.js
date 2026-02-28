@@ -4616,6 +4616,7 @@ function DualCarouselCards() {
       { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are thos who performed well enough in the 89 test to be employed to live in the semi-autonomous Emporiums. ", img: "/images/classes/emporati.png"},
       { title: "Deacons", text: "Deacons are men that have done well in the  89 and have decided to live in the Rus and work for the Priesthood of the Melchizedek.", img: "/images/classes/priest.png" },
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN.", img: "/images/classes/acolyte.png" },
+      { title: "Exiles", text:"Exile men are those that had sex with a female younger than 17 and have been paired for life with the female they had sex with to live in a motorbike for 6 years before living in a kharvee together, they are unable to progress above acolyte. This rule also applies for female acolytes who start at 16.", img: "/images/classes/exiles.png" },
       { title: "Slave", text: "Slaves are those who failed the 89 or comiited a crime (failure of the 114) and now live a life of in the Emirate.", img: "/images/classes/maleslave.png" }
     ],
     two: [
@@ -4625,6 +4626,7 @@ function DualCarouselCards() {
       { title: "Townie", text: "Townies are the typical women who scored reasonably well on the 89 exam and continue to pass the 114.", img: "/images/classes/townie.png" },
       { title: "City girl", text: "'City girls' are women that didn't get a high enough score to remain a townie but do not want to be an acolyte it is a secondary path available after the results of the WALTP. They can apply to live in the Emirate and be a bearer of 6 daughters. They must also work, but they do not work in production or manufacturing as the slaves do they work in entertainment and services. The daughters are raised in the Hidalgo and educated at the Thana before living in the Towns.", img: "/images/classes/citygirl.png" },
       { title: "Acolyte", text: "Acolytes are women that scored below the avergae but not bad enouh to be slaves and work the MSHN around the CLT.", img: "/images/classes/femaleacolyte.png" },
+      { title: "Exiles", text:"Exile women are those that had sex before the age of 17 and have been paired for life with the male they had sex with to live in a motorbike for 6 years before living in a kharvee together, they are unable to progress above acolyte. This rule also applies to female acolytes who have sex before 17.", img: "/images/classes/exiles.png" },
       { title: "Slave", text: "Slaves are women that have commited a crime or performed very badly on the 89 test and now work for the priestesses in the Thana.", img: "/images/classes/femaleslave.png" }
     ], 
     three: [
@@ -5120,8 +5122,8 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     },
     {
       id: 2,
-      title: "Infrastructure",
-      img: "/images/city3.png"
+      title: "Exiles",
+      img: "/images/motorbike.png"
     },
     {
       id: 3,
