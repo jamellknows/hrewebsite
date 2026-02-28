@@ -1546,7 +1546,21 @@ const cosmology = [
       title: "San Marino Public Transport",
       description: "San Marino’s public transport is primarily centered around a dedicated bus network and its iconic aerial cable car, the Funivia. Eight domestic bus routes connect the capital to major towns like Borgo Maggiore and Serravalle, while a frequent international coach service links the Republic to the nearby Italian city of Rimini. The Funivia di San Marino offers a scenic two-minute journey between the lower markets of Borgo Maggiore and the historic mountain-top center, carrying over half a million passengers annually. While there is currently no active railway, a small section of the historic Rimini–San Marino line was restored in 2012 as a heritage attraction for tourists. For those arriving from further abroad, the state relies on shuttle connections to Italy’s Federico Fellini International Airport and the Rimini railway station.",
       images: ["./images/sanmarinokingdom/cablecar.jpg"],
-      children: []
+      children: [
+        {
+          title: "San Marino Train Proposal Route",
+          description:"This concept outlines a modern railway network for San Marino, designed to link major population, commercial, and tourism hubs across the republic. It would revive the idea of rail connectivity in a territory that historically had an electric railway — the narrow-gauge Rimini–San Marino railway, which ran from Rimini, Italy, into San Marino from 1932 until its destruction in World War II. That line was a remarkable engineering achievement of its time, featuring numerous tunnels, bridges, and direct current electric traction — and today parts of it survive as heritage tracks and walking paths. In the proposed network, there are two western termini: one at Acquaviva and another at Chiesanuova, anchoring the system in the republic’s more rural west. The south-western line would run eastward through Fiorentino and over the mountainous terrain around Montegiardino, then onto Faetano. From there it curves inward toward Valdragone before descending into Borgo Maggiore, where this branch links with the north-western spine of the system. The north-western line proceeds from Borgo Maggiore through the historic Città di San Marino — perched atop Monte Titano — and continues northeast to Domagnano, twists through Monte Lupo, before running on to Serravalle and the bustling border town of Dogana, finally terminating at Falciano. Together, these two arms would knit the entire republic together, providing seamless passenger service between residential districts, cultural landmarks, and key commercial centres such as the Atlanta Mall and the Falciano Shopping Center. The connection would be transformative for both residents and tourists, offering an alternative to the existing bus and road transport networks that dominate in San Marino today — particularly given that there is currently no active public railway serving the country beyond a short heritage section. By drawing on San Marino’s rich railway heritage while introducing a forward-looking transport artery, this plan not only improves mobility but also taps into the country’s identity as one of the world’s oldest republics — blending cultural resonance with modern infrastructure planning.",
+          images: ["/images/sanmarinokingdom/smtrain.png"],
+          children:[]
+        },
+        {
+          title: "San Marino Train AI generated map.",
+          description:"This is an AI generated San Marino Map",
+          images: ["/images/sanmarinokingdom/rightideawrongmap.png"],
+          children: []
+        }
+
+      ]
       }
       ]
 
