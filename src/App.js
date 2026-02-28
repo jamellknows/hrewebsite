@@ -5031,15 +5031,7 @@ function WorldRule2Page() {
 
 ]; 
 
-const metric6 = [
-  {id: 1, title: "Governance"},
-  {id: 2, title: "Infrastructure"},
-  {id: 3, title: "Culture"},
-  {id: 4, title: "Feminism"},
-  {id: 5, title: "Traditionalism"},
-  {id: 6, title: "Population"}
 
-];
 
 const blocks4 = Array.from({ length: 4 }).map((_, i) => ({
     id: i,
