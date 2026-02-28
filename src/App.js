@@ -1393,7 +1393,7 @@ const cosmology = [
     children: [
      {
     title: "Boeing",
-    description: "Bezalel, son of Uri and grandson of Hur of the tribe of Judah and Oholiab, son of Ahisamach, of the tribe of Dan and Elijah the Tishbite from Tishbe of the tribe of Gad (Gilead: East of the Jordan River).",
+    description: "Bezalel, son of Uri and grandson of Hur of the tribe of Judah and Oholiab, son of Ahisamach, of the tribe of Dan and Elijah the Tishbite from Tishbe of the tribe of Mannasseh (Gilead: East of the Jordan River).",
     images: ["./images/sanmarinokingdom/boeing.png"],
     children: []
       },
