@@ -3302,83 +3302,94 @@ const arrowStyle = (side) => ({
       </p>
 
       <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(60px, 1fr))",
-          gap: "10px",
-          marginTop: "16px"
-        }}
-      >
-       {[
-  { letter: "क", number: 11 },
-  { letter: "ख", number: 12 },
-  { letter: "ग", number: 21 },
-  { letter: "घ", number: 19 },
-  { letter: "ङ", number: 26 },
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(60px, 1fr))",
+    gap: "10px",
+    marginTop: "16px"
+  }}
+>
+  {[
+    { letter: "क", name: "ka", number: 11 },
+    { letter: "ख", name: "kha", number: 12 },
+    { letter: "ग", name: "ga", number: 21 },
+    { letter: "घ", name: "gha", number: 26 },
+    { letter: "ङ", name: "ṅa", number: 27 },
 
-  { letter: "च", number: 24 },
-  { letter: "छ", number: 31 },
-  { letter: "ज", number: 36 },
-  { letter: "झ", number: 10 },
-  { letter: "ञ", number: null },
+    { letter: "च", name: "cha", number: 24 },
+    { letter: "छ", name: "chha", number: 31 },
+    { letter: "ज", name: "ja", number: 36 },
+    { letter: "झ", name: "jha", number: 46 },
+    { letter: "ञ", name: "ña", number: 20 },
 
-  { letter: "ट", number: 43 },
-  { letter: "ठ", number: 44 },
-  { letter: "ड", number: 26 },
-  { letter: "ढ", number: 8 },
-  { letter: "ण", number: 17 },
+    { letter: "ट", name: "ṭa", number: 43 },
+    { letter: "ठ", name: "ṭha", number: 44 },
+    { letter: "ड", name: "ḍa", number: 28 },
+    { letter: "ढ", name: "ḍha", number: 8 },
+    { letter: "ण", name: "ṇa", number: 17 },
 
-  { letter: "त", number: 42 },
-  { letter: "थ", number: 18 },
-  { letter: "द", number: 9 },
-  { letter: "ध", number: null },
-  { letter: "न", number: 20 },
+    { letter: "त", name: "ta", number: 42 },
+    { letter: "थ", name: "tha", number: 18 },
+    { letter: "द", name: "da", number: 9 },
+    { letter: "ध", name: "dha", number: 32 },
+    { letter: "न", name: "na", number: 14 },
 
-  { letter: "प", number: 19 },
-  { letter: "फ", number: 23 },
-  { letter: "ब", number: 45 },
-  { letter: "भ", number: 30 },
-  { letter: "म", number: 13 },
+    { letter: "प", name: "pa", number: 19 },
+    { letter: "फ", name: "pha", number: 23 },
+    { letter: "ब", name: "ba", number: 45 },
+    { letter: "भ", name: "bha", number: 30 },
+    { letter: "म", name: "ma", number: 13 },
 
-  { letter: "य", number: 40 },
-  { letter: "र", number: 3 },
-  { letter: "ल", number: 25 },
-  { letter: "व", number: 29 },
+    { letter: "य", name: "ya", number: 40 },
+    { letter: "र", name: "ra", number: 3 },
+    { letter: "ल", name: "la", number: 25 },
+    { letter: "व", name: "va", number: 29 },
 
-  { letter: "श", number: 38 },
-  { letter: "ष", number: null },
-  { letter: "स", number: 6 },
-  { letter: "ह", number: 16 }
-].map((c, i) => (
-  <div
-    key={i}
-    style={{
-      padding: "12px",
-      borderRadius: "14px",
-      background: "white",
-      textAlign: "center",
-      boxShadow: "0 4px 12px rgba(0,0,0,.08)"
-    }}
-  >
-    <div style={{ fontSize: "28px", fontWeight: 600 }}>
-      {c.letter}
-    </div>
+    { letter: "श", name: "śa", number: 22 },
+    { letter: "ष", name: "ṣa", number: 38 },
+    { letter: "स", name: "sa", number: 6 },
+    { letter: "ह", name: "ha", number: 16 }
+  ].map((c, i) => (
+    <div
+      key={i}
+      style={{
+        padding: "12px",
+        borderRadius: "14px",
+        background: "white",
+        textAlign: "center",
+        boxShadow: "0 4px 12px rgba(0,0,0,.08)"
+      }}
+    >
+      <div style={{ fontSize: "28px", fontWeight: 600 }}>
+        {c.letter}
+      </div>
 
-    {c.number && (
       <div
         style={{
-          fontSize: "13px",
+          fontSize: "12px",
           marginTop: "4px",
-          fontWeight: 600,
-          color: "#0f172a"
+          fontWeight: 500,
+          color: "#475569"
         }}
       >
-        {c.number}
+        {c.name}
       </div>
-    )}
-  </div>
-))}
-      </div>
+
+      {c.number !== null && (
+        <div
+          style={{
+            fontSize: "13px",
+            marginTop: "4px",
+            fontWeight: 600,
+            color: "#0f172a"
+          }}
+        >
+          {c.number}
+        </div>
+      )}
+    </div>
+  ))}
+</div>
 
       {/* Symbolic Note */}
       <h4 style={{ marginTop: "30px" }}>Spiritual Significance</h4>
