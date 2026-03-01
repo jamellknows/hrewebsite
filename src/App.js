@@ -2640,6 +2640,7 @@ useEffect(() => {
     <div
       onClick={(e) => e.stopPropagation()}
       style={{
+        position: "relative", // needed for absolute close button
         display: "grid",
         gridTemplateColumns: "1.5fr 1fr",
         maxWidth: "1200px",
@@ -2651,6 +2652,39 @@ useEffect(() => {
         boxShadow: "0 30px 90px rgba(0,0,0,0.7)"
       }}
     >
+
+      {/* CLOSE BUTTON */}
+      <button
+        onClick={() => setLightbox(null)}
+        style={{
+          position: "absolute",
+          top: "16px",
+          right: "16px",
+          width: "38px",
+          height: "38px",
+          borderRadius: "50%",
+          border: "none",
+          background: "rgba(255,255,255,0.08)",
+          color: "white",
+          fontSize: "20px",
+          fontWeight: 600,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backdropFilter: "blur(4px)",
+          transition: "all 0.2s ease",
+          zIndex: 10
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.background = "rgba(255,255,255,0.18)")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.background = "rgba(255,255,255,0.08)")
+        }
+      >
+        ✕
+      </button>
 
       {/* SCROLLABLE IMAGE CONTAINER */}
       <div
@@ -2680,7 +2714,6 @@ useEffect(() => {
           />
         ))}
 
-        {/* OPTIONAL: Navigation Arrows */}
         {lightbox.images.length > 1 && (
           <>
             <button onClick={prevImage} style={arrowStyle("left")}>‹</button>
