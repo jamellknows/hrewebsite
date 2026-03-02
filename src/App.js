@@ -5371,7 +5371,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     {
       id: 6,
       title: "Teaching and learning",
-      img: "/images/hierarchies.png"
+      img: "/images/religious/hierarchies.png"
     }
   ];
 
