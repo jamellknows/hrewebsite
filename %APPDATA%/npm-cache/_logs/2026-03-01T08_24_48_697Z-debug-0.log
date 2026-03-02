@@ -1,0 +1,28 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\jamel\Code\architect-portfolio\.npmrc
+5 silly config load:file:C:\Users\jamel\.npmrc
+6 silly config load:file:C:\Users\jamel\Code\architect-portfolio\%APPDATA%\npm\etc\npmrc
+7 verbose title npm s
+8 verbose argv "s"
+9 verbose logfile logs-max:10 dir:C:\Users\jamel\Code\architect-portfolio\%APPDATA%\npm-cache\_logs\2026-03-01T08_24_48_697Z-
+10 verbose logfile C:\Users\jamel\Code\architect-portfolio\%APPDATA%\npm-cache\_logs\2026-03-01T08_24_48_697Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 verbose stack Error: search must be called with arguments
+13 verbose stack     at Search.exec (C:\Program Files\nodejs\node_modules\npm\lib\commands\search.js:35:13)
+13 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\npm.js:256:63
+13 verbose stack     at Object.start (C:\Program Files\nodejs\node_modules\npm\node_modules\proc-log\lib\index.js:101:21)
+13 verbose stack     at #exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:255:17)
+13 verbose stack     at async Npm.exec (C:\Program Files\nodejs\node_modules\npm\lib\npm.js:208:9)
+13 verbose stack     at async module.exports (C:\Program Files\nodejs\node_modules\npm\lib\cli\entry.js:67:5)
+14 error search must be called with arguments
+15 verbose cwd C:\Users\jamel\Code\architect-portfolio
+16 verbose os Windows_NT 10.0.26200
+17 verbose node v24.13.0
+18 verbose npm  v11.6.2
+19 verbose exit 1
+20 verbose code 1
+21 error A complete log of this run can be found in: C:\Users\jamel\Code\architect-portfolio\%APPDATA%\npm-cache\_logs\2026-03-01T08_24_48_697Z-debug-0.log
