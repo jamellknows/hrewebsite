@@ -5827,8 +5827,8 @@ const toggleTriangle = (index) => {
               src={slides[activeSlide].image}
               alt=""
               style={{
-                marginTop:"2rem",
-                maxHeight:"vh",
+                marginTop:"3rem",
+                maxHeight:"65vh",
                 maxWidth: "100%",
                 borderRadius: "1rem",
                 marginBottom: "1rem"
@@ -5840,8 +5840,9 @@ const toggleTriangle = (index) => {
             <p
               style={{
                 color: "#ddd",
-                maxWidth: "600px",
-                margin: "0 auto"
+                maxWidth: "95vw",
+                margin: "0 auto",
+                fontSize:"0.5rem"
               }}
             >
               {slides[activeSlide].text}
