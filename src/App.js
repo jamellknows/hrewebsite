@@ -5191,7 +5191,6 @@ function DualCarouselCards() {
 
 
 function WorldRule2Page() {
-  const [highlightIndex, setHighlightIndex] = useState(0);
   const [openStatId, setOpenStatId] = useState(null); // <-- track expanded stat
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -5199,6 +5198,11 @@ function WorldRule2Page() {
   const [openWheelImage, setOpenWheelImage] = useState(null);
   const [openCoreImage, setOpenCoreImage] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
+  const [activeTriangle, setActiveTriangle] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [fullscreen, setFullscreen] = useState(false);
+
+
   
 
 
@@ -5257,11 +5261,7 @@ There are 331,068 priestesses worldwide. Each receives training within the Colle
 ]; 
 
 
-    const metric4 = [
-    { id: 1, title: "Big Head", text:"In order to manage the government structure for each of the 12977 CLTs there is a structure of 1 Woman Divine Huriyya to 6 Arch Angel Divines of the Domus 180 Women Infantas, 32832 Amiras and 389310 Ladies of the Lamp and 194655 Ladies of the Gal." },
-    { id: 2, title: "Acolytes", text:"Acolytes are those who did not meet the criteria of the town or the emporium and therefore have been conscripted to the Oikos of the Oikodrome. They are fitted with a electronic LL or ceramic braces and trained how to drive a Kharvee. They work the MSHN. Male acolytes drive from CLT to CLT around the world in what is known as the EPIC and female acolytes drive around their home CLT and once a year in an event known as the Pacchāgamana"},
-    { id: 3, title: "The Priesthood", text: "As previously explained priests live in relic cities and the bishops live in the Rus. The Relic cities are the cities of today reduced to only their core major building of worship, palace or any other grand building. As there are 23328 cities, I require that number of priest cities. Therefore there are 471 priests per priest city with 1884 wives(max), 900 servitor robots, 5 Seraphim(advanced) and 1000 sheep dogs. They are to work THAT (Teaching, Husbandry, Authorship and Technology) or TATA (Teaching, Agriculture, Technology, Authorship). After bulldozing the irrelevant parts of the relic cities, fields and manufacturing will be established in place. With 4 wives each the populations should steadily increase. Of course the rules for monks and nuns apply to all priests (Buddhism)." },
-  ];
+
   
    const metric5 = [
   { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). It is populated by blacks. "},
@@ -5293,11 +5293,72 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
     }));
 
 
-  const highlights3 = Array.from({ length: 3 }).map((_, i) => ({
-    id: i,
-    title: `${metric4[i].title}`,
-    text: `${metric4[i].text}`
-  }));
+ const triangles = [
+    {
+      id: 1,
+      slides: [
+        {
+          title: "Schedule",
+          text: "Scheduling is fundamentally about knowing where you need to be and when you need to be there. To do that effectively, a person must first determine what is important and why it matters at a given time. For some men, their priorities may be strongly influenced by sexual desire and attraction. In that case, their schedule might revolve around pursuing relationships or encounters with women they are attracted to and who they believe are strongly interested in them as well.",
+          image: "/images/religious/gfs.png"
+        },
+        {
+          title: "Positioning",
+          text: "Power flows toward precision and structure.",
+          image: "/images/schedule2.jpg"
+        }
+      ]
+    },
+    {
+      id: 2,
+      slides: [
+        {
+          title: "Capital",
+          text: "The Rack Capital is made of 40 CLTs which are 10 FESTs which is 3 SHUBS and a FEST.",
+          image: "/images/capital1.jpg"
+        },
+        {
+          title: "Mobility",
+          text: "Circulation sustains structure.",
+          image: "/images/capital2.jpg"
+        }
+      ]
+    },
+    {
+      id: 3,
+      slides: [
+        {
+          title: "Angelic Distribution",
+          text: "Numbers of Angels given to roles.",
+          image: "/images/angelic1.jpg"
+        },
+        {
+          title: "Angelic ",
+          text: "Teaching and authorship preserve stability.",
+          image: "/images/angelic2.jpg"
+        }
+      ]
+    }
+  ];
+
+
+
+const navButton = {
+  padding: "10px 18px",
+  borderRadius: "14px",
+  border: "none",
+  background:
+    "linear-gradient(135deg,#6C5CE7,#4834D4)",
+  color: "#fff",
+  fontSize: "1rem",
+  cursor: "pointer",
+  transition: "all 0.2s ease",
+  boxShadow:
+    "0 10px 25px rgba(0,0,0,0.3)"
+};
+
+
+
 
 
     const carouselSlides = [
@@ -5454,6 +5515,54 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       boxShadow: "0 8px 22px rgba(0,0,0,0.25)"
     });
 
+    const buttonStyle = {
+  padding: "10px 20px",
+  borderRadius: "10px",
+  border: "none",
+  background: "linear-gradient(135deg, #007BFF, #0056b3)",
+  color: "#ffffff",
+  cursor: "pointer",
+  fontWeight: "600",
+  fontSize: "0.95rem",
+  letterSpacing: "0.5px",
+  transition: "all 0.25s ease",
+  boxShadow: "0 6px 14px rgba(0, 123, 255, 0.35)"
+};
+
+const toggleTriangle = (index) => {
+    if (activeTriangle === index) {
+      setActiveTriangle(null);
+      setActiveSlide(0);
+    } else {
+      setActiveTriangle(index);
+      setActiveSlide(0);
+    }
+  };
+
+  const slides =
+    activeTriangle !== null
+      ? triangles[activeTriangle].slides
+      : [];
+
+  const nextSlide = () =>
+    setActiveSlide((prev) => (prev + 1) % slides.length);
+
+  const prevSlide = () =>
+    setActiveSlide(
+      (prev) => (prev - 1 + slides.length) % slides.length
+    );
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const diff =
+      e.changedTouches[0].clientX - touchStartX.current;
+    if (diff > 50) prevSlide();
+    if (diff < -50) nextSlide();
+  };
+
 
   return (
     <AnimatedPage>
@@ -5544,43 +5653,205 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
         </div>
       </div>
 
-      {/* === Bottom: rotating highlights (3) === */}
+{/* === Bottom: clickable highlights with expandable carousel === */}
+
+ <div
+      style={{
+        maxWidth: "1000px",
+        margin: "0 auto",
+        padding: "80px 0",
+        position: "relative"
+      }}
+    >
+      {/* Pyramid Layout */}
       <div
         style={{
-          position: "relative",
-          maxWidth: "700px",
-          margin: "0 auto",
-          textAlign: "center"
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "auto auto",
+          justifyItems: "center",
+          gap: "80px"
         }}
       >
-        <div style={styles.card}>
-          <h3>{highlights3[highlightIndex].title}</h3>
-          <p>{highlights3[highlightIndex].text}</p>
-        </div>
+        {triangles.map((triangle, index) => (
+          <div
+            key={triangle.id}
+            style={{
+              gridColumn:
+                index === 0 ? "1 / span 2" : "auto",
+              textAlign: "center"
+            }}
+          >
+            {/* Triangle */}
+            <div
+              onClick={() => toggleTriangle(index)}
+              style={{
+                width: 0,
+                height: 0,
+                borderLeft: "80px solid transparent",
+                borderRight: "80px solid transparent",
+                borderBottom:
+                  activeTriangle === index
+                    ? "160px solid #6C5CE7"
+                    : "140px solid #111",
+                cursor: "pointer",
+                transition:
+                  "all 0.5s cubic-bezier(.2,.8,.2,1)",
+                transform:
+                  activeTriangle === index
+                    ? "scale(1.2) rotate(3deg)"
+                    : "scale(1)",
+                filter:
+                  activeTriangle === index
+                    ? "drop-shadow(0 25px 35px rgba(0,0,0,0.5))"
+                    : "drop-shadow(0 12px 20px rgba(0,0,0,0.3))"
+              }}
+            />
 
+            {/* Glass Panel */}
+            {activeTriangle === index && slides.length > 0 && (
+              <div
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                style={{
+                  marginTop: "50px",
+                  width: "360px",
+                  padding: "28px",
+                  borderRadius: "24px",
+                  background:
+                    "rgba(255,255,255,0.15)",
+                  backdropFilter: "blur(18px)",
+                  WebkitBackdropFilter: "blur(18px)",
+                  border:
+                    "1px solid rgba(255,255,255,0.3)",
+                  boxShadow:
+                    "0 30px 60px rgba(0,0,0,0.35)",
+                  transition: "all 0.4s ease",
+                  animation: "fadeIn 0.4s ease"
+                }}
+              >
+                <img
+                  key={activeSlide}
+                  src={slides[activeSlide].image}
+                  alt=""
+                  style={{
+                    width: "100%",
+                    borderRadius: "18px",
+                    marginBottom: "20px",
+                    transition: "opacity 0.4s ease"
+                  }}
+                />
+
+                <h2
+                  style={{
+                    marginBottom: "12px",
+                    fontWeight: 600
+                  }}
+                >
+                  {slides[activeSlide].title}
+                </h2>
+
+                <p
+                  style={{
+                    lineHeight: "1.6",
+                    fontSize: "0.95rem"
+                  }}
+                >
+                  {slides[activeSlide].text}
+                </p>
+
+                {/* Navigation */}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginTop: "22px"
+                  }}
+                >
+                  <button
+                    onClick={prevSlide}
+                    style={navButton}
+                  >
+                    ←
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      setFullscreen(true)
+                    }
+                    style={{
+                      ...navButton,
+                      background:
+                        "linear-gradient(135deg,#00B894,#019875)"
+                    }}
+                  >
+                    ⤢
+                  </button>
+
+                  <button
+                    onClick={nextSlide}
+                    style={navButton}
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Fullscreen Overlay */}
+      {fullscreen && slides.length > 0 && (
         <div
+          onClick={() => setFullscreen(false)}
           style={{
-            marginTop: "12px",
+            position: "fixed",
+            inset: 0,
+            background:
+              "rgba(0,0,0,0.92)",
             display: "flex",
-            gap: "10px",
-            justifyContent: "center"
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 999,
+            animation: "fadeIn 0.3s ease"
           }}
         >
-          {highlights3.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setHighlightIndex(i)}
+          <div
+            style={{
+              maxWidth: "80%",
+              textAlign: "center"
+            }}
+          >
+            <img
+              src={slides[activeSlide].image}
+              alt=""
               style={{
-                ...styles.btn,
-                padding: "6px 12px",
-                opacity: highlightIndex === i ? 1 : 0.5
+                marginTop:"2rem",
+                maxHeight:"vh",
+                maxWidth: "100%",
+                borderRadius: "1rem",
+                marginBottom: "1rem"
+              }}
+            />
+            <h2 style={{ color: "#fff" }}>
+              {slides[activeSlide].title}
+            </h2>
+            <p
+              style={{
+                color: "#ddd",
+                maxWidth: "600px",
+                margin: "0 auto"
               }}
             >
-              {i + 1}
-            </button>
-          ))}
+              {slides[activeSlide].text}
+            </p>
+          </div>
         </div>
-      </div>
+      )}
+    </div>
+
+
 
         {/* ===================== */}
         {/* PREMIUM CAROUSEL */}
