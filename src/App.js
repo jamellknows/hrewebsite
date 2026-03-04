@@ -5314,7 +5314,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       slides: [
         {
           title: "Capital",
-          text: "The Rack Capital is made of 40 CLTs which is equal to 10 FESTs which is equal to 3 SHUBS and a FEST. Candidate locations are Australia and the region of Mount Arat from the 2 lakes to its south up to  Donetsk, Rostov on Don and Volograd.",
+          text: "The Rack Capital comprises 40 CLTs, equivalent to 10 FESTs or 3 SHUBS plus 1 FEST. Candidate locations for its establishment include Australia and the region surrounding Mount Arat, with the Mount Arat site encompassing from the two lakes to its south all the way to Donetsk, Rostov-on-Don, and Volgograd. Complementing the capital, 40 Sea Villages will be constructed in the Black Sea, designed with a layout reminiscent of the shape of Australia.",
           image: "/images/religious/map.png"
         },
         {
