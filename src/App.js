@@ -5314,8 +5314,8 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       slides: [
         {
           title: "Capital",
-          text: "The Rack Capital is made of 40 CLTs which are 10 FESTs which is 3 SHUBS and a FEST.",
-          image: "/images/capital1.jpg"
+          text: "The Rack Capital is made of 40 CLTs which is equal to 10 FESTs which is equal to 3 SHUBS and a FEST. Candidate locations are Australia and the region of Mount Arat from the 2 lakes to its south up to  Donetsk, Rostov on Don and Volograd.",
+          image: "/images/religious/map.png"
         },
         {
           title: "Mobility",
