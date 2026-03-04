@@ -3514,12 +3514,6 @@ useEffect(() => {
       title: "Judgement",
       image: "./images/sv3.png",
       text: "Testing cycles evaluate citizens and redistribute the civilians every five years. Families that have a female family member as a lady of the gal enjoy special privileges in employment.  "
-    },
-    {
-      id: 5,
-      title: "Completion",
-      image: "./images/sv6.jpg",
-      text: "The Sea Villages are home to advanced engineering, to ensure security there are many evangelions. Those who live in the Sea Village will be transferred to live on water worlds when space colonization commences.  "
     }
   ];
 
@@ -3543,23 +3537,23 @@ useEffect(() => {
   {
     id: 0,
     title: "Love: Women, sex, companionship, dating, pairing",
-    content: "Marriage is a right of priests, deacons, polītai, proedros, and members of NIFTYER59HALO. Marriage partners for priests and deacons are found using a dating app. Women that live in the towns are free to have sex with the boys from age 16 to 19(when they leave). Women of the MSHN(acolytes) are free to have sex with men who themselves are acolytes when their routes intersect. Men that are slaves do not have sex, but donate sperm. The laws regarding sex for Polītai are mostly governed by the Proedros of that Emporium, however some laws will still be in effect."
+    content: "Marriage is a right of priests, polītai, and members of NIFTYER59HALO. Marriage partners for priests and polītai are found using a dating app. Women that live in the towns are free to have sex with the boys from age 16 to 18(when they leave). Female acolytes aged 20 and above are free to have sex with well performing male acolytes at palatates if using protection. Men that are slaves do not have sex, but donate sperm. The laws regarding sex for Polītai are mostly governed by the Proedros of that Polis, however some laws will still be in effect."
   },
   {
     id: 1,
     title: "Language: People, Zoos and the mandatory second language",
-    content: "The mandatory second language of a zone(town, route) will depend on the result of their 89 test. Currently I am thinking Hindi, Mandarin, Armenian, Arabic, Hebrew, Persian and Greek (MAPSHAG). People will live in towns or routes and will have varying levels of rights and life styles depending on this. Where a person lives is determined by their 89 score, gender and race(ethnic background). All towns will have a zoo and I am considering putting zoos along routes." // Second item
+    content: "The official languages of a zone(town, route) will depend on the result of their 89 test. Currently I am thinking Hindi, Mandarin, Armenian, Arabic, Hebrew, Persian and Greek (MAPSHAG) along with German, Italian and French. People will live in towns or routes and will have varying levels of rights and life styles depending on this. Where a person lives is determined by their 89 score, gender and race(ethnic background). All towns will have a zoo and I am considering putting zoos along routes." // Second item
   },
   {
     id: 2,
-    title: "Leadership: NIFTYER59HALO and Evangelions(Angels)",
-    content: " The Leadership is headed by myself from the NIFTYER59HALO, there are 3 sub branches of government the leading is the Priesthood of the Melchizidek, then the Three Domus of the House of Bucknor Wisdom, then it is mega company 2. The priesthood is led by Bishops with the aid of priests, deacons and priestesses. 2 is run by evangellions, women known as palatines and children of NIFTYER59HALO, and the three Domus is led by my wife the Divine Hurriya with evangellions and women titled called ladies, amiras and infantas. Evangelions can be described as droids or robots. They are designed to be as powerful as biblical angels and are also useful servants, governors, constructors and more. They are built using LL(Lavore Luce) a state of matter between a photon and a fermion. Some will be made of a very durable ceramic, some will have the face of a lion, ox, eagle or a shawl. Others will look like men."
+    title: "Leadership: NIFTYER59HALO",
+    content: " "
   },
   {
     id: 3,
     title: "Cause: Priesthood",
-    content: " The priesthood of the Melchizedek has 5 branches together they oversee the whole globe. Current priests will be recruited and new priests will be made across all religions. Priests live in relic cities overseen by the Rabat of the Relics. Priests are tasked with purifying these cities starting again from the holiest sites. The 5 branches are the Cetiya of the Upasikayo (female acolytes), Rabat of the Relic (Relic Cities), Oikos of the Oikodrome (male acolytes), the Synagogue of the Sefer (Science) and the Sanctuary of the Sea (Towns). "
-  },
+    content: " The priesthood of the Melchizedek has 6 branches together they oversee the whole globe. Current priests will be recruited and new priests will be made across all religions. Priests live in relic cities overseen by the Rabat of the Relics. Priests are tasked with purifying these cities starting again from the holiest sites. The 6 branches are the Cetiya of the Upasikayo(lamp), Rabat of the Relic (Relic Cities), Oikos of the Oikodrome(Arx and routes), the Synagogue of the Sefer(Rus), the Sanctuary of the Sea (Sea Village), the Haveli of the Hari(KT HAM), the Temple of the Tao(Thana and Hidalgo) . "
+  }, 
   {
     id: 4,
     title: "Justice: Test, Payment and JSPEM",
@@ -3648,10 +3642,10 @@ const rightGrid = [
 
 
   const bottomThree = [
-  { id: 0, title: "ACOLYTES and the MSHN", text: "ACOLYTES are males and females from the age of 19. All men that not employed by the Emporium or slaves are acolytes to the Priesthood of Melchizedek within the Oikos of the Oikodrome. It takes a year to train an acolyte and during that time they are taught how to drive and maintain a kharvee and how to do their first jobs. They then do the MSHN across the world in what is known as the EPIC. Women that fall below the town threshold at 19 also become acolytes and are trained how to drive a Kharvee. They work the MSHN around their CLT on the LABIA and return once a year in an event called the Pacchāgamana. Acolytes are required to maintain fitness and there is an execise bike inside the Kharvee. The MSHN is MAGGOT, SKOULIKIA, HAITI, NOVELISE. Acolytes earn etra points for being a researcher or performer.  "},
-  { id: 1, title: "MAGGOTS, SKOULIKIA, HATI AND STUNT DOUBLES", text:"Maggots work agriculture, skoulikia work manufacturing and hati work services, entertainment and construction. Together with N which stands for novelise this forms the MSHN. Novelise is to write a book, innovate something new, write three songs, make three visual art pieces, score three goals in three sports, write a film script, act in a stage play and a film and other creative endeavours. Men work the MSHN across the globe in what is called the EPIC. Depending on behaviour they are fitted with braces or collars of various sizes. Stunt Doubles are remote controlled work droids used by men who have attained the rank of a Reader, a Sexton is able to pilot 3 Stunt Doubles at a time.  " },
-  { id: 2, title: "THE LABIA AND PMSEC", text:"The Labia is the route that runs along the outside of a CLT served by women. The Legs are the routes that connect settlements. Along all route are the eshtions, factroies, fields, facilities, services and utilities. Acolytes are expected to work at their destination and along the route they aquire extra points for performing research or performing. Acolytes will also freight goods between as part of their job in a pass the parcel manner. Acolytes who do not do research do not have sex. The goal is the MSHN. Which is to learn and teach the most skilled jobs as a MAGGOT, SKOULIKIA and HATI and then to novelise. Male and female acolytes meet when a male order arrives at the same time that a female order is at the destinantion. The top 3/5ths of men are given an electronic condom. Unpermitted sex results in slavery. Acolytes are allowed to enter the stadiums and theatres between the towns for entertainment and some may be performers. " },
-  { id: 3, title: "THE 89 & THE 114", text:"The 89 is the sorting test that determines a persons class. It is based on how they performed in life(8) and their goodness(9) and has a part called the WALT.P (Wife, Acolyte, Lady, Townie).(Priestess) for females and the PAD for males (Priest, Acolyte, Deacon). The 114 is the continous requirements for a citizen to fulfill in order to not be excommunicated or have additional restraints placed on them. These are to physically produce, not to break any law and to not refuse correction, to be wise in all choices, to be trained in 4 jobs, not to profane the Name of God and for women it is to raise 1 male and 2 females to adulthood. The numbers for this calculation are [11,11,11,11], [16,16], 18, 32" }
+  { id: 0, title: "MSHN", text: "MAGGOTS, SKOULIKIA, HATI and NOVELISE."},
+  { id: 1, title: "SPAM", text:"" },
+  { id: 2, title: "4SA", text:"" },
+  { id: 3, title: "FACTS", text:"" }
 
 ];
 
@@ -3766,7 +3760,7 @@ const mainCards = [
   },
   {
     id: 3,
-    title: "Integral",
+    title: "Routes",
     image: "/images/Eshtion.jpg",
     subCards: [
       { id: 31, text: "Kharvees are autonomous and manual moveable apartments first made during the business phase of the plan. They are similar to RVs and can drive on road, loop or rail. Kharvees are organised into groups of 21 called Lots and Lots are organised into groups of 13 called Orders and Orders are organised into groups of 5 called Ecclesia and Ecclesia are grouped into 4s called an Koinonia that come under one as an Akoloutheo (Ακολουθέω). The Akoloutheo are administerd by the Oikos of the Oikodome. Altogether this is a Khloe Kao. ", image: "/images/automation/kharveefreight.png" },
@@ -5232,12 +5226,12 @@ Each rank carries defined responsibilities:
 - Rank 5 governs philanthropic work and operates across continental regions.
 - Rank 6 exercises senior authority and serves on the Rack Government.
 
-There are 331,068 priestesses worldwide. Each receives training within the College of her home RUS, where spiritual devotion is integrated with administrative discipline and leadership formation. While all priestesses may advance through the hierarchy, most aspire to reach the third rank, where leadership, governance, and direct institutional influence are most actively expressed.`
+There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. Each receives training within the College of her home RUS, where spiritual devotion is integrated with administrative discipline and leadership formation. While all priestesses may advance through the hierarchy, most aspire to reach the third rank, where leadership, governance, and direct institutional influence are most actively expressed.`
 },
   { id: 3, title: "PPEA", text:"There are 51,904 PPEA, an acronym for Proedros, Palatine, Emir, and Archon. These individuals are members of NIFTYER59HALO and are each assigned an independent, semi-autonomous settlement located just beyond the borders of a CLT. Their governance is overseen by the Synagogue of the Sefer, which ensures that all activities remain within the boundaries of the law. Each rulership type operates within a distinct population pool: Emirs oversee city girls and male slaves. Proedros work with the Politai (polite citizens). Palatines guide acolytes. Archons are responsible for female slaves and queer individuals. This structured allocation ensures that each PPEA can manage their settlement effectively while maintaining social and legal order under the guidance of the Synagogue." },
-  { id: 4, title: "The Rack Government", text:"The Rack Government serves as the supreme governing body responsible for issuing directives and making all major decisions worldwide. Its membership is composed of the following leaders: Alvah or Russell, serving as the head and Priest of Melchizidek, representing the ruling NIFTYER59HALO family. Dao-shi-ni of the Temple of the Tao. Deva Desi of the Haveli of the Hari. Yeshe Tsoyal of the Cetiya of the Upasika. Mudarib al-Tahara of the Rabat of the Relics. Sacristan of the Oikos of the Oikodrom. Ba’alat Shem of the Synagogue of the Sefer. Thyiades of the Sanctuary of the Sea. The Rack Government convenes for formal meetings once every 14 days, where they deliberate on global matters, issue guidance, and enforce the decisions of the council."},
+  { id: 4, title: "The Rach Government", text:"The Rach Government serves as the supreme governing body responsible for issuing directives and making all major decisions worldwide. Its membership is composed of the following leaders: Alvah or Russell, serving as the head and Priest of Melchizidek, representing the ruling NIFTYER59HALO family. Dao-shi-ni of the Temple of the Tao. Deva Desi of the Haveli of the Hari. Yeshe Tsoyal of the Cetiya of the Upasika. Mudarib al-Tahara of the Rabat of the Relics. Sacristan of the Oikos of the Oikodrom. Ba’alat Shem of the Synagogue of the Sefer. Thyiades of the Sanctuary of the Sea. The Rach Government convenes for formal meetings once every 14 days, where they deliberate on global matters, issue guidance, and enforce the decisions of the council."},
   { id: 5, title: "Ivangellions and Ivorgellions", text: "Ivangellions and Ivorgellions are autonomous, AI-powered angelic beings crafted from Lavore Luce (LL), designed to excel in all fundamental tasks while mastering specialized disciplines. Ivangellions operate mechanically, like clockwork, whereas Ivorgellions function luminously, harnessing light. Their hierarchy is extensive: 10 Sefirot Angels — the most powerful and influential; 12 Archangels — overseeing advanced governance and strategic matters; 10 Maimonides Angels — experts in complex, specialized domains; and 72 Ha-Shem Mephorah Angels — supporting a wide array of operational and mystical functions. All evangellions and ivorgellions utilize artificial intelligence created by the supreme AI, Metatron, ensuring unmatched precision, learning capacity, and coordinated operation across their spheres of influence."},
-  { id: 6, title: "Zones", text: "Zones serve as the organizational framework for determining a person's residence based on their performance across 89 assessments. The zones are B8, B9, F8, F9, A9, and A8, each governed by a specific rank of priesthood or nobility: B8 – Giving and Continent, B9 – Language and Understanding, F8 – Movement and Leadership, F9 – Social and Cause, A9 – Service and Justice, A8 (LAID) – Completion (FEST). A person's continental placement is determined by their strongest assessment result: 18 – North Europe, 42 – Middle East, 32 – South Europe, 11 – America, Africa, or Australia, 16 – South or East Asia. This system ensures individuals are allocated to regions and social structures that align with their abilities and potential. Zones are also connected to hierarchical groupings of settlements and events: A9 – 3 FESTs (Shubs), F9 – 7 Shubs (Rave), F8 – 14 Raves (Panic), B9 – 11 Panics (Disco). Continents are organized into differing numbers of Discos, now called Balls, and 8 Balls together form a Rack, providing both social and geographic structure while reflecting individual skill hierarchies."}
+  { id: 6, title: "Zones", text: "Zones serve as the organizational framework for determining a person's residence based on their performance across 89 assessments. The zones are B8, B9, F8, F9, A9, and A8, each governed by a specific rank of priesthood or nobility: B8 – Giving and Continent, B9 – Language and Understanding, F8 – Movement and Leadership, F9 – Social and Cause, A9 – Service and Justice, A8 (LAID) – Completion (FEST). A person's continental placement is determined by their strongest assessment result: 18 – North Europe, 42 – Middle East, 32 – South Europe, 11 – America, Africa, or Australia, 16 – South or East Asia. This system ensures individuals are allocated to regions and social structures that align with their abilities and potential. Zones are also connected to hierarchical groupings of settlements and events: A9 – 3 FESTs (SHUBs), F9 – 7 SHUBs (RAVE), F8 – 14 RAVEs (PANIC), B9 – 11 PANICs (DISCO). Continents are organized into differing numbers of DISCOs, now called BALLs, and 8 BALLs together form a RACH, providing both social and geographic structure while reflecting individual skill hierarchies."}
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
     id: i,
@@ -5308,13 +5302,13 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           image: "/images/schedule2.jpg"
         }
       ]
-    },
+    }, 
     {
       id: 2,
       slides: [
         {
           title: "Capital",
-          text: "The Rack Capital comprises 40 CLTs, equivalent to 10 FESTs or 3 SHUBS plus 1 FEST. Candidate locations for its establishment include Australia and the region surrounding Mount Arat, with the Mount Arat site encompassing from the two lakes to its south all the way to Donetsk, Rostov-on-Don, and Volgograd. Complementing the capital, 40 Sea Villages will be constructed in the Black Sea, designed with a layout reminiscent of the shape of Australia.",
+          text: "The Rack Capital comprises 40 CLTs, equivalent to 10 FESTs or 3 SHUBs plus 1 FEST. Candidate locations for its establishment include Australia and the region surrounding Mount Arat, with the Mount Arat site encompassing from the two lakes to its south all the way to Donetsk, Rostov-on-Don, and Volgograd. Complementing the capital, 40 Sea Villages will be constructed in the Black Sea, designed with a layout reminiscent of the shape of Australia.",
           image: "/images/religious/map.png"
         },
         {
@@ -5329,12 +5323,12 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       slides: [
         {
           title: "Angelic Distribution",
-          text: "Numbers of Angels given to roles.",
+          text: "The ratio of angels to females for a CLAPPET is 33 angels to 1 adult female.",
           image: "/images/angelic1.jpg"
         },
         {
-          title: "Angelic ",
-          text: "Teaching and authorship preserve stability.",
+          title: "Stunt Doubles",
+          text: "Stunt Doubles are remote controlled work droids used by men who have attained the rank of a Reader, a Sexton is able to pilot 3 Stunt Doubles at a time. ",
           image: "/images/angelic2.jpg"
         }
       ]
