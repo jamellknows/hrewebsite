@@ -5515,19 +5515,6 @@ const navButton = {
       boxShadow: "0 8px 22px rgba(0,0,0,0.25)"
     });
 
-    const buttonStyle = {
-  padding: "10px 20px",
-  borderRadius: "10px",
-  border: "none",
-  background: "linear-gradient(135deg, #007BFF, #0056b3)",
-  color: "#ffffff",
-  cursor: "pointer",
-  fontWeight: "600",
-  fontSize: "0.95rem",
-  letterSpacing: "0.5px",
-  transition: "all 0.25s ease",
-  boxShadow: "0 6px 14px rgba(0, 123, 255, 0.35)"
-};
 
 const toggleTriangle = (index) => {
     if (activeTriangle === index) {
