@@ -4240,27 +4240,7 @@ const CarouselContent = ({ large = false }) => (
             color: "#374151",
           }}
         >
-          Each letter of HAM KT S WE SHG B (KTSHAM WEBSHG) represents a town.
-          The towns are female-only, with men living in mobile apartments connected
-          via an inter-loop/rail system. Apartments are attachable to each other
-          and compatible with both road and rail/loop transport. Each town has a
-          population of 29,542 women and children.
 
-          Towns consist of six villages, designed to hold 4,560 people in saddles
-          or 4,380 in triangles/sandwiches. They are livestock-centered, while
-          the outer zones support manufacturing. Each residential area includes a
-          temple, church, or mosque (TCIHJB). Towns are walled with multi-level
-          roads and buildings that integrate service and entertainment facilities,
-          often shaped like elephant heads to support roads and transport.
-
-          There are eight castles per town serving as government offices and
-          residences for the Ladies of the Lamp/Gal. Men participate in the Interrail
-          system, working as maggots, skoulikia, or hati depending on their
-          attainment.
-
-          The towns are designed to prioritize the Ladies of the Lamp: they
-          minimize travel, allow safe shopping and living within castles, and
-          are supported by evangelions and FDELM.
         </p>
       </div>
     </div>
@@ -4369,36 +4349,12 @@ const CarouselContent = ({ large = false }) => (
             color: "#374151",
           }}
         >
-          There are 30 Ladies of the Lamp per Lamp, and each Lamp consists of six towns.
-          A Tooth likewise contains six towns and is guided by 15 Ladies of the Gal.
-          A Lamp and a Tooth combine with a Christmas and the Interrail to form a CLT,
-          of which there are 12,977 in total, together forming the PIG
-          (Production Integrated Globe).
-
-          The Ladies of the Lamp move frequently between locations.
-          A city has a population of 354,504, while a town contains 29,542 people.
-
-          Saddles house 38 people and are built in neighbourhood clusters of 120.
-          Sandwiches house 60 people and are built in clusters of 73.
-
-          Priestesses live with a Rus and move as needed within a CLT.
-          Hospitals operate as central services within the walls, while local
-          health facilities and convenience stores serve each residential district.
-
-          All residents receive training in PMSEC work categories and specialise
-          in one field. Individuals are sorted through a structured test measuring
-          their strongest goodness, weakest life attribute, weakest goodness
-          attribute, and overall averages across remaining measures.
-
-          This sorting ensures that the Ladies of the Lamp work with balanced
-          groups of people and can design a FEST suited to their development.
-          Trial, testing, and transformation form the foundation of this system.
+         
 
           The nine categories are: [46, 44, 38, 21, 21, 14, 11, 30(5)].
           The eight categories are: [32, 42, 18, 11, 11, 11, 16, 16].
 
-          Each town has six religious leaders who communicate with the
-          Palatines of business to ensure production targets are maintained.
+          
         </p>
       </div>
     </div>
