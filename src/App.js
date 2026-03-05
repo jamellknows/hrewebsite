@@ -3674,9 +3674,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Housing & Residential", 
     icon: "🏘️", 
     slides: [
-      { image: "/images/sketches/saddle4.jpg", text: "The Saddle: This is the first concept for housing based of a building previously built in San Marino. It is smaller in scale for the towns and has a capcaity of 38 for a family feel. The building in San Marino has capacity of 160 people." },
-      { image: "/images/sketches/sandwiches.png", text: "The Sandwich: This is the Sandwich platter complex that is also based of housing used in San Marino. Each sandwich has a capacity of 123 people. " },
-      { image: "/images/sketches/crescent.png", text: "The Crescent: This is the third housing design taken from the 11 houses I have planned to build in Socotra. It will house 54 people when built when I rule the world and 189 people when built in Socotra." }
+      { image: "/images/sketches/saddle4.jpg", text: "The majority of the residents live in the saddle in groups of 18. There are 6 boroughs in a town with 273 saddles each." }
     ]
   },
   { 
@@ -3684,9 +3682,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Agriculture", 
     icon: "🌾", 
     slides: [
-      { image: "/images/aa1.png", text: "Farms, gardens, and food production integrated into town layout." },
-      { image: "/images/aa2.png", text: "Local farmers markets and orchards." },
-      { image: "/images/aa3.png", text: "Irrigation and crop rotation fields." }
+      { image: "/images/automation/farm1.png", text: "The majority of the agriculture will take place within the square walls of the route and the zig zag shapped walls of the CLT. These farms are worked by slaves, passing acolytes and automated units and are overseen by Maimonides class Ivangellions. The rest of the agriculture is along the route and is also worked by the acolytes." }
     ]
   },
   { 
@@ -3694,9 +3690,9 @@ const carouselItems = bottomThree.map(item => ({
     title: "Manufacturing & Industry", 
     icon: "🏭", 
     slides: [
-      { image: "/images/manufuturist.png", text: "All manufacturing is CLT integrated to completion. It is then traded for what other CLTs produce as a part of the economy." },
-      { image: "/images/manumodern.png", text: "Warehouses and assembly workshops." },
-      { image: "/images/manuclassic.png", text: "Local manufacturing and artisan production areas." }
+      { image: "/images/manufuturist.png", text: "All manufacturing of a CLT is completed within the 4 squares (PPEA) the rest of the maunfacturing is done along the routes with the Emporiums run by a Sexton being a major zone of manufacturing. " },
+      { image: "/images/manumodern.png", text: "Industry also includes entertainment and services. Women within a town work these roles. The quality of clothing they recieve and can design depends upon their progression within the town heirarchy. Every woman has her own clothing brand and the more orders she gets for her clothing brand the higher she progresses." },
+  
     ]
   },
   { 
@@ -3717,9 +3713,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Entertainment & Culture", 
     icon: "🎭", 
     slides: [
-      { image: "/images/sketches/potalapalacefuturistic.png", text: "Theaters, music halls, parks, and cultural centers. These are all managed by the Ladies of the Lamp/Gal who are a part of FEST. It is intended for there to be one 'Tibet' for each AT(Arrow,Tooth). This is outside of the towns and is wher epeople who live in different regions come to met with each other. It is also the only place where alcohol and gambling is allowed." },
-      { image: "/images/sketches/finger2.png", text: "Concerts, festivals, and cultural events. Concerts are banned. Festivals are allowed as organised processions. Modern art pieces and installations will be based on my bored doodles. As there is no money all gambling will be the wagering of time off work. Thise in debt will owe significant hours of work and those with large winnings will not have to work much. All people will still have the same living standards." },
-      { image: "/images/sketches/NiftyClub.png", text: "Community art centers and galleries. Lots of Art centers." }
+      { image: "/images/sketches/potalapalacefuturistic.png", text: "Theaters, music halls, parks, and cultural centers. These are managed and directed by FEST. Each CLT has a specialty as a part of a FEST. The Fashion CLT has an arts center, the Entertainment CLT has a hologram world theme park, the Science CLT has a Pokemon Park and the Trade CLT has a Tibet which is the only place where gambling is permitted." },
     ]
   },
   { 
@@ -3727,9 +3721,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Governance & Security", 
     icon: "🏰", 
     slides: [
-      { image: "/images/governance1.jpg", text: "Castles, government offices, and security posts." },
-      { image: "/images/governance2.jpg", text: "Town hall and administrative centers." },
-      { image: "/images/governance3.jpg", text: "Police posts and safety infrastructure." }
+      { image: "/images/governance1.jpg", text: "Castles, government offices, and security posts." }
     ]
   }
 ];
@@ -3755,7 +3747,7 @@ const mainCards = [
       { id: 21, text: "The Lamp is composed of the Wola, Eshkol, Shefa, Hromoda, Grad and Burg and is governed by the Cetiya of the Upasika. The Tooth is composed of the Hamlet, Alber, Mish, Kent and Thorpe and is governed by the Haveli of the Hari.", image: "/images/tour.png" },
       { id: 22, text: "Males up to the age of 18 live in the towns after which they are inducted into the Oikos of the Oikodrome as an Acolyte. Before they leave town they are not restricted from having sex with any woman above the age of 20 and not oathed to another. Females are given two opportunities to become LAID or Priestesses, typically at the ages of 14 and 18. Exceptional candidates may be recruited into boarding school from the age of 14. All females then spend two years, beginning at age 16, serving as acolytes. At the conclusion of this acolyte period, they are formally assessed to determine who is suitable to advance to the roles of LAID or Priestess. ", image: "/images/acolyte1.png" },
       { id: 23, text: "Males under the age of 18 are given free electronic condoms. They must use them as any unauthorised pregnancy or unprotected sex will result in the male being acolyted immediately. Acolytes are permitted to engage in sexual relations inside the Palatinate on the condition that they have completed every stop along a route.", image: "https://via.placeholder.com/200x150" },
-      { id: 24, text: "Women live in families of 3 Head Wives, 4 Tit Wives and 5 Batty Wives. They live in a house called a Saddle that can accomodate 18 people as 12 women and 6 children. The right to bear children is reserved for a Head Wife who can have 2. When a Head Wife has performed very well she is given the option to become a MAC Wife. A MAC wife has no limit on the number of children she can have and lives in a castle on the town walls with women of her choice.", image: "https://via.placeholder.com/200x150" },
+      { id: 24, text: "Women live in families of 3 Head Wives, 4 Tit Wives and 5 Batty Wives. They live in a house called a Saddle that can accomodate 18 people as 12 women and 6 children. The right to bear children is reserved for a Head Wife who can have 2. When a Head Wife has performed very well she is given the option to become a MAC Wife. A MAC wife has no limit on the number of children she can have and lives in a castle between the town walls with women of her choice.", image: "https://via.placeholder.com/200x150" },
     ],
   },
   {
