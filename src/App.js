@@ -4240,7 +4240,7 @@ const CarouselContent = ({ large = false }) => (
           Purchase points are strictly single-use to prevent double spending and are directly applied toward a woman's standing within the hierarchy. 
           This ensures that every point spent on a design simultaneously functions as a vote of success, permanently tethering a designer's social rank to the actual consumption of her work. 
           The social hierarchy undergoes a total recalculation every two years, at which point women must relocate to the specific accommodations tied to their new rank.
-           This entire system is overseen by the Ladies in Charge of Fashion, a council of four elites per FEST who hold the exclusive right to access all materials. 
+           This entire system is overseen by the Ladies in Charge of Fashion(Ladies of the Lamp), a council of four elites per FEST who hold the exclusive right to access all materials. 
           These overseers possess the power to award discretionary points to designs they deem exceptional and maintain total authority over selecting the designers who represent their FEST along with them at the prestigious fashion shows (4 Ladies, 4 Townsfolk).
           While the women of the towns focus on the high-stakes world of fashion, all manufacturing and agriculture are performed by those living outside the town limits, and essential services are handled by acolytes, Ivangellions, droids, and slaves, though childcare remains a personal responsibility performed within the home.
         </p>
@@ -4351,6 +4351,8 @@ const CarouselContent = ({ large = false }) => (
             color: "#374151",
           }}
         >
+          Managed by the Oikos of the Oikodrome, life along the routes is powered by Acolytes who perform all menial labor under oath until they are either promoted to Sexton or, if female, return to the towns as a Tit Wife; while all men are classified as Acolytes unless they are Priests in a Holy City managed by the Rabat of the Relics or Polites within a Polis, their primary goal is to earn a permanent residence within an Emporium—a manufacturing and logistic hub—where a single Sexton may oversee operations and house up to four City Girl wives. 
+          Women who do not fit into the town hierarchy yet eschew Acolyte labor become City Girls within the Emirate, serving as call girls for high-performing Acolytes who have earned sex points until they are selected by a Sexton to gain exclusive access to Emporium-manufactured clothing, though Acolytes may also engage in heterosexual intercourse and sperm donation at the Palatinate.
          
 
 
