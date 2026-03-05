@@ -3547,7 +3547,7 @@ useEffect(() => {
   {
     id: 2,
     title: "Leadership: NIFTYER59HALO",
-    content: " "
+    content: "NIFTYER59HALO is the name of the family established by Alvah Ivan Jamell Ivor Bucknor Wisdom Samuels during the periods of trial, testing, transformation, and planning that shaped his life—from his years in education through to his experience of homelessness."
   },
   {
     id: 3,
@@ -3857,7 +3857,17 @@ const CarouselContent = ({ large = false }) => (
       <h2 style={styles.sectionTitle}>World Rule 1</h2>
 
      {/* Accordion at the top (inline toggle version) */}
-<div style={{ display: 'flex', gap: '12px', marginBottom: '24px', flexWrap: 'wrap' }}>
+<div
+  style={{
+    display: 'flex',
+    gap: '12px',
+    marginBottom: '24px',
+    flexWrap: 'wrap',
+    maxHeight: '500px', // <-- max height for the entire accordion container
+    overflowY: 'auto',  // <-- enable vertical scrolling
+    paddingRight: '8px', // optional, prevent content from being hidden behind scrollbar
+  }}
+>
   {accordionItems.map((item) => {
     const isOpen = activeAccordion === item.id;
     return (
@@ -3893,11 +3903,11 @@ const CarouselContent = ({ large = false }) => (
           <span style={{ opacity: 0.6 }}>{isOpen ? '−' : '+'}</span>
         </h4>
 
-        {/* Expandable content */}
+        {/* Scrollable expandable content */}
         <div
           style={{
-            maxHeight: isOpen ? '40rem' : '0px',
-            overflow: 'hidden',
+            maxHeight: isOpen ? '200px' : '0px', // scrollable area height
+            overflowY: 'auto', // enable vertical scroll
             transition: 'max-height 0.35s ease, padding 0.35s ease',
             paddingTop: isOpen ? '12px' : '0px',
             color: '#374151',
@@ -4147,151 +4157,253 @@ const CarouselContent = ({ large = false }) => (
       </div>
 
                   {/* IMAGE + SIDE BOXES SECTION */}
-            <div
-      style={{
-        marginTop: "80px",
-        display: "grid",
-        gridTemplateColumns: "1fr 2fr 1fr",
-        gap: "28px",
-        alignItems: "center",
-      }}
-    >
-      {/* LEFT BOX */}
-      <div
-        onClick={() =>
-          setOpenSideBox(openSideBox === "left" ? null : "left")
-        }
-        style={{
-          background: "#f9fafb",
-          padding: "22px",
-          borderRadius: "18px",
-          boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-          border: "1px solid #e5e7eb",
-          cursor: "pointer",
-        }}
-      >
-        <h3
-          style={{
-            marginBottom: "10px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          Towns
-          <span style={{ opacity: 0.6 }}>
-            {openSideBox === "left" ? "−" : "+"}
-          </span>
-        </h3>
-
-        <div
-          style={{
-            maxHeight: openSideBox === "left" ? "200rem" : "50px",
-            overflow: "hidden",
-            transition: "max-height 0.4s ease",
-          }}
-        >
-          <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
-            Each letter of HAM KT S WE SHG B aka KTSHAM WEBSHG represents a town. The towns are female only with men living in mobile apartments connected via an 
-            inter loop/rail system. Each apartment is attachable to each other and is road and rail/loop compatible. The population of a town is 29542 women and children. 
-            
-            These towns are made up of 6 villages designed to hold 4560 people in saddles or 4380 people in triangles/sandwiches. 
-            They are livestock centered with the outside zones being for manufacturing. 
-            Each residential area has a temple, church or mosque (TCIHJB) and each town is walled with roads that run alongside on multiple levels with buildings. 
-            On the levels are the service and entertainment buildings designed like elephant heads to be multileveled and support the roads and transport to and from. 
-            There are 8 castles that serve as government buildings and Ladies of the Lamp/Gal residences. Men live as a part of the Interrail and travel between towns 
-            working as maggots, skoulikia or hati depending on their attainment. 
-            
-            The Towns are designed to be good for the Ladies of the Lamp as they don't have to travel for to shop and can remain safe in the castle while also being supported by the evangelions and FDELM.
-          </p>
-        </div>
-      </div>
-
-     {/* CENTER IMAGE CAROUSEL */}
-    <CarouselContent />
-    {expanded && (
+<div
+  style={{
+    marginTop: "80px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "28px", // spacing between boxes and carousel
+    width: "100%",
+  }}
+>
+  {/* LEFT BOX */}
   <div
-    onClick={() => setExpanded(false)}
+    onClick={() => setOpenSideBox(openSideBox === "left" ? null : "left")}
     style={{
-      position: "fixed",
-      inset: 0,
-      background: "rgba(0,0,0,0.92)",
-      backdropFilter: "blur(8px)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 9999,
-      animation: "fadeIn 0.25s ease",
+      width: "100%",
+      maxWidth: "520px",
+      background: "#ffffff",
+      padding: "20px 22px",
+      borderRadius: "16px",
+      border: "1px solid #e5e7eb",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+      cursor: "pointer",
+      transition: "all 0.25s ease",
+      fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.10)";
+      e.currentTarget.style.transform = "translateY(-2px)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)";
+      e.currentTarget.style.transform = "translateY(0)";
     }}
   >
-    <div
-      onClick={(e) => e.stopPropagation()}
+    <h3
       style={{
-        width: "95vw",
-        height: "95vh",
-        maxWidth: "1600px",
+        margin: 0,
+        marginBottom: "10px",
+        fontSize: "18px",
+        fontWeight: "600",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "#111827",
+        letterSpacing: "0.2px",
       }}
     >
-      <CarouselContent large />
-    </div>
-  </div>
-)}
-
-
-
-      {/* RIGHT BOX */}
-      <div
-        onClick={() =>
-          setOpenSideBox(openSideBox === "right" ? null : "right")
-        }
+      Towns
+      <span
         style={{
-          background: "#f9fafb",
-          padding: "22px",
-          borderRadius: "18px",
-          boxShadow: "0 6px 20px rgba(0,0,0,0.08)",
-          border: "1px solid #e5e7eb",
-          cursor: "pointer",
+          fontSize: "22px",
+          lineHeight: 1,
+          opacity: 0.6,
+          transition: "transform 0.3s ease",
+          transform: openSideBox === "left" ? "rotate(180deg)" : "rotate(0deg)",
         }}
       >
-        <h3
+        {openSideBox === "left" ? "−" : "+"}
+      </span>
+    </h3>
+
+    <div
+      style={{
+        maxHeight: openSideBox === "left" ? "400px" : "0px",
+        overflow: "hidden",
+        transition: "max-height 0.45s ease",
+      }}
+    >
+      <div
+        style={{
+          maxHeight: "400px",
+          overflowY: openSideBox === "left" ? "auto" : "hidden",
+          paddingRight: "4px",
+        }}
+      >
+        <p
           style={{
-            marginBottom: "10px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            marginTop: "12px",
+            fontSize: "14.5px",
+            lineHeight: "1.7",
+            color: "#374151",
           }}
         >
-          More About Towns etc
-          <span style={{ opacity: 0.6 }}>
-            {openSideBox === "right" ? "−" : "+"}
-          </span>
-        </h3>
+          Each letter of HAM KT S WE SHG B (KTSHAM WEBSHG) represents a town.
+          The towns are female-only, with men living in mobile apartments connected
+          via an inter-loop/rail system. Apartments are attachable to each other
+          and compatible with both road and rail/loop transport. Each town has a
+          population of 29,542 women and children.
 
-        <div
-          style={{
-            maxHeight: openSideBox === "right" ? "200rem" : "50px",
-            overflow: "hidden",
-            transition: "max-height 0.4s ease",
-          }}
-        >
-          <p style={{ fontSize: "15px", lineHeight: 1.6 }}>
-            There are 30 Ladies of the Lamp per lamp and a Lamp is 6 towns. There are 15 Ladies of the Gal per Tooth and a Tooth is 6 towns. A Lamp and a Tooth come 
-            together with a Christmas and the Interrail to form a CLT (clit). There are 12977 clits in total and they form the PIG (production integrated globe). 
+          Towns consist of six villages, designed to hold 4,560 people in saddles
+          or 4,380 in triangles/sandwiches. They are livestock-centered, while
+          the outer zones support manufacturing. Each residential area includes a
+          temple, church, or mosque (TCIHJB). Towns are walled with multi-level
+          roads and buildings that integrate service and entertainment facilities,
+          often shaped like elephant heads to support roads and transport.
 
-            The Ladies of the Lamp will move about often. The total population of a city is 354504 and a Town is 29542. 
-            Saddles can contain 38 people and are built in neighborhoods of 120 and sandwiches can contain 60 people and are built in neighborhoods of 73. 
-            Priestesses live with a Rus and move about as needed within a CLIT. Hospitals are a service and within the walls. 
-            There will be local health facilities and convenience stores at each residential area serviced by people and evangelions. 
-            Training will be provided for a range of work in PMSEC and everybody will have a specialism in one job in these categories. 
-            People are sorted based on a test which ranks their best goodness, then their worst attribute in life, followed by their worst attribute in goodness, 
-            then the average of their other goodness and then sorted between KTSHAM and WEBSHG by the average of their other life attributes. It works 
-            out that the Ladies of the Lamp have a similar group of people to work with and therefore design a FEST that suits them all and improves them. 
-            This is where trial testing and transformation is important. The 9 is [46,44,38,21,21,14,11,30(5)], the 8 is [32, 42, 18, 11, 11, 11, 16,16]. 
-            There are 6 religious leaders for each town who the Palatines of the business communicate with to ensure that production is on target. 
-          </p>
-        </div>
+          There are eight castles per town serving as government offices and
+          residences for the Ladies of the Lamp/Gal. Men participate in the Interrail
+          system, working as maggots, skoulikia, or hati depending on their
+          attainment.
+
+          The towns are designed to prioritize the Ladies of the Lamp: they
+          minimize travel, allow safe shopping and living within castles, and
+          are supported by evangelions and FDELM.
+        </p>
       </div>
     </div>
+  </div>
+
+  {/* CENTER IMAGE CAROUSEL */}
+  <CarouselContent />
+  {expanded && (
+    <div
+      onClick={() => setExpanded(false)}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.92)",
+        backdropFilter: "blur(8px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+        animation: "fadeIn 0.25s ease",
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: "95vw",
+          height: "95vh",
+          maxWidth: "1600px",
+        }}
+      >
+        <CarouselContent large />
+      </div>
+    </div>
+  )}
+
+  {/* RIGHT BOX */}
+  <div
+    onClick={() => setOpenSideBox(openSideBox === "right" ? null : "right")}
+    style={{
+      width: "100%",
+      maxWidth: "520px",
+      background: "#ffffff",
+      padding: "20px 22px",
+      borderRadius: "16px",
+      border: "1px solid #e5e7eb",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+      cursor: "pointer",
+      transition: "all 0.25s ease",
+      fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.boxShadow = "0 12px 32px rgba(0,0,0,0.10)";
+      e.currentTarget.style.transform = "translateY(-2px)";
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.06)";
+      e.currentTarget.style.transform = "translateY(0)";
+    }}
+  >
+    <h3
+      style={{
+        margin: 0,
+        marginBottom: "10px",
+        fontSize: "18px",
+        fontWeight: "600",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "#111827",
+        letterSpacing: "0.2px",
+      }}
+    >
+      More About Towns
+      <span
+        style={{
+          fontSize: "22px",
+          lineHeight: 1,
+          opacity: 0.6,
+          transition: "transform 0.3s ease",
+          transform: openSideBox === "right" ? "rotate(180deg)" : "rotate(0deg)",
+        }}
+      >
+        {openSideBox === "right" ? "−" : "+"}
+      </span>
+    </h3>
+
+    <div
+      style={{
+        maxHeight: openSideBox === "right" ? "400px" : "0px",
+        overflow: "hidden",
+        transition: "max-height 0.45s ease",
+      }}
+    >
+      <div
+        style={{
+          maxHeight: "400px",
+          overflowY: openSideBox === "right" ? "auto" : "hidden",
+          paddingRight: "4px",
+        }}
+      >
+        <p
+          style={{
+            marginTop: "12px",
+            fontSize: "14.5px",
+            lineHeight: "1.7",
+            color: "#374151",
+          }}
+        >
+          There are 30 Ladies of the Lamp per Lamp, and each Lamp consists of six towns.
+          A Tooth likewise contains six towns and is guided by 15 Ladies of the Gal.
+          A Lamp and a Tooth combine with a Christmas and the Interrail to form a CLT,
+          of which there are 12,977 in total, together forming the PIG
+          (Production Integrated Globe).
+
+          The Ladies of the Lamp move frequently between locations.
+          A city has a population of 354,504, while a town contains 29,542 people.
+
+          Saddles house 38 people and are built in neighbourhood clusters of 120.
+          Sandwiches house 60 people and are built in clusters of 73.
+
+          Priestesses live with a Rus and move as needed within a CLT.
+          Hospitals operate as central services within the walls, while local
+          health facilities and convenience stores serve each residential district.
+
+          All residents receive training in PMSEC work categories and specialise
+          in one field. Individuals are sorted through a structured test measuring
+          their strongest goodness, weakest life attribute, weakest goodness
+          attribute, and overall averages across remaining measures.
+
+          This sorting ensures that the Ladies of the Lamp work with balanced
+          groups of people and can design a FEST suited to their development.
+          Trial, testing, and transformation form the foundation of this system.
+
+          The nine categories are: [46, 44, 38, 21, 21, 14, 11, 30(5)].
+          The eight categories are: [32, 42, 18, 11, 11, 11, 16, 16].
+
+          Each town has six religious leaders who communicate with the
+          Palatines of business to ensure production targets are maintained.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
       {/* Carousel at the bottom */}
