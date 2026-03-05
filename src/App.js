@@ -5496,7 +5496,7 @@ const navButton = {
     {
       id: 2,
       title: "Materiality",
-      images: ["/images/towniechart.png"]
+      images: ["/images/towniechart.png", "/images/citygirlchart.png"]
     },
     {
       id: 3,
