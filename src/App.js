@@ -3721,7 +3721,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Governance & Security", 
     icon: "🏰", 
     slides: [
-      { image: "/images/governance1.jpg", text: "Castles, government offices, and security posts." }
+      { image: "/images/governance1.jpg", text: "" }
     ]
   }
 ];
@@ -4232,7 +4232,13 @@ const CarouselContent = ({ large = false }) => (
             color: "#374151",
           }}
         >
-
+          In this society, every woman is a fashion designer whose social standing is woven into the very fabric of her success. 
+          Rank is determined by the volume of sales compared to other women, and this hierarchy dictates everything from the materials she may use to the specific garments she is permitted to create and wear.
+          A woman's progression through the social strata unlocks new creative frontiers: as a Batty Wife, she is restricted to footwear and lower-body apparel; upon promotion to Tit Wife, she gains the privilege of designing tops; reaching the level of Head Wife allows for the creation of hats, jewelry, watches, and sunglasses; and finally, reaching the rank of MAC grants the exclusive right to produce cosmetics. 
+          The system operates on a cycle where finalized designs are sent to high-tech factories for mass production, and the designer must then use her samples to convince women within her CLT (Consumer Loyalty Tier) to purchase her collections using their rank-based purchase points. 
+          A basic amount of spending points are distributed every 36-day month with additional bonuses awarded by the Ivangellions for exceptional innovation or craftsmanship. 
+          Purchase points are strictly single-use to prevent double spending and are directly applied toward a woman's standing within the hierarchy. This ensures that every point spent on a design simultaneously functions as a vote of success, permanently tethering a designer's social rank to the actual consumption of her work. 
+          While the women of the towns focus on the high-stakes world of fashion, all manufacturing and agriculture are performed by those living outside the town limits, and essential services are handled by acolytes, Ivangellions, droids, and slaves, though childcare remains a personal responsibility performed within the home.
         </p>
       </div>
     </div>
