@@ -4351,8 +4351,8 @@ const CarouselContent = ({ large = false }) => (
             color: "#374151",
           }}
         >
-          Managed by the Oikos of the Oikodrome, life along the routes is powered by Acolytes who perform all menial labor under oath until they are either promoted to Sexton or, if female, return to the towns as a Tit Wife; while all men are classified as Acolytes unless they are Priests in a Holy City managed by the Rabat of the Relics or Polites within a Polis, their primary goal is to earn a permanent residence within an Emporium—a manufacturing and logistic hub—where a single Sexton may oversee operations and house up to four City Girl wives. 
-          Women who do not fit into the town hierarchy yet eschew Acolyte labor become City Girls within the Emirate, serving as call girls for high-performing Acolytes who have earned sex points until they are selected by a Sexton to gain exclusive access to Emporium-manufactured clothing, though Acolytes may also engage in heterosexual intercourse and sperm donation at the Palatinate.
+          Managed by the Oikos of the Oikodrome, life along the routes is powered by Acolytes who perform all menial labor under oath until they are either promoted to Sexton or, if female, return to the towns as a Tit Wife; all men are classified as Acolytes unless they are Priests in a Holy City managed by the Rabat of the Relics or Polites within a Polis, their primary goal is to earn a permanent residence within an Emporium—a manufacturing, social and logistic hub—where a single Sexton oversees operations with a Stunt Double and houses up to four City Girl wives. 
+          Women who do not fit into the town hierarchy yet eschew Acolyte labor become City Girls within the Emirate, serving as call girls for high-performing Acolytes who have earned sex points until they are selected by a Sexton to gain exclusive access to Emporium-manufactured clothing, though Acolytes may also engage in heterosexual intercourse and sperm donation at the Palatinate. Realtionships between male and female Acolytes is permitted if the female is above 20 years of age. 
          
 
 
