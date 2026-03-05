@@ -4236,8 +4236,12 @@ const CarouselContent = ({ large = false }) => (
           Rank is determined by the volume of sales compared to other women, and this hierarchy dictates everything from the materials she may use to the specific garments she is permitted to create and wear.
           A woman's progression through the social strata unlocks new creative frontiers: as a Batty Wife, she is restricted to footwear and lower-body apparel; upon promotion to Tit Wife, she gains the privilege of designing tops; reaching the level of Head Wife allows for the creation of hats, jewelry, watches, and sunglasses; and finally, reaching the rank of MAC grants the exclusive right to produce cosmetics. 
           The system operates on a cycle where finalized designs are sent to high-tech factories for mass production, and the designer must then use her samples to convince women within her CLT (Consumer Loyalty Tier) to purchase her collections using their rank-based purchase points. 
-          A basic amount of spending points are distributed every 36-day month with additional bonuses awarded by the Ivangellions for exceptional innovation or craftsmanship. 
-          Purchase points are strictly single-use to prevent double spending and are directly applied toward a woman's standing within the hierarchy. This ensures that every point spent on a design simultaneously functions as a vote of success, permanently tethering a designer's social rank to the actual consumption of her work. 
+          A basic amount of spending points are distributed every 36-day month with additional bonuses awarded by the Ivangellions and Ladies for exceptional innovation or craftsmanship. 
+          Purchase points are strictly single-use to prevent double spending and are directly applied toward a woman's standing within the hierarchy. 
+          This ensures that every point spent on a design simultaneously functions as a vote of success, permanently tethering a designer's social rank to the actual consumption of her work. 
+          The social hierarchy undergoes a total recalculation every two years, at which point women must relocate to the specific accommodations tied to their new rank.
+           This entire system is overseen by the Ladies in Charge of Fashion, a council of four elites per FEST who hold the exclusive right to access all materials. 
+          These overseers possess the power to award discretionary points to designs they deem exceptional and maintain total authority over selecting the designers who represent their FEST along with them at the prestigious fashion shows (4 Ladies, 4 Townsfolk).
           While the women of the towns focus on the high-stakes world of fashion, all manufacturing and agriculture are performed by those living outside the town limits, and essential services are handled by acolytes, Ivangellions, droids, and slaves, though childcare remains a personal responsibility performed within the home.
         </p>
       </div>
