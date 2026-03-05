@@ -322,7 +322,7 @@ function EnglishLetterCardsCalculator() {
 
   return (
     <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
-      <h1 style={{ textAlign: "center" }}>The Jammatria:English Letter Cards & Calculator</h1>
+      <h1 style={{ textAlign: "center" }}>The Jamatria: English Letter Calculator</h1>
 
       {/* Cards displayed horizontally with wrapping */}
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "20px" }}>
