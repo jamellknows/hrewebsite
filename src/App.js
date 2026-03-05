@@ -3557,7 +3557,7 @@ useEffect(() => {
   {
     id: 4,
     title: "Justice: Test, Payment and JSPEM",
-    content: "To ensure society is fair all people will be tested according to their life (8) and their goodness and concealed goodness (9) togther this is an 89 (celebration of preservation against evil). A person is paid by their living standards and this is determined by where they live which is decided by their race(ethnicity), gender and 89 result. They must then commit to a 114. JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decisions about FEST.",
+    content: "To ensure society is fair all people will be tested according to their life (8) and their goodness and concealed goodness (9) togther this is an 89 (celebration of preservation against evil). A person is paid by their living standards and this is determined by where they live which is decided by their race(ethnicity), gender and 89 result. They must then commit to a 114. JSPEM stands for Justice, System, Psychic, Estem and Meal. It is a sub branch of the main branch of the 9 governed by seraphim evangelions. They calculate and operate the core of the governing decisions for many sectors and only submit to decisions about FEST. The nine categories are: [46, 44, 38, 21, 21, 14, 11, 30(5)]. The eight categories are: [32, 42, 18, 11, 11, 11, 16, 16].",
     fontSize: "0.5em"
   },
   {
@@ -4351,8 +4351,6 @@ const CarouselContent = ({ large = false }) => (
         >
          
 
-          The nine categories are: [46, 44, 38, 21, 21, 14, 11, 30(5)].
-          The eight categories are: [32, 42, 18, 11, 11, 11, 16, 16].
 
           
         </p>
