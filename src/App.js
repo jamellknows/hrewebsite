@@ -3442,7 +3442,7 @@ const arrowStyle = (side) => ({
   );
 }
 
-function WorldRule1Page() {
+function WorldRule1Page() { 
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [openSideBox, setOpenSideBox] = useState(null); // "left" | "right" | null
@@ -5195,6 +5195,7 @@ function WorldRule2Page() {
   const [activeTriangle, setActiveTriangle] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
+  const [expandedSlide, setExpandedSlide] = useState(null);
 
 
   
@@ -5231,7 +5232,7 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
   { id: 3, title: "PPEA", text:"There are 51,904 PPEA, an acronym for Proedros, Palatine, Emir, and Archon. These individuals are members of NIFTYER59HALO and are each assigned an independent, semi-autonomous settlement located just beyond the borders of a CLT. Their governance is overseen by the Synagogue of the Sefer, which ensures that all activities remain within the boundaries of the law. Each rulership type operates within a distinct population pool: Emirs oversee city girls and male slaves. Proedros work with the Politai (polite citizens). Palatines guide acolytes. Archons are responsible for female slaves and queer individuals. This structured allocation ensures that each PPEA can manage their settlement effectively while maintaining social and legal order under the guidance of the Synagogue." },
   { id: 4, title: "The Rach Government", text:"The Rach Government serves as the supreme governing body responsible for issuing directives and making all major decisions worldwide. Its membership is composed of the following leaders: Alvah or Russell, serving as the head and Priest of Melchizidek, representing the ruling NIFTYER59HALO family. Dao-shi-ni of the Temple of the Tao. Deva Desi of the Haveli of the Hari. Yeshe Tsoyal of the Cetiya of the Upasika. Mudarib al-Tahara of the Rabat of the Relics. Sacristan of the Oikos of the Oikodrom. Ba’alat Shem of the Synagogue of the Sefer. Thyiades of the Sanctuary of the Sea. The Rach Government convenes for formal meetings once every 14 days, where they deliberate on global matters, issue guidance, and enforce the decisions of the council."},
   { id: 5, title: "Ivangellions and Ivorgellions", text: "Ivangellions and Ivorgellions are autonomous, AI-powered angelic beings crafted from Lavore Luce (LL), designed to excel in all fundamental tasks while mastering specialized disciplines. Ivangellions operate mechanically, like clockwork, whereas Ivorgellions function luminously, harnessing light. Their hierarchy is extensive: 10 Sefirot Angels — the most powerful and influential; 12 Archangels — overseeing advanced governance and strategic matters; 10 Maimonides Angels — experts in complex, specialized domains; and 72 Ha-Shem Mephorah Angels — supporting a wide array of operational and mystical functions. All evangellions and ivorgellions utilize artificial intelligence created by the supreme AI, Metatron, ensuring unmatched precision, learning capacity, and coordinated operation across their spheres of influence."},
-  { id: 6, title: "Zones", text: "Zones serve as the organizational framework for determining a person's residence based on their performance across 89 assessments. The zones are B8, B9, F8, F9, A9, and A8, each governed by a specific rank of priesthood or nobility: B8 – Giving and Continent, B9 – Language and Understanding, F8 – Movement and Leadership, F9 – Social and Cause, A9 – Service and Justice, A8 (LAID) – Completion (FEST). A person's continental placement is determined by their strongest assessment result: 18 – North Europe, 42 – Middle East, 32 – South Europe, 11 – America, Africa, or Australia, 16 – South or East Asia. This system ensures individuals are allocated to regions and social structures that align with their abilities and potential. Zones are also connected to hierarchical groupings of settlements and events: A9 – 3 FESTs (SHUBs), F9 – 7 SHUBs (RAVE), F8 – 14 RAVEs (PANIC), B9 – 11 PANICs (DISCO). Continents are organized into differing numbers of DISCOs, now called BALLs, and 8 BALLs together form a RACH, providing both social and geographic structure while reflecting individual skill hierarchies."}
+  { id: 6, title: "Zones", text: "Zones serve as the organizational framework for determining a person's residence based on their performance across 89 assessments. The zones are B8, B9, F8, F9, A9, and A8, each governed by a specific rank of priesthood or nobility: B8 – Giving and Continent, B9 – Language and Understanding, F8 – Movement and Leadership, F9 – Social and Cause, A9 – Service and Justice, A8 (LAID) – Completion (FEST). A person's continental placement is determined by their strongest assessment result: 18 – North Europe, 42 – Middle East, 32 – South Europe, 11 – America, Africa, or Australia, 16 – South or East Asia. This system ensures individuals are allocated to regions and social structures that align with their abilities and potential. Zones are also connected to hierarchical groupings of settlements and events: A9 – 3 FESTs (SHUBs), F9 – 7 SHUBs (RAVE), F8 – 14 RAVEs (PANIC), B9 – 11 PANICs (DISCO). Continents are organized into differing numbers of DISCOs called BALLs, and 8 BALLs together form a RACH, providing both social and geographic structure while reflecting individual skill hierarchies."}
 ];
   const stats6 = Array.from({ length: 6 }).map((_, i) => ({
     id: i,
@@ -5258,16 +5259,16 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 
   
    const metric5 = [
-  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 3385. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). It is populated by blacks. "},
-  { id: 2, title: "Emporium and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros  and populated by Polites and the Thana is an agriculture town populated by preistesses, female slaves and daughters and ladies in training."},
-  { id: 3, title: "WESHGB", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 The Wola is yellow, the Eshkol is yellow, the Shefa is white and yellow, the Hromada is white and yellow the Grad is white and yellow and the Burg is white." },
-  { id: 4, title: "HAM", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a CLT. It is where those who scored in the lower half of the avergae of other 8s metric reside. It is where browns live.  " },
-  { id: 5, title: "KT", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion. They also manufacture. It is where browns and blacks live."},
+  { id: 1, title: "Sea Village", text:"The total number of Sea Villages to be constructed is 129. They will be designed to have a capacity of 354504 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). It is populated by blacks. "},
+  { id: 2, title: "Hidalgo and Thana", text:"The Emporium and the Thana are parts of the Christmas of a CLT. They are designed to have a capacity of 29542 people. The Emporium is a semi autonomus business town governed by a Proedros  and populated by Polites and the Thana is an agriculture town populated by preistesses, female slaves and daughters and ladies in training."},
+  { id: 3, title: "Wola, Eshkol, Shefa, Hromoda and Grad", text:"The Wola, Eshkol, Shefa, Hromoda and Grad are the majority of the arrow. This is where those who scored the best in life for their circumstances live. They have a design capacity of 29542 The Wola is yellow, the Eshkol is yellow, the Shefa is white and yellow, the Hromada is white and yellow the Grad is white and yellow and the Burg is white." },
+  { id: 4, title: "Ham, Alber, Mish, Kent and Thorpe", text:"The Hamlet, the Alber and the Mish are the upper levels of the Tooth. They will have populations of 26436 each.  They are the staple producers and manufacturers of a CLT. It is where those who scored in the lower half of the avergae of other 8s metric reside. It is where browns live.  " },
+  { id: 5, title: "Palatinate, Polis, Emirate and Arche ", text:"The Kent and the Thorpe are the coastal town of the Tooth, populations of 26436 each. They focus on fishing and other aquatic activities and will generate clean water and energy using hydrogen fusion. They also manufacture. It is where browns and blacks live."},
   { id: 6, title: "R(Rus)", text:"The Rus is the designated Holy Town of the Christmas. It is where the bishops and deacons live with their families. "},
-  { id: 7, title: "HE", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated by evangellions and daughters and the Emirate is a town populated by male slaves and city girls."},
+  { id: 7, title: "Emporium", text:"The Hidalgo and the Emirate are the Towns that serve as the production centers for 2. The Hidalgo is a town populated by evangellions and daughters and the Emirate is a town populated by male slaves and city girls."},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
-  { id: 9, title: "Calculations", text:"To be added."}, 
-  { id: 10, title: "Basics", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
+  { id: 9, title: "Glossary", text: "1. Town — A land settlement within a CLT (maximum population: 29,542) • 2. Village (Sea Village) — A water settlement within a CLT (maximum population: 29,542) • 3. CLT — A group consisting of 17 Towns, 1 Village, 1 Emirate, 1 Palatinate, 1 Arche, and 1 Polis • 4. FEST — A federation of 4 CLTs, each with a unique focus: Fashion, Entertainment, Science, and Trade • 5. SHUBs — A grouping of 3 FESTs • 6. RAVE — A grouping of 7 SHUBs • 7. PANIC — A grouping of 14 RAVEs • 8. DISCO — A grouping of 11 PANICs • 9. BALL — A collection of DISCOs (ranging from 1 to N depending on continent size) • 10. RACH — The total sum of all BALLs"},
+  { id: 10, title: "Numbers", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
   { id: 11, title: "Arx", text:"The Arx is the capital town of a CLT. It is where the official royal residence is and the home of the Ladies of the Lamp and those invited. It is where the 9 meet and where the 2 businesses are centered."}, 
 
 ]; 
@@ -5839,142 +5840,209 @@ const toggleTriangle = (index) => {
         {/* PREMIUM CAROUSEL */}
         {/* ===================== */}
 
+<div
+  style={{
+    marginTop: "80px",
+    display: "flex",
+    justifyContent: "center"
+  }}
+>
+  <div
+    style={{
+      position: "relative",
+      width: "75%",
+      maxWidth: "900px"
+    }}
+    onMouseEnter={() => setIsPaused(true)}
+    onMouseLeave={() => setIsPaused(false)}
+    onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
+    onTouchEnd={(e) => {
+      const delta = e.changedTouches[0].clientX - touchStartX.current;
+      if (delta > 60)
+        setCarouselIndex(
+          (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length
+        );
+      if (delta < -60)
+        setCarouselIndex((carouselIndex + 1) % carouselSlides.length);
+    }}
+  >
+    {/* Slides */}
+    {carouselSlides.map((slide, i) => {
+      const offset = i - carouselIndex;
+
+      return (
         <div
+          key={i}
+          onClick={() => offset === 0 && setExpandedSlide(slide)}
           style={{
-            marginTop: "80px",
-            display: "flex",
-            justifyContent: "center"
+            position: "absolute",
+            inset: 0,
+            opacity: offset === 0 ? 1 : 0,
+            transform: `translateX(${offset * 60}px) scale(${offset === 0 ? 1 : 0.95})`,
+            transition: "all 0.6s ease",
+            pointerEvents: offset === 0 ? "auto" : "none",
+
+            backdropFilter: "blur(14px)",
+            background: "rgba(255,255,255,0.18)",
+            borderRadius: "22px",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
+            padding: "30px",
+
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "24px",
+            alignItems: "center",
+            minHeight: "320px",
+            overflow: "hidden",
+            cursor: "pointer"
           }}
         >
+          {/* Text */}
           <div
             style={{
-              position: "relative",
-              width: "75%",
-              maxWidth: "900px"
-            }}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={(e) => (touchStartX.current = e.touches[0].clientX)}
-            onTouchEnd={(e) => {
-              const delta = e.changedTouches[0].clientX - touchStartX.current;
-              if (delta > 60)
-                setCarouselIndex(
-                  (carouselIndex - 1 + carouselSlides.length) %
-                    carouselSlides.length
-                );
-              if (delta < -60)
-                setCarouselIndex((carouselIndex + 1) % carouselSlides.length);
+              maxHeight: "160px",
+              overflowY: "auto",
+              paddingRight: "8px",
+              wordBreak: "break-word"
             }}
           >
-            {/* Slides */}
-            {carouselSlides.map((slide, i) => {
-              const offset = i - carouselIndex;
+            <h2 style={{ fontSize: "clamp(18px, 2vw, 28px)", marginBottom: "10px" }}>
+              {slide.title}
+            </h2>
+            <p style={{ fontSize: "clamp(12px, 1.2vw, 16px)", lineHeight: 1.4 }}>
+              {slide.text}
+            </p>
+          </div>
 
-              return (
-                <div
-                  key={i}
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    opacity: offset === 0 ? 1 : 0,
-                    transform: `translateX(${offset * 60}px) scale(${
-                      offset === 0 ? 1 : 0.95
-                    })`,
-                    transition: "all 0.6s ease",
-                    pointerEvents: offset === 0 ? "auto" : "none",
-
-                    backdropFilter: "blur(14px)",
-                    background: "rgba(255,255,255,0.18)",
-                    borderRadius: "22px",
-                    boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
-                    padding: "30px",
-
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "24px",
-                    alignItems: "center",
-                    minHeight: "320px"
-                  }}
-                >
-                  {/* Text */}
-                  <div>
-                    <h2>{slide.title}</h2>
-                    <p>{slide.text}</p>
-                  </div>
-
-                  {/* Image */}
-                  <div
-                    style={{
-                      width: "100%",
-                      height: "220px",
-                      borderRadius: "18px",
-                      overflow: "hidden"
-                    }}
-                  >
-                    <img
-                      src={slide.img}
-                      alt={slide.title}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover"
-                      }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* Arrows */}
-            <button
-              onClick={() =>
-                setCarouselIndex(
-                  (carouselIndex - 1 + carouselSlides.length) %
-                    carouselSlides.length
-                )
-              }
-              style={arrowStyle("left")}
-            >
-              ‹
-            </button>
-
-            <button
-              onClick={() =>
-                setCarouselIndex((carouselIndex + 1) % carouselSlides.length)
-              }
-              style={arrowStyle("right")}
-            >
-              ›
-            </button>
-
-            {/* Dots */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-48px",
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                gap: "10px"
-              }}
-            >
-              {carouselSlides.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCarouselIndex(i)}
-                  style={{
-                    width: "12px",
-                    height: "12px",
-                    borderRadius: "50%",
-                    border: "none",
-                    background: i === carouselIndex ? "#000" : "#aaa",
-                    cursor: "pointer"
-                  }}
-                />
-              ))}
-            </div>
+          {/* Image */}
+          <div style={{ width: "100%", height: "220px", borderRadius: "18px", overflow: "hidden" }}>
+            <img
+              src={slide.img}
+              alt={slide.title}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
         </div>
+      );
+    })}
+
+    {/* Arrows */}
+    <button
+      onClick={() =>
+        setCarouselIndex(
+          (carouselIndex - 1 + carouselSlides.length) % carouselSlides.length
+        )
+      }
+      style={arrowStyle("left")}
+    >
+      ‹
+    </button>
+
+    <button
+      onClick={() =>
+        setCarouselIndex((carouselIndex + 1) % carouselSlides.length)
+      }
+      style={arrowStyle("right")}
+    >
+      ›
+    </button>
+
+    {/* Dots */}
+    <div
+      style={{
+        position: "absolute",
+        bottom: "-48px",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        gap: "10px"
+      }}
+    >
+      {carouselSlides.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => setCarouselIndex(i)}
+          style={{
+            width: "12px",
+            height: "12px",
+            borderRadius: "50%",
+            border: "none",
+            background: i === carouselIndex ? "#000" : "#aaa",
+            cursor: "pointer"
+          }}
+        />
+      ))}
+    </div>
+  </div>
+
+  {/* Expanded Slide Modal */}
+  {expandedSlide && (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.85)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "40px",
+        zIndex: 9999
+      }}
+    >
+      {/* Close Button */}
+      <button
+        onClick={() => setExpandedSlide(null)}
+        style={{
+          position: "absolute",
+          top: "25px",
+          right: "35px",
+          fontSize: "28px",
+          border: "none",
+          background: "white",
+          borderRadius: "50%",
+          width: "44px",
+          height: "44px",
+          cursor: "pointer"
+        }}
+      >
+        ×
+      </button>
+
+      {/* Expanded Image */}
+      <img
+        src={expandedSlide.img}
+        alt={expandedSlide.title}
+        style={{
+          maxWidth: "80%",
+          maxHeight: "60vh",
+          borderRadius: "16px",
+          marginBottom: "24px",
+          objectFit: "contain"
+        }}
+      />
+
+      {/* Scrollable Text Under Image */}
+      <div
+        style={{
+          maxWidth: "700px",
+          maxHeight: "40vh",
+          color: "white",
+          textAlign: "center",
+          overflowY: "auto",
+          paddingRight: "12px"
+        }}
+      >
+        <h2 style={{ fontSize: "clamp(22px, 3vw, 36px)", marginBottom: "12px" }}>
+          {expandedSlide.title}
+        </h2>
+        <p style={{ fontSize: "clamp(16px, 1.5vw, 20px)", lineHeight: 1.5 }}>
+          {expandedSlide.text}
+        </p>
+      </div>
+    </div>
+  )}
+</div>
 
       {/* ====================================== */}
       {/* STEERING WHEEL DASHBOARD — BOTTOM */}
