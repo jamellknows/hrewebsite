@@ -174,11 +174,7 @@ const linearLetterValues = {
   ת: 22
 };
 
-const niqqudValues = Object.fromEntries(
-  niqqudData
-    .filter(n => n.char.length > 1)
-    .map(n => [n.char.slice(1), n.value])
-);
+
 
 function calculateHebrewLetterValue(word) {
   let total = 0;
