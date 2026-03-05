@@ -21,6 +21,125 @@ L.Icon.Default.mergeOptions({
 // Center coordinates of San Marino
 const sanMarinoCenter = [43.9424, 12.4578];
 
+const niqqudData = [
+  { char: "א", name: "None", position: "None", sound: "Silent / carrier for vowels", value: 1 },
+  { char: "אְ", name: "Sheva", position: "Below", sound: "Very short 'e' or silent", value: 100000 },
+  { char: "אֱ", name: "Hataf Segol", position: "Below", sound: "Very short 'eh'", value: 100000000 },
+  { char: "אֲ", name: "Hataf Patah", position: "Below", sound: "Very short 'ah'", value: 1000000000 },
+  { char: "אֳ", name: "Hataf Qamats", position: "Below", sound: "Very short 'o'", value: 100000000000 },
+  { char: "אִ", name: "Hiriq", position: "Below", sound: "ee as in 'machine'", value: 10 },
+  { char: "אֵ", name: "Tsere", position: "Below", sound: "ay as in 'they'", value: 100 },
+  { char: "אֶ", name: "Segol", position: "Below", sound: "eh as in 'bed'", value: 1000 },
+  { char: "אַ", name: "Patah", position: "Below", sound: "a as in 'father'", value: 10000 },
+  { char: "אָ", name: "Qamats", position: "Below", sound: "ah / aw depending on context", value: 1000000 },
+  { char: "אֹ", name: "Holam", position: "Above", sound: "oh as in 'go'", value: 10 },
+  { char: "אֻ", name: "Qubuts", position: "Below", sound: "oo as in 'food'", value: 1000 },
+  { char: "אּ", name: "Dagesh", position: "Inside", sound: "Consonant strengthening / stop", value: 10 },
+  { char: "אֽ", name: "Meteg", position: "Beside", sound: "Stress / vowel length marker", value: 10000000 },
+  { char: "אֿ", name: "Rafe", position: "Above", sound: "Soft consonant marker", value: 10000 },
+  { char: "אׁ", name: "Shin Dot", position: "Above", sound: "sh sound (normally on ש)", value: 10 },
+  { char: "אׂ", name: "Sin Dot", position: "Above", sound: "s sound (normally on ש)", value: 10 },
+  { char: "אׇ", name: "Qamats Qatan", position: "Below", sound: "short 'o'", value: 1000000 },
+];
+
+function Card({ item }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      onClick={() => setFlipped(!flipped)}
+      style={{
+        width: "180px",
+        height: "220px",
+        perspective: "1000px",
+        cursor: "pointer",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          textAlign: "center",
+          transition: "transform 0.6s",
+          transformStyle: "preserve-3d",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+        }}
+      >
+        {/* Front */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backfaceVisibility: "hidden",
+            border: "1px solid #ccc",
+            borderRadius: "12px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "40px",
+            background: "#ffffff",
+          }}
+        >
+          <div>{item.char}</div>
+          <div style={{ fontSize: "16px", marginTop: "12px" }}>{item.name}</div>
+        </div>
+
+        {/* Back */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+            border: "1px solid #ccc",
+            borderRadius: "12px",
+            padding: "16px",
+            background: "#f5f5f5",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <div><strong>Position:</strong> {item.position}</div>
+          <div style={{ marginTop: "10px" }}>
+            <strong>Sound:</strong> {item.sound}
+          </div>
+          <div style={{ marginTop: "10px" }}>
+            <strong>Value:</strong> {item.value}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NiqqudExplanation() {
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>Niqqud Explanation</h1>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row", // horizontal layout
+          flexWrap: "wrap",     // allow cards to wrap to next line
+          gap: "20px",          // spacing between cards
+          justifyContent: "center", // center horizontally
+          marginTop: "30px",
+        }}
+      >
+        {niqqudData.map((item, index) => (
+          <Card key={index} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -2883,6 +3002,8 @@ const arrowStyle = (side) => ({
 });
 
 
+
+
   return (
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>Religion</h2>
@@ -3438,6 +3559,7 @@ const arrowStyle = (side) => ({
 </div>
 
 <OldTestamentList/>
+<NiqqudExplanation/>
     </AnimatedPage>
   );
 }
@@ -4196,7 +4318,7 @@ const CarouselContent = ({ large = false }) => (
         letterSpacing: "0.2px",
       }}
     >
-      Towns
+      The FashionCLT 
       <span
         style={{
           fontSize: "22px",
@@ -5321,7 +5443,7 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 ]; 
 
   const metric3 = [
-  { id: 1, title: "Fashion", text:"Each city will have it's own fashion decided by the Ladies of the Lamp in charge of that settlement. Fashion for the priestesses will be determined by themselves following some guidelines. Ladies of the Lamp do fashion for WESHGB KTSHAM, as there is 1 Ladies of the Lamp per department for all of the towns (12, 12 towns = 1 city). Priestesses do their own fashion. Ladies of the Light can choose between Ladies of the Lamp fashion, priestess fashion or making their own clothes. The diversity is brought in by competing fashion brands from each of the Ladies of the Lamp which total to 23328 different fashion brands worldwide. The Ladies of the Lamp use the city to produce their brand after which they compete with each other worldwide. Her home city will always wear her clothes. I am also including game development as a part of fashion. "},
+  {id:1, title: "Fashion", text: "The Fashion CLT is dedicated to women who pursue progression within Fashion and Culinary."}, 
   {id: 2, title: "Entertainment", text: "Culture and entertainment are structured around a governing principle of duality. At the highest level, they are divided into two distinct cultural spheres: the Sphere of the Town and the Sphere of the Routes. Within the Towns, prominence belongs to the children of NIFTYER59HALO, who represent established cultural identity, institutional continuity, and inherited influence. Each Lamp and each Tooth operates under its own cultural authority, directed by the Ladies of the Lamp and the Evangelions, who are responsible for curating, supervising, and regulating entertainment within their respective domains. Along the Routes, recognition is not inherited but earned. Celebrity emerges from merit, performance, and distinction. The acolytes who demonstrate superior capability rise to prominence. Oversight within the Routes is administered by the Stunt Doubles and the Evangelions, who determine worthiness and elevate individuals to public status—while the Stunt Doubles themselves stand as celebrities within this sphere."}, 
   { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
   { id: 4, title: "Test", text:"Test is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test(department of Ladies of the Lamp). Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of towns and cities. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 (on purpose of course) for example and the solution would be to select the most saddening group of people to move to the 42 fail cities. " },
