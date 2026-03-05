@@ -5260,7 +5260,7 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
   
    const metric5 = [
   { id: 1, title: "Sea Village (Pyramid)", text:"The total number of Sea Villages to be constructed is 12976. They will be designed to have a capacity of 29542 meaning that the total Sea Village capacity is 383336992 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). It is populated by blacks. "},
-  { id: 2, title: "Hidalgo and Thana", text:"The Hidalgos and the Thanas are the residences of LAID and Priestesses. LAID live in the Hidalgo and the Priestesses live in the Thana. The Capital Hidalgos and the Thanas are home to 141 genetically engineered 'super' women clones each for a total of 2820 women. They are super in that they have boosted intelligence and health. Those who live within the Hidalgos and Thanas are allowed to travel to any Hidalgo or Thana in the world."},
+  { id: 2, title: "Hidalgo and Thana", text:"The Hidalgos and the Thanas are the residences of LAID and Priestesses. LAID live in the Hidalgo and the Priestesses live in the Thana. The Capital Hidalgos and Thanas are home to 141 genetically engineered 'super' women clones each for a total of 2820 women. They are super in that they have boosted intelligence and health. Those who live within the Hidalgos and Thanas are allowed to travel to any Hidalgo or Thana within their PANIC at will except from those at the capital who remain their coducting super research. Hidalgos and Thanas are designed/constructed using the PATH SHIFT principle. PATH= [Pokemon Gardens, Arts Center, Tibet, Holoworld], SHIFT = [Stadium, Houses, Institute, Factory Plaza, Tibet]."},
   { id: 3, title: "Wola, Eshkol, Shefa, Hromoda and Grad and Burg (LAMP)", text:"The Wola, Eshkol, Shefa, Hromoda, Grad and Burg form the Lamp of a CLT governed by the Cetiya of the Upasika. The Wola is yellow, the Eshkol is yellow, the Shefa is white and yellow, the Hromada is white and yellow the Grad is whites and the Burg is white." },
   { id: 4, title: "Ham, Alber, Mish, Kent and Thorpe", text:"The Hamlet, Alber, MIsh, Kent and Thorpe form the Tooth of the CLT goverened by the Haveli of the Hari.It is where browns live.  " },
   { id: 5, title: "Palatinate, Polis, Emirate and Arche ", text:"The Palatinate, Polis, Emirate and Arche are the semi autonomus regions outside of the walls of the main part of a CLT. They are governed by members of NIFTYER59HALO or those who have extreme favour with them. Each is for a different purpose and has a different population. The Polis is full of the politests people of a CLT, the Arche is for female slaves(criminals) and queers, the Emirate is for male slaves(criminals) and city girls(women who gave up on being an acolyte) and the Palatinate is for the temporary acolytes who reside their while on their route."},
@@ -5298,8 +5298,8 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           image: "/images/religious/gfs.png"
         },
         {
-          title: "Positioning",
-          text: "Power flows toward precision and structure.",
+          title: "World Wide Vacations",
+          text: "Travel historically has been a disruptor, that is why people will remain within their FEST unless they are acolytes which permits worldwide travel along the route. The rules for travel regarding members of the RACH government is LAID can travel anywhere within their PANIC, leave their BALL and DISCO once a year.  ",
           image: "/images/schedule2.jpg"
         }
       ]
