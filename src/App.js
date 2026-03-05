@@ -3690,8 +3690,8 @@ const carouselItems = bottomThree.map(item => ({
     title: "Manufacturing & Industry", 
     icon: "🏭", 
     slides: [
-      { image: "/images/manufuturist.png", text: "All manufacturing of a CLT is completed within the 4 squares (PPEA) the rest of the maunfacturing is done along the routes with the Emporiums run by a Sexton being a major zone of manufacturing. " },
-      { image: "/images/manumodern.png", text: "Industry also includes entertainment and services. Women within a town work these roles. The quality of clothing they recieve and can design depends upon their progression within the town heirarchy. Every woman has her own clothing brand and the more orders she gets for her clothing brand the higher she progresses." },
+      { image: "/images/automation/emporium1.png", text: "All manufacturing of a CLT is completed within the 4 squares (PPEA) the rest of the maunfacturing is done along the routes with the Emporiums run by a Sexton being a major zone of manufacturing. " },
+      { image: "/images/automation/fashion.png", text: "Within the towns women work as fashion designers and child bearers." },
   
     ]
   },
@@ -3721,7 +3721,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Governance & Security", 
     icon: "🏰", 
     slides: [
-      { image: "/images/governance1.jpg", text: "" }
+      { image: "/images/automation/gov1.png", text: "Direct government is performed by LAID(FEST) and Maimonides type Ivangellions(JSPEM). They are overseen by priestesses from towns ruling religion." }
     ]
   }
 ];
@@ -4241,7 +4241,7 @@ const CarouselContent = ({ large = false }) => (
           This ensures that every point spent on a design simultaneously functions as a vote of success, permanently tethering a designer's social rank to the actual consumption of her work. 
           The social hierarchy undergoes a total recalculation every two years, at which point women must relocate to the specific accommodations tied to their new rank.
            This entire system is overseen by the Ladies in Charge of Fashion(Ladies of the Lamp), a council of four elites per FEST who hold the exclusive right to access all materials. 
-          These overseers possess the power to award discretionary points to designs they deem exceptional and maintain total authority over selecting the designers who represent their FEST along with them at the prestigious fashion shows (4 Ladies, 4 Townsfolk).
+          These overseers possess the power to award discretionary points to designs they deem exceptional and maintain total authority over selecting the designers who represent their FEST along with them at the prestigious fashion shows (6 Ladies, 6 Townsfolk).
           While the women of the towns focus on the high-stakes world of fashion, all manufacturing and agriculture are performed by those living outside the town limits, and essential services are handled by acolytes, Ivangellions, droids, and slaves, though childcare remains a personal responsibility performed within the home.
         </p>
       </div>
