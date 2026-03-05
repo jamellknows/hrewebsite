@@ -3674,7 +3674,7 @@ const carouselItems = bottomThree.map(item => ({
     title: "Housing & Residential", 
     icon: "🏘️", 
     slides: [
-      { image: "/images/sketches/saddle4.jpg", text: "The majority of the residents live in the saddle in groups of 18. There are 6 boroughs in a town with 273 saddles each." }
+      { image: "/images/automation/saddle.png", text: "The majority of the residents live in the saddle in groups of 18. There are 6 boroughs in a town with 273 saddles each." }
     ]
   },
   { 
