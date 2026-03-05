@@ -4233,7 +4233,7 @@ const CarouselContent = ({ large = false }) => (
           }}
         >
           In this society, every woman is a fashion designer whose social standing is woven into the very fabric of her success. 
-          Rank is determined by the volume of sales compared to other women, and this hierarchy dictates everything from the materials she may use to the specific garments she is permitted to create and wear.
+          Rank is determined by the volume of sales compared to other women, and this hierarchy dictates everything from the materials she may use to the specific garments she is permitted to create.
           A woman's progression through the social strata unlocks new creative frontiers: as a Batty Wife, she is restricted to footwear and lower-body apparel; upon promotion to Tit Wife, she gains the privilege of designing tops; reaching the level of Head Wife allows for the creation of hats, jewelry, watches, and sunglasses; and finally, reaching the rank of MAC grants the exclusive right to produce cosmetics. 
           The system operates on a cycle where finalized designs are sent to high-tech factories for mass production, and the designer must then use her samples to convince women within her CLT (Consumer Loyalty Tier) to purchase her collections using their rank-based purchase points. 
           A basic amount of spending points are distributed every 36-day month with additional bonuses awarded by the Ivangellions and Ladies for exceptional innovation or craftsmanship. 
@@ -4315,7 +4315,7 @@ const CarouselContent = ({ large = false }) => (
         letterSpacing: "0.2px",
       }}
     >
-      More About Towns
+      Routes
       <span
         style={{
           fontSize: "22px",
