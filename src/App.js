@@ -3643,9 +3643,9 @@ const rightGrid = [
 
   const bottomThree = [
   { id: 0, title: "MSHN", text: "MAGGOTS, SKOULIKIA, HATI and NOVELISE."},
-  { id: 1, title: "SPAM", text:"" },
+  { id: 1, title: "SPAM", text:"Service, Produce, Arts, Manufacturing" },
   { id: 2, title: "4SA", text:"" },
-  { id: 3, title: "FACTS", text:"" }
+  { id: 3, title: "FACTS", text:"Factory, Agriculture, Servitude, Transportation" }
 
 ];
 
@@ -3738,24 +3738,24 @@ const carouselItems = bottomThree.map(item => ({
 const mainCards = [
   {
     id: 1,
-    title: "Christmas",
+    title: "Christmas and PPEA",
     image: "/images/christmas2.png",
     subCards: [
-      { id: 11, text: "The christmas contains the arx, hidalgo, emerati, emporium, rus and thana. The arx is for royalty or those invited, the hidalgo is for evangellions and daughters, the emerati is for male slaves, the emporium is for romans, the rus is for priesthood(bishops and deacons), the thana is for priestesses and female slaves.", image: "/images/christmascity.png" },
-      { id: 12, text: "There are robotic elves that live in the emir and work alongside the male slaves. ", image: "/images/robotelf.png" },
-      { id: 13, text: "A daughter is a category consisting of two types of women. The first are the biological daughters of myself, Russell or Kwame that live in the hidalgo with the evangellions. The second are the children of townies who have been fertilised with the semen of a slave. They raise the child in the town and then when the child turns 18 they are moved to the hidalgo to be friends with my biological daughters. There they are celebrities of some form I will work it out. ", image: "/images/daughters.png" },
-      { id: 14, text: "All stadiums, theatres, amusement parks, discos, clubs, spectator venues and any other type of entertainment venue are outside of the settlement. Entertainment follows the duality principle those that live along routes have a seperate entertainment industry and culture to those that live inside towns.", image: "/images/entertainment1.png" },
+      { id: 11, text: "The Christmas contains the Arx, Hidalgo, Rus and Thana. The Arx is the tranportation and distribution capital governed by the Oikos and home to the Elite 4. The Rus is the administrative capital governed by the Synagogue of the Sefer. The Hidalgo and Thana are the directive and religious capitals goverend by the Temple of the Tao and inhabitated only by LAID and Priestesses along Ivangellions. ", image: "/images/christmascity.png" },
+      { id: 12, text: "PPEA stands for Palatinate, Polis, Emirate and Arche. There are robotic elves that live in the Emirate and work alongside the male slaves. ", image: "/images/robotelf.png" },
+      { id: 13, text: "", image: "/images/daughters.png" },
+      { id: 14, text: "", image: "/images/entertainment1.png" },
     ],
   },
   {
     id: 2,
-    title: "Lamp",
+    title: "Lamp and Tooth",
     image: "/images/lamp.png",
     subCards: [
-      { id: 21, text: "People are allowed to move between towns of equal rank (failed 9) outside of a clit for the purpose of things such as a holiday, this is equal to there being 20 CLTS. Tour groups are organised for visits to relic cities and towns outside of a woman's catagory.", image: "/images/tour.png" },
-      { id: 22, text: "Males up to the age of 19 (pre acolyteship, deaconhood, hellenisation or slavery if very bad) live in towns with their mother. They are not restricted from having sex but at the age of 19 (holiness and cycles of time) they become an acolyte and are removed from the town. Females that perform well on tests at a young age are given the choice of becoming a priestess or lady the criteria to become one is being a virgin and the intake begins at 14. Women are able to apply to become a priestess or a lady as long as they remain virgins. Males under the age of 19 are given free electronic condoms. They must use them as any unauthorised pregnancy or unprotected sex will result in the male being acolyted immediately. If the woman becomes pregnant she is to carry the child to term after which she will be acolyted to the priestesses. The child will then be adopted by a family within the town.", image: "/images/acolyte1.png" },
-      { id: 23, text: "", image: "https://via.placeholder.com/200x150" },
-      { id: 24, text: "Women live in families of 3 head members, 4 tit members and 5  batty members. They live in a house (saddle) that can accomodate 38 people. They collaborate on childcare and can have 26 children maximum at a time.", image: "https://via.placeholder.com/200x150" },
+      { id: 21, text: "The Lamp is composed of the Wola, Eshkol, Shefa, Hromoda, Grad and Burg and is governed by the Cetiya of the Upasika. The Tooth is composed of the Hamlet, Alber, Mish, Kent and Thorpe and is governed by the Haveli of the Hari.", image: "/images/tour.png" },
+      { id: 22, text: "Males up to the age of 18 live in the towns after which they are inducted into the Oikos of the Oikodrome as an Acolyte. Before they leave town they are not restricted from having sex with any woman above the age of 20 and not oathed to another. Females are given two opportunities to become LAID or Priestesses, typically at the ages of 14 and 18. Exceptional candidates may be recruited into boarding school from the age of 14. All females then spend two years, beginning at age 16, serving as acolytes. At the conclusion of this acolyte period, they are formally assessed to determine who is suitable to advance to the roles of LAID or Priestess. ", image: "/images/acolyte1.png" },
+      { id: 23, text: "Males under the age of 18 are given free electronic condoms. They must use them as any unauthorised pregnancy or unprotected sex will result in the male being acolyted immediately. Acolytes are permitted to engage in sexual relations inside the Palatinate on the condition that they have completed every stop along a route.", image: "https://via.placeholder.com/200x150" },
+      { id: 24, text: "Women live in families of 3 Head Wives, 4 Tit Wives and 5 Batty Wives. They live in a house called a Saddle that can accomodate 18 people as 12 women and 6 children. The right to bear children is reserved for a Head Wife who can have 2. When a Head Wife has performed very well she is given the option to become a MAC Wife. A MAC wife has no limit on the number of children she can have and lives in a castle on the town walls with women of her choice.", image: "https://via.placeholder.com/200x150" },
     ],
   },
   {
@@ -3771,7 +3771,7 @@ const mainCards = [
   },
   {
     id: 4,
-    title: "Tooth",
+    title: "Pyramids",
     image: "/images/tooth.png",
     subCards: [
       { id: 41, text: "In Freestyle Manufacturing, the factory stops being a rigid assembly line and starts acting like a Creative Printer. Instead of having one machine for a phone and another for a wrench, the entire facility is built around the mastery of a specific Core Material (like advanced carbon-fiber composites, recycled polymers, or powdered titanium). By focusing on one material, the factory can achieve ultimate versatility.", image: "/images/freestylemanufacturing.png" },
