@@ -140,6 +140,149 @@ function NiqqudExplanation() {
   );
 }
 
+const letterValues = {
+  א: 1, ב: 2, ג: 3, ד: 4, ה: 5,
+  ו: 6, ז: 7, ח: 8, ט: 9,
+  י: 10, כ: 20, ך: 20,
+  ל: 30,
+  מ: 40, ם: 40,
+  נ: 50, ן: 50,
+  ס: 60,
+  ע: 70,
+  פ: 80, ף: 80,
+  צ: 90, ץ: 90,
+  ק: 100,
+  ר: 200,
+  ש: 300,
+  ת: 400
+};
+
+const linearLetterValues = {
+  א: 1, ב: 2, ג: 3, ד: 4, ה: 5,
+  ו: 6, ז: 7, ח: 8, ט: 9,
+  י: 10, כ: 11, ך: 11,
+  ל: 12,
+  מ: 13, ם: 13,
+  נ: 14, ן: 14,
+  ס: 15,
+  ע: 16,
+  פ: 17, ף: 17,
+  צ: 18, ץ: 18,
+  ק: 19,
+  ר: 20,
+  ש: 21,
+  ת: 22
+};
+
+const niqqudValues = Object.fromEntries(
+  niqqudData
+    .filter(n => n.char.length > 1)
+    .map(n => [n.char.slice(1), n.value])
+);
+
+function calculateHebrewLetterValue(word) {
+  let total = 0;
+  for (const char of word) {
+    if (letterValues[char]) {
+      total += letterValues[char];
+    }
+  }
+  return total;
+}
+
+function linearCalculateHebrewLetterValue(word) {
+  let total = 0;
+  for (const char of word) {
+    if (linearLetterValues[char]) {
+      total += linearLetterValues[char];
+    }
+  }
+  return total;
+}
+
+function HebrewLetterCalculator() {
+  const [text, setText] = useState("");
+
+  const totalValue = calculateHebrewLetterValue(text);
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>Conventional Hebrew Letter Value Calculator</h1>
+
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type Hebrew letters here..."
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          height: "80px",
+          fontSize: "24px",
+          padding: "12px",
+          marginTop: "20px",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          textAlign: "right",
+          direction: "rtl",
+        }}
+      />
+
+      <div
+        style={{
+          marginTop: "20px",
+          fontSize: "20px",
+          textAlign: "center",
+        }}
+      >
+        Total Letter Value: <strong>{totalValue}</strong>
+      </div>
+    </div>
+  );
+}
+
+function LinearHebrewLetterCalculator() {
+  const [text, setText] = useState("");
+
+  const totalValue = linearCalculateHebrewLetterValue(text);
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>Linear Hebrew Letter Value Calculator</h1>
+
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type Hebrew letters here..."
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          height: "80px",
+          fontSize: "24px",
+          padding: "12px",
+          marginTop: "20px",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          textAlign: "right",
+          direction: "rtl",
+        }}
+      />
+
+      <div
+        style={{
+          marginTop: "20px",
+          fontSize: "20px",
+          textAlign: "center",
+        }}
+      >
+        Total Letter Value: <strong>{totalValue}</strong>
+      </div>
+    </div>
+  );
+}
+
+
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -3560,6 +3703,8 @@ const arrowStyle = (side) => ({
 
 <OldTestamentList/>
 <NiqqudExplanation/>
+<HebrewLetterCalculator/>
+<LinearHebrewLetterCalculator/>
     </AnimatedPage>
   );
 }
