@@ -282,6 +282,107 @@ function LinearHebrewLetterCalculator() {
   );
 }
 
+function EnglishLetterCardsCalculator() {
+  const [inputText, setInputText] = useState("");
+
+  // Define English letters in groups, no dashes
+  const englishLetterGroups = [
+    { letters: ["A", "B", "C", "D", "E"] },
+    { letters: ["M", "S", "P", "L", "G"] },
+    { letters: ["N", "T", "Q", "V", "F"] },
+    { letters: ["O", "U", "R", "H", "W"] },
+    { letters: ["I", "Z", "J"] },
+    { letters: ["X", "K", "Y"] }
+  ];
+
+  // Explicit values for each letter
+  const letterValues = {
+    A: 1, B: 2, C: 3, D: 4, E: 5,
+    M: 6, S: 7, P: 8, L: 9, G: 10,
+    N: 11, T: 12, Q: 13, V: 14, F: 15,
+    O: 16, U: 17, R: 18, H: 19, W: 20,
+    I: 21, Z: 22, J: 23,
+    X: 24, K: 25, Y: 26
+  };
+
+  // Flatten letters into cards
+  const englishCards = englishLetterGroups.flatMap(group =>
+    group.letters.map(letter => ({
+      letter,
+      value: letterValues[letter]
+    }))
+  );
+
+  // Function to calculate total value of typed letters
+  const calculateEnglishValue = (text) => {
+    let total = 0;
+    for (const char of text.toUpperCase()) {
+      if (letterValues[char]) total += letterValues[char];
+    }
+    return total;
+  };
+
+  const totalValue = calculateEnglishValue(inputText);
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>English Letter Cards & Calculator</h1>
+
+      {/* Cards displayed horizontally with wrapping */}
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: "20px" }}>
+        {englishCards.map((card, idx) => (
+          <div
+            key={idx}
+            style={{
+              width: "80px",
+              height: "100px",
+              border: "1px solid #ccc",
+              borderRadius: "12px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "32px",
+              background: "#f0f0f0",
+              margin: "5px",
+              color: "#000"
+            }}
+          >
+            <div>{card.letter}</div>
+            <div style={{ fontSize: "18px", marginTop: "8px" }}>Value: {card.value}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Input for live calculator */}
+      <div style={{ marginTop: "40px", textAlign: "center" }}>
+        <textarea
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder="Type letters here..."
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            height: "80px",
+            fontSize: "24px",
+            padding: "12px",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            textAlign: "center",
+          }}
+        />
+
+        <div style={{ marginTop: "20px", fontSize: "20px" }}>
+          Total Value: <strong>{totalValue}</strong>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
 
 function SanMarinoMap() {
   return (
@@ -3705,6 +3806,7 @@ const arrowStyle = (side) => ({
 <NiqqudExplanation/>
 <HebrewLetterCalculator/>
 <LinearHebrewLetterCalculator/>
+<EnglishLetterCardsCalculator/>
     </AnimatedPage>
   );
 }
