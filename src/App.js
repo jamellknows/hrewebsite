@@ -5360,37 +5360,37 @@ const navButton = {
     {
       title: "Sea Village",
       text: metric5[0].text,
-      img: "/images/seavillage.jpg"
+      img: "/images/tooth.png"
     },
     {
-      title: "Emporium and Thana",
+      title: "Hidalgo and Thana",
       text: metric5[1].text,
-      img: "/images/city3.png"
+      img: "/images/city6.png"
     },
     {
       title: "Wola, Eshkol, Shefa, Hromoda and Grad",
       text: metric5[2].text,
-      img: "/images/city2.png"
-    },
-    {
-      title: "Hamlet, Alber and Mish",
-      text: metric5[3].text,
       img: "/images/city3.png"
     },
     {
-      title: "Kent and Thorpe",
-      text: metric5[4].text,
+      title: "Hamlet, Alber, Mish, Kent and Thorpe",
+      text: metric5[3].text,
       img: "/images/city4.jpg"
+    },
+    {
+      title: "Palatinate, Polis, Emirate and Arche",
+      text: metric5[4].text,
+      img: "/images/city1.jpg"
     },
     {
       title: "Rus",
       text: metric5[5].text,
-      img: "/images/city5.png"
+      img: "/images/city7.png"
     },
     {
-      title: "Hidalgo, Emirate",
+      title: "Emporium",
       text: metric5[6].text,
-      img: "/images/city7.png"
+      img: "/images/city2.png"
     },
     {
       title: "Statstics",
