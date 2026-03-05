@@ -4353,7 +4353,7 @@ const CarouselContent = ({ large = false }) => (
         >
           Managed by the Oikos of the Oikodrome, life along the routes is powered by Acolytes who perform all menial labor under oath until they are either promoted to Sexton or, if female, return to the towns as a Tit Wife; all men are classified as Acolytes unless they are Priests in a Holy City managed by the Rabat of the Relics or Polites within a Polis, their primary goal is to earn a permanent residence within an Emporium—a manufacturing, social and logistic hub—where a single Sexton oversees operations with a Stunt Double and houses up to four City Girl wives. 
           Women who do not fit into the town hierarchy yet eschew Acolyte labor become City Girls within the Emirate, serving as call girls for high-performing Acolytes who have earned sex points until they are selected by a Sexton to gain exclusive access to Emporium-manufactured clothing, though Acolytes may also engage in heterosexual intercourse and sperm donation at the Palatinate. Realtionships between male and female Acolytes is permitted if the female is above 20 years of age. Points awarded to City girls function similar 
-          to those within a town with the more points a city girl accumulates promoting her higher up the ranks with rewards in clothing. The ranking system is recalculated every two years.
+          to those within a town with the more points a city girl accumulates promoting her higher up the ranks with rewards studio decorations and clothing. The ranking system is recalculated every two years.
          
 
 
@@ -5260,13 +5260,14 @@ function WorldRule2Page() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
-  const [openWheelImage, setOpenWheelImage] = useState(null);
   const [openCoreImage, setOpenCoreImage] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
   const [activeTriangle, setActiveTriangle] = useState(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [fullscreen, setFullscreen] = useState(false);
   const [expandedSlide, setExpandedSlide] = useState(null);
+  const [openWheelImage, setOpenWheelImage] = useState(null);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
 
 
   
@@ -5490,32 +5491,32 @@ const navButton = {
     {
       id: 1,
       title: "The Ruling class and Slavery",
-      img: "/images/religious/1cltofafest.png"
+      images: ["/images/religious/1cltofafest.png"]
     },
     {
       id: 2,
       title: "Materiality",
-      img: "/images/towniechart.png"
+      images: ["/images/towniechart.png"]
     },
     {
       id: 3,
       title: "Religious Service and Movement",
-      img: "/images/ap.png"
+      images: ["/images/ap.png"]
     },
     {
       id: 4,
       title: "Feminism",
-      img: "/images/felp.png"
+      images: ["/images/felp.png"]
     },
     {
       id: 5,
       title: "Traditionalism",
-      img: "/images/melp.png"
+      images: ["/images/melp.png"]
     },
     {
       id: 6,
       title: "Teaching and learning",
-      img: "/images/religious/hierarchies.png"
+      images: ["/images/religious/hierarchies.png"]
     }
   ];
 
@@ -6169,7 +6170,10 @@ const toggleTriangle = (index) => {
   return (
     <div
       key={panel.id}
-      onClick={() => setOpenWheelImage(panel)}
+      onClick={() => {
+  setOpenWheelImage(panel);
+  setCurrentImgIndex(0);
+}}
       style={{
         position: "absolute",
         top: "40%",
@@ -6252,11 +6256,39 @@ const toggleTriangle = (index) => {
     }}
   >
     <div
-      style={{ position: "relative" }}
+      style={{ position: "relative", display: "flex", alignItems: "center" }}
       onClick={(e) => e.stopPropagation()}
     >
+
+      {/* PREVIOUS BUTTON */}
+      {openWheelImage.images.length > 1 && (
+        <button
+          onClick={() =>
+            setCurrentImgIndex(
+              (currentImgIndex - 1 + openWheelImage.images.length) %
+                openWheelImage.images.length
+            )
+          }
+          style={{
+            position: "absolute",
+            left: "-60px",
+            fontSize: "30px",
+            background: "white",
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            border: "none",
+            cursor: "pointer",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.6)"
+          }}
+        >
+          ‹
+        </button>
+      )}
+
+      {/* IMAGE */}
       <img
-        src={openWheelImage.img}
+        src={openWheelImage.images[currentImgIndex]}
         alt={openWheelImage.title}
         style={{
           width: "92vw",
@@ -6266,6 +6298,31 @@ const toggleTriangle = (index) => {
           boxShadow: "0 40px 120px rgba(0,0,0,0.8)"
         }}
       />
+
+      {/* NEXT BUTTON */}
+      {openWheelImage.images.length > 1 && (
+        <button
+          onClick={() =>
+            setCurrentImgIndex(
+              (currentImgIndex + 1) % openWheelImage.images.length
+            )
+          }
+          style={{
+            position: "absolute",
+            right: "-60px",
+            fontSize: "30px",
+            background: "white",
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            border: "none",
+            cursor: "pointer",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.6)"
+          }}
+        >
+          ›
+        </button>
+      )}
 
       {/* CLOSE BUTTON */}
       <button
@@ -6283,20 +6340,12 @@ const toggleTriangle = (index) => {
           fontSize: "18px",
           fontWeight: "bold",
           cursor: "pointer",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.6)",
-          transition: "all 0.25s ease"
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "scale(1.1)";
-          e.currentTarget.style.background = "#f1f1f1";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "scale(1)";
-          e.currentTarget.style.background = "#ffffff";
+          boxShadow: "0 10px 30px rgba(0,0,0,0.6)"
         }}
       >
         ✕
       </button>
+
     </div>
   </div>
 )}
