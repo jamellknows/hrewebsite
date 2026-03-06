@@ -5940,7 +5940,7 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 
   const metric3 = [
   {id:1, title: "FEST", text: ""}, 
-  {id: 2, title: "Relic Cities", text: "Culture and entertainment are structured around a governing principle of duality. At the highest level, they are divided into two distinct cultural spheres: the Sphere of the Town and the Sphere of the Routes. Within the Towns, prominence belongs to the children of NIFTYER59HALO, who represent established cultural identity, institutional continuity, and inherited influence. Each Lamp and each Tooth operates under its own cultural authority, directed by the Ladies of the Lamp and the Evangelions, who are responsible for curating, supervising, and regulating entertainment within their respective domains. Along the Routes, recognition is not inherited but earned. Celebrity emerges from merit, performance, and distinction. The acolytes who demonstrate superior capability rise to prominence. Oversight within the Routes is administered by the Stunt Doubles and the Evangelions, who determine worthiness and elevate individuals to public status—while the Stunt Doubles themselves stand as celebrities within this sphere."}, 
+  {id: 2, title: "Relic Cities", text: ""},
   { id: 3, title: "Routes", text:"" },
   { id: 4, title: "Capital and Camp", text:"" },
 ]; 
