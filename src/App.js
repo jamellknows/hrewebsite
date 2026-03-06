@@ -157,6 +157,91 @@ const letterValues = {
   ת: 400
 };
 
+const greekLetterValues = {
+  α: 1,
+  β: 2,
+  γ: 3,
+  δ: 4,
+  ε: 5,
+  ϛ: 6, // digamma / stigma
+  ζ: 7,
+  η: 8,
+  θ: 9,
+  ι: 10,
+  κ: 20,
+  λ: 30,
+  μ: 40,
+  ν: 50,
+  ξ: 60,
+  ο: 70,
+  π: 80,
+  ϟ: 90, // koppa
+  ρ: 100,
+  σ: 200,
+  τ: 300,
+  υ: 400,
+  φ: 500,
+  χ: 600,
+  ψ: 700,
+  ω: 800,
+  ϡ: 900, // sampi
+};
+
+function calculateGreekLetterValue(text) {
+  // Remove spaces and convert to lowercase
+  const letters = text.replace(/\s+/g, "").toLowerCase();
+  let total = 0;
+  for (let char of letters) {
+    if (greekLetterValues[char]) {
+      total += greekLetterValues[char];
+    }
+  }
+  return total;
+}
+
+function GreekLetterCalculator() {
+  const [text, setText] = useState("");
+
+  const totalValue = calculateGreekLetterValue(text);
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1 style={{ textAlign: "center" }}>
+        Greek Letter Value Calculator
+      </h1>
+
+      <textarea
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type Greek letters here..."
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          height: "80px",
+          fontSize: "24px",
+          padding: "12px",
+          marginTop: "20px",
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          textAlign: "left", // Greek reads LTR
+          direction: "ltr",
+        }}
+      />
+
+      <div
+        style={{
+          marginTop: "20px",
+          fontSize: "20px",
+          textAlign: "center",
+        }}
+      >
+        Total Letter Value: <strong>{totalValue}</strong>
+      </div>
+    </div>
+  );
+}
+
 const linearLetterValues = {
   א: 1, ב: 2, ג: 3, ד: 4, ה: 5,
   ו: 6, ז: 7, ח: 8, ט: 9,
@@ -3843,6 +3928,7 @@ const arrowStyle = (side) => ({
 <OldTestamentList/>
 <HebrewLetterCalculator/>
 <LinearHebrewLetterCalculator/>
+<GreekLetterCalculator/>
 
 {/* Hindi Alphabet Expandable Section */}
 <div style={{ marginTop: "90px" }}>
