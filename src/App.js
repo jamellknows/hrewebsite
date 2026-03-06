@@ -5939,7 +5939,7 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 ]; 
 
   const metric3 = [
-  {id:1, title: "FEST", text: ""}, 
+  {id: 1,title: "FEST", text: "FEST stands for Fashion, Entertainment, Science, and Trade. Each sector is led by a different woman with a specific title and responsibility. The Fashion sector is led by a Lady, who oversees and regulates the fashion industry within the CLT. Entertainment is directed by an Amira, who manages the entertainment industry. She works with the Jewish community of the Arx, indentured workers, and women from the towns to establish and develop their own 'Woods'. Science is overseen by the Infantas. They manage the researchers of the Hidalgo, who also serve as teachers and lecturers within the towns. Trade is managed by the Dominas. They coordinate with the Oikos to ensure that goods are delivered throughout the CLT and negotiate the trade of clothing and other products with other FEST regions."},
   {id: 2, title: "Relic Cities", text: ""},
   { id: 3, title: "Routes", text:"" },
   { id: 4, title: "Capital and Camp", text:"" },
