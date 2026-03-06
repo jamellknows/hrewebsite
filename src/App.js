@@ -429,8 +429,8 @@ function GreekDiphthongCards() {
             <div
               style={{
                 position: "absolute",
-                width: "100%",
-                height: "100%",
+                width: "90%",
+                height: "90%",
                 backfaceVisibility: "hidden",
                 background: "linear-gradient(135deg, #333, #555)",
                 color: "#fff",
@@ -4374,7 +4374,6 @@ function WorldRule1Page() {
   const [flippedCard, setFlippedCard] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
   const [expandedText, setExpandedText] = useState(null);
-  const [activeImage, setActiveImage] = React.useState(null);
 
 useEffect(() => {
   const handleEsc = (e) => {
