@@ -4170,7 +4170,7 @@ useEffect(() => {
   {
     id: 3,
     title: "Cause: Priesthood",
-    content: " The priesthood of the Melchizedek has 6 branches together they oversee the whole globe. Current priests will be recruited and new priests will be made across all religions. Priests live in relic cities overseen by the Rabat of the Relics. Priests are tasked with purifying these cities starting again from the holiest sites. The 6 branches are the Cetiya of the Upasikayo(lamp), Rabat of the Relic (Relic Cities), Oikos of the Oikodrome(Arx and routes), the Synagogue of the Sefer(Rus), the Sanctuary of the Sea (Sea Village), the Haveli of the Hari(KT HAM), the Temple of the Tao(Thana and Hidalgo) . "
+    content: " The priesthood of the Melchizedek has 6 branches together they oversee the whole globe. Current Klēroi from all religions will be recruited and new Klēroi will be made as seen fit and be given the official status Klēros. Klēroi  live in relic cities overseen by the Rabat of the Relics. Klēroi are tasked with purifying these cities starting again from the holiest sites. The 6 branches are the Cetiya of the Upasikayo(lamp), Rabat of the Relic (Relic Cities), Oikos of the Oikodrome(Arx and routes), the Synagogue of the Sefer(Rus), the Sanctuary of the Sea (Sea Village), the Haveli of the Hari(KT HAM), the Temple of the Tao(Thana and Hidalgo) . "
   }, 
   {
     id: 4,
@@ -4189,37 +4189,37 @@ useEffect(() => {
   {
     id: 0,
     title: "Produce",
-    summary: "Produce is the most important part of a civilization, I have therefore decided to completely integrate produce to be a unifier controlled from the top to ensure stability.  ",
+    summary: "Indentured, Acolytes",
     details:
-      "Planting: 2, Animals: 2 and priests, Processing: 2, Tending: Common, Reaping: Priests, Packaging: 2",
+      "",
   },
   {
     id: 1,
     title: "Manufacturing",
-    summary: "Manufcaturing is a vital part of maintaining or sustaining a functional society. I have decided to divide the work by size of product.",
+    summary: "Routes, PPEA",
     details:
-      "Mining: Commoners, Refining: priests, Small: 2, Medium: Common, Large: Common, Gigantic(Colossal): 2 and Priests ",
+      "",
   },
   {
     id: 2,
     title: "Services",
-    summary: "Modern society treats services as if it is the bread and butter. In this new paradigm services will be split into 6 areas with key sectors such as transport, infrastructure, leadership and education being either the work of senior officials or automated.",
+    summary: "Towns: Routes: Relics: PPEA",
     details:
-      "Available areas are medicine, commerce, hospitality, app development, domestics and utilities.",
+      "",
   },
   {
     id: 3,
     title: "Entertainment",
-    summary: "Entertainment will be open source with everybody having access to a studio, theatre etc at one on the 12 towns in their locality. ",
+    summary: "",
     details:
-      "The available industries with the entertainment industry are TV and Film, Music, Sports, Games, Live Entertainment and Publishing and Print. Most forms of viewable entertainment will still be around in some form although religious values will be applied. Entertainment usues a duality principle with the towns and the routes having different media and celebrities.",
+      "",
   },
   {
     id: 4,
     title: "Construction",
-    summary: "Construction is mandatory and everybody of able body will be required to take part. Each settlement and its cities have ben pre-designed and therefore all construction is government owned.",
+    summary: "Route, PPEA",
     details:
-      "There will be assistance in the form of Evangelions, everybody will have a mandated studio flat in a house, cohabitation will no longer be allowed, although people will be moved to live next to their partner with divorce prohibited. ",
+      "",
   }
 ];
 
@@ -5523,7 +5523,7 @@ function DualCarouselCards() {
 
   const carousels = {
     one: [
-      { title: "Priest", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%). Priests work within the Rabt, the Oikos and the Synagogue.", img: "/images/classes/priest.png" },
+      { title: "Klēros ", text: "Priests are men that have chosen to dedicate their lives to religion, study and research. New priests are required to gain the highest marks in the 89 (top 0.1%). Priests work within the Rabt, the Oikos and the Synagogue.", img: "/images/classes/priest.png" },
       { title: "Polítēs(Πολίτης)", text: "Polītai(Πολῖται) are thos who performed well enough in the 89 test and have been chosen to be employed to live in the semi-autonomous Emporiums. All acolytes can apply to be a Polítēs. ", img: "/images/classes/emporati.png"},
       { title: "Deacons", text: "Deacons are men who have distinguished themselves in the 89 and chosen to reside in the Rus, serving the Priesthood of the Melchizedek. They carry out the same duties as the PMSEC but enjoy a higher standard of living. In addition to their secular responsibilities, deacons are entrusted with religious obligations, reinforcing their role within the Priesthood.", img: "/images/classes/priest.png" },
       { title: "Acolyte", text: "Acolytes are the average man who dedicates their life to the Oikos of the Oikodrome and the EPIC MSHN.", img: "/images/classes/acolyte.png" },
