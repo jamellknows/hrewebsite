@@ -4072,6 +4072,7 @@ function WorldRule1Page() {
   const [flippedCard, setFlippedCard] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
   const [expandedText, setExpandedText] = useState(null);
+  const [activeImage, setActiveImage] = React.useState(null);
 
 useEffect(() => {
   const handleEsc = (e) => {
@@ -5886,6 +5887,9 @@ function WorldRule2Page() {
   const [expandedSlide, setExpandedSlide] = useState(null);
   const [openWheelImage, setOpenWheelImage] = useState(null);
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+  const [activeImage, setActiveImage] = useState(null);
+  const [flipped, setFlipped] = useState({}); // track which cards are flipped
+  
 
 
   
@@ -5939,10 +5943,32 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 ]; 
 
   const metric3 = [
-  {id: 1,title: "FEST", text: "FEST stands for Fashion, Entertainment, Science, and Trade. Each sector is led by a different woman with a specific title and responsibility. The Fashion sector is led by a Lady, who oversees and regulates the fashion industry within the CLT. Entertainment is directed by an Amira, who manages the entertainment industry. She works with the Jewish community of the Arx, indentured workers, and women from the towns to establish and develop their own 'Woods'. Science is overseen by the Infantas. They manage the researchers of the Hidalgo, who also serve as teachers and lecturers within the towns. Trade is managed by the Dominas. They coordinate with the Oikos to ensure that goods are delivered throughout the CLT and negotiate the trade of clothing and other products with other FEST regions."},
-  {id: 2, title: "Relic Cities", text: ""},
-  { id: 3, title: "Routes", text:"" },
-  { id: 4, title: "Capital and Camp", text:"" },
+  {
+    id: 1,
+    title: "FEST", 
+    text: "A FEST is a collective administrative unit composed of four Periféreia, each associated with a distinct culture (CLT). Because every Periféreia corresponds directly to a culture, the terms CLT and Periféreia are used interchangeably. The term FEST is an acronym for Fashion, Entertainment, Science, and Trade, representing the four primary cultural and functional domains of the region. Each Periféreia specialises in one of these domains, forming a coordinated system of governance, production, and cultural organisation. The four Periféreia are governed on behalf of NIFTYER59HALO by a council of women, each of whom holds authority over one of the four institutional Houses that correspond to the FEST sectors. The House of Fashion is led by the Ladies of the Lamp, who oversee and regulate the fashion industry within the CLT. They establish design standards, manage permitted materials, and organise the wider systems of clothing production, craftsmanship, and distribution. The House of Entertainment is directed by the Amiras of the Alpet, who supervise the entertainment sector. They collaborate with the Jewish community of the Arx, indentured workers, and women from the towns to establish and develop creative centres known as “Woods,” where artistic and cultural production takes place. The House of Science is overseen by the Infantas of the Imepgliata, who supervise the researchers of the Hidalgo. These researchers also serve as teachers and lecturers within the towns, ensuring that scientific knowledge, education, and research are integrated into the broader society. The House of Trade is administered by the Dominas of the Domus, who coordinate with the Oikos to ensure the efficient movement of goods throughout the FEST. They also negotiate the exchange of clothing and other products with neighbouring FEST regions. The women who lead these governmental departments are drawn from a range of broad ethnic backgrounds, including Jewish, Middle Eastern, European, East Asian, Native American, Pacific, and South Asian communities, reflecting the diverse composition of the governing body.",
+    bg: "/images/.png",    
+    image: "/images/.png", 
+  },
+  {
+    id: 2, title: "Relic Cities", 
+    text: "",
+    bg: "/images/fest-governance.jpg",    
+    image: "/images/fest-diagram.jpg",
+  },
+  { 
+    id: 3, title: "Routes", 
+    text:"",
+    bg: "/images/fest-governance.jpg",    
+    image: "/images/fest-diagram.jpg",
+   },
+  { 
+    id: 4, 
+    title: "Capital and Camp", 
+    text:"",
+    bg: "/images/fest-governance.jpg",    
+    image: "/images/fest-diagram.jpg",
+   },
 ]; 
 
 
@@ -5965,11 +5991,13 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 
 
 
-const blocks4 = Array.from({ length: 4 }).map((_, i) => ({
-    id: i,
-    title: `${metric3[i].title}`,
-    text: `${metric3[i].text}`
-  }));
+const blocks4 = metric3.map((m) => ({
+  id: m.id,
+  title: m.title,
+  text: m.text,
+  bg: m.bg,
+  image: m.image
+}));
 
 const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       id: i,
@@ -6235,6 +6263,10 @@ const toggleTriangle = (index) => {
     if (diff < -50) nextSlide();
   };
 
+  const toggleFlip = (id) => {
+    setFlipped((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
 
   return (
     <AnimatedPage>
@@ -6303,26 +6335,203 @@ const toggleTriangle = (index) => {
         </div>
 
         {/* Right: 4 interactive blocks */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "12px"
-          }}
-        >
-          {blocks4.map((b) => (
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(2, 1fr)",
+          gap: "2rem",
+        }}
+      >
+        {blocks4.map((b) => (
+          <div key={b.id} style={{ perspective: "1000px", height: "30rem" }}>
             <div
-              key={b.id}
               style={{
-                ...styles.card,
-                cursor: "pointer"
+                position: "relative",
+                width: "95%",
+                height: "100%",
+                textAlign: "center",
+                transition: "transform 0.8s",
+                transformStyle: "preserve-3d",
+                transform: flipped[b.id] ? "rotateY(180deg)" : "rotateY(0deg)",
               }}
             >
-              <h4>{b.title}</h4>
-              <p>{b.text}</p>
+              {/* Front Side */}
+              <div
+                style={{
+                  position: "absolute",
+                  width: "100%",
+                  height: "100%",
+                  backfaceVisibility: "hidden",
+                  background: "#fff",
+                  color: "#000",
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "14px",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+                  borderRadius: "8px",
+                }}
+              >
+                <h3 style={{ textAlign: "center", fontSize: "1.3rem", marginBottom: "8px" }}>
+                  {b.title}
+                </h3>
+                <div
+                  style={{
+                    flex: 1,
+                    overflowY: "auto",
+                    fontSize: "0.95rem",
+                    lineHeight: "1.4",
+                    paddingRight: "4px",
+                  }}
+                >
+                  {b.text}
+                </div>
+                <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+                  <button
+                    onClick={() => setActiveImage(b.image)}
+                    style={{
+                      marginTop: "10px",
+                      padding: "6px 14px",
+                      borderRadius: "6px",
+                      border: "none",
+                      background: "#222",
+                      color: "white",
+                      cursor: "pointer",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    View Image
+                  </button>
+                  <button
+                    onClick={() => toggleFlip(b.id)}
+                    style={{
+                      marginTop: "10px",
+                      padding: "6px 14px",
+                      borderRadius: "6px",
+                      border: "none",
+                      background: "#555",
+                      color: "white",
+                      cursor: "pointer",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    Flip
+                  </button>
+                </div>
+              </div>
+
+              {/* Back Side */}
+              <div
+                style={{
+                  position: "absolute",
+                  width: "90%",
+                  height: "100%",
+                  backfaceVisibility: "hidden",
+                  background: "linear-gradient(135deg, #333, #555)",
+                  color: "#fff",
+                  transform: "rotateY(180deg)",
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "16px",
+                  borderRadius: "8px",
+                  overflowY: "auto",
+                  fontFamily: "'Courier New', monospace",
+                }}
+              >
+                <h3 style={{ textAlign: "center", fontSize: "1.3rem", marginBottom: "12px" }}>
+                  Details
+                </h3>
+                <ul style={{ textAlign: "left", paddingLeft: "20px", margin: 0 }}>
+                  {b.bulletPoints?.map((point, i) => (
+                    <li key={i} style={{ marginBottom: "6px" }}>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => toggleFlip(b.id)}
+                  style={{
+                    marginTop: "auto",
+                    alignSelf: "center",
+                    padding: "6px 14px",
+                    borderRadius: "6px",
+                    border: "none",
+                    background: "#777",
+                    color: "white",
+                    cursor: "pointer",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  Flip Back
+                </button>
+              </div>
             </div>
-          ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Image Modal */}
+      {activeImage && (
+        <div
+          onClick={() => setActiveImage(null)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              onClick={() => setActiveImage(null)}
+              style={{
+                position: "absolute",
+                top: "-10px",
+                right: "-10px",
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                border: "none",
+                background: "#ffffff",
+                color: "#000",
+                fontSize: "18px",
+                fontWeight: "bold",
+                cursor: "pointer",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+              }}
+            >
+              ✕
+            </button>
+
+            <img
+              src={activeImage}
+              alt="preview"
+              style={{
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                borderRadius: "8px",
+                boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+              }}
+            />
+          </div>
         </div>
+      )}
+
+
+
       </div>
 
 {/* === Bottom: clickable highlights with expandable carousel === */}
