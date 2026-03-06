@@ -377,6 +377,256 @@ function EnglishLetterCardsCalculator() {
   );
 }
 
+function HindiGematriaCalculator() {
+
+const [inputText,setInputText]=React.useState("")
+const [searchValue,setSearchValue]=React.useState("")
+const [openHindi,setOpenHindi]=React.useState(false)
+
+const letters=[
+
+{letter:"अ",name:"A",value:1},
+{letter:"आ",name:"Ā",value:2},
+{letter:"इ",name:"I",value:15},
+{letter:"ई",name:"Ī",value:15},
+{letter:"उ",name:"U",value:34},
+{letter:"ऊ",name:"Ū",value:41},
+{letter:"ऋ",name:"Ṛ",value:35},
+{letter:"ए",name:"E",value:33},
+{letter:"ऐ",name:"Ai",value:7},
+{letter:"ओ",name:"O",value:37},
+{letter:"औ",name:"Au",value:39},
+
+{letter:"क",name:"ka",value:11},
+{letter:"ख",name:"kha",value:12},
+{letter:"ग",name:"ga",value:21},
+{letter:"घ",name:"gha",value:26},
+{letter:"ङ",name:"ṅa",value:27},
+
+{letter:"च",name:"cha",value:24},
+{letter:"छ",name:"chha",value:31},
+{letter:"ज",name:"ja",value:36},
+{letter:"झ",name:"jha",value:46},
+{letter:"ञ",name:"ña",value:20},
+
+{letter:"ट",name:"ṭa",value:43},
+{letter:"ठ",name:"ṭha",value:44},
+{letter:"ड",name:"ḍa",value:28},
+{letter:"ढ",name:"ḍha",value:8},
+{letter:"ण",name:"ṇa",value:17},
+
+{letter:"त",name:"ta",value:42},
+{letter:"थ",name:"tha",value:18},
+{letter:"द",name:"da",value:9},
+{letter:"ध",name:"dha",value:32},
+{letter:"न",name:"na",value:14},
+
+{letter:"प",name:"pa",value:19},
+{letter:"फ",name:"pha",value:23},
+{letter:"ब",name:"ba",value:45},
+{letter:"भ",name:"bha",value:30},
+{letter:"म",name:"ma",value:13},
+
+{letter:"य",name:"ya",value:40},
+{letter:"र",name:"ra",value:3},
+{letter:"ल",name:"la",value:25},
+{letter:"व",name:"va",value:29},
+
+{letter:"श",name:"śa",value:22},
+{letter:"ष",name:"ṣa",value:38},
+{letter:"स",name:"sa",value:6},
+{letter:"ह",name:"ha",value:16},
+
+{letter:"क्ष",name:"kṣa",value:47},
+{letter:"त्र",name:"tra",value:48},
+{letter:"ज्ञ",name:"jña",value:49},
+{letter:"श्र",name:"śra",value:50}
+
+]
+
+const letterValues=Object.fromEntries(
+letters.map(l=>[l.letter,l.value])
+)
+
+const matras={
+"ा":letterValues["आ"],
+"ि":letterValues["इ"],
+"ी":letterValues["ई"],
+"ु":letterValues["उ"],
+"ू":letterValues["ऊ"],
+"े":letterValues["ए"],
+"ै":letterValues["ऐ"],
+"ो":letterValues["ओ"],
+"ौ":letterValues["औ"],
+"ृ":letterValues["ऋ"]
+}
+
+const conjuncts=["क्ष","त्र","ज्ञ","श्र"]
+
+function calculateValue(text){
+
+let total=0
+let i=0
+
+while(i<text.length){
+
+let two=text.slice(i,i+2)
+
+if(conjuncts.includes(two)){
+total+=letterValues[two]
+i+=2
+continue
+}
+
+let char=text[i]
+
+if(letterValues[char]) total+=letterValues[char]
+else if(matras[char]) total+=matras[char]
+
+i++
+}
+
+return total
+}
+
+const totalValue=calculateValue(inputText)
+
+const reverseMatches=letters.filter(l=>String(l.value)===searchValue)
+
+return(
+
+<div style={{marginTop:"80px",fontFamily:"sans-serif"}}>
+
+<div
+onClick={()=>setOpenHindi(!openHindi)}
+style={{
+padding:"20px",
+textAlign:"center",
+fontWeight:600,
+fontSize:"18px",
+borderRadius:"14px",
+background:"#f1f5f9",
+cursor:"pointer"
+}}
+>
+
+{openHindi?"Close Hindi Gematria ▲":"Hindi Devanagari Gematria ▼"}
+
+</div>
+
+{openHindi && (
+
+<div style={{
+marginTop:"20px",
+padding:"30px",
+borderRadius:"18px",
+background:"#f8fafc"
+}}>
+
+<h3>Devanagari Letter Values</h3>
+
+<div style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(80px,1fr))",
+gap:"12px",
+marginTop:"20px"
+}}>
+
+{letters.map((c,i)=>(
+
+<div key={i}
+style={{
+padding:"14px",
+borderRadius:"14px",
+background:"white",
+textAlign:"center",
+boxShadow:"0 4px 12px rgba(0,0,0,.08)"
+}}
+>
+
+<div style={{fontSize:"30px",fontWeight:600}}>
+{c.letter}
+</div>
+
+<div style={{fontSize:"12px",opacity:0.7}}>
+{c.name}
+</div>
+
+<div style={{fontSize:"14px",fontWeight:600}}>
+{c.value}
+</div>
+
+</div>
+
+))}
+
+</div>
+
+<div style={{marginTop:"40px",textAlign:"center"}}>
+
+<h3>Gematria Calculator</h3>
+
+<textarea
+value={inputText}
+onChange={(e)=>setInputText(e.target.value)}
+placeholder="Type Hindi text..."
+style={{
+width:"100%",
+maxWidth:"600px",
+height:"90px",
+fontSize:"22px",
+padding:"12px",
+display:"block",
+margin:"auto",
+textAlign:"center"
+}}
+/>
+
+<div style={{marginTop:"20px",fontSize:"22px"}}>
+Total Value: <strong>{totalValue}</strong>
+</div>
+
+</div>
+
+<div style={{marginTop:"40px",textAlign:"center"}}>
+
+<h3>Reverse Gematria</h3>
+
+<input
+type="number"
+value={searchValue}
+onChange={(e)=>setSearchValue(e.target.value)}
+placeholder="Enter number"
+style={{
+padding:"10px",
+fontSize:"18px",
+width:"200px",
+textAlign:"center"
+}}
+/>
+
+<div style={{marginTop:"20px"}}>
+
+{reverseMatches.map((m,i)=>(
+<div key={i} style={{fontSize:"20px"}}>
+{m.letter} ({m.name})
+</div>
+))}
+
+</div>
+
+</div>
+
+</div>
+
+)}
+
+</div>
+
+)
+
+}
+
 
 
 
@@ -3589,6 +3839,10 @@ const arrowStyle = (side) => ({
     </div>
   )}
 </div>
+<NiqqudExplanation/>
+<OldTestamentList/>
+<HebrewLetterCalculator/>
+<LinearHebrewLetterCalculator/>
 
 {/* Hindi Alphabet Expandable Section */}
 <div style={{ marginTop: "90px" }}>
@@ -3797,11 +4051,10 @@ const arrowStyle = (side) => ({
     </div>
   )}
 </div>
+<HindiGematriaCalculator/>
 
-<OldTestamentList/>
-<NiqqudExplanation/>
-<HebrewLetterCalculator/>
-<LinearHebrewLetterCalculator/>
+
+
 <EnglishLetterCardsCalculator/>
     </AnimatedPage>
   );
@@ -4561,7 +4814,7 @@ const CarouselContent = ({ large = false }) => (
         letterSpacing: "0.2px",
       }}
     >
-      The FashionCLT 
+      Towns 
       <span
         style={{
           fontSize: "22px",
@@ -5686,10 +5939,10 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 ]; 
 
   const metric3 = [
-  {id:1, title: "Fashion", text: "The Fashion CLT is dedicated to women who pursue progression within Fashion and Culinary."}, 
-  {id: 2, title: "Entertainment", text: "Culture and entertainment are structured around a governing principle of duality. At the highest level, they are divided into two distinct cultural spheres: the Sphere of the Town and the Sphere of the Routes. Within the Towns, prominence belongs to the children of NIFTYER59HALO, who represent established cultural identity, institutional continuity, and inherited influence. Each Lamp and each Tooth operates under its own cultural authority, directed by the Ladies of the Lamp and the Evangelions, who are responsible for curating, supervising, and regulating entertainment within their respective domains. Along the Routes, recognition is not inherited but earned. Celebrity emerges from merit, performance, and distinction. The acolytes who demonstrate superior capability rise to prominence. Oversight within the Routes is administered by the Stunt Doubles and the Evangelions, who determine worthiness and elevate individuals to public status—while the Stunt Doubles themselves stand as celebrities within this sphere."}, 
-  { id: 3, title: "Science", text:"Science deals with knowledge. This is broad and includes the monitoring of civilians. It is also what technology to apply to a problem as their will be a few choices and also how to best develop and in what direction to develop the research tasks given to them. Most of it will be looking for ways to innovate on existing technology to make the most out of its potential. Surveillance and innovation." },
-  { id: 4, title: "Test", text:"Test is the continual testing of the citizenry to better the population. How to administer the test, what the test is, the pass and fails marks and how to improve the citizens results continuously are all death with by test(department of Ladies of the Lamp). Each city zone has its own 8 and 9 to improve upon and there will be comparisons between the results of towns and cities. As well as tests on each citizen on the other 8 and 9 categories which will mean some citizens may be relocated if they score too badly in something they should be proficient at. I did consider a situation whereby everybody tried to fail at 42 (on purpose of course) for example and the solution would be to select the most saddening group of people to move to the 42 fail cities. " },
+  {id:1, title: "FEST", text: ""}, 
+  {id: 2, title: "Relic Cities", text: "Culture and entertainment are structured around a governing principle of duality. At the highest level, they are divided into two distinct cultural spheres: the Sphere of the Town and the Sphere of the Routes. Within the Towns, prominence belongs to the children of NIFTYER59HALO, who represent established cultural identity, institutional continuity, and inherited influence. Each Lamp and each Tooth operates under its own cultural authority, directed by the Ladies of the Lamp and the Evangelions, who are responsible for curating, supervising, and regulating entertainment within their respective domains. Along the Routes, recognition is not inherited but earned. Celebrity emerges from merit, performance, and distinction. The acolytes who demonstrate superior capability rise to prominence. Oversight within the Routes is administered by the Stunt Doubles and the Evangelions, who determine worthiness and elevate individuals to public status—while the Stunt Doubles themselves stand as celebrities within this sphere."}, 
+  { id: 3, title: "Routes", text:"" },
+  { id: 4, title: "Capital and Camp", text:"" },
 ]; 
 
 
