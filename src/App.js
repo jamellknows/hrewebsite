@@ -242,6 +242,220 @@ function GreekLetterCalculator() {
   );
 }
 
+
+const greekDiphthongs = [
+  { diphthong: "αι", sound: "ai / e", example: "like 'ai' in 'aisle'" },
+  { diphthong: "ει", sound: "ei / i", example: "like 'ee' in 'see'" },
+  { diphthong: "οι", sound: "oi / i", example: "like 'oi' in 'oil'" },
+  { diphthong: "υι", sound: "yi / i", example: "like 'ui' in 'ruin'" },
+  { diphthong: "αυ", sound: "au / av", example: "like 'ow' in 'cow'" },
+  { diphthong: "ευ", sound: "eu / ev", example: "like 'ev' in 'ever'" },
+  { diphthong: "ου", sound: "ou / u", example: "like 'oo' in 'food'" },
+  { diphthong: "ηυ", sound: "ēu / ev", example: "rare, classical diphthong" },
+];
+
+function GreekAlphabetCards() {
+  const [flipped, setFlipped] = useState({});
+
+  const greekLetters = [
+    { letter: "α", capital: "Α", value: 1, sound: "a" },
+    { letter: "β", capital: "Β", value: 2, sound: "b" },
+    { letter: "γ", capital: "Γ", value: 3, sound: "g" },
+    { letter: "δ", capital: "Δ", value: 4, sound: "d" },
+    { letter: "ε", capital: "Ε", value: 5, sound: "e" },
+    { letter: "ϛ", capital: "Ϛ", value: 6, sound: "st / digamma" },
+    { letter: "ζ", capital: "Ζ", value: 7, sound: "z" },
+    { letter: "η", capital: "Η", value: 8, sound: "ē" },
+    { letter: "θ", capital: "Θ", value: 9, sound: "th" },
+    { letter: "ι", capital: "Ι", value: 10, sound: "i" },
+    { letter: "κ", capital: "Κ", value: 20, sound: "k" },
+    { letter: "λ", capital: "Λ", value: 30, sound: "l" },
+    { letter: "μ", capital: "Μ", value: 40, sound: "m" },
+    { letter: "ν", capital: "Ν", value: 50, sound: "n" },
+    { letter: "ξ", capital: "Ξ", value: 60, sound: "x" },
+    { letter: "ο", capital: "Ο", value: 70, sound: "o" },
+    { letter: "π", capital: "Π", value: 80, sound: "p" },
+    { letter: "ϟ", capital: "Ϟ", value: 90, sound: "q / koppa" },
+    { letter: "ρ", capital: "Ρ", value: 100, sound: "r" },
+    { letter: "σ", capital: "Σ", value: 200, sound: "s" },
+    { letter: "τ", capital: "Τ", value: 300, sound: "t" },
+    { letter: "υ", capital: "Υ", value: 400, sound: "u / y" },
+    { letter: "φ", capital: "Φ", value: 500, sound: "ph / f" },
+    { letter: "χ", capital: "Χ", value: 600, sound: "ch" },
+    { letter: "ψ", capital: "Ψ", value: 700, sound: "ps" },
+    { letter: "ω", capital: "Ω", value: 800, sound: "ō" },
+    { letter: "ϡ", capital: "Ϡ", value: 900, sound: "sampi" },
+  ];
+
+  const toggleFlip = (letter) => {
+    setFlipped((prev) => ({ ...prev, [letter]: !prev[letter] }));
+  };
+
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(6, 1fr)",
+        gap: "16px",
+        padding: "20px",
+      }}
+    >
+      {greekLetters.map((g) => (
+        <div
+          key={g.letter}
+          style={{
+            perspective: "1000px",
+            width: "100%",
+            height: "180px",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              textAlign: "center",
+              transition: "transform 0.6s",
+              transformStyle: "preserve-3d",
+              transform: flipped[g.letter] ? "rotateY(180deg)" : "rotateY(0deg)",
+              cursor: "pointer",
+            }}
+            onClick={() => toggleFlip(g.letter)}
+          >
+            {/* Front */}
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                background: "#fff",
+                color: "#000",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "3rem",
+                borderRadius: "10px",
+                boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+              }}
+            >
+              {g.letter}
+            </div>
+
+            {/* Back */}
+            <div
+              style={{
+                position: "absolute",
+                width: "90%",
+                height: "90%",
+                backfaceVisibility: "hidden",
+                background: "linear-gradient(135deg, #333, #555)",
+                color: "#fff",
+                transform: "rotateY(180deg)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "1rem",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            >
+              <ul
+                style={{
+                  listStyle: "disc",
+                  paddingLeft: "20px",
+                  textAlign: "left",
+                  margin: 0,
+                }}
+              >
+                <li>Capital: {g.capital}</li>
+                <li>Value: {g.value}</li>
+                <li>Sound: {g.sound}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function GreekDiphthongCards() {
+  const [flipped, setFlipped] = useState({});
+
+  const toggleFlip = (dip) => {
+    setFlipped((prev) => ({ ...prev, [dip]: !prev[dip] }));
+  };
+
+  return (
+    <div style={{ display: "flex", gap: "12px", padding: "20px", overflowX: "auto" }}>
+      {greekDiphthongs.map((d) => (
+        <div key={d.diphthong} style={{ perspective: "1000px", width: "140px", height: "160px" }}>
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              textAlign: "center",
+              transition: "transform 0.6s",
+              transformStyle: "preserve-3d",
+              transform: flipped[d.diphthong] ? "rotateY(180deg)" : "rotateY(0deg)",
+              cursor: "pointer",
+            }}
+            onClick={() => toggleFlip(d.diphthong)}
+          >
+            {/* Front */}
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                background: "#fff",
+                color: "#000",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "2.5rem",
+                borderRadius: "10px",
+                boxShadow: "0 6px 16px rgba(0,0,0,0.2)",
+              }}
+            >
+              {d.diphthong}
+            </div>
+
+            {/* Back */}
+            <div
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                backfaceVisibility: "hidden",
+                background: "linear-gradient(135deg, #333, #555)",
+                color: "#fff",
+                transform: "rotateY(180deg)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "1rem",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            >
+              <ul style={{ listStyle: "disc", paddingLeft: "20px", textAlign: "left" }}>
+                <li>Sound: {d.sound}</li>
+                <li>Example: {d.example}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const linearLetterValues = {
   א: 1, ב: 2, ג: 3, ד: 4, ה: 5,
   ו: 6, ז: 7, ח: 8, ט: 9,
@@ -3928,6 +4142,8 @@ const arrowStyle = (side) => ({
 <OldTestamentList/>
 <HebrewLetterCalculator/>
 <LinearHebrewLetterCalculator/>
+<GreekAlphabetCards/>
+<GreekDiphthongCards/>
 <GreekLetterCalculator/>
 
 {/* Hindi Alphabet Expandable Section */}
