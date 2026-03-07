@@ -1306,6 +1306,183 @@ textAlign:"center"
 
 }
 
+function CyrillicAlphabetCalculator() {
+
+const letters = [
+{upper:"А", lower:"а", value:1, sound:"a"},
+{upper:"Б", lower:"б", value:2, sound:"b"},
+{upper:"В", lower:"в", value:3, sound:"v"},
+{upper:"Г", lower:"г", value:4, sound:"g"},
+{upper:"Д", lower:"д", value:5, sound:"d"},
+{upper:"Е", lower:"е", value:6, sound:"ye"},
+{upper:"Ж", lower:"ж", value:7, sound:"zh"},
+{upper:"З", lower:"з", value:8, sound:"z"},
+{upper:"И", lower:"и", value:9, sound:"i"},
+{upper:"К", lower:"к", value:20, sound:"k"},
+{upper:"Л", lower:"л", value:30, sound:"l"},
+{upper:"М", lower:"м", value:40, sound:"m"},
+{upper:"Н", lower:"н", value:50, sound:"n"},
+{upper:"О", lower:"о", value:70, sound:"o"},
+{upper:"П", lower:"п", value:80, sound:"p"},
+{upper:"Р", lower:"р", value:100, sound:"r"},
+{upper:"С", lower:"с", value:200, sound:"s"},
+{upper:"Т", lower:"т", value:300, sound:"t"},
+{upper:"У", lower:"у", value:400, sound:"u"},
+{upper:"Ф", lower:"ф", value:500, sound:"f"},
+{upper:"Х", lower:"х", value:600, sound:"kh"},
+{upper:"Ц", lower:"ц", value:900, sound:"ts"}
+];
+
+const [flipped,setFlipped] = useState({});
+const [input,setInput] = useState("");
+
+const valueMap = {};
+letters.forEach(l=>{
+valueMap[l.upper] = l.value;
+valueMap[l.lower] = l.value;
+});
+
+const total = input.split("").reduce((sum,char)=>{
+return sum + (valueMap[char] || 0);
+},0);
+
+function toggleCard(i){
+setFlipped(prev=>({...prev,[i]:!prev[i]}));
+}
+
+return (
+
+<div style={{maxWidth:"900px",margin:"auto"}}>
+
+<h2 style={{textAlign:"center"}}>Cyrillic Alphabet Cards</h2>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(120px,1fr))",
+gap:"16px"
+}}
+>
+
+{letters.map((l,i)=>{
+
+const isFlipped = flipped[i];
+
+return(
+
+<div
+key={i}
+onClick={()=>toggleCard(i)}
+style={{
+perspective:"800px",
+cursor:"pointer"
+}}
+>
+
+<div
+style={{
+position:"relative",
+width:"100%",
+height:"120px",
+transformStyle:"preserve-3d",
+transition:"transform .5s",
+transform:isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+}}
+>
+
+{/* FRONT */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+background:"#111",
+color:"#fff",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+fontSize:"26px",
+fontWeight:"bold"
+}}
+>
+
+<div>{l.upper}</div>
+<div style={{fontSize:"14px",opacity:.7}}>
+{l.value}
+</div>
+
+</div>
+
+{/* BACK */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+transform:"rotateY(180deg)",
+background:"#e5e7eb",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+fontSize:"20px"
+}}
+>
+
+<div>{l.lower}</div>
+<div style={{fontSize:"14px"}}>
+{l.sound}
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+)
+
+})}
+
+</div>
+
+
+{/* CALCULATOR */}
+
+<div style={{marginTop:"40px",textAlign:"center"}}>
+
+<h3>Cyrillic Calculator</h3>
+
+<input
+value={input}
+onChange={(e)=>setInput(e.target.value)}
+placeholder="Type Cyrillic letters"
+style={{
+padding:"12px",
+fontSize:"18px",
+borderRadius:"8px",
+border:"1px solid #ccc",
+width:"300px"
+}}
+/>
+
+<div style={{marginTop:"12px",fontSize:"22px"}}>
+Value: <strong>{total}</strong>
+</div>
+
+</div>
+
+</div>
+
+);
+}
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -4764,7 +4941,7 @@ const arrowStyle = (side) => ({
 <GreekAlphabetCards/>
 <GreekDiphthongCards/>
 <GreekLetterCalculator/>
-
+<CyrillicAlphabetCalculator/>
 {/* Hindi Alphabet Expandable Section */}
 <div style={{ marginTop: "90px" }}>
   <div
@@ -4977,6 +5154,7 @@ const arrowStyle = (side) => ({
 <ArmenianAlphabet/>
 
 <EnglishLetterCardsCalculator/>
+
     </AnimatedPage>
   );
 }
