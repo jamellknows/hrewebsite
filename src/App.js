@@ -7109,32 +7109,36 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       id: 1,
       slides: [
         {
-          title: "Schedule",
-          text: "Scheduling is fundamentally about knowing where you need to be and when you need to be there. To do that effectively, a person must first determine what is important and why it matters at a given time. For some men, their priorities may be strongly influenced by sexual desire and attraction. In that case, their schedule might revolve around pursuing relationships or encounters with women they are attracted to and who they believe are strongly interested in them as well.",
-          image: "/images/religious/gfs.png"
-        },
-        {
-          title: "World Wide Vacations",
-          text: "Travel historically has been a disruptor, that is why people will remain within their SHUB unless they are acolytes which permits worldwide travel along the route. The rules for travel regarding members of the RACH government is LAID can travel anywhere within their PANIC and can leave their BALL and DISCO once a year. There will be new oasis resorts for vacations built within the Sahara Desert.  ",
-          image: "/images/automation/oasis.png"
-        },
-        {
           title: "Sea Routes",
           text:"Sea Routes are the sea sisters of the routes on land used by the land acolytes. Sea Villages are constructed in complete cycles that are connected via long roads and water passageways. Sea acolytes therefore must drive the seavee an automated kharvee+boat hybrid to traverse over land and sea.",
           image:"/images/automation/searoutes.png"
+        },
+        {
+          title: "Seavee",
+          text: "This ultra-modern cargo vessel is a sophisticated, energy-efficient transport solution specifically designed to ferry diverse goods and modular containers between self-sustaining sea villages and seaporiums within a futuristic marine network.",
+          image:"/images/automation/seavee.png"
+        },
+        {
+          title: "Stunt Doubles",
+          text: "Stunt Doubles are remote controlled work droids used by men who have attained the rank of a Reader, a Sexton is able to pilot 3 Stunt Doubles at a time. ",
+          image: "/images/automation/droid4.png"
         }
-
       ]
     }, 
     {
       id: 2,
       slides: [
+         {
+          title: "Schedule",
+          text: "Scheduling is fundamentally about knowing where you need to be and when you need to be there. To do that effectively, a person must first determine what is important and why it matters at a given time. For some men, their priorities may be strongly influenced by sexual desire and attraction. In that case, their schedule might revolve around pursuing relationships or encounters with women they are attracted to and who they believe are strongly interested in them as well.",
+          image: "/images/religious/gfs.png"
+        },
         {
           title: "Capital",
           text: "The Rack Capital comprises 40 CLTs, equivalent to 10 FESTs or 3 SHUBs plus 1 FEST. Candidate locations for its establishment include Australia and the region surrounding Mount Arat, with the Mount Arat site encompassing from the two lakes to its south all the way to Donetsk, Rostov-on-Don, and Volgograd. Complementing the capital, 40 Sea Villages will be constructed in the Black Sea, designed with a layout reminiscent of the shape of Australia.",
           image: "/images/religious/map.png"
         },
-         {
+        {
           title: "ARAT",
           text: "This is a hypothetical AI generated image of the capital at Arat that I thought looked interesting enough to include. The person on a motorbike would be an exile and I would not have exiles so close to the capital, but it is interesting that Gemini remembers previous images I have asked it to make.",
           image: "/images/automation/arat.png"
@@ -7155,10 +7159,10 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           image: "/images/angelic1.jpg"
         },
         {
-          title: "Stunt Doubles",
-          text: "Stunt Doubles are remote controlled work droids used by men who have attained the rank of a Reader, a Sexton is able to pilot 3 Stunt Doubles at a time. ",
-          image: "/images/angelic2.jpg"
-        }
+          title: "World Wide Vacations",
+          text: "Travel historically has been a disruptor, that is why people will remain within their SHUB unless they are acolytes which permits worldwide travel along the route. The rules for travel regarding members of the RACH government is LAID can travel anywhere within their PANIC and can leave their BALL and DISCO once a year. There will be new oasis resorts for vacations built within the Sahara Desert.  ",
+          image: "/images/automation/oasis.png"
+        },
       ]
     }
   ];
