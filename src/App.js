@@ -4104,45 +4104,46 @@ useEffect(() => {
     </div>
 
     {/* ORBITING NODES */}
-    {currentNodes.map((node, i) => {
-      const angle = (i / currentNodes.length) * 360;
-      const radius = 230;
+{currentNodes.map((node, i) => {
+  const angle = (i / currentNodes.length) * 360;
+  const radius = 230;
 
-      return (
-        <div
-          key={i}
-          onClick={() => {
-            setActiveIndex(i);
-            setRotation(-angle);
+  return (
+    <div
+      key={i}
+      onClick={() => {
+        setActiveIndex(i);
+        setRotation(-angle);
 
-            if (node.children?.length) {
-              setTimeout(() => {
-                setNodeStack(s => [...s, node.children]);
-                setActiveIndex(0);
-              }, 500);
-            }
-          }}
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: `
-              rotate(${angle}deg)
-              translate(${radius}px)
-              rotate(${-angle}deg)
-            `,
-            padding: "12px 18px",
-            borderRadius: "14px",
-            background: i === activeIndex ? "#111" : "#e5e7eb",
-            color: i === activeIndex ? "#fff" : "#000",
-            cursor: "pointer",
-            fontWeight: 600
-          }}
-        >
-          {node.title}
-        </div>
-      );
-    })}
+        if (node.children?.length) {
+          setTimeout(() => {
+            setNodeStack(s => [...s, node.children]);
+            setActiveIndex(0);
+          }, 500);
+        }
+      }}
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: `
+          rotate(${angle}deg)
+          translate(${radius}px)
+          rotate(${-angle - rotation}deg)
+        `,
+        padding: "12px 18px",
+        borderRadius: "14px",
+        background: i === activeIndex ? "#111" : "#e5e7eb",
+        color: i === activeIndex ? "#fff" : "#000",
+        cursor: "pointer",
+        fontWeight: 600,
+        transition: "transform .8s cubic-bezier(.22,1,.36,1)"
+      }}
+    >
+      {node.title}
+    </div>
+  );
+})}
 
   </div>
 </div>
