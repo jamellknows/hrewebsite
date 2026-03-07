@@ -242,6 +242,191 @@ function GreekLetterCalculator() {
   );
 }
 
+  const armenianLetters = [
+{u:"Ա",l:"ա",v:1,s:"Ayb"},
+{u:"Բ",l:"բ",v:2,s:"Ben"},
+{u:"Գ",l:"գ",v:3,s:"Gim"},
+{u:"Դ",l:"դ",v:4,s:"Da"},
+{u:"Ե",l:"ե",v:5,s:"Ech"},
+{u:"Զ",l:"զ",v:6,s:"Za"},
+{u:"Է",l:"է",v:7,s:"Eh"},
+{u:"Ը",l:"ը",v:8,s:"Ut"},
+{u:"Թ",l:"թ",v:9,s:"To"},
+{u:"Ժ",l:"ժ",v:10,s:"Zhe"},
+{u:"Ի",l:"ի",v:20,s:"Ini"},
+{u:"Լ",l:"լ",v:30,s:"Liwn"},
+{u:"Խ",l:"խ",v:40,s:"Khe"},
+{u:"Ծ",l:"ծ",v:50,s:"Tsa"},
+{u:"Կ",l:"կ",v:60,s:"Ken"},
+{u:"Հ",l:"հ",v:70,s:"Ho"},
+{u:"Ձ",l:"ձ",v:80,s:"Dza"},
+{u:"Ղ",l:"ղ",v:90,s:"Ghad"},
+{u:"Ճ",l:"ճ",v:100,s:"Che"},
+{u:"Մ",l:"մ",v:200,s:"Men"},
+{u:"Յ",l:"յ",v:300,s:"Yi"},
+{u:"Ն",l:"ն",v:400,s:"Now"},
+{u:"Շ",l:"շ",v:500,s:"Sha"},
+{u:"Ո",l:"ո",v:600,s:"Vo"},
+{u:"Չ",l:"չ",v:700,s:"Cha"},
+{u:"Պ",l:"պ",v:800,s:"Pe"},
+{u:"Ջ",l:"ջ",v:900,s:"Jhe"},
+{u:"Ռ",l:"ռ",v:1000,s:"Ra"},
+{u:"Ս",l:"ս",v:2000,s:"Se"},
+{u:"Վ",l:"վ",v:3000,s:"Vew"},
+{u:"Տ",l:"տ",v:4000,s:"Tiwn"},
+{u:"Ր",l:"ր",v:5000,s:"Re"},
+{u:"Ց",l:"ց",v:6000,s:"Co"},
+{u:"Ւ",l:"ւ",v:7000,s:"Yiwn"},
+{u:"Փ",l:"փ",v:8000,s:"Piwr"},
+{u:"Ք",l:"ք",v:9000,s:"Keh"},
+
+// letters without numeric values
+{u:"Օ",l:"օ",v:null,s:"O"},
+{u:"Ֆ",l:"ֆ",v:null,s:"F"},
+{u:"և",l:"և",v:null,s:"Ev"}
+  ];
+
+  const valueMap = {};
+  armenianLetters.forEach(l=>{
+  if(l.v){
+  valueMap[l.u]=l.v;
+  valueMap[l.l]=l.v;
+  }
+  });
+
+function ArmenianAlphabet(){
+
+const [flipped,setFlipped]=useState({});
+const [input,setInput]=useState("");
+
+function flip(letter){
+setFlipped(prev=>({...prev,[letter]:!prev[letter]}));
+}
+
+let sum=0;
+for(let char of input){
+sum += valueMap[char] || 0;
+}
+
+return(
+
+<div style={{fontFamily:"serif",padding:"40px"}}>
+
+<h2 style={{textAlign:"center",fontSize:"36px"}}>
+Armenian Alphabet
+</h2>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,90px)",
+gap:"16px",
+justifyContent:"center",
+marginTop:"30px"
+}}
+>
+
+{armenianLetters.map(l=>(
+<div
+key={l.u}
+style={{perspective:"800px",cursor:"pointer"}}
+onClick={()=>flip(l.u)}
+>
+
+<div
+style={{
+width:"90px",
+height:"110px",
+position:"relative",
+transformStyle:"preserve-3d",
+transition:"transform 0.6s",
+transform:flipped[l.u]?"rotateY(180deg)":"rotateY(0deg)"
+}}
+>
+
+<div
+style={{
+position:"absolute",
+inset:0,
+background:"#f4f4f4",
+borderRadius:"10px",
+display:"flex",
+alignItems:"center",
+justifyContent:"center",
+fontSize:"40px",
+boxShadow:"0 6px 14px rgba(0,0,0,0.25)",
+backfaceVisibility:"hidden"
+}}
+>
+{l.u}
+</div>
+
+<div
+style={{
+position:"absolute",
+inset:0,
+background:"#222",
+color:"#fff",
+borderRadius:"10px",
+display:"flex",
+flexDirection:"column",
+justifyContent:"center",
+alignItems:"center",
+fontSize:"14px",
+transform:"rotateY(180deg)",
+backfaceVisibility:"hidden",
+textAlign:"center",
+padding:"6px"
+}}
+>
+<div style={{fontSize:"22px"}}>{l.l}</div>
+<div>
+{l.v ? `Value ${l.v}` : "No value"}
+</div>
+<div>{l.s}</div>
+</div>
+
+</div>
+</div>
+))}
+
+</div>
+
+<div
+style={{
+marginTop:"60px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center"
+}}
+>
+
+<h3 style={{fontSize:"30px"}}>Armenian Alphabet Calculator</h3>
+
+<input
+value={input}
+onChange={e=>setInput(e.target.value)}
+placeholder="Enter Armenian word"
+style={{
+padding:"10px 14px",
+fontSize:"22px",
+borderRadius:"6px",
+border:"1px solid #999",
+textAlign:"center",
+marginTop:"10px"
+}}
+/>
+
+<div style={{fontSize:"28px",marginTop:"18px"}}>
+Sum: {sum}
+</div>
+
+</div>
+
+</div>
+
+);
+}
 
 const greekDiphthongs = [
   { diphthong: "αι", sound: "ai / e", example: "like 'ai' in 'aisle'" },
@@ -4788,8 +4973,7 @@ const arrowStyle = (side) => ({
 </div>
 <HindiGematriaCalculator/>
 <ArabicAbjad/>
-
-
+<ArmenianAlphabet/>
 
 <EnglishLetterCardsCalculator/>
     </AnimatedPage>
