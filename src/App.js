@@ -2781,6 +2781,18 @@ function BusinessPage() {
       ]
 
 
+  },
+  {
+    title: "Ports",
+    description:"Ports are essential",
+    images:[""],
+    children:[]
+  }, 
+  {
+    title: "Economic Regions",
+    description:"Comprehensive breakdown of the three economic zones",
+    images:[""],
+    children:[]
   }
 ];
 
