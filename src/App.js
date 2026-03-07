@@ -1916,6 +1916,277 @@ function LanguagePage() {
   );
 }
 
+function CombinedCarousels({ slides = [], runwayImages = [] }) {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [runwayIndex, setRunwayIndex] = useState(0);
+
+  // Auto-advance for first carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((i) => (i + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  // Auto-advance for runway carousel
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setRunwayIndex((i) => (i + 1) % runwayImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [runwayImages.length]);
+
+  const nextRunway = () => setRunwayIndex((runwayIndex + 1) % runwayImages.length);
+  const prevRunway = () =>
+    setRunwayIndex((runwayIndex - 1 + runwayImages.length) % runwayImages.length);
+
+  const shoe = (
+    <svg width="45" height="45" viewBox="0 0 64 64" fill="white">
+      <path d="M10 42c4-6 10-10 14-18l6 3c3 8 11 12 20 14 3 1 4 3 4 5v4H10v-8z" />
+    </svg>
+  );
+
+  return (
+    <div
+      style={{
+        gridArea: "main",
+        display: "flex",
+        flexDirection: "column",
+        gap: "40px",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {/* First standard carousel at the top */}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "760px",
+          height: "380px",
+          borderRadius: "22px",
+          overflow: "hidden",
+          position: "relative",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
+        }}
+      >
+        {slides.map((src, i) => (
+          <img
+            key={i}
+            src={src}
+            alt=""
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: slideIndex === i ? 1 : 0,
+              transition: "opacity 1s ease",
+            }}
+          />
+        ))}
+
+        {/* dots */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 14,
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            gap: 8,
+          }}
+        >
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => setSlideIndex(i)}
+              style={{
+                width: 9,
+                height: 9,
+                borderRadius: "50%",
+                cursor: "pointer",
+                background: slideIndex === i ? "#fff" : "rgba(255,255,255,.5)",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Runway-style carousel at the bottom */}
+<div
+  style={{
+    width: "100%",
+    height: "500px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-end",
+    perspective: "1500px",
+    background: "radial-gradient(circle at top, #111 0%, #000 100%)",
+    overflow: "hidden",
+    position: "relative",
+  }}
+>
+  {/* Runway Container */}
+  <div
+    style={{
+      width: "80%",
+      height: "60%",
+      position: "relative",
+      transform: "rotateX(50deg)",
+      borderRadius: "12px",
+      overflow: "visible",
+      boxShadow: "0 30px 80px rgba(0,0,0,0.7)",
+    }}
+  >
+    {/* Raised 3D runway */}
+    <div
+      style={{
+        position: "absolute",
+        bottom: "0",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "100%",
+        height: "120px",
+        background: "linear-gradient(to bottom, #8B0000, #C41E3A 60%, #FF1A3C)",
+        borderRadius: "8px",
+        boxShadow: "0 20px 50px rgba(0,0,0,0.6), 0 0 20px rgba(255,0,0,0.4) inset",
+        zIndex: 1,
+      }}
+    />
+
+    {/* Runway edge lights */}
+    <div
+      style={{
+        position: "absolute",
+        bottom: "15rem",
+        width: "100%",
+        height: "8px",
+        display: "flex",
+        justifyContent: "space-between",
+        zIndex: 2,
+      }}
+    >
+      <div style={{ width: "10%", height: "20rem", background: "#ff4d4d", boxShadow: "0 0 10px #ff4d4d", padding:"15px" }} />
+      <div style={{ width: "10%", height: "20rem", background: "#ff4d4d", boxShadow: "0 0 10px #ff4d4d", padding:"15px" }} />
+    </div>
+
+    {/* Top lighting */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background: "radial-gradient(circle at top center, rgba(255,255,255,0.25) 0%, transparent 60%)",
+        pointerEvents: "none",
+        zIndex: 3,
+        marginTop:"-35rem"
+      }}
+    />
+
+    {/* Images on runway */}
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        transform: "rotateY(50deg)",
+        zIndex: 4,
+      }}
+    >
+      {runwayImages.map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          alt=""
+          style={{
+            position: "absolute",
+            width: "80%",
+            height: "150%",
+            objectFit: "cover",
+            borderRadius: "14px",
+            opacity: i === runwayIndex ? 1 : 0,
+            transition: "opacity 1.2s ease, transform 1.5s ease",
+            transform: i === runwayIndex ? "scale(1.05) translateY(-5px)" : "scale(0.95) translateY(0)",
+            animation: i === runwayIndex ? "glimmer 3s ease-in-out infinite" : "none",
+            boxShadow: "0 30px 60px rgba(0,0,0,0.7), 0 0 25px rgba(255,255,255,0.15)",
+            marginTop:"-45rem",
+          }}
+        />
+      ))}
+    </div>
+
+    {/* Left shoe */}
+    <button
+      onClick={prevRunway}
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "10px",
+        transform: "translateY(-50%) rotateY(180deg)",
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        transition: "transform 0.3s ease, filter 0.3s ease",
+        zIndex: 5,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-50%) rotateY(180deg) scale(1.2)";
+        e.currentTarget.style.filter = "drop-shadow(0 0 15px #ff1a3c)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(-50%) rotateY(180deg) scale(1)";
+        e.currentTarget.style.filter = "none";
+      }}
+    >
+      {shoe}
+    </button>
+
+    {/* Right shoe */}
+    <button
+      onClick={nextRunway}
+      style={{
+        position: "absolute",
+        top: "50%",
+        right: "10px",
+        transform: "translateY(-50%)",
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        transition: "transform 0.3s ease, filter 0.3s ease",
+        zIndex: 5,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-50%) scale(1.2)";
+        e.currentTarget.style.filter = "drop-shadow(0 0 15px #ff1a3c)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(-50%) scale(1)";
+        e.currentTarget.style.filter = "none";
+      }}
+    >
+      {shoe}
+    </button>
+  </div>
+
+  {/* Glimmer animation keyframes */}
+  <style>
+    {`
+      @keyframes glimmer {
+        0% { opacity: 0.9; transform: scale(1.02) translateY(0); }
+        50% { opacity: 1; transform: scale(1.05) translateY(-5px); }
+        100% { opacity: 0.9; transform: scale(1.02) translateY(0); }
+      }
+    `}
+  </style>
+</div>
+
+  
+    </div>
+  );
+}
+
 function BusinessPage() {
     const cosmology = [
   {
@@ -2171,8 +2442,16 @@ function BusinessPage() {
     "/images/photo3.jpg",
     "/images/photo4.jpg",
     "/images/photo5.jpg",
-    "/images/photo6.jpg",
-    
+    "/images/photo6.jpg", 
+  ];
+
+  const runwayImages = [
+    "/images/photo1.jpg",
+    "/images/photo2.jpg",
+    "/images/photo3.jpg",
+    "/images/photo4.jpg",
+    "/images/photo5.jpg",
+    "/images/photo6.jpg", 
   ];
 
 const taoContent = {
@@ -2478,12 +2757,6 @@ these women will be 1952.
 
 
 
-
-  
-
-  
-
-
     useEffect(() => {
       const idle = setInterval(() => {
         setRotation(r => r - 0.05);
@@ -2561,12 +2834,6 @@ useEffect(() => {
   window.addEventListener("keydown", handler);
   return () => window.removeEventListener("keydown", handler);
 }, [lightbox, nextImage, prevImage]);
-
-
-
-
-
-
 
 
   return (
@@ -2658,34 +2925,8 @@ useEffect(() => {
         </div>
 
 {/* Centered Image Modal */}
-{activeImage && (
-  <div
-    onClick={() => setActiveImage(null)}
-    style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100vw",
-      height: "100vh",
-      background: "rgba(0,0,0,0.85)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 1000
-    }}
-  >
-    <img
-      src={activeImage}
-      alt=""
-      style={{
-        maxWidth: "90vw",
-        maxHeight: "90vh",
-        borderRadius: "8px",
-        boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
-      }}
-    />
-  </div>
-)}
+<CombinedCarousels slides={slides} runwayImages={runwayImages}/>
+
 
         {/* ===== Second row accordion (2) ===== */}
         <div
@@ -2862,69 +3103,7 @@ useEffect(() => {
 </>
 
         {/* ===== CENTER IMAGE SLIDER ===== */}
-        <div
-          style={{
-            gridArea: "main",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <div
-            style={{
-              width: "100%",
-              height: "380px",
-              maxWidth: "760px",
-              borderRadius: "22px",
-              overflow: "hidden",
-              position: "relative",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
-            }}
-          >
-            {slides.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  opacity: slideIndex === i ? 1 : 0,
-                  transition: "opacity 1s ease"
-                }}
-              />
-            ))}
-
-            {/* dots */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 14,
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                gap: 8
-              }}
-            >
-              {slides.map((_, i) => (
-                <div
-                  key={i}
-                  onClick={() => setSlideIndex(i)}
-                  style={{
-                    width: 9,
-                    height: 9,
-                    borderRadius: "50%",
-                    cursor: "pointer",
-                    background: slideIndex === i ? "#fff" : "rgba(255,255,255,.5)"
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+      
 
 
     <>
