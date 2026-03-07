@@ -1306,87 +1306,107 @@ textAlign:"center"
 
 }
 
-function CyrillicAlphabetCalculator() {
+function CyrillicAlphabetExplorer(){
 
 const letters = [
-{upper:"А", lower:"а", value:1, sound:"a"},
-{upper:"Б", lower:"б", value:2, sound:"b"},
-{upper:"В", lower:"в", value:3, sound:"v"},
-{upper:"Г", lower:"г", value:4, sound:"g"},
-{upper:"Д", lower:"д", value:5, sound:"d"},
-{upper:"Е", lower:"е", value:6, sound:"ye"},
-{upper:"Ж", lower:"ж", value:7, sound:"zh"},
-{upper:"З", lower:"з", value:8, sound:"z"},
-{upper:"И", lower:"и", value:9, sound:"i"},
-{upper:"К", lower:"к", value:20, sound:"k"},
-{upper:"Л", lower:"л", value:30, sound:"l"},
-{upper:"М", lower:"м", value:40, sound:"m"},
-{upper:"Н", lower:"н", value:50, sound:"n"},
-{upper:"О", lower:"о", value:70, sound:"o"},
-{upper:"П", lower:"п", value:80, sound:"p"},
-{upper:"Р", lower:"р", value:100, sound:"r"},
-{upper:"С", lower:"с", value:200, sound:"s"},
-{upper:"Т", lower:"т", value:300, sound:"t"},
-{upper:"У", lower:"у", value:400, sound:"u"},
-{upper:"Ф", lower:"ф", value:500, sound:"f"},
-{upper:"Х", lower:"х", value:600, sound:"kh"},
-{upper:"Ц", lower:"ц", value:900, sound:"ts"}
+{upper:"А",lower:"а",value:1,sound:"a"},
+{upper:"Б",lower:"б",value:2,sound:"b"},
+{upper:"В",lower:"в",value:3,sound:"v"},
+{upper:"Г",lower:"г",value:4,sound:"g"},
+{upper:"Д",lower:"д",value:5,sound:"d"},
+{upper:"Е",lower:"е",value:6,sound:"ye"},
+{upper:"Ж",lower:"ж",value:7,sound:"zh"},
+{upper:"З",lower:"з",value:8,sound:"z"},
+{upper:"И",lower:"и",value:9,sound:"i"},
+
+{upper:"К",lower:"к",value:20,sound:"k"},
+{upper:"Л",lower:"л",value:30,sound:"l"},
+{upper:"М",lower:"м",value:40,sound:"m"},
+{upper:"Н",lower:"н",value:50,sound:"n"},
+{upper:"О",lower:"о",value:70,sound:"o"},
+{upper:"П",lower:"п",value:80,sound:"p"},
+
+{upper:"Р",lower:"р",value:100,sound:"r"},
+{upper:"С",lower:"с",value:200,sound:"s"},
+{upper:"Т",lower:"т",value:300,sound:"t"},
+{upper:"У",lower:"у",value:400,sound:"u"},
+{upper:"Ф",lower:"ф",value:500,sound:"f"},
+{upper:"Х",lower:"х",value:600,sound:"kh"},
+{upper:"Ц",lower:"ц",value:900,sound:"ts"}
 ];
 
-const [flipped,setFlipped] = useState({});
-const [input,setInput] = useState("");
+const groups = {
+"1–9": letters.filter(l=>l.value < 10),
+"10–90": letters.filter(l=>l.value >=10 && l.value <100),
+"100–900": letters.filter(l=>l.value >=100)
+};
 
 const valueMap = {};
 letters.forEach(l=>{
-valueMap[l.upper] = l.value;
-valueMap[l.lower] = l.value;
+valueMap[l.upper]=l.value;
+valueMap[l.lower]=l.value;
 });
 
-const total = input.split("").reduce((sum,char)=>{
-return sum + (valueMap[char] || 0);
+const [flipped,setFlipped]=useState({});
+const [input,setInput]=useState("");
+
+const toggleCard=i=>{
+setFlipped(prev=>({...prev,[i]:!prev[i]}));
+};
+
+const addLetter=l=>{
+setInput(prev=>prev + l);
+};
+
+const total=input.split("").reduce((sum,c)=>{
+return sum+(valueMap[c]||0);
 },0);
 
-function toggleCard(i){
-setFlipped(prev=>({...prev,[i]:!prev[i]}));
-}
+return(
 
-return (
+<div style={{maxWidth:"1000px",margin:"auto",fontFamily:"sans-serif"}}>
 
-<div style={{maxWidth:"900px",margin:"auto"}}>
+<h2 style={{textAlign:"center"}}>
+Cyrillic Alphabet Explorer
+</h2>
 
-<h2 style={{textAlign:"center"}}>Cyrillic Alphabet Cards</h2>
+
+{/* CARD GROUPS */}
+
+{Object.entries(groups).map(([title,group],gi)=>(
+
+<div key={gi} style={{marginTop:"30px"}}>
+
+<h3>{title}</h3>
 
 <div
 style={{
 display:"grid",
 gridTemplateColumns:"repeat(auto-fill,minmax(120px,1fr))",
-gap:"16px"
+gap:"18px"
 }}
 >
 
-{letters.map((l,i)=>{
+{group.map((l,i)=>{
 
-const isFlipped = flipped[i];
+const id=title+i;
+const isFlipped=flipped[id];
 
 return(
 
 <div
-key={i}
-onClick={()=>toggleCard(i)}
-style={{
-perspective:"800px",
-cursor:"pointer"
-}}
+key={id}
+onClick={()=>toggleCard(id)}
+style={{perspective:"900px",cursor:"pointer"}}
 >
 
 <div
 style={{
+height:"130px",
 position:"relative",
-width:"100%",
-height:"120px",
 transformStyle:"preserve-3d",
-transition:"transform .5s",
-transform:isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
+transition:"transform .6s",
+transform:isFlipped?"rotateY(180deg)":"rotateY(0)"
 }}
 >
 
@@ -1398,19 +1418,20 @@ position:"absolute",
 width:"100%",
 height:"100%",
 backfaceVisibility:"hidden",
-background:"#111",
-color:"#fff",
-borderRadius:"12px",
+background:"linear-gradient(145deg,#111,#1f2937)",
+color:"white",
+borderRadius:"14px",
 display:"flex",
 flexDirection:"column",
 alignItems:"center",
 justifyContent:"center",
-fontSize:"26px",
-fontWeight:"bold"
+fontSize:"30px",
+boxShadow:"0 8px 20px rgba(0,0,0,.35)"
 }}
 >
 
 <div>{l.upper}</div>
+
 <div style={{fontSize:"14px",opacity:.7}}>
 {l.value}
 </div>
@@ -1426,17 +1447,19 @@ width:"100%",
 height:"100%",
 backfaceVisibility:"hidden",
 transform:"rotateY(180deg)",
-background:"#e5e7eb",
-borderRadius:"12px",
+background:"#f3f4f6",
+borderRadius:"14px",
 display:"flex",
 flexDirection:"column",
 alignItems:"center",
-justifyContent:"center",
-fontSize:"20px"
+justifyContent:"center"
 }}
 >
 
-<div>{l.lower}</div>
+<div style={{fontSize:"28px"}}>
+{l.lower}
+</div>
+
 <div style={{fontSize:"14px"}}>
 {l.sound}
 </div>
@@ -1453,28 +1476,85 @@ fontSize:"20px"
 
 </div>
 
+</div>
+
+))}
+
 
 {/* CALCULATOR */}
 
-<div style={{marginTop:"40px",textAlign:"center"}}>
+<div style={{marginTop:"50px",textAlign:"center"}}>
 
-<h3>Cyrillic Calculator</h3>
+<h2>Cyrillic Calculator</h2>
 
 <input
 value={input}
-onChange={(e)=>setInput(e.target.value)}
-placeholder="Type Cyrillic letters"
+onChange={e=>setInput(e.target.value)}
 style={{
 padding:"12px",
-fontSize:"18px",
-borderRadius:"8px",
-border:"1px solid #ccc",
-width:"300px"
+fontSize:"20px",
+width:"320px",
+borderRadius:"10px",
+border:"1px solid #ccc"
 }}
+placeholder="Type or click letters"
 />
 
-<div style={{marginTop:"12px",fontSize:"22px"}}>
-Value: <strong>{total}</strong>
+<div style={{marginTop:"12px",fontSize:"24px"}}>
+Total: <strong>{total}</strong>
+</div>
+
+<button
+onClick={()=>setInput("")}
+style={{
+marginTop:"10px",
+padding:"8px 18px",
+borderRadius:"8px",
+border:"none",
+background:"#111",
+color:"#fff",
+cursor:"pointer"
+}}
+>
+Clear
+</button>
+
+</div>
+
+
+{/* CYRILLIC KEYBOARD */}
+
+<div style={{marginTop:"40px"}}>
+
+<h3 style={{textAlign:"center"}}>Keyboard</h3>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(60px,1fr))",
+gap:"10px",
+maxWidth:"500px",
+margin:"auto"
+}}
+>
+
+{letters.map((l,i)=>(
+<button
+key={i}
+onClick={()=>addLetter(l.upper)}
+style={{
+padding:"10px",
+fontSize:"20px",
+borderRadius:"8px",
+border:"1px solid #ddd",
+background:"#fafafa",
+cursor:"pointer"
+}}
+>
+{l.upper}
+</button>
+))}
+
 </div>
 
 </div>
@@ -4941,7 +5021,7 @@ const arrowStyle = (side) => ({
 <GreekAlphabetCards/>
 <GreekDiphthongCards/>
 <GreekLetterCalculator/>
-<CyrillicAlphabetCalculator/>
+<CyrillicAlphabetExplorer/>
 {/* Hindi Alphabet Expandable Section */}
 <div style={{ marginTop: "90px" }}>
   <div
@@ -7073,17 +7153,17 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
 
   
    const metric5 = [
-  { id: 1, title: "Sea Village (Pyramid)", text:"The Sea Village is goverened by the Hellenistic Sanctuary of the Sea. The total number of Sea Villages to be constructed is 12976. They will be designed to have a capacity of 29542 meaning that the total Sea Village capacity is 383336992 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). The Sea Village is black. "},
-  { id: 2, title: "Hidalgo and Thana", text:"The Thana is the residence of LAID, Indentured workers (braces) and Priestesses, the indentured workers bring in the harvest from within the outer perimeter(square walls).The Thanas in the capital are specialin that they also are the residences of every female celebrity(Hollywood and Bollywood: 3300) and female model(60,000). Hidalgos and the Thanas are the residences of LAID and Priestesses. LAID live in the Hidalgo and the Priestesses live in the Thana. The Capital Hidalgos are home to 141 genetically engineered 'super' women clones each for a total of 2820 women. They are super in that they have boosted intelligence and health. Those who live within the Hidalgos and Thanas are allowed to travel to any Hidalgo or Thana within their PANIC at will except from those at the capital Hidalgo who remain there coducting super research. Hidalgos and Thanas are designed/constructed using the PATH SHIFT principle. PATH= [Pokemon Gardens, Arts Center, Tibet, Holoworld], SHIFT = [Stadium, Houses, Institute, Factory Plaza, Tibet]."},
-  { id: 3, title: "Wola, Eshkol, Shefa, Hromoda and Grad and Burg (LAMP)", text:"The Wola, Eshkol, Shefa, Hromoda, Grad and Burg form the Lamp of a CLT governed by the Cetiya of the Upasika. The Wola and the Eshkol are European, the Shefa, Hromada and the Grad are East Asian and the Burg is Native American and Native Pacific." },
-  { id: 4, title: "Ham, Alber, Mish, Kent and Thorpe", text:"The Hamlet, Alber, MIsh, Kent and Thorpe form the Tooth of the CLT goverened by the Haveli of the Hari.It is where browns live.  " },
+  { id: 1, title: "Sea Village (Pyramid)", text:"The Sea Village is goverened by the Hellenistic Sanctuary of the Sea.It forms the Diamond zone of a CLT. The total number of Sea Villages to be constructed is 12976. They will be designed to have a capacity of 29542 meaning that the total Sea Village capacity is 383336992 people. The clever part of their design is that they go as far down as they are built up. It has a pyramid shape above the water and is flipped to be the shape whether under the sea(floats) or the seabed(embedded). The Sea Village is black. "},
+  { id: 2, title: "Hidalgo and Thana", text:"The Thana is the residence of LAID, Indentured workers (braces) and Priestesses, the indentured workers bring in the harvest from within the outer perimeter(square walls). It is a part of the Shade zone of a CLT. The Thanas in the capital are specialin that they also are the residences of every female celebrity(Hollywood and Bollywood: 3300) and female model(60,000). Hidalgos and the Thanas are the residences of LAID and Priestesses. LAID live in the Hidalgo and the Priestesses live in the Thana. The Capital Hidalgos are home to 141 genetically engineered 'super' women clones each for a total of 2820 women. They are super in that they have boosted intelligence and health. Those who live within the Hidalgos and Thanas are allowed to travel to any Hidalgo or Thana within their PANIC at will except from those at the capital Hidalgo who remain there coducting super research. Hidalgos and Thanas are designed/constructed using the PATH SHIFT principle. PATH= [Pokemon Gardens, Arts Center, Tibet, Holoworld], SHIFT = [Stadium, Houses, Institute, Factory Plaza, Tibet]."},
+  { id: 3, title: "Wola, Eshkol, Shefa, Hromoda and Grad and Burg (LAMP)", text:"The Wola, Eshkol, Shefa, Hromoda, Grad and Burg form the Lamp zone of a CLT governed by the Cetiya of the Upasika. The Wola and the Eshkol are European, the Shefa, Hromada and the Grad are East Asian and the Burg is Native American and Native Pacific." },
+  { id: 4, title: "Ham, Alber, Mish, Kent and Thorpe", text:"The Hamlet, Alber, MIsh, Kent and Thorpe form the Nightstand zone of the CLT goverened by the Haveli of the Hari.It is where browns live.  " },
   { id: 5, title: "Palatinate, Polis, Emirate and Arche ", text:"The Palatinate, Polis, Emirate and Arche are the semi autonomus regions outside of the walls of the main part of a CLT. They are governed by members of NIFTYER59HALO or those who have extreme favour with them. Each is for a different purpose and has a different population. The Polis is full of the politests people of a CLT and they help the acolytes who pass in the factory, the Arche is for slaves(criminals), the Emirate is for queers and city girls(women who gave up on being an acolyte) and the Palatinate is for the temporary acolytes who work their while on their route."},
-  { id: 6, title: "Rus", text:"The Rus is the Capital Town of a CLT and the administrative center. It is home to the frontier brains and is governed by the Synagogue of the Sefer. The Rus is where children of Klēroi go for their education comencing at 14 for the females and 16 for the males. Their religious education lasts for 4 years during which they spend a year as an acolyte (16 to 17 females)(18 to 19 males). After which they return to their Holy City fully ordained and ready for work, marriage and in touch with life within a CLT. The Rus is Middle Eastern. "},
+  { id: 6, title: "Rus", text:"The Rus is the Capital Town of a CLT and the administrative center. It is home to the frontier brains and is governed by the Synagogue of the Sefer. It is a part of the Bulb zone of a CLT. The Rus is where children of Klēroi go for their education comencing at 14 for the females and 16 for the males. Their religious education lasts for 4 years during which they spend a year as an acolyte (16 to 17 females)(18 to 19 males). After which they return to their Holy City fully ordained and ready for work, marriage and in touch with life within a CLT. The Rus is Middle Eastern. "},
   { id: 7, title: "Emporium", text:"The Emporiums are trade posts along the routes governed by a Sexton."},
   { id: 8, title: "Statistics",   text: "• 8.27 billion total people\n• 1.2 billion sea village inhabitants\n• 2 billion 469 million 300 thousand acolytes\n• 827 million queer people (not going to be a separate class now they probably just join the MSHN)\n• 3 billion 773 million 700 thousand remaining people (nothings)"},
   { id: 9, title: "Glossary", text: "1. Town — A land settlement within a CLT (maximum population: 29,542) • 2. Village (Sea Village) — A water settlement within a CLT (maximum population: 29,542) • 3. CLT — A group consisting of 17 Towns, 1 Village, 1 Emirate, 1 Palatinate, 1 Arche, and 1 Polis • 4. FEST — A federation of 4 CLTs, each with a unique focus: Fashion, Entertainment, Science, and Trade • 5. SHUBs — A grouping of 3 FESTs • 6. RAVE — A grouping of 7 SHUBs • 7. PANIC — A grouping of 14 RAVEs • 8. DISCO — A grouping of 11 PANICs • 9. BALL — A collection of DISCOs (ranging from 1 to N depending on continent size) • 10. RACH — The total sum of all BALLs"},
   { id: 10, title: "Numbers", text: `• Town population (women and children): 29,542 — Women: 17,210 — Children: 12,332 \n• CLT population — Capacity: 531,756 — Women: 309,778 \n • Kharvees per CLT: 26,200`},
-  { id: 11, title: "Arx", text:"The Arx is the Bastion of a CLT and the logistics center simply put it is the gate.  It is governed by the Oikos of the Oikodrome and is home to the Elite 4. It is where the Jewish people who are not Klēroi live."}, 
+  { id: 11, title: "Arx", text:"The Arx is the Bastion of a CLT and the logistics center simply put it is the gate.  It is governed by the Oikos of the Oikodrome and is home to the Elite 4. It is a part of the Bulb zone of a CLT. It is where the Jewish people who are not Klēroi live."}, 
 
 ]; 
 
