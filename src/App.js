@@ -926,9 +926,6 @@ textAlign:"center"
 
 }
 
-
-
-
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -1058,8 +1055,6 @@ function OldTestamentList() {
   );
 }
 
-
-
 // Added inline CSS to replace missing App.css
 const styles = {
   app: {
@@ -1168,7 +1163,6 @@ const styles = {
     border: '1px solid #d1d5db',
   }
 };
-
 
 function AnimatedPage({ children }) {
   return (
@@ -1286,7 +1280,6 @@ const LearnMoreButton = () => {
   );
 };
 
-
 function InfoRevealButton() {
   const [open, setOpen] = useState(false);
 
@@ -1355,7 +1348,6 @@ function InfoRevealButton() {
     </div>
   );
 }
-
 
 function HomePage() {
   return (
@@ -1460,7 +1452,6 @@ function HomePage() {
     </AnimatedPage>
   );
 }
-
 
 function LanguagePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -1926,7 +1917,222 @@ function LanguagePage() {
 }
 
 function BusinessPage() {
-  const [openTop, setOpenTop] = useState(null);
+    const cosmology = [
+  {
+    title: "Buildings",
+    description: "Buildings used during the business phase with a future prospect of San Marino.",
+    images: ["./images/sketches/sanmarino.png"],
+    children: [
+
+      // ---------- RESIDENTIAL ----------
+      {
+        title: "Residential",
+        description: "Accommodation for employees and citizens",
+        images: ["./images/sketches/saddle6.jpg"],
+        children: [
+          {
+            title: "The Saddle",
+            description: "The Saddle serves as the home for models in San Marino. It has a capacity of 160, photostudios, gyms and other entertainment such as a miniature golf course, pools and indoor cinema and cabins that are suppoused to go on the roof.",
+            images: ["./images/sketches/saddle4.jpg"],
+            children: []
+          },
+          {
+            title: "The Sandwiches",
+            description: "Triangular housing units for the residents of San Marino. Each is to have a capacity of 300.",
+            images: ["./images/sketches/sandwiches.png"],
+            children: []
+          },
+          {
+            title: "The Crucifix",
+            description: "The Crucifix is the main building of the business. It is a home, a mass manufacturer and reseach center. The AI was unable to get the crucifix shape correct and the building is of a larger height and more European in architecture, but it does have Asian attributes in style. It is located on the site of the San Marino Stadium ",
+            images: ["./images/sketches/cross2.png"],
+            children: []
+          },
+          {
+            title: "The Buddha Wheel",
+            description: "The Buddha Wheel is a vehicle manufacturing and stroage building that is also employee housing. The Vehicles are produced in a circle using a technique I know for sure will work. The housing is in the outer circles and the storage is in the spokes. ",
+            images: ["./images/sketches/buddhawheel.png"],
+            children: []
+          }
+
+        ]
+      },
+
+      // ---------- COMMERCIAL ----------
+      {
+        title: "Commercial",
+        description: "Shops, services and public interaction buildings",
+        images: ["/images/sketch/commercial.png"],
+        children: [
+          {
+            title: "KKKlub",
+            description: "This is one of the clubs in San Marino. It is named the KKKlub. It is a fusion of the ideas of a children's day care center, a night club and Kim Kardashian. Rising from the quiet elegance of San Marino like a monument to sound itself, The KKKlub isn’t just a nightclub — it feels like stepping inside music. From the outside, the building already breaks reality: a massive sculptural structure resembling glossy black Kim K butt cheeks and thighs, glowing softly with electric cyan outlines of a hand and a foot — symbolizing rhythm and movement in black glass. People gather around it before even entering, because the place feels alive long before the first bass drop. Inside, the atmosphere shifts instantly. You walk through a low-lit corridor where the floor subtly vibrates with the beat leaking from within — not loud, but felt in your chest. Then the space opens. The main hall is enormous yet intimate, wrapped in dark mirrored surfaces that reflect moving neon waves instead of plain light. The ceiling behaves like a living equalizer — panels pulse in sync with the music, reacting to every kick drum and hi-hat. The DJ booth floats in the center like an altar, surrounded by a circular dance floor so nobody stands behind the energy — everyone is inside it. The sound system is unreal. Not just loud — precise. Every layer of hip hop comes through: sub-bass you feel in your bones, crisp snares snapping around the room, vocals hovering almost physically in the air. You don’t hear tracks here… you inhabit them. The most iconic feature is the bar. Shaped like a gigantic pair of studio headphones, it wraps around the dance floor in a glowing arc. The “ear cups” serve as cocktail stations, while the “headband” forms a sleek glass counter lit from within by liquid-looking light. Bartenders move with choreographed speed, mixing drinks that arrive smoking, sparkling, or color-shifting depending on the beat currently playing. Upstairs lounges overlook the floor through smoked glass balconies. Velvet seating, soft blue ambient glow, and tables that subtly vibrate with bass allow you to rest without ever leaving the music. Even conversations feel cinematic — nobody shouts, because the acoustics somehow keep voices clear while the music stays powerful. By 2am, the place transforms completely. Strangers dance like friends. The DJ reads the room like a mind. The lights, the sound, the architecture — everything syncs into one continuous experience. People don’t say they went to a club. They say they went to the KKKlub.",
+            images: ["./images/sketches/kkklub2.png"],
+            children: []
+          },
+          {
+            title: "The Bag",
+            description: "This is the bag, where models and only fans artists go to work in offices and studios, it is located next to the Saddle.",
+            images: ["/images/sketches/bag2.png"],
+            children: []
+          },
+          {
+            title: "Atlas",
+            description: "Atlas is a hospital, wellness center and medical research center based in the south of San Marino and Italy.",
+            images: ["/images/office.png"],
+            children: []
+          },
+           {
+            title: "Vapovere",
+            description: "The Aethelgard Shell Port is a marvel of bio-mimetic architecture, featuring a spiraling structure that mimics the natural geometry of a conch shell to efficiently manage vertical space. The facility utilizes a tiered system where passenger services like check-in and duty-free are located at the base, while aircraft are stored in the central decks and transported via internal ramps to the summit for takeoff. This vertical design allows for a significantly smaller land footprint while providing a seamless, multi-level flow for both futuristic aircraft and high-speed ground transport.",
+            images: ["/images/vapovere1.png"],
+            children: []
+          }
+        ]
+      },
+
+      // ---------- INDUSTRIAL ----------
+      {
+        title: "Industrial",
+        description: "Production and technical facilities",
+        images: ["/images/sketch/industrial.png"],
+        children: [
+          {
+            title: "The Underdog",
+            description: "The Underdog is a storage facility and underground nuclear fusion energy plant.",
+            images: ["./images/sketches/underdog1.png"],
+            children: []
+          },
+          {
+            title: "The Hour Glass",
+            description: "The Hour Glass is an office and clothing manufacturing facility. ",
+            images: ["/images/sketches/hourglass.png"],
+            children: []
+          },
+          {
+            title: "The Lottery Flower Tower",
+            description: "The Lottery flower tower is a research and clothing manufacturing facility . This is where evangellions are made.",
+            images: ["/images/sketches/tlft.png"],
+            children: []
+          },
+          {
+            title: "The ReRe Manufacturing Park",
+            description: "The ReRe manufacturing plant is for large output manufacturing of electronic products.",
+            images: ["/images/sketches/rere.png"],
+            children: []
+          },
+          {
+            title: "The Prince Russell",
+            description: "The Prince Russell is a water treatement facility.",
+            images: ["/images/sketches/princerussell.png"],
+            children: []
+          },
+          {
+            title: "SOIF NANTE",
+            description: "This is a design for a nuclear fusion plant. Although I will be doing fusion in the underdog I also have this SOIF NANTE idea which is more of a pun about how nuclear fusion works. It is most likely safer to build fusion plants underground what this building will become is yet to be determined.",
+            images: ["/images/sketches/soifnante.png"],
+            children: []
+          },
+
+        ]
+      },
+      {
+        title: "Gemini Conjecture",
+        description: "This is what Gemini conjectured from information about buildings it is not correct, but it is a good inference. ",
+        images: ["./images/sketches/gemini.png"],
+        children:[
+          {
+          title: "Page 1",
+          description: "First Page",
+          images: ["./images/sketches/GC1.jpg"],
+          children:[]
+          },
+          {
+          title: "Page 2",
+          description: "Second Page",
+          images: ["./images/sketches/GC2.jpg"],
+          children:[]
+          }
+        ],
+      },
+      {
+        title: "Evangellions",
+        description: "The Evangellions are advanced robotics designed with knowledge, methodology and production techniques estimated to be 2 million years ahead of todays technology. They use LL an advanced state of matter that is between solid and light (which is not a photon trapped in a crystal). They serve all purposes, are programmed implicitly with loyalty to me and have an intelligence level that is vastly superior to all people, while maintinaing a non-violent moral code and having deadly weaponary as well as non lethal options. Each top model alone is capable of eliminating an entire western military and 8 basic units can defeat the united states military.  ",
+        images: ["./images/sketches/evangellion2.png"],
+        children:[
+          {
+          title: "The Lion",
+          description: "This is the lion faced chashmalim evangellion designed for war, guarding and battles.",
+          images: ["./images/sketches/evangellion2.png"],
+          children:[]
+          },
+          {
+          title: "The Malachim",
+          description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
+          images: ["./images/sketches/evangellion1.png"],
+          children:[]
+          },
+          {
+          title: "The Ben e Elohim",
+          description: "These are the sons of the mighty. They have a face of an ox and are architects, builders and craftsmen.",
+          images: ["./images/sketches/evangellion3.png"],
+          children:[]
+          },
+          {
+          title: "Cheruvim",
+          description: "These are the Cheruvim and they are associated with knowledge and protection.",
+          images: ["./images/sketches/evangellion4.png"],
+          children:[]
+          },
+          {
+            title: "The Hierachy of the Angels",
+            description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
+            images: ["./images/evangellionchart1.png"],
+            children:[]
+          }
+        ],
+      }
+
+    ]
+    
+  },
+  {
+    title: "Routes",
+    description: "Transport routes, entrepreneurship routes, running routes",
+    images: ["./images/sanmarinokingdom/train2.png"],
+    children: [
+     {
+    title: "Boeing",
+    description: "Bezalel, son of Uri and grandson of Hur of the tribe of Judah and Oholiab, son of Ahisamach, of the tribe of Dan and Elijah the Tishbite from Tishbe of the tribe of Mannasseh (Gilead: East of the Jordan River).",
+    images: ["./images/sanmarinokingdom/boeing.png"],
+    children: []
+      },
+      {
+      title: "San Marino Public Transport",
+      description: "San Marino’s public transport is primarily centered around a dedicated bus network and its iconic aerial cable car, the Funivia. Eight domestic bus routes connect the capital to major towns like Borgo Maggiore and Serravalle, while a frequent international coach service links the Republic to the nearby Italian city of Rimini. The Funivia di San Marino offers a scenic two-minute journey between the lower markets of Borgo Maggiore and the historic mountain-top center, carrying over half a million passengers annually. While there is currently no active railway, a small section of the historic Rimini–San Marino line was restored in 2012 as a heritage attraction for tourists. For those arriving from further abroad, the state relies on shuttle connections to Italy’s Federico Fellini International Airport and the Rimini railway station.",
+      images: ["./images/sanmarinokingdom/cablecar.jpg"],
+      children: [
+        {
+          title: "San Marino Train Proposal Route",
+          description:"This concept outlines a modern railway network for San Marino, designed to link major population, commercial, and tourism hubs across the republic. It would revive the idea of rail connectivity in a territory that historically had an electric railway — the narrow-gauge Rimini–San Marino railway, which ran from Rimini, Italy, into San Marino from 1932 until its destruction in World War II. That line was a remarkable engineering achievement of its time, featuring numerous tunnels, bridges, and direct current electric traction — and today parts of it survive as heritage tracks and walking paths. In the proposed network, there are two western termini: one at Acquaviva and another at Chiesanuova, anchoring the system in the republic’s more rural west. The south-western line would run eastward through Fiorentino and over the mountainous terrain around Montegiardino, then onto Faetano. From there it curves inward toward Valdragone before descending into Borgo Maggiore, where this branch links with the north-western spine of the system. The north-western line proceeds from Borgo Maggiore through the historic Città di San Marino — perched atop Monte Titano — and continues northeast to Domagnano, twists through Monte Lupo, before running on to Serravalle and the bustling border town of Dogana, finally terminating at Falciano. Together, these two arms would knit the entire republic together, providing seamless passenger service between residential districts, cultural landmarks, and key commercial centres such as the Atlanta Mall and the Falciano Shopping Center. The connection would be transformative for both residents and tourists, offering an alternative to the existing bus and road transport networks that dominate in San Marino today — particularly given that there is currently no active public railway serving the country beyond a short heritage section. By drawing on San Marino’s rich railway heritage while introducing a forward-looking transport artery, this plan not only improves mobility but also taps into the country’s identity as one of the world’s oldest republics — blending cultural resonance with modern infrastructure planning.",
+          images: ["/images/sanmarinokingdom/smtrain.png"],
+          children:[]
+        },
+        {
+          title: "San Marino Train AI generated map.",
+          description:"This is an AI generated San Marino Map",
+          images: ["/images/sanmarinokingdom/rightideawrongmap.png"],
+          children: []
+        }
+
+      ]
+      }
+      ]
+
+
+  }
+];
+
   const [openSecond, setOpenSecond] = useState(null);
   const [openFourth, setOpenFourth] = useState(null);
   const [openMetric, setOpenMetric] = useState(null);
@@ -1936,8 +2142,21 @@ function BusinessPage() {
   const [activeCarousel, setActiveCarousel] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [nodeStack, setNodeStack] = useState([cosmology]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [rotation, setRotation] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
+  const currentNodes = nodeStack[nodeStack.length -1];
+  const activeNode = currentNodes[activeIndex];
+  const [lightbox, setLightbox] = useState(null);
+  const [carousel, setCarousel] = useState(null); 
+  const [activeSlide, setActiveSlide] = useState(null);
+  const [index, setIndex] = useState(0);
+  const [activeImage, setActiveImage] = useState(null);
+  const [zoomed, setZoomed] = useState(false);
+  const [openCards, setOpenCards] = useState({});
   
-  
+
 
   
 
@@ -1984,20 +2203,17 @@ these women will be 1952.
     {
       id: 0,
       title: "COS",
-      text:
-        "Chief of staff divided into 6 parts, women, communications, CEO's charity and publishing, legal and publishing, progress. The anagram is WCCCAPLAPP."
+      image: "/images/cos.png",
     },
     {
       id: 1,
       title: "ARCH",
-      text:
-        "Arch runs PISH which is how a company of this size can be efficiently run by one person. Presentations, Implementations, support and hiring."
+      image:"/images/arch.png",
     },
     {
       id: 2,
       title: "PST",
-      text:
-        "Also called Projects, PST is primary, secondary, tertiary and is run by female graduates from married working parents."
+      image:"",
     }
   ];
 
@@ -2260,235 +2476,12 @@ these women will be 1952.
   }
 ];
 
-const cosmology = [
-  {
-    title: "Buildings",
-    description: "Buildings used during the business phase with a future prospect of San Marino.",
-    images: ["./images/sketches/sanmarino.png"],
-    children: [
-
-      // ---------- RESIDENTIAL ----------
-      {
-        title: "Residential",
-        description: "Accommodation for employees and citizens",
-        images: ["./images/sketches/saddle6.jpg"],
-        children: [
-          {
-            title: "The Saddle",
-            description: "The Saddle serves as the home for models in San Marino. It has a capacity of 160, photostudios, gyms and other entertainment such as a miniature golf course, pools and indoor cinema and cabins that are suppoused to go on the roof.",
-            images: ["./images/sketches/saddle4.jpg"],
-            children: []
-          },
-          {
-            title: "The Sandwiches",
-            description: "Triangular housing units for the residents of San Marino. Each is to have a capacity of 300.",
-            images: ["./images/sketches/sandwiches.png"],
-            children: []
-          },
-          {
-            title: "The Crucifix",
-            description: "The Crucifix is the main building of the business. It is a home, a mass manufacturer and reseach center. The AI was unable to get the crucifix shape correct and the building is of a larger height and more European in architecture, but it does have Asian attributes in style. It is located on the site of the San Marino Stadium ",
-            images: ["./images/sketches/cross2.png"],
-            children: []
-          },
-          {
-            title: "The Buddha Wheel",
-            description: "The Buddha Wheel is a vehicle manufacturing and stroage building that is also employee housing. The Vehicles are produced in a circle using a technique I know for sure will work. The housing is in the outer circles and the storage is in the spokes. ",
-            images: ["./images/sketches/buddhawheel.png"],
-            children: []
-          }
-
-        ]
-      },
-
-      // ---------- COMMERCIAL ----------
-      {
-        title: "Commercial",
-        description: "Shops, services and public interaction buildings",
-        images: ["/images/sketch/commercial.png"],
-        children: [
-          {
-            title: "KKKlub",
-            description: "This is one of the clubs in San Marino. It is named the KKKlub. It is a fusion of the ideas of a children's day care center, a night club and Kim Kardashian. Rising from the quiet elegance of San Marino like a monument to sound itself, The KKKlub isn’t just a nightclub — it feels like stepping inside music. From the outside, the building already breaks reality: a massive sculptural structure resembling glossy black Kim K butt cheeks and thighs, glowing softly with electric cyan outlines of a hand and a foot — symbolizing rhythm and movement in black glass. People gather around it before even entering, because the place feels alive long before the first bass drop. Inside, the atmosphere shifts instantly. You walk through a low-lit corridor where the floor subtly vibrates with the beat leaking from within — not loud, but felt in your chest. Then the space opens. The main hall is enormous yet intimate, wrapped in dark mirrored surfaces that reflect moving neon waves instead of plain light. The ceiling behaves like a living equalizer — panels pulse in sync with the music, reacting to every kick drum and hi-hat. The DJ booth floats in the center like an altar, surrounded by a circular dance floor so nobody stands behind the energy — everyone is inside it. The sound system is unreal. Not just loud — precise. Every layer of hip hop comes through: sub-bass you feel in your bones, crisp snares snapping around the room, vocals hovering almost physically in the air. You don’t hear tracks here… you inhabit them. The most iconic feature is the bar. Shaped like a gigantic pair of studio headphones, it wraps around the dance floor in a glowing arc. The “ear cups” serve as cocktail stations, while the “headband” forms a sleek glass counter lit from within by liquid-looking light. Bartenders move with choreographed speed, mixing drinks that arrive smoking, sparkling, or color-shifting depending on the beat currently playing. Upstairs lounges overlook the floor through smoked glass balconies. Velvet seating, soft blue ambient glow, and tables that subtly vibrate with bass allow you to rest without ever leaving the music. Even conversations feel cinematic — nobody shouts, because the acoustics somehow keep voices clear while the music stays powerful. By 2am, the place transforms completely. Strangers dance like friends. The DJ reads the room like a mind. The lights, the sound, the architecture — everything syncs into one continuous experience. People don’t say they went to a club. They say they went to the KKKlub.",
-            images: ["./images/sketches/kkklub2.png"],
-            children: []
-          },
-          {
-            title: "The Bag",
-            description: "This is the bag, where models and only fans artists go to work in offices and studios, it is located next to the Saddle.",
-            images: ["/images/sketches/bag2.png"],
-            children: []
-          },
-          {
-            title: "Atlas",
-            description: "Atlas is a hospital, wellness center and medical research center based in the south of San Marino and Italy.",
-            images: ["/images/office.png"],
-            children: []
-          },
-           {
-            title: "Vapovere",
-            description: "The Aethelgard Shell Port is a marvel of bio-mimetic architecture, featuring a spiraling structure that mimics the natural geometry of a conch shell to efficiently manage vertical space. The facility utilizes a tiered system where passenger services like check-in and duty-free are located at the base, while aircraft are stored in the central decks and transported via internal ramps to the summit for takeoff. This vertical design allows for a significantly smaller land footprint while providing a seamless, multi-level flow for both futuristic aircraft and high-speed ground transport.",
-            images: ["/images/vapovere1.png"],
-            children: []
-          }
-        ]
-      },
-
-      // ---------- INDUSTRIAL ----------
-      {
-        title: "Industrial",
-        description: "Production and technical facilities",
-        images: ["/images/sketch/industrial.png"],
-        children: [
-          {
-            title: "The Underdog",
-            description: "The Underdog is a storage facility and underground nuclear fusion energy plant.",
-            images: ["./images/sketches/underdog1.png"],
-            children: []
-          },
-          {
-            title: "The Hour Glass",
-            description: "The Hour Glass is an office and clothing manufacturing facility. ",
-            images: ["/images/sketches/hourglass.png"],
-            children: []
-          },
-          {
-            title: "The Lottery Flower Tower",
-            description: "The Lottery flower tower is a research and clothing manufacturing facility . This is where evangellions are made.",
-            images: ["/images/sketches/tlft.png"],
-            children: []
-          },
-          {
-            title: "The ReRe Manufacturing Park",
-            description: "The ReRe manufacturing plant is for large output manufacturing of electronic products.",
-            images: ["/images/sketches/rere.png"],
-            children: []
-          },
-          {
-            title: "The Prince Russell",
-            description: "The Prince Russell is a water treatement facility.",
-            images: ["/images/sketches/princerussell.png"],
-            children: []
-          },
-          {
-            title: "SOIF NANTE",
-            description: "This is a design for a nuclear fusion plant. Although I will be doing fusion in the underdog I also have this SOIF NANTE idea which is more of a pun about how nuclear fusion works. It is most likely safer to build fusion plants underground what this building will become is yet to be determined.",
-            images: ["/images/sketches/soifnante.png"],
-            children: []
-          },
-
-        ]
-      },
-      {
-        title: "Gemini Conjecture",
-        description: "This is what Gemini conjectured from information about buildings it is not correct, but it is a good inference. ",
-        images: ["./images/sketches/gemini.png"],
-        children:[
-          {
-          title: "Page 1",
-          description: "First Page",
-          images: ["./images/sketches/GC1.jpg"],
-          children:[]
-          },
-          {
-          title: "Page 2",
-          description: "Second Page",
-          images: ["./images/sketches/GC2.jpg"],
-          children:[]
-          }
-        ],
-      },
-      {
-        title: "Evangellions",
-        description: "The Evangellions are advanced robotics designed with knowledge, methodology and production techniques estimated to be 2 million years ahead of todays technology. They use LL an advanced state of matter that is between solid and light (which is not a photon trapped in a crystal). They serve all purposes, are programmed implicitly with loyalty to me and have an intelligence level that is vastly superior to all people, while maintinaing a non-violent moral code and having deadly weaponary as well as non lethal options. Each top model alone is capable of eliminating an entire western military and 8 basic units can defeat the united states military.  ",
-        images: ["./images/sketches/evangellion2.png"],
-        children:[
-          {
-          title: "The Lion",
-          description: "This is the lion faced chashmalim evangellion designed for war, guarding and battles.",
-          images: ["./images/sketches/evangellion2.png"],
-          children:[]
-          },
-          {
-          title: "The Malachim",
-          description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
-          images: ["./images/sketches/evangellion1.png"],
-          children:[]
-          },
-          {
-          title: "The Ben e Elohim",
-          description: "These are the sons of the mighty. They have a face of an ox and are architects, builders and craftsmen.",
-          images: ["./images/sketches/evangellion3.png"],
-          children:[]
-          },
-          {
-          title: "Cheruvim",
-          description: "These are the Cheruvim and they are associated with knowledge and protection.",
-          images: ["./images/sketches/evangellion4.png"],
-          children:[]
-          },
-          {
-            title: "The Hierachy of the Angels",
-            description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
-            images: ["./images/evangellionchart1.png"],
-            children:[]
-          }
-        ],
-      }
-
-    ]
-    
-  },
-  {
-    title: "Routes",
-    description: "Transport routes, entrepreneurship routes, running routes",
-    images: ["./images/sanmarinokingdom/train2.png"],
-    children: [
-     {
-    title: "Boeing",
-    description: "Bezalel, son of Uri and grandson of Hur of the tribe of Judah and Oholiab, son of Ahisamach, of the tribe of Dan and Elijah the Tishbite from Tishbe of the tribe of Mannasseh (Gilead: East of the Jordan River).",
-    images: ["./images/sanmarinokingdom/boeing.png"],
-    children: []
-      },
-      {
-      title: "San Marino Public Transport",
-      description: "San Marino’s public transport is primarily centered around a dedicated bus network and its iconic aerial cable car, the Funivia. Eight domestic bus routes connect the capital to major towns like Borgo Maggiore and Serravalle, while a frequent international coach service links the Republic to the nearby Italian city of Rimini. The Funivia di San Marino offers a scenic two-minute journey between the lower markets of Borgo Maggiore and the historic mountain-top center, carrying over half a million passengers annually. While there is currently no active railway, a small section of the historic Rimini–San Marino line was restored in 2012 as a heritage attraction for tourists. For those arriving from further abroad, the state relies on shuttle connections to Italy’s Federico Fellini International Airport and the Rimini railway station.",
-      images: ["./images/sanmarinokingdom/cablecar.jpg"],
-      children: [
-        {
-          title: "San Marino Train Proposal Route",
-          description:"This concept outlines a modern railway network for San Marino, designed to link major population, commercial, and tourism hubs across the republic. It would revive the idea of rail connectivity in a territory that historically had an electric railway — the narrow-gauge Rimini–San Marino railway, which ran from Rimini, Italy, into San Marino from 1932 until its destruction in World War II. That line was a remarkable engineering achievement of its time, featuring numerous tunnels, bridges, and direct current electric traction — and today parts of it survive as heritage tracks and walking paths. In the proposed network, there are two western termini: one at Acquaviva and another at Chiesanuova, anchoring the system in the republic’s more rural west. The south-western line would run eastward through Fiorentino and over the mountainous terrain around Montegiardino, then onto Faetano. From there it curves inward toward Valdragone before descending into Borgo Maggiore, where this branch links with the north-western spine of the system. The north-western line proceeds from Borgo Maggiore through the historic Città di San Marino — perched atop Monte Titano — and continues northeast to Domagnano, twists through Monte Lupo, before running on to Serravalle and the bustling border town of Dogana, finally terminating at Falciano. Together, these two arms would knit the entire republic together, providing seamless passenger service between residential districts, cultural landmarks, and key commercial centres such as the Atlanta Mall and the Falciano Shopping Center. The connection would be transformative for both residents and tourists, offering an alternative to the existing bus and road transport networks that dominate in San Marino today — particularly given that there is currently no active public railway serving the country beyond a short heritage section. By drawing on San Marino’s rich railway heritage while introducing a forward-looking transport artery, this plan not only improves mobility but also taps into the country’s identity as one of the world’s oldest republics — blending cultural resonance with modern infrastructure planning.",
-          images: ["/images/sanmarinokingdom/smtrain.png"],
-          children:[]
-        },
-        {
-          title: "San Marino Train AI generated map.",
-          description:"This is an AI generated San Marino Map",
-          images: ["/images/sanmarinokingdom/rightideawrongmap.png"],
-          children: []
-        }
-
-      ]
-      }
-      ]
 
 
-  }
-];
 
+  
 
-  const [nodeStack, setNodeStack] = useState([cosmology]);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [rotation, setRotation] = useState(0);
-  const [imageIndex, setImageIndex] = useState(0);
-  const currentNodes = nodeStack[nodeStack.length -1];
-  const activeNode = currentNodes[activeIndex];
-  const [lightbox, setLightbox] = useState(null);
-  const [carousel, setCarousel] = useState(null); 
-  const [activeSlide, setActiveSlide] = useState(null);
-  const [index, setIndex] = useState(0);
-  const [activeImage, setActiveImage] = useState(null);
-  const [zoomed, setZoomed] = useState(false);
+  
 
 
     useEffect(() => {
@@ -2597,29 +2590,102 @@ useEffect(() => {
       >
         {/* ===== Top accordion row (3) ===== */}
         <div
+  style={{
+    gridArea: "accordion",
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "0.5em"
+  }}
+>
+  {metric5.map((m) => (
+    <div
+      key={m.id}
+      style={{
+        ...styles.card,
+        position: "relative",
+        padding: "1em",
+        textAlign: "center"
+      }}
+    >
+      {/* Title */}
+      <h4 style={{ margin: 0 }}>{m.title}</h4>
+
+      {/* Plus Button */}
+      <button
+        onClick={() =>
+          setOpenCards((prev) => ({
+            ...prev,
+            [m.id]: !prev[m.id]
+          }))
+        }
+        style={{
+          position: "absolute",
+          top: "8px",
+          right: "8px",
+          width: "26px",
+          height: "26px",
+          borderRadius: "50%",
+          border: "none",
+          background: "#222",
+          color: "#fff",
+          fontSize: "18px",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
+        +
+      </button>
+
+      {/* Revealed Image */}
+      {openCards[m.id] && (
+        <img
+          src={m.image}
+          alt=""
+          onClick={() => setActiveImage(m.image)}
           style={{
-            gridArea: "accordion",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 0.5fr)",
-            gap: "0.25em"
+            marginTop: "12px",
+            width: "100%",
+            borderRadius: "6px",
+            cursor: "pointer",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.2)"
           }}
-        >
-          {metric5.map((m, i) => (
-            <div
-              key={m.id}
-              onClick={() => setOpenTop(openTop === i ? null : i)}
-              style={{
-                ...styles.card,
-                cursor: "pointer",
-                padding: "0.5em",
-                background: openTop === i ? "#eef6ff" : undefined
-              }}
-            >
-              <h4>{m.title}</h4>
-              {openTop === i && <p>{m.text}</p>}
-            </div>
-          ))}
+        />
+      )}
+    </div>
+  ))}
         </div>
+
+{/* Centered Image Modal */}
+{activeImage && (
+  <div
+    onClick={() => setActiveImage(null)}
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100vw",
+      height: "100vh",
+      background: "rgba(0,0,0,0.85)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 1000
+    }}
+  >
+    <img
+      src={activeImage}
+      alt=""
+      style={{
+        maxWidth: "90vw",
+        maxHeight: "90vh",
+        borderRadius: "8px",
+        boxShadow: "0 20px 60px rgba(0,0,0,0.6)"
+      }}
+    />
+  </div>
+)}
 
         {/* ===== Second row accordion (2) ===== */}
         <div
