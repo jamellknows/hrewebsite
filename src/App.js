@@ -2706,43 +2706,6 @@ function BusinessPage() {
           }
         ],
       },
-      {
-        title: "Evangellions",
-        description: "The Evangellions are advanced robotics designed with knowledge, methodology and production techniques estimated to be 2 million years ahead of todays technology. They use LL an advanced state of matter that is between solid and light (which is not a photon trapped in a crystal). They serve all purposes, are programmed implicitly with loyalty to me and have an intelligence level that is vastly superior to all people, while maintinaing a non-violent moral code and having deadly weaponary as well as non lethal options. Each top model alone is capable of eliminating an entire western military and 8 basic units can defeat the united states military.  ",
-        images: ["./images/sketches/evangellion2.png"],
-        children:[
-          {
-          title: "The Lion",
-          description: "This is the lion faced chashmalim evangellion designed for war, guarding and battles.",
-          images: ["./images/sketches/evangellion2.png"],
-          children:[]
-          },
-          {
-          title: "The Malachim",
-          description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
-          images: ["./images/sketches/evangellion1.png"],
-          children:[]
-          },
-          {
-          title: "The Ben e Elohim",
-          description: "These are the sons of the mighty. They have a face of an ox and are architects, builders and craftsmen.",
-          images: ["./images/sketches/evangellion3.png"],
-          children:[]
-          },
-          {
-          title: "Cheruvim",
-          description: "These are the Cheruvim and they are associated with knowledge and protection.",
-          images: ["./images/sketches/evangellion4.png"],
-          children:[]
-          },
-          {
-            title: "The Hierachy of the Angels",
-            description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
-            images: ["./images/evangellionchart1.png"],
-            children:[]
-          }
-        ],
-      }
 
     ]
     
@@ -2793,6 +2756,43 @@ function BusinessPage() {
     description:"Comprehensive breakdown of the three economic zones",
     images:[""],
     children:[]
+  },
+  {
+        title: "Evangellions",
+        description: "The Evangellions are advanced robotics designed with knowledge, methodology and production techniques estimated to be 2 million years ahead of todays technology. They use LL an advanced state of matter that is between solid and light (which is not a photon trapped in a crystal). They serve all purposes, are programmed implicitly with loyalty to me and have an intelligence level that is vastly superior to all people, while maintinaing a non-violent moral code and having deadly weaponary as well as non lethal options. Each top model alone is capable of eliminating an entire western military and 8 basic units can defeat the united states military.  ",
+        images: ["./images/sketches/evangellion2.png"],
+        children:[
+          {
+          title: "The Lion",
+          description: "This is the lion faced chashmalim evangellion designed for war, guarding and battles.",
+          images: ["./images/sketches/evangellion2.png"],
+          children:[]
+          },
+          {
+          title: "The Malachim",
+          description: "This is a messenger malachim or erelim evangellion. All messengers have their face covered.",
+          images: ["./images/sketches/evangellion1.png"],
+          children:[]
+          },
+          {
+          title: "The Ben e Elohim",
+          description: "These are the sons of the mighty. They have a face of an ox and are architects, builders and craftsmen.",
+          images: ["./images/sketches/evangellion3.png"],
+          children:[]
+          },
+          {
+          title: "Cheruvim",
+          description: "These are the Cheruvim and they are associated with knowledge and protection.",
+          images: ["./images/sketches/evangellion4.png"],
+          children:[]
+          },
+          {
+            title: "The Hierachy of the Angels",
+            description:"The hierarchy is abbrieviated as SAM72. 10 Sefirot, 6 Archangels, 10 Maimonides and then the 72 Shem Ha Mephorash for a total of 98 types of angels. Although only the 72 Shem Ha Mephorash and the 10 Maimonides are mass produced.",
+            images: ["./images/evangellionchart1.png"],
+            children:[]
+          }
+        ]
   }
 ];
 
