@@ -7115,9 +7115,15 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
         },
         {
           title: "World Wide Vacations",
-          text: "Travel historically has been a disruptor, that is why people will remain within their FEST unless they are acolytes which permits worldwide travel along the route. The rules for travel regarding members of the RACH government is LAID can travel anywhere within their PANIC, leave their BALL and DISCO once a year.  ",
-          image: "/images/schedule2.jpg"
+          text: "Travel historically has been a disruptor, that is why people will remain within their SHUB unless they are acolytes which permits worldwide travel along the route. The rules for travel regarding members of the RACH government is LAID can travel anywhere within their PANIC and can leave their BALL and DISCO once a year. There will be new oasis resorts for vacations built within the Sahara Desert.  ",
+          image: "/images/automation/oasis.png"
+        },
+        {
+          title: "Sea Routes",
+          text:"Sea Routes are the sea sisters of the routes on land used by the land acolytes. Sea Villages are constructed in complete cycles that are connected via long roads and water passageways. Sea acolytes therefore must drive the seavee an automated kharvee+boat hybrid to traverse over land and sea.",
+          image:"/images/automation/searoutes.png"
         }
+
       ]
     }, 
     {
