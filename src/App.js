@@ -2409,7 +2409,6 @@ function BusinessPage() {
   const [openMetric, setOpenMetric] = useState(null);
   const [taoOpen, setTaoOpen] = useState(false);
   const [openTao, setOpenTao] = useState(false);
-  const [slideIndex, setSlideIndex] = useState(0);
   const [activeCarousel, setActiveCarousel] = useState(null);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
