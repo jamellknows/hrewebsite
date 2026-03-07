@@ -1563,6 +1563,258 @@ cursor:"pointer"
 
 );
 }
+
+function JapaneseKanaCards() {
+
+const kana = [
+{h:"あ",k:"ア",r:"a",v:1},
+{h:"い",k:"イ",r:"i",v:2},
+{h:"う",k:"ウ",r:"u",v:3},
+{h:"え",k:"エ",r:"e",v:4},
+{h:"お",k:"オ",r:"o",v:5},
+
+{h:"か",k:"カ",r:"ka",v:6},
+{h:"き",k:"キ",r:"ki",v:7},
+{h:"く",k:"ク",r:"ku",v:8},
+{h:"け",k:"ケ",r:"ke",v:9},
+{h:"こ",k:"コ",r:"ko",v:10},
+
+{h:"さ",k:"サ",r:"sa",v:11},
+{h:"し",k:"シ",r:"shi",v:12},
+{h:"す",k:"ス",r:"su",v:13},
+{h:"せ",k:"セ",r:"se",v:14},
+{h:"そ",k:"ソ",r:"so",v:15},
+
+{h:"た",k:"タ",r:"ta",v:16},
+{h:"ち",k:"チ",r:"chi",v:17},
+{h:"つ",k:"ツ",r:"tsu",v:18},
+{h:"て",k:"テ",r:"te",v:19},
+{h:"と",k:"ト",r:"to",v:20},
+
+{h:"な",k:"ナ",r:"na",v:21},
+{h:"に",k:"ニ",r:"ni",v:22},
+{h:"ぬ",k:"ヌ",r:"nu",v:23},
+{h:"ね",k:"ネ",r:"ne",v:24},
+{h:"の",k:"ノ",r:"no",v:25},
+
+{h:"は",k:"ハ",r:"ha",v:26},
+{h:"ひ",k:"ヒ",r:"hi",v:27},
+{h:"ふ",k:"フ",r:"fu",v:28},
+{h:"へ",k:"ヘ",r:"he",v:29},
+{h:"ほ",k:"ホ",r:"ho",v:30},
+
+{h:"ま",k:"マ",r:"ma",v:31},
+{h:"み",k:"ミ",r:"mi",v:32},
+{h:"む",k:"ム",r:"mu",v:33},
+{h:"め",k:"メ",r:"me",v:34},
+{h:"も",k:"モ",r:"mo",v:35},
+
+{h:"や",k:"ヤ",r:"ya",v:36},
+{h:"ゆ",k:"ユ",r:"yu",v:37},
+{h:"よ",k:"ヨ",r:"yo",v:38},
+
+{h:"ら",k:"ラ",r:"ra",v:39},
+{h:"り",k:"リ",r:"ri",v:40},
+{h:"る",k:"ル",r:"ru",v:41},
+{h:"れ",k:"レ",r:"re",v:42},
+{h:"ろ",k:"ロ",r:"ro",v:43},
+
+{h:"わ",k:"ワ",r:"wa",v:44},
+{h:"を",k:"ヲ",r:"wo",v:45},
+{h:"ん",k:"ン",r:"n",v:46}
+];
+
+const [flipped,setFlipped] = useState({});
+const [input,setInput] = useState("");
+
+const valueMap = {};
+kana.forEach(k=>{
+valueMap[k.h] = k.v;
+valueMap[k.k] = k.v;
+});
+
+const total = input.split("").reduce((sum,c)=>{
+return sum + (valueMap[c] || 0);
+},0);
+
+function toggleCard(i){
+setFlipped(prev=>({...prev,[i]:!prev[i]}));
+}
+
+function addKana(c){
+setInput(prev=>prev + c);
+}
+
+return(
+
+<div style={{maxWidth:"1000px",margin:"auto",fontFamily:"sans-serif"}}>
+
+<h2 style={{textAlign:"center"}}>Japanese Kana Explorer</h2>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(110px,1fr))",
+gap:"16px"
+}}
+>
+
+{kana.map((k,i)=>{
+
+const isFlipped = flipped[i];
+
+return(
+
+<div key={i} onClick={()=>toggleCard(i)} style={{perspective:"900px",cursor:"pointer"}}>
+
+<div
+style={{
+height:"120px",
+position:"relative",
+transformStyle:"preserve-3d",
+transition:"transform .6s",
+transform:isFlipped ? "rotateY(180deg)" : "rotateY(0)"
+}}
+>
+
+{/* FRONT */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+background:"#111",
+color:"#fff",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+fontSize:"30px"
+}}
+>
+
+<div>{k.h}</div>
+<div style={{fontSize:"14px"}}>{k.v}</div>
+
+</div>
+
+{/* BACK */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+transform:"rotateY(180deg)",
+background:"#f3f4f6",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center"
+}}
+>
+
+<div style={{fontSize:"28px"}}>{k.k}</div>
+<div style={{fontSize:"14px"}}>{k.r}</div>
+
+</div>
+
+</div>
+
+</div>
+
+)
+
+})}
+
+</div>
+
+{/* CALCULATOR */}
+
+<div style={{marginTop:"40px",textAlign:"center"}}>
+
+<h3>Kana Calculator</h3>
+
+<input
+value={input}
+onChange={(e)=>setInput(e.target.value)}
+placeholder="Type kana or use keyboard"
+style={{
+padding:"10px",
+fontSize:"20px",
+width:"320px",
+borderRadius:"8px",
+border:"1px solid #ccc"
+}}
+/>
+
+<div style={{marginTop:"10px",fontSize:"24px"}}>
+Total: <strong>{total}</strong>
+</div>
+
+<button
+onClick={()=>setInput("")}
+style={{
+marginTop:"10px",
+padding:"8px 18px",
+borderRadius:"8px",
+border:"none",
+background:"#111",
+color:"#fff",
+cursor:"pointer"
+}}
+>
+Clear
+</button>
+
+</div>
+
+{/* KEYBOARD */}
+
+<div style={{marginTop:"40px"}}>
+
+<h3 style={{textAlign:"center"}}>Kana Keyboard</h3>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(60px,1fr))",
+gap:"10px",
+maxWidth:"500px",
+margin:"auto"
+}}
+>
+
+{kana.map((k,i)=>(
+<button
+key={i}
+onClick={()=>addKana(k.h)}
+style={{
+padding:"10px",
+fontSize:"20px",
+borderRadius:"8px",
+border:"1px solid #ddd",
+background:"#fafafa",
+cursor:"pointer"
+}}
+>
+{k.h}
+</button>
+))}
+
+</div>
+
+</div>
+
+</div>
+
+);
+}
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -5234,6 +5486,7 @@ const arrowStyle = (side) => ({
 <ArmenianAlphabet/>
 
 <EnglishLetterCardsCalculator/>
+<JapaneseKanaCards/>
 
     </AnimatedPage>
   );
