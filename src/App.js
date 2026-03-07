@@ -2469,13 +2469,7 @@ these women will be 1952.
 
 
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [slides.length]);
+ 
 
   const metric5 = [
     {
