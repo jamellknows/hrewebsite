@@ -7128,6 +7128,11 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           text: "The Rack Capital comprises 40 CLTs, equivalent to 10 FESTs or 3 SHUBs plus 1 FEST. Candidate locations for its establishment include Australia and the region surrounding Mount Arat, with the Mount Arat site encompassing from the two lakes to its south all the way to Donetsk, Rostov-on-Don, and Volgograd. Complementing the capital, 40 Sea Villages will be constructed in the Black Sea, designed with a layout reminiscent of the shape of Australia.",
           image: "/images/religious/map.png"
         },
+         {
+          title: "ARAT",
+          text: "This is a hypothetical AI generated image of the capital at Arat that I thought looked interesting enough to include. The person on a motorbike would be an exile and I would not have exiles so close to the capital, but it is interesting that Gemini remembers previous images I have asked it to make.",
+          image: "/images/automation/arat.png"
+        },
         {
           title: "Mobility",
           text: "Circulation sustains structure.",
