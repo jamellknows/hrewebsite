@@ -473,6 +473,201 @@ const linearLetterValues = {
   ת: 22
 };
 
+const arabicLetters = [
+  { letter: "ا", value: 1, pronunciation: "Alif" },
+  { letter: "ب", value: 2, pronunciation: "Ba" },
+  { letter: "ج", value: 3, pronunciation: "Jim" },
+  { letter: "د", value: 4, pronunciation: "Dal" },
+  { letter: "ه", value: 5, pronunciation: "Ha" },
+  { letter: "و", value: 6, pronunciation: "Waw" },
+  { letter: "ز", value: 7, pronunciation: "Zay" },
+  { letter: "ح", value: 8, pronunciation: "Ha (deep)" },
+  { letter: "ط", value: 9, pronunciation: "Ta (emphatic)" },
+  { letter: "ي", value: 10, pronunciation: "Ya" },
+  { letter: "ى", value: 10, pronunciation: "Alif Maqṣūra" },
+  { letter: "ك", value: 20, pronunciation: "Kaf" },
+  { letter: "ل", value: 30, pronunciation: "Lam" },
+  { letter: "م", value: 40, pronunciation: "Mim" },
+  { letter: "ن", value: 50, pronunciation: "Nun" },
+  { letter: "س", value: 60, pronunciation: "Sin" },
+  { letter: "ع", value: 70, pronunciation: "Ain" },
+  { letter: "ف", value: 80, pronunciation: "Fa" },
+  { letter: "ص", value: 90, pronunciation: "Sad" },
+  { letter: "ق", value: 100, pronunciation: "Qaf" },
+  { letter: "ر", value: 200, pronunciation: "Ra" },
+  { letter: "ش", value: 300, pronunciation: "Shin" },
+  { letter: "ت", value: 400, pronunciation: "Ta" },
+  { letter: "ة", value: 400, pronunciation: "Ta Marbūṭa" },
+  { letter: "ث", value: 500, pronunciation: "Tha" },
+  { letter: "خ", value: 600, pronunciation: "Kha" },
+  { letter: "ذ", value: 700, pronunciation: "Dhal" },
+  { letter: "ض", value: 800, pronunciation: "Dad" },
+  { letter: "ظ", value: 900, pronunciation: "Za" },
+  { letter: "غ", value: 1000, pronunciation: "Ghain" },
+  { letter: "ء", value: 1, pronunciation: "Hamza" },
+];
+
+// Abjad lookup object
+const abjadValues = arabicLetters.reduce((acc, l) => {
+  acc[l.letter] = l.value;
+  return acc;
+}, {});
+ 
+function ArabicAbjad() {
+  const [flipped, setFlipped] = useState({});
+  const [inputWord, setInputWord] = useState("");
+  const [wordSum, setWordSum] = useState(0);
+
+  const toggleFlip = (letter) => {
+    setFlipped((prev) => ({ ...prev, [letter]: !prev[letter] }));
+  };
+
+  const calculateWord = () => {
+    const sum = inputWord
+      .split("")
+      .reduce((acc, char) => acc + (abjadValues[char] || 0), 0);
+    setWordSum(sum);
+  };
+
+  return (
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+      <h2>Arabic Abjad Letters</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
+          gap: "15px",
+        }}
+      >
+        {arabicLetters.map((l) => (
+          <div
+            key={l.letter}
+            onClick={() => toggleFlip(l.letter)}
+            style={{
+              perspective: "600px",
+              cursor: "pointer",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "80px",
+                height: "100px",
+                transition: "transform 0.6s",
+                transformStyle: "preserve-3d",
+                transform: flipped[l.letter] ? "rotateY(180deg)" : "rotateY(0deg)",
+              }}
+            >
+              {/* Front */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "#f5f5f5",
+                  borderRadius: "8px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: "32px",
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+                  backfaceVisibility: "hidden",
+                }}
+              >
+                {l.letter}
+              </div>
+              {/* Back */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "#333",
+                  color: "#fff",
+                  borderRadius: "8px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  fontSize: "14px",
+                  padding: "5px",
+                  boxShadow: "0 5px 15px rgba(0,0,0,0.5)",
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                  textAlign: "center",
+                }}
+              >
+                <div>Value: {l.value}</div>
+                <div style={{ marginTop: "5px" }}>{l.pronunciation}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Word Calculator */}
+      <div
+  style={{
+    marginTop: "50px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "'Cairo', sans-serif", // elegant Arabic-friendly font
+    fontSize: "20px",
+    color: "#222",
+  }}
+>
+  <h3 style={{ fontSize: "32px", marginBottom: "20px", color: "#c41e3a" }}>
+    Arabic Word Calculator
+  </h3>
+  <div style={{ display: "flex", gap: "15px" }}>
+    <input
+      type="text"
+      value={inputWord}
+      onChange={(e) => setInputWord(e.target.value)}
+      placeholder="Enter Arabic word"
+      style={{
+        padding: "12px 16px",
+        fontSize: "22px",
+        borderRadius: "8px",
+        border: "2px solid #c41e3a",
+        textAlign: "center",
+        outline: "none",
+        width: "250px",
+      }}
+    />
+    <button
+      onClick={calculateWord}
+      style={{
+        padding: "12px 24px",
+        fontSize: "22px",
+        cursor: "pointer",
+        background: "#c41e3a",
+        color: "#fff",
+        border: "none",
+        borderRadius: "8px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "scale(1.05)";
+        e.currentTarget.style.boxShadow = "0 6px 16px rgba(0,0,0,0.4)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "scale(1)";
+        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
+      }}
+    >
+      Calculate
+    </button>
+  </div>
+  <div style={{ marginTop: "20px", fontSize: "28px", color: "#222" }}>
+    Sum: {wordSum}
+  </div>
+</div>
+    </div>
+  );
+}
+
 
 
 function calculateHebrewLetterValue(word) {
@@ -4592,6 +4787,7 @@ const arrowStyle = (side) => ({
   )}
 </div>
 <HindiGematriaCalculator/>
+<ArabicAbjad/>
 
 
 
