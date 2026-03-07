@@ -2213,7 +2213,7 @@ these women will be 1952.
     {
       id: 2,
       title: "PST",
-      image:"",
+      image:"/images/projects.png",
     }
   ];
 
