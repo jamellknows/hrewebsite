@@ -4010,84 +4010,68 @@ useEffect(() => {
   </div>
 )}
 
-<div style={{gridColumn:"1 / -1", marginTop:"90px"}}>
+<div style={{ gridColumn: "1 / -1", marginTop: "90px" }}>
 
   {/* BACK BUTTON */}
   {nodeStack.length > 1 && (
     <button
-  onClick={() => {
-    setNodeStack(s => s.slice(0, -1));
-    setActiveIndex(0);
-  }}
-  style={{
-    marginBottom: "0.8em",
-    padding: "10px 22px",
-    borderRadius: "14px",
-    border: "1px solid rgba(255,255,255,0.2)",
-    background: "linear-gradient(135deg, #1f2937, #111827)",
-    color: "#fff",
-    fontWeight: "600",
-    letterSpacing: "0.5px",
-    backdropFilter: "blur(8px)",
-    cursor: "pointer",
-    transition: "all 0.25s ease",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.35)",
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.boxShadow = "0 0 18px rgba(99,102,241,0.8)";
-    e.currentTarget.style.transform = "translateY(-2px)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.boxShadow = "0 8px 20px rgba(0,0,0,0.35)";
-    e.currentTarget.style.transform = "translateY(0px)";
-  }}
-  onMouseDown={(e) => {
-    e.currentTarget.style.transform = "scale(0.96)";
-  }}
-  onMouseUp={(e) => {
-    e.currentTarget.style.transform = "translateY(-2px)";
-  }}
->
-  ← Back Level
-</button>
-
+      onClick={() => {
+        setNodeStack(s => s.slice(0, -1));
+        setActiveIndex(0);
+      }}
+      style={{
+        marginBottom: "0.8em",
+        padding: "10px 22px",
+        borderRadius: "14px",
+        border: "1px solid rgba(255,255,255,0.2)",
+        background: "linear-gradient(135deg, #1f2937, #111827)",
+        color: "#fff",
+        fontWeight: "600",
+        letterSpacing: "0.5px",
+        backdropFilter: "blur(8px)",
+        cursor: "pointer",
+        transition: "all 0.25s ease",
+        boxShadow: "0 8px 20px rgba(0,0,0,0.35)"
+      }}
+    >
+      ← Back Level
+    </button>
   )}
 
   <div
     style={{
-      position:"relative",
-      width:"520px",
-      height:"520px",
-      margin:"auto",
-      transform:`rotate(${rotation}deg)`,
-      transition:"transform .8s cubic-bezier(.22,1,.36,1)"
+      position: "relative",
+      width: "520px",
+      height: "520px",
+      margin: "auto",
+      transform: `rotate(${rotation}deg)`,
+      transition: "transform .8s cubic-bezier(.22,1,.36,1)"
     }}
   >
 
     {/* CENTER */}
     <div
       style={{
-        position:"absolute",
-        top:"50%",
-        left:"50%",
-        transform:"translate(-50%,-50%)",
-        width:"180px",
-        height:"180px",
-        borderRadius:"50%",
-        background:"#0f172a",
-        color:"#fff",
-        display:"flex",
-        flexDirection:"column",
-        justifyContent:"center",
-        alignItems:"center",
-        textAlign:"center",
-        padding:"18px",
-        zIndex:10
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: `translate(-50%,-50%) rotate(${-rotation}deg)`,
+        width: "180px",
+        height: "180px",
+        borderRadius: "50%",
+        background: "#0f172a",
+        color: "#fff",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        padding: "18px",
+        zIndex: 10
       }}
     >
-      <h3>{activeNode.title}</h3>
 
-      {/* IMAGE SLIDER */}
+      {/* IMAGE */}
       {activeNode.images?.length > 0 && (
         <img
           src={activeNode.images[imageIndex]}
@@ -4101,62 +4085,66 @@ useEffect(() => {
               images: activeNode.images
             })
           }
-
           style={{
-            width: "120px",
+            width: "110px",
             height: "80px",
             objectFit: "cover",
             borderRadius: "10px",
-            marginTop: "8px",
-            cursor: "pointer"
+            cursor: "pointer",
+            marginBottom: "8px"
           }}
         />
       )}
 
+      {/* TITLE UNDER IMAGE */}
+      <h3 style={{ fontSize: "15px", fontWeight: 600 }}>
+        {activeNode.title}
+      </h3>
+
+    </div>
 
     {/* ORBITING NODES */}
-    {currentNodes.map((node,i)=>{
-      const angle = (i/currentNodes.length)*360;
+    {currentNodes.map((node, i) => {
+      const angle = (i / currentNodes.length) * 360;
       const radius = 230;
 
       return (
         <div
           key={i}
-          onClick={()=>{
+          onClick={() => {
             setActiveIndex(i);
             setRotation(-angle);
 
-            if(node.children?.length){
-              setTimeout(()=>{
-                setNodeStack(s=>[...s,node.children]);
+            if (node.children?.length) {
+              setTimeout(() => {
+                setNodeStack(s => [...s, node.children]);
                 setActiveIndex(0);
-              },500);
+              }, 500);
             }
           }}
           style={{
-            position:"absolute",
-            top:"50%",
-            left:"50%",
-            transform:`
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: `
               rotate(${angle}deg)
               translate(${radius}px)
               rotate(${-angle}deg)
             `,
-            padding:"12px 18px",
-            borderRadius:"14px",
-            background:i===activeIndex?"#111":"#e5e7eb",
-            color:i===activeIndex?"#fff":"#000",
-            cursor:"pointer",
-            fontWeight:600
+            padding: "12px 18px",
+            borderRadius: "14px",
+            background: i === activeIndex ? "#111" : "#e5e7eb",
+            color: i === activeIndex ? "#fff" : "#000",
+            cursor: "pointer",
+            fontWeight: 600
           }}
         >
           {node.title}
         </div>
-      )
+      );
     })}
 
   </div>
-</div>
 </div>
 
 {/* LIGHTBOX MODAL */}
