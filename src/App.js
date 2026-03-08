@@ -4141,7 +4141,7 @@ these women will be 1952.
   ];
 
   const metric9 = [
-    { id: 0, title: "Global Investment Bank: Hagoldson Heritage.", text: "The global investment bank owns 51% of the companies of the 5." },
+    { id: 0, title: "Global Investment Bank: Roman Anglo Colombian Heritage.", text: "The global investment bank owns 51% of the companies of the 5." },
     { id: 1, title: "National Retail Bank: Livre Euro D'Argent Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
   ];
 
