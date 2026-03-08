@@ -5859,7 +5859,7 @@ useEffect(() => {
 
   const hubSection = {
   id: "hub",
-  name: "Town:Alber",
+  name: "Town",
   icon: "🏛️",
   image: "/images/town5.png",
   text: "This is an AI generated image of what an Alber could look like."
@@ -5882,7 +5882,7 @@ useEffect(() => {
       id: 0,
       title: "Foundation",
       image: "./images/sv7.jpg",
-      text: "The base of the system provides housing, agriculture, logistics, and population stability across all villages."
+      text: "There are 9,900 Sea Villages, each constructed as a pair of two heterogeneous pyramids. Within each pair, the leading pyramid is designated HI, while the following pyramid is designated AGO. HI represents the sectors of Hybrid Manufacturing and Integrated Manufacturing, reflecting advanced industrial production and engineering systems. AGO represents Aquaponics, Grinding, and Orthography, symbolizing sustainable food production, precision manufacturing, and the development of written systems and communication. Each Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-contained community that integrates industry, agriculture, and cultural development."
     },
     {
       id: 1,
@@ -6797,7 +6797,7 @@ const CarouselContent = ({ large = false }) => (
     {/* PYRAMID SECTION */}
     {/* =============================== */}
 
-  <div
+<div
   style={{
     marginTop: "80px",
     display: "flex",
@@ -6806,22 +6806,21 @@ const CarouselContent = ({ large = false }) => (
     perspective: "1500px",
   }}
 >
-  <h2 style={styles.sectionTitle}>Sea Village:Interactive Pyramid</h2>
+  <h2 style={styles.sectionTitle}>Sea Village: Interactive Pyramid</h2>
 
   <div
     style={{
       width: "90%",
       maxWidth: "600px",
       display: "flex",
-      flexDirection: "column-reverse", // bottom tier first
+      flexDirection: "column-reverse",
       gap: "12px",
     }}
   >
     {pyramidSections.map((tier, idx) => {
       const isOpen = openPyramid === tier.id;
 
-      // Bottom tier widest, top tier narrowest
-      const width = 85 + (12- 12*idx); // adjust these numbers for steeper/shallower pyramid
+      const width = 85 + (12 - 12 * idx);
 
       return (
         <div
@@ -6869,7 +6868,7 @@ const CarouselContent = ({ large = false }) => (
           {/* EXPANDABLE CONTENT */}
           <div
             style={{
-              maxHeight: isOpen ? "400px" : "0px",
+              maxHeight: isOpen ? "420px" : "0px",
               overflow: "hidden",
               transition: "max-height 0.45s ease, padding 0.35s ease",
               paddingTop: isOpen ? "12px" : "0px",
@@ -6888,7 +6887,7 @@ const CarouselContent = ({ large = false }) => (
                   gap: "12px",
                 }}
               >
-                {/* IMAGE INSIDE TIER */}
+                {/* IMAGE */}
                 <div
                   style={{
                     width: "100%",
@@ -6900,13 +6899,28 @@ const CarouselContent = ({ large = false }) => (
                     borderRadius: "12px",
                     boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
                   }}
-                  alt={tier.title}
                 />
 
-                {/* TEXT INSIDE TIER */}
-                <p style={{ fontSize: "15px", lineHeight: 1.6, textAlign: "center" }}>
-                  {tier.text}
-                </p>
+                {/* SCROLLABLE TEXT AREA */}
+                <div
+                  style={{
+                    maxHeight: "120px",
+                    overflowY: "auto",
+                    paddingRight: "6px",
+                    width: "100%",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                      margin: 0,
+                    }}
+                  >
+                    {tier.text}
+                  </p>
+                </div>
               </div>
             )}
           </div>
