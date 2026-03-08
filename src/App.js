@@ -8303,14 +8303,16 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
       "Estate = 45 Saddles",
       "Neighbourhood = 270 Saddles",
       "Town = 1620 Saddles",
-      "1 Saddle = 17 people"
+      "1 Saddle = 17 people",
+      "Pu = 4 women + 13 children",
+      "Blo = 5 women + 12 children"
 
     ] 
   },
   {
     id: 2, 
     title: "Relic Cities", 
-    text: " ",
+    text: "Relic Cities are religiously significant cities that have been preserved and integrated into the ultra-modern era. They are governed by the **Relic of the Rabat**, a specialised branch of the **RACH** responsible for safeguarding the historical and spiritual heritage of these locations while elevating the surrounding regions to the standards of ultra-modern development. Within each Relic City reside priests and religious practitioners associated with the faith for which the city holds significance. These individuals live as ordinary citizens while observing the religious laws and practices of their tradition in full. Their presence ensures the continuity of the city’s spiritual character while allowing it to function within the wider civic structure. Relic Cities are supported by surrounding administrative and production districts, including their own **Polis, Palatinate, Arche, and Emirate**, which operate in the areas around the preserved city. These surrounding districts provide the economic, administrative, and logistical infrastructure necessary to sustain the Relic City while maintaining its protected status. The protected boundary of a Relic City extends only to buildings of direct religious importance. Any other structures located within this zone are removed and replaced with ultra-modern architecture that complements the preserved heritage sites. The **Rabat** is responsible for coordinating this process, ensuring that the historical fabric of the city is carefully restored and maintained in a pristine condition while harmonising it with the surrounding modern environment. Residents of Relic Cities are known as **Kleros**. They may also become citizens of the **PPEA** in the surrounding districts if they choose to participate more directly in the broader civic system. In addition, inhabitants of Relic Cities are permitted to visit other holy cities within the **RACH**, although such travel requires prior authorisation.",
     bg: "/images/fest-governance.jpg",    
     image: "/images/fest-diagram.jpg",
     bulletPoints:""
