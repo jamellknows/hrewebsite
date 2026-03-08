@@ -853,8 +853,6 @@ function ArabicAbjad() {
   );
 }
 
-
-
 function calculateHebrewLetterValue(word) {
   let total = 0;
   for (const char of word) {
@@ -4143,8 +4141,8 @@ these women will be 1952.
   ];
 
   const metric9 = [
-    { id: 0, title: "Global Investment Bank", text: "The global investment bank owns 51% of the companies of the 5." },
-    { id: 1, title: "National Retail Bank", text: "The national retail bank owns 51% of the companies on the side of the 4." }
+    { id: 0, title: "Global Investment Bank: Hagoldson Heritage.", text: "The global investment bank owns 51% of the companies of the 5." },
+    { id: 1, title: "National Retail Bank: Livre Euro D'Argent Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
   ];
 
   const metric10 = [
@@ -4816,7 +4814,43 @@ useEffect(() => {
   />
 )}
 
+<div
+  style={{
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    padding: "40px 20px",
+    fontFamily: "Inter, Helvetica, Arial, sans-serif"
+  }}
+>
+  <h2
+    style={{
+      margin: 0,
+      fontSize: "2.2rem",
+      fontWeight: 600,
+      letterSpacing: "0.04em",
+      color: "#111",
+    }}
+  >
+    Areas of Business
+  </h2>
 
+  <p
+    style={{
+      marginTop: "10px",
+      fontSize: "1rem",
+      fontWeight: 400,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "#777"
+    }}
+  >
+    Macroscopic & Microscopic
+  </p>
+</div>
   <div
     style={{
       display: "grid",
@@ -6105,7 +6139,7 @@ useEffect(() => {
       id: 4,
       title: "Judgement",
       image: "./images/sv3.png",
-      text: "Testing cycles evaluate citizens and redistribute the civilians every five years. Families that have a female family member as a lady of the gal enjoy special privileges in employment.  "
+      text: "Admission to the Sea Villages is determined through an evaluative framework known as the CAPE Criteria (CC). This framework serves as a guiding standard for assessing eligibility for entry into the Sea Village communities. The CAPE criteria consider four primary categories: Celebrities, Africans, Politicians, and English. These categories represent individuals who possess cultural influence, continental connection, governance experience, or linguistic compatibility with the operational language of the settlements. While the CAPE criteria play a significant role in the evaluation process, they are not absolute requirements. Exceptions may be granted in certain circumstances where applicants demonstrate exceptional merit, contribution, or alignment with the values and objectives of the Sea Villages. Nevertheless, these parameters remain important factors that weigh heavily in the overall judgment for admission "
     }
   ];
 
