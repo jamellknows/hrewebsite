@@ -157,6 +157,8 @@ const letterValues = {
   ת: 400
 };
 
+
+
 const greekLetterValues = {
   α: 1,
   β: 2,
@@ -1306,32 +1308,7 @@ textAlign:"center"
 
 function CyrillicAlphabetExplorer(){
 
-const letters = [
-{upper:"А",lower:"а",value:1,sound:"a"},
-{upper:"Б",lower:"б",value:2,sound:"b"},
-{upper:"В",lower:"в",value:3,sound:"v"},
-{upper:"Г",lower:"г",value:4,sound:"g"},
-{upper:"Д",lower:"д",value:5,sound:"d"},
-{upper:"Е",lower:"е",value:6,sound:"ye"},
-{upper:"Ж",lower:"ж",value:7,sound:"zh"},
-{upper:"З",lower:"з",value:8,sound:"z"},
-{upper:"И",lower:"и",value:9,sound:"i"},
 
-{upper:"К",lower:"к",value:20,sound:"k"},
-{upper:"Л",lower:"л",value:30,sound:"l"},
-{upper:"М",lower:"м",value:40,sound:"m"},
-{upper:"Н",lower:"н",value:50,sound:"n"},
-{upper:"О",lower:"о",value:70,sound:"o"},
-{upper:"П",lower:"п",value:80,sound:"p"},
-
-{upper:"Р",lower:"р",value:100,sound:"r"},
-{upper:"С",lower:"с",value:200,sound:"s"},
-{upper:"Т",lower:"т",value:300,sound:"t"},
-{upper:"У",lower:"у",value:400,sound:"u"},
-{upper:"Ф",lower:"ф",value:500,sound:"f"},
-{upper:"Х",lower:"х",value:600,sound:"kh"},
-{upper:"Ц",lower:"ц",value:900,sound:"ts"}
-];
 
 const groups = {
 "1–9": letters.filter(l=>l.value < 10),
@@ -1554,6 +1531,285 @@ cursor:"pointer"
 ))}
 
 </div>
+
+</div>
+
+</div>
+
+);
+}
+
+const letters = [
+{upper:"А",lower:"а",value:1,sound:"a"},
+{upper:"Б",lower:"б",value:2,sound:"b"},
+{upper:"В",lower:"в",value:14,sound:"v"},
+{upper:"Г",lower:"г",value:10,sound:"g"},
+{upper:"Д",lower:"д",value:4,sound:"d"},
+{upper:"Е",lower:"е",value:20,sound:"ye"},
+{upper:"Ё",lower:"ё",value:31,sound:"yo"},
+{upper:"Ж",lower:"ж",value:26,sound:"zh"},
+{upper:"З",lower:"з",value:23,sound:"z"},
+{upper:"И",lower:"и",value:30,sound:"i"},
+{upper:"Й",lower:"й",value:13,sound:"y"},
+{upper:"К",lower:"к",value:33,sound:"k"},
+{upper:"Л",lower:"л",value:9,sound:"l"},
+{upper:"М",lower:"м",value:6,sound:"m"},
+{upper:"Н",lower:"н",value:11,sound:"n"},
+{upper:"О",lower:"о",value:16,sound:"o"},
+{upper:"П",lower:"п",value:8,sound:"p"},
+{upper:"Р",lower:"р",value:18,sound:"r"},
+{upper:"С",lower:"с",value:7,sound:"s"},
+{upper:"Т",lower:"т",value:12,sound:"t"},
+{upper:"У",lower:"у",value:17,sound:"u"},
+{upper:"Ф",lower:"ф",value:15,sound:"f"},
+{upper:"Х",lower:"х",value:28,sound:"kh"},
+{upper:"Ц",lower:"ц",value:3,sound:"ts"},
+{upper:"Ч",lower:"ч",value:32,sound:"ch"},
+{upper:"Ш",lower:"ш",value:22,sound:"sh"},
+{upper:"Щ",lower:"щ",value:29,sound:"shch"},
+{upper:"Ъ",lower:"ъ",value:27,sound:"hard sign"},
+{upper:"Ы",lower:"ы",value:13,sound:"y"},
+{upper:"Ь",lower:"ь",value:27,sound:"soft sign"},
+{upper:"Э",lower:"э",value:5,sound:"e"},
+{upper:"Ю",lower:"ю",value:24,sound:"yu"},
+{upper:"Я",lower:"я",value:25,sound:"ya"}
+];
+
+function RussianAlphabetCalculator(){
+
+const [flipped,setFlipped] = useState({});
+const [text,setText] = useState("");
+
+const toggleFlip = (i)=>{
+setFlipped(prev=>({...prev,[i]:!prev[i]}));
+};
+
+const addLetter=(l)=>{
+setText(t=>t+l);
+};
+
+const calculateValue=()=>{
+let sum=0;
+
+for(let char of text){
+
+const match = letters.find(
+l=>l.upper===char || l.lower===char
+);
+
+if(match) sum+=match.value;
+
+}
+
+return sum;
+};
+
+return(
+
+<div style={{
+maxWidth:"1200px",
+margin:"auto",
+fontFamily:"sans-serif",
+color:"white"
+}}>
+
+<h1 style={{
+textAlign:"center",
+fontSize:"42px",
+letterSpacing:"4px",
+marginBottom:"40px",
+color: "black"
+}}>
+The Russian Jamatria
+</h1>
+
+{/* CARD GRID */}
+
+<div style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(120px,1fr))",
+gap:"18px",
+marginBottom:"60px"
+}}>
+
+{letters.map((l,i)=>{
+
+const isFlip=flipped[i];
+
+return(
+
+<div
+key={i}
+onClick={()=>toggleFlip(i)}
+style={{
+height:"140px",
+perspective:"800px",
+cursor:"pointer"
+}}
+>
+
+<div style={{
+position:"relative",
+width:"100%",
+height:"100%",
+transformStyle:"preserve-3d",
+transition:"transform 0.6s",
+transform:isFlip?"rotateY(180deg)":"rotateY(0deg)"
+}}>
+
+{/* FRONT */}
+
+<div style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+borderRadius:"16px",
+background:"linear-gradient(145deg,#111,#222)",
+boxShadow:"0 10px 25px rgba(0,0,0,0.6)",
+fontSize:"34px"
+}}>
+
+<div>{l.upper}</div>
+
+<div style={{
+fontSize:"14px",
+opacity:0.7,
+marginTop:"6px"
+}}>
+{l.sound}
+</div>
+
+</div>
+
+{/* BACK */}
+
+<div style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+transform:"rotateY(180deg)",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+borderRadius:"16px",
+background:"linear-gradient(145deg,#000,#333)",
+boxShadow:"0 10px 25px rgba(0,0,0,0.8)"
+}}>
+
+<div style={{fontSize:"32px"}}>
+{l.lower}
+</div>
+
+<div style={{
+marginTop:"8px",
+fontSize:"18px"
+}}>
+{l.value}
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
+})}
+
+</div>
+
+{/* CALCULATOR */}
+
+<div style={{
+background:"#111",
+padding:"40px",
+borderRadius:"20px",
+boxShadow:"0 20px 60px rgba(0,0,0,0.7)"
+}}>
+
+<h2 style={{textAlign:"center"}}>
+Letter Value Calculator
+</h2>
+
+<input
+value={text}
+onChange={e=>setText(e.target.value)}
+placeholder="Type Russian letters..."
+style={{
+width:"100%",
+padding:"14px",
+fontSize:"20px",
+marginTop:"20px",
+borderRadius:"10px",
+border:"none",
+outline:"none",
+background:"#222",
+color:"white"
+}}
+/>
+
+<div style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fit,minmax(50px,1fr))",
+gap:"10px",
+marginTop:"20px"
+}}>
+
+{letters.map((l,i)=>(
+
+<button
+key={i}
+onClick={()=>addLetter(l.lower)}
+style={{
+padding:"12px",
+fontSize:"18px",
+borderRadius:"8px",
+border:"none",
+background:"#333",
+color:"white",
+cursor:"pointer"
+}}
+>
+{l.upper}
+</button>
+
+))}
+
+</div>
+
+<div style={{
+marginTop:"30px",
+fontSize:"26px",
+textAlign:"center"
+}}>
+Total Value: {calculateValue()}
+</div>
+
+<button
+onClick={()=>setText("")}
+style={{
+marginTop:"20px",
+padding:"10px 20px",
+display:"block",
+marginLeft:"auto",
+marginRight:"auto",
+borderRadius:"10px",
+border:"none",
+background:"#555",
+color:"white",
+cursor:"pointer"
+}}
+>
+Clear
+</button>
 
 </div>
 
@@ -5847,6 +6103,7 @@ const arrowStyle = (side) => ({
 <GreekDiphthongCards/>
 <GreekLetterCalculator/>
 <CyrillicAlphabetExplorer/>
+<RussianAlphabetCalculator/>
 {/* Hindi Alphabet Expandable Section */}
 <div style={{ marginTop: "90px" }}>
   <div
