@@ -5882,13 +5882,13 @@ useEffect(() => {
       id: 0,
       title: "Foundation",
       image: "./images/sv7.jpg",
-      text: "There are 9,900 Sea Villages, each constructed as a pair of two heterogeneous pyramids. Within each pair, the leading pyramid is designated HI, while the following pyramid is designated AGO. HI represents the sectors of Hybrid Manufacturing and Integrated Manufacturing, reflecting advanced industrial production and engineering systems. AGO represents Aquaponics, Grinding, and Orthography, symbolizing sustainable food production, precision manufacturing, and the development of written systems and communication. Each Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-contained community that integrates industry, agriculture, and cultural development."
+      text: "There are 9,900 Sea Villages, each constructed as a pair of two heterogeneous pyramids.  Each Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-contained community that integrates industry, agriculture, and cultural development. The organisational structure of the Sea Villages is 2->5->5->22->9."
     },
     {
       id: 1,
       title: "Production",
       image: "./images/sv2.png",
-      text: "Production is to flow through the sea village chain where it is delivered to the land via 2 end points. Sea Villages are self sufficient and only rely on the land for materials for production."
+      text: "Within each pair, the leading pyramid is designated HI, while the following pyramid is designated AGO. HI represents the sectors of Hybrid Manufacturing and Integrated Manufacturing, reflecting advanced industrial production and engineering systems. AGO represents Aquaponics, Grinding, and Orthography, symbolizing sustainable food production, precision manufacturing, and the development of written systems and communication."
     },
     {
       id: 2,
