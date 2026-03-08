@@ -5847,6 +5847,8 @@ function WorldRule1Page() {
   const [flippedCard, setFlippedCard] = useState(null);
   const [expandedImage, setExpandedImage] = useState(null);
   const [expandedText, setExpandedText] = useState(null);
+  const [activeImage, setActiveImage] = useState(null);
+
 
 useEffect(() => {
   const handleEsc = (e) => {
@@ -6819,7 +6821,6 @@ const CarouselContent = ({ large = false }) => (
   >
     {pyramidSections.map((tier, idx) => {
       const isOpen = openPyramid === tier.id;
-
       const width = 85 + (12 - 12 * idx);
 
       return (
@@ -6848,8 +6849,6 @@ const CarouselContent = ({ large = false }) => (
               border: "1px solid #e5e7eb",
               transform: isOpen ? "scale(1.03)" : "scale(1)",
               transition: "all 0.35s ease",
-              position: "relative",
-              zIndex: idx,
             }}
           >
             <h4
@@ -6887,8 +6886,12 @@ const CarouselContent = ({ large = false }) => (
                   gap: "12px",
                 }}
               >
-                {/* IMAGE */}
+                {/* CLICKABLE IMAGE */}
                 <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveImage(tier.image);
+                  }}
                   style={{
                     width: "100%",
                     height: "160px",
@@ -6898,10 +6901,11 @@ const CarouselContent = ({ large = false }) => (
                     backgroundPosition: "center",
                     borderRadius: "12px",
                     boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
+                    cursor: "zoom-in",
                   }}
                 />
 
-                {/* SCROLLABLE TEXT AREA */}
+                {/* SCROLLABLE TEXT */}
                 <div
                   style={{
                     maxHeight: "120px",
@@ -6928,6 +6932,34 @@ const CarouselContent = ({ large = false }) => (
       );
     })}
   </div>
+
+  {/* IMAGE MODAL */}
+  {activeImage && (
+    <div
+      onClick={() => setActiveImage(null)}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.85)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+        cursor: "zoom-out",
+      }}
+    >
+      <img
+        src={activeImage}
+        alt=""
+        style={{
+          maxWidth: "90%",
+          maxHeight: "90%",
+          borderRadius: "14px",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+        }}
+      />
+    </div>
+  )}
 </div>
 
   <h2 style={{ ...styles.sectionTitle, marginTop: "3rem", textAlign: "center" }}>
