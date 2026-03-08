@@ -1308,7 +1308,37 @@ textAlign:"center"
 
 function CyrillicAlphabetExplorer(){
 
+  const letters = [
+{upper:"А",lower:"а",value:1,sound:"a"},
+{upper:"В",lower:"в",value:2,sound:"v"},
+{upper:"Г",lower:"г",value:3,sound:"g"},
+{upper:"Д",lower:"д",value:4,sound:"d"},
+{upper:"Є",lower:"є",value:5,sound:"ye"},
+{upper:"Ѕ",lower:"ѕ",value:6,sound:"dz"},
+{upper:"З",lower:"з",value:7,sound:"z"},
+{upper:"И",lower:"и",value:8,sound:"i"},
+{upper:"Ѳ",lower:"ѳ",value:9,sound:"f/th"},
 
+{upper:"І",lower:"і",value:10,sound:"i"},
+{upper:"К",lower:"к",value:20,sound:"k"},
+{upper:"Л",lower:"л",value:30,sound:"l"},
+{upper:"М",lower:"м",value:40,sound:"m"},
+{upper:"Н",lower:"н",value:50,sound:"n"},
+{upper:"Ѯ",lower:"ѯ",value:60,sound:"ks"},
+{upper:"О",lower:"о",value:70,sound:"o"},
+{upper:"П",lower:"п",value:80,sound:"p"},
+{upper:"Ч",lower:"ч",value:90,sound:"ch"},
+
+{upper:"Р",lower:"р",value:100,sound:"r"},
+{upper:"С",lower:"с",value:200,sound:"s"},
+{upper:"Т",lower:"т",value:300,sound:"t"},
+{upper:"У",lower:"у",value:400,sound:"u"},
+{upper:"Ф",lower:"ф",value:500,sound:"f"},
+{upper:"Х",lower:"х",value:600,sound:"kh"},
+{upper:"Ѱ",lower:"ѱ",value:700,sound:"ps"},
+{upper:"Ѿ",lower:"ѿ",value:800,sound:"ot"},
+{upper:"Ц",lower:"ц",value:900,sound:"ts"}
+];
 
 const groups = {
 "1–9": letters.filter(l=>l.value < 10),
@@ -1539,7 +1569,11 @@ cursor:"pointer"
 );
 }
 
-const letters = [
+
+
+function RussianAlphabetCalculator(){
+
+  const letters = [
 {upper:"А",lower:"а",value:1,sound:"a"},
 {upper:"Б",lower:"б",value:2,sound:"b"},
 {upper:"В",lower:"в",value:14,sound:"v"},
@@ -1574,8 +1608,6 @@ const letters = [
 {upper:"Ю",lower:"ю",value:24,sound:"yu"},
 {upper:"Я",lower:"я",value:25,sound:"ya"}
 ];
-
-function RussianAlphabetCalculator(){
 
 const [flipped,setFlipped] = useState({});
 const [text,setText] = useState("");
