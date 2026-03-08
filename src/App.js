@@ -5583,7 +5583,7 @@ const arrowStyle = (side) => ({
             35: "Balance Extended [Transition and change]",
             36: "Hidden Light [Hidden righteousness of sustainers]",
             37: "Expansion [Spiritual insight and divine wisdom]",
-            38: "Spiritual Influence [Livlihood and sustenance]",
+            38: "Spiritual Influence [Livelihood and sustenance]",
             39: "Refinement [Preservation and guarding against evil]",
             40: "Transformation [Trial, testing and transformation]",
             41: "New Cycle [Renewal and new beginings]",
