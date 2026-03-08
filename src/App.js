@@ -6086,7 +6086,7 @@ useEffect(() => {
     {
       id: 1,
       title: "Production",
-      image: "./images/sv2.png",
+      image: "./images/automation/pyramid2.png",
       text: "Within each pair of pyramids, the leading structure is designated HI, while the following structure is designated AGO. Each pyramid serves a distinct functional role within the Sea Village’s economic and cultural system. The HI Pyramid represents the sectors of Hybrid Manufacturing and Integrated Manufacturing. It functions as the industrial and engineering center of the Sea Village, supporting advanced production systems, technological development, and complex fabrication processes. The AGO Pyramid represents Aquaponics, Grinding, and Orthography. This pyramid supports sustainable food production through aquaponic systems, precision material processing, and the development and preservation of written systems, knowledge, and communication. Complementing these pyramids are the Seaporium Lighthouses, which guide the maritime networks connecting the Sea Villages. In addition to their navigational role, these structures house additional aquaponic facilities, supporting ocean-based agriculture and environmental monitoring."
     },
     {
