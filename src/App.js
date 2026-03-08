@@ -1815,6 +1815,298 @@ cursor:"pointer"
 
 );
 }
+
+function KangxiRadicalExplorer(){
+
+const radicals = [
+{r:"一",strokes:1,pinyin:"yī",freq:1},
+{r:"丨",strokes:1,pinyin:"gǔn",freq:90},
+{r:"丶",strokes:1,pinyin:"zhǔ",freq:120},
+{r:"丿",strokes:1,pinyin:"piě",freq:80},
+{r:"乙",strokes:1,pinyin:"yǐ",freq:70},
+
+{r:"人",strokes:2,pinyin:"rén",freq:5},
+{r:"亻",strokes:2,pinyin:"rén (variant)",freq:4},
+{r:"口",strokes:3,pinyin:"kǒu",freq:3},
+{r:"女",strokes:3,pinyin:"nǚ",freq:10},
+{r:"子",strokes:3,pinyin:"zǐ",freq:40},
+
+{r:"心",strokes:4,pinyin:"xīn",freq:7},
+{r:"忄",strokes:3,pinyin:"xīn (variant)",freq:6},
+{r:"手",strokes:4,pinyin:"shǒu",freq:9},
+{r:"扌",strokes:3,pinyin:"shǒu (variant)",freq:8},
+{r:"水",strokes:4,pinyin:"shuǐ",freq:12},
+
+{r:"氵",strokes:3,pinyin:"shuǐ (variant)",freq:2},
+{r:"火",strokes:4,pinyin:"huǒ",freq:11},
+{r:"灬",strokes:4,pinyin:"huǒ (variant)",freq:15},
+{r:"木",strokes:4,pinyin:"mù",freq:14},
+{r:"土",strokes:3,pinyin:"tǔ",freq:16},
+
+{r:"日",strokes:4,pinyin:"rì",freq:18},
+{r:"月",strokes:4,pinyin:"yuè",freq:20},
+{r:"山",strokes:3,pinyin:"shān",freq:30},
+{r:"石",strokes:5,pinyin:"shí",freq:35},
+{r:"田",strokes:5,pinyin:"tián",freq:33},
+
+{r:"禾",strokes:5,pinyin:"hé",freq:50},
+{r:"竹",strokes:6,pinyin:"zhú",freq:60},
+{r:"糸",strokes:6,pinyin:"mì",freq:45},
+{r:"纟",strokes:3,pinyin:"mì (variant)",freq:44},
+{r:"言",strokes:7,pinyin:"yán",freq:13},
+{r:"讠",strokes:2,pinyin:"yán (variant)",freq:17}
+];
+
+const [flipped,setFlipped] = useState({});
+const [input,setInput] = useState("");
+
+const radicalMap = {};
+radicals.forEach(r=>{
+radicalMap[r.r] = r.strokes;
+});
+
+const total = input.split("").reduce((sum,c)=>{
+return sum + (radicalMap[c] || 0);
+},0);
+const freqMap = {};
+radicals.forEach(r=>{
+freqMap[r.r] = r.freq;
+});
+
+const frequencyTotal = input.split("").reduce((sum,c)=>{
+return sum + (freqMap[c] || 0);
+},0);
+
+const radicalCount = input.split("").filter(c=>freqMap[c]).length;
+
+const averageFrequency =
+radicalCount ? (frequencyTotal / radicalCount).toFixed(2) : 0;
+
+function toggleCard(i){
+setFlipped(prev=>({...prev,[i]:!prev[i]}));
+}
+
+function addRadical(r){
+setInput(prev=>prev + r);
+}
+
+return(
+
+<div style={{maxWidth:"1000px",margin:"auto",fontFamily:"sans-serif"}}>
+
+<h2 style={{textAlign:"center"}}>Kangxi Radical Explorer</h2>
+
+{/* RADICAL CARDS */}
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(110px,1fr))",
+gap:"16px"
+}}
+>
+
+{radicals.map((rad,i)=>{
+
+const isFlipped = flipped[i];
+
+return(
+
+<div
+key={i}
+onClick={()=>toggleCard(i)}
+style={{perspective:"900px",cursor:"pointer"}}
+>
+
+<div
+style={{
+height:"120px",
+position:"relative",
+transformStyle:"preserve-3d",
+transition:"transform .6s",
+transform:isFlipped ? "rotateY(180deg)" : "rotateY(0)"
+}}
+>
+
+{/* FRONT */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+background:"#111",
+color:"#fff",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center",
+fontSize:"32px"
+}}
+>
+
+<div>{rad.r}</div>
+<div style={{fontSize:"14px"}}>
+{rad.strokes} strokes
+</div>
+
+</div>
+
+{/* BACK */}
+
+<div
+style={{
+position:"absolute",
+width:"100%",
+height:"100%",
+backfaceVisibility:"hidden",
+transform:"rotateY(180deg)",
+background:"#f3f4f6",
+borderRadius:"12px",
+display:"flex",
+flexDirection:"column",
+alignItems:"center",
+justifyContent:"center"
+}}
+>
+
+<div style={{fontSize:"18px"}}>
+{rad.pinyin}
+</div>
+
+<div style={{fontSize:"14px"}}>
+freq rank: {rad.freq}
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+)
+
+})}
+
+</div>
+
+
+{/* CALCULATOR */}
+
+<div style={{marginTop:"40px",textAlign:"center"}}>
+
+<h3>Radical Stroke Calculator</h3>
+
+<input
+value={input}
+onChange={(e)=>setInput(e.target.value)}
+placeholder="Type radicals"
+style={{
+padding:"10px",
+fontSize:"20px",
+width:"320px",
+borderRadius:"8px",
+border:"1px solid #ccc"
+}}
+/>
+
+<div style={{marginTop:"10px",fontSize:"24px"}}>
+Total strokes: <strong>{total}</strong>
+</div>
+
+<button
+onClick={()=>setInput("")}
+style={{
+marginTop:"10px",
+padding:"8px 18px",
+borderRadius:"8px",
+border:"none",
+background:"#111",
+color:"#fff",
+cursor:"pointer"
+}}
+>
+Clear
+</button>
+
+</div>
+
+<div style={{marginTop:"30px",textAlign:"center"}}>
+
+<h3>Radical Frequency Calculator</h3>
+
+<div style={{fontSize:"20px",marginTop:"8px"}}>
+Frequency Total: <strong>{frequencyTotal}</strong>
+</div>
+
+<div style={{fontSize:"18px"}}>
+Average Frequency: <strong>{averageFrequency}</strong>
+</div>
+
+<div style={{marginTop:"12px"}}>
+
+{input.split("").map((char,i)=>{
+
+const rad = radicals.find(r=>r.r === char);
+
+if(!rad) return null;
+
+return(
+<div key={i} style={{fontSize:"16px"}}>
+{rad.r} → freq rank {rad.freq}
+</div>
+);
+
+})}
+
+</div>
+
+</div>
+
+
+{/* RADICAL KEYBOARD */}
+
+<div style={{marginTop:"40px"}}>
+
+<h3 style={{textAlign:"center"}}>Radical Keyboard</h3>
+
+<div
+style={{
+display:"grid",
+gridTemplateColumns:"repeat(auto-fill,minmax(60px,1fr))",
+gap:"10px",
+maxWidth:"500px",
+margin:"auto"
+}}
+>
+
+{radicals.map((rad,i)=>(
+<button
+key={i}
+onClick={()=>addRadical(rad.r)}
+style={{
+padding:"10px",
+fontSize:"20px",
+borderRadius:"8px",
+border:"1px solid #ddd",
+background:"#fafafa",
+cursor:"pointer"
+}}
+>
+{rad.r}
+</button>
+))}
+
+</div>
+
+</div>
+
+</div>
+
+);
+}
 function SanMarinoMap() {
   return (
     <div style={{ height: "600px", width: "100%", borderRadius: "20px", overflow: "hidden" }}>
@@ -5487,6 +5779,7 @@ const arrowStyle = (side) => ({
 
 <EnglishLetterCardsCalculator/>
 <JapaneseKanaCards/>
+<KangxiRadicalExplorer/>
 
     </AnimatedPage>
   );
