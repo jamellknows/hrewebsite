@@ -5881,7 +5881,7 @@ useEffect(() => {
     {
       id: 0,
       title: "Foundation",
-      image: "./images/sv7.jpg",
+      image: "./images/automation/pyramid1.png",
       text: "There are 9,900 Sea Villages, each constructed as a paired formation of two heterogeneous pyramids. Every Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-sustaining community that integrates industry, agriculture, and cultural development. The Sea Villages are interconnected by a network of long bridges and maritime sea lanes, which are guided and supported by Seaporium lighthouses that serve as navigation and coordination points across the ocean settlements. Internally, each Sea Village is organized using a honeycomb structural layout, maximizing spatial efficiency, resilience, and community connectivity. Their social and civic organization mirrors that of the land settlements, operating under a 14-tribe system that structures governance, culture, and economic activity within the village. This design allows the Sea Villages to function as interlinked oceanic cities, combining architectural innovation, maritime infrastructure, and social organization into a unified settlement network."
     },
     {
@@ -5894,13 +5894,13 @@ useEffect(() => {
       id: 2,
       title: "Culture",
       image: "./images/sv4.png",
-      text: "The culture of the Sea Villages is focused around the 14 tribe system which totals to 126 tribes with smaller tribes being grouped together and larger tribes being distributed equally among the villages and between. "
+      text: "The culture of the Sea Villages is focused around the 14 tribe system which totals to 126 tribes with smaller tribes being grouped together and larger tribes being distributed equally among the villages and between. There are also "
     },
     {
       id: 3,
       title: "Governance",
       image: "./images/sv1.png",
-      text: "The organisational structure of the Sea Villages is 2->5->5->22->9 up to the 9 Hierera representing the 9 waters that each cycle of villages is within. The 9 waters are the Baltic Sea, Black Sea, Hudson Bay, Mediterranean Sea, Caspian Sea, Sea of Ohotsk, Baffin Bay, Bering Sea and Kara Sea.   "
+      text: "The Sea Villages are integrated into the RACH under the authority of the Sanctuary of the Sea, which serves as the governing maritime institution overseeing the oceanic settlements. Their organisational structure follows a hierarchical progression of 2 → 5 → 5 → 22 → 9, culminating in the Nine Hierera of the Sanctuary of the Sea. This structure organizes the Sea Villages into successive administrative and functional layers, ensuring coordination, governance, and distribution of responsibilities across the network of settlements. At the highest level, the Nine Hierera correspond to the Nine Waters, the major maritime regions within which each cycle of Sea Villages is situated. These waters define the geographic and ecological domains of the Sanctuary’s authority. The Nine Waters are: The Baltic Sea. The Black Sea. Hudson Bay. The Mediterranean Sea. The Caspian Sea. The Sea of Okhotsk. Baffin Bay. The Bering Sea. The Kara Sea. Through this structure, the Sea Villages operate as a coordinated maritime network, linking oceanic communities across multiple regions while remaining unified under the governance of the Sanctuary of the Sea."
     },
     {
       id: 4,
