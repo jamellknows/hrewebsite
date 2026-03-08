@@ -2719,6 +2719,18 @@ function LanguagePage() {
     (currentIndex + 2) % languages.length
   ];
 
+   useEffect(() => {
+    if (!velocity) return;
+
+    const id = setInterval(() => {
+      setRotation((r) => r + velocity);
+      setVelocity((v) => v * 0.95);
+    }, 16);
+
+    return () => clearInterval(id);
+  }, [velocity]);
+
+
   return (
     <AnimatedPage>
       <h2 style={styles.sectionTitle}>Languages</h2>
@@ -2873,178 +2885,216 @@ function LanguagePage() {
      {/* ───────────────── DHARMA WHEEL SECTION ───────────────── */}
 
 <div
-  style={{
-    marginTop: "140px",
-    paddingBottom: "160px",
-    display: "flex",
-    justifyContent: "center",
-    background:
-      "radial-gradient(circle at center, rgba(255,200,80,.25), transparent 70%)"
-  }}
->
-  <div
-    style={{
-      width: 420,
-      height: 420,
-      position: "relative",
-      cursor: "grab",
-      userSelect: "none"
-    }}
-    onMouseDown={(e) => {
-      dragRef.current = true;
-      setVelocity(0);
-
-      const rect = e.currentTarget.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-
-      lastAngleRef.current = Math.atan2(
-        e.clientY - cy,
-        e.clientX - cx
-      );
-
-      lastMoveRef.current = Date.now();
-    }}
-    onMouseMove={(e) => {
-      if (!dragRef.current) return;
-
-      const rect = e.currentTarget.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-
-      const angle = Math.atan2(
-        e.clientY - cy,
-        e.clientX - cx
-      );
-
-      const delta =
-        ((angle - lastAngleRef.current) * 180) /
-        Math.PI;
-
-      const now = Date.now();
-      const dt = now - lastMoveRef.current;
-
-      setRotation((r) => r + delta);
-      setVelocity((delta / Math.max(dt, 1)) * 18);
-
-      lastMoveRef.current = now;
-      lastAngleRef.current = angle;
-    }}
-    onMouseUp={() => (dragRef.current = false)}
-    onMouseLeave={() => (dragRef.current = false)}
-  >
-    {/* Lotus Overlay */}
-    <svg
-      viewBox="0 0 500 500"
       style={{
-        position: "absolute",
-        inset: 0,
-        pointerEvents: "none",
-        opacity: 0.15
+        marginTop: "140px",
+        paddingBottom: "160px",
+        display: "flex",
+        justifyContent: "center",
+        background:
+          "radial-gradient(circle at center, rgba(255,200,80,.25), transparent 70%)"
       }}
     >
-      <circle
-        cx="250"
-        cy="250"
-        r="220"
-        stroke="gold"
-        strokeWidth="4"
-        fill="none"
-      />
-      {[...Array(8)].map((_, i) => (
-        <ellipse
-          key={i}
-          cx="250"
-          cy="110"
-          rx="22"
-          ry="80"
-          fill="gold"
-          transform={`rotate(${(360 / 8) * i} 250 250)`}
-        />
-      ))}
-    </svg>
-       
-    {/* Spokes */}
-    {dharmaSpokes.map((s, i) => {
-      const angle =
-        (360 / dharmaSpokes.length) * i + rotation;
+      <div
+        style={{
+          width: 420,
+          height: 420,
+          position: "relative",
+          cursor: "grab",
+          userSelect: "none"
+        }}
+        onMouseDown={(e) => {
+          dragRef.current = true;
+          setVelocity(0);
 
-      const isOpen = openSpoke === s.id;
+          const rect = e.currentTarget.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
 
-      return (
-        <div
-          key={s.id}
+          lastAngleRef.current = Math.atan2(
+            e.clientY - cy,
+            e.clientX - cx
+          );
+
+          lastMoveRef.current = Date.now();
+        }}
+        onMouseMove={(e) => {
+          if (!dragRef.current) return;
+
+          const rect = e.currentTarget.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+
+          const angle = Math.atan2(
+            e.clientY - cy,
+            e.clientX - cx
+          );
+
+          const delta =
+            ((angle - lastAngleRef.current) * 180) /
+            Math.PI;
+
+          const now = Date.now();
+          const dt = now - lastMoveRef.current;
+
+          setRotation((r) => r + delta);
+          setVelocity((delta / Math.max(dt, 1)) * 18);
+
+          lastMoveRef.current = now;
+          lastAngleRef.current = angle;
+        }}
+        onMouseUp={() => (dragRef.current = false)}
+        onMouseLeave={() => (dragRef.current = false)}
+      >
+        {/* Lotus Overlay */}
+        <svg
+          viewBox="0 0 500 500"
           style={{
             position: "absolute",
-            top: "41%",
-            left: "34%",
-            width: 140,
-            transform: `
-              rotate(${angle}deg)
-              translate(0, -170px)
-            `,
-            transformOrigin: "center bottom"
+            inset: 0,
+            pointerEvents: "none",
+            opacity: 0.15
           }}
         >
+          <circle
+            cx="250"
+            cy="250"
+            r="220"
+            stroke="gold"
+            strokeWidth="4"
+            fill="none"
+          />
+          {[...Array(8)].map((_, i) => (
+            <ellipse
+              key={i}
+              cx="250"
+              cy="110"
+              rx="22"
+              ry="80"
+              fill="gold"
+              transform={`rotate(${(360 / 8) * i} 250 250)`}
+            />
+          ))}
+        </svg>
+
+        {/* Spokes */}
+        {dharmaSpokes.map((s, i) => {
+          const angle =
+            (360 / dharmaSpokes.length) * i + rotation;
+
+          const isOpen = openSpoke === s.id;
+
+          return (
+            <div
+              key={s.id}
+              style={{
+                position: "absolute",
+                top: "41%",
+                left: "34%",
+                width: 140,
+                transform: `
+                  rotate(${angle}deg)
+                  translate(0, -170px)
+                `,
+                transformOrigin: "center bottom"
+              }}
+            >
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+
+                  const snap =
+                    (360 / dharmaSpokes.length) * i;
+
+                  setRotation((r) => r - snap);
+                  setOpenSpoke(isOpen ? null : s.id);
+                }}
+                style={{
+                  background: "#111",
+                  color: "white",
+                  padding: "8px",
+                  borderRadius: "14px",
+                  textAlign: "center",
+                  cursor: "pointer",
+                  boxShadow: isOpen
+                    ? "0 0 18px gold"
+                    : "0 6px 16px rgba(0,0,0,.4)",
+                  transition: "0.3s"
+                }}
+              >
+                <strong>{s.title}</strong>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* HUB POPUP */}
+        {openSpoke && (
           <div
-            onClick={(e) => {
-              e.stopPropagation();
-
-              const snap =
-                (360 / dharmaSpokes.length) * i;
-
-              setRotation((r) => r - snap);
-              setOpenSpoke(isOpen ? null : s.id);
-            }}
             style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+              width: 240,
               background: "#111",
               color: "white",
-              padding: "8px",
-              borderRadius: "14px",
+              borderRadius: 18,
+              padding: 16,
               textAlign: "center",
-              cursor: "pointer",
-              boxShadow: isOpen
-                ? "0 0 18px gold"
-                : "0 6px 16px rgba(0,0,0,.4)",
-              transition: "0.3s"
+              boxShadow:
+                "0 0 35px rgba(255,215,0,.65)",
+              zIndex: 20
             }}
           >
-            <strong>{s.title}</strong>
+            {(() => {
+              const s = dharmaSpokes.find(
+                (x) => x.id === openSpoke
+              );
 
-            {isOpen && (
-              <div style={{ marginTop: 8 }}>
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setActiveModal(s);
-                  }}
-                  style={{
-                    width: "100%",
-                    height: 45,
-                    objectFit: "cover",
-                    borderRadius: 10,
-                    cursor: "zoom-in"
-                  }}
-                />
+              return (
+                <>
+                  <h3>{s.title}</h3>
 
-                <p
-                  style={{
-                    fontSize: 12,
-                    marginTop: 6
-                  }}
-                >
-                  {s.text}
-                </p>
-              </div>
-            )}
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    onClick={() => setActiveModal(s)}
+                    style={{
+                      width: "100%",
+                      height: 120,
+                      objectFit: "cover",
+                      borderRadius: 12,
+                      cursor: "zoom-in"
+                    }}
+                  />
+
+                  <p
+                    style={{
+                      fontSize: 13,
+                      marginTop: 10
+                    }}
+                  >
+                    {s.text}
+                  </p>
+
+                  <div
+                    onClick={() => setOpenSpoke(null)}
+                    style={{
+                      marginTop: 8,
+                      fontSize: 12,
+                      cursor: "pointer",
+                      opacity: 0.7
+                    }}
+                  >
+                    close
+                  </div>
+                </>
+              );
+            })()}
           </div>
-        </div>
-      );
-    })}
-  </div>
-</div>
+        )}
+      </div>
+    </div>
 
 {/* ───────────── FULLSCREEN IMAGE MODAL ───────────── */}
 
