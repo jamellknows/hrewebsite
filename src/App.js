@@ -5882,25 +5882,25 @@ useEffect(() => {
       id: 0,
       title: "Foundation",
       image: "./images/sv7.jpg",
-      text: "There are 9,900 Sea Villages, each constructed as a pair of two heterogeneous pyramids.  Each Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-contained community that integrates industry, agriculture, and cultural development. The organisational structure of the Sea Villages is 2->5->5->22->9."
+      text: "There are 9,900 Sea Villages, each constructed as a paired formation of two heterogeneous pyramids. Every Sea Village is designed to accommodate 202,020 inhabitants, forming a large, self-sustaining community that integrates industry, agriculture, and cultural development. The Sea Villages are interconnected by a network of long bridges and maritime sea lanes, which are guided and supported by Seaporium lighthouses that serve as navigation and coordination points across the ocean settlements. Internally, each Sea Village is organized using a honeycomb structural layout, maximizing spatial efficiency, resilience, and community connectivity. Their social and civic organization mirrors that of the land settlements, operating under a 14-tribe system that structures governance, culture, and economic activity within the village. This design allows the Sea Villages to function as interlinked oceanic cities, combining architectural innovation, maritime infrastructure, and social organization into a unified settlement network."
     },
     {
       id: 1,
       title: "Production",
       image: "./images/sv2.png",
-      text: "Within each pair, the leading pyramid is designated HI, while the following pyramid is designated AGO. HI represents the sectors of Hybrid Manufacturing and Integrated Manufacturing, reflecting advanced industrial production and engineering systems. AGO represents Aquaponics, Grinding, and Orthography, symbolizing sustainable food production, precision manufacturing, and the development of written systems and communication."
+      text: "Within each pair of pyramids, the leading structure is designated HI, while the following structure is designated AGO. Each pyramid serves a distinct functional role within the Sea Village’s economic and cultural system. The HI Pyramid represents the sectors of Hybrid Manufacturing and Integrated Manufacturing. It functions as the industrial and engineering center of the Sea Village, supporting advanced production systems, technological development, and complex fabrication processes. The AGO Pyramid represents Aquaponics, Grinding, and Orthography. This pyramid supports sustainable food production through aquaponic systems, precision material processing, and the development and preservation of written systems, knowledge, and communication. Complementing these pyramids are the Seaporium Lighthouses, which guide the maritime networks connecting the Sea Villages. In addition to their navigational role, these structures house additional aquaponic facilities, supporting ocean-based agriculture and environmental monitoring."
     },
     {
       id: 2,
       title: "Culture",
       image: "./images/sv4.png",
-      text: "The culture in the Sea Villages is very religious, the focus is on language building, manners, politeness, etiquette and moral and social responsibility. The sea villages are tasked to invent two writing scripts. Land pilgrimages are permitted 6 times a year every 60 days and last for 3 days with transport and accommodation provided."
+      text: "The culture of the Sea Villages is focused around the 14 tribe system which totals to 126 tribes with smaller tribes being grouped together and larger tribes being distributed equally among the villages and between. "
     },
     {
       id: 3,
       title: "Governance",
       image: "./images/sv1.png",
-      text: "The Sea Villages are special administrative zones run by Evangelions who form JSPEM and 16 Ladies of the Wave. Ladies of the gal are the most beautiful virgin women who are tasked with fashion, research, employment and entertainment (FREE).  "
+      text: "The organisational structure of the Sea Villages is 2->5->5->22->9 up to the 9 Hierera representing the 9 waters that each cycle of villages is within. The 9 waters are the Baltic Sea, Black Sea, Hudson Bay, Mediterranean Sea, Caspian Sea, Sea of Ohotsk, Baffin Bay, Bering Sea and Kara Sea.   "
     },
     {
       id: 4,
