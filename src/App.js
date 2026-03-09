@@ -4430,7 +4430,7 @@ these women will be 1952.
 
   const metric9 = [
     { id: 0, title: "Global Investment Bank: Roman Anglo Colombian.", text: "The global investment bank owns 51% of the companies of the 5." },
-    { id: 1, title: "National Retail Bank: Livre Euro Argent D'Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
+    { id: 1, title: "National Retail Bank: Livre Euro Argent De Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
   ];
 
   const metric10 = [
