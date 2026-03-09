@@ -5678,25 +5678,44 @@ function SiddimCarousel() {
     {
       id: 1,
       image: "https://picsum.photos/600/400",
-      top: "Top Writing Area",
-      left: ["Point A", "Point B", "Point C"],
-      right: ["Detail 1", "Detail 2", "Detail 3"],
-      bottom: "Sorani"
+      top: "3: Aner: That man, Eshkol: (His) love (all), pain, dirt, donkey arm(branch, shoulder) Mamre: Hair way, uncle, way",
+      left: ["Kedorlaomer: What, yoghurt, beverage, middle, worf, often, thing, when, (snake/sheep): King of security and people: Elam", "Amraphel: Security opinion of acquainted people: King of depression, prosperity, oppurtunity, 'blue', opinions: Shinar", "Aurioch: Bull/Bully/Leadership: King of the cerebreum, mind, opposite view, nations(people), disobedience: Ellasar", "Tidal: Other women: King of hearing that opinion: Goiim"],
+      right: ["Bera: Produce, offspring(of women), fruit: King of doubt of authority: Sodom", "Birsha: Wellness of the mind, reflection: King of hearing opinions: Gomorrah", "Shineab: Depression, 'blue of August: King of literature and culture, snake or sheep: Admah", "Shemeber: Renown(name) of children or famour children: King of (not giving) for that reason not giving: Zeboiim", "Nameless: To go without (leave): Bela/Zoar"],
+      bottom: "Kurdish/Farsi mix: There's 2 Kurdish languages and Farsi can go from Pashto to Darija"
     },
-    {
-      id: 2,
-      image: "https://picsum.photos/601/400",
-      top: "Another Top Text",
-      left: ["Feature A", "Feature B", "Feature C"],
-      right: ["Insight 1", "Insight 2", "Insight 3"],
-      bottom: "Hebrew"
-    },
+ {
+  id: 2,
+  image: "https://picsum.photos/601/400",
+
+  top: [
+    "Aner – 'Youth / Servant'",
+    "Eshkol – 'Cluster (of Grapes)'",
+    "Mamre – 'Strength / Fertility'"
+  ],
+
+  left: [
+    "Amraphel – 'Speaker of Authority' – King of Shinar ('Land of Two Rivers / Babylonia')",
+    "Arioch – 'Lion-like' – King of Ellasar ('God has Bound / God has Chastened')",
+    "Chedorlaomer – 'Servant of Lagamar (Elamite god)' – King of Elam ('Highland / Highlands')",
+    "Tidal – 'Great Leader' – King of Goiim ('Nations / Peoples')"
+  ],
+
+  right: [
+    "Bera – 'Son of Evil' – King of Sodom ('Burning / Scorched')",
+    "Birsha – 'Son of Wickedness' – King of Gomorrah ('Ruin / Heap / Submersion')",
+    "Shinab – 'Splendor of the Father' – King of Admah ('Earth / Ground / Soil')",
+    "Shemeber – 'Name is Strong' – King of Zeboiim ('Gazelles / Deer')",
+    "Bela – 'Swallowing / Destruction' – King of Bela later Zoar ('Small / Little')"
+  ],
+
+  bottom: "Hebrew Names and City Meanings – Genesis 14"
+},
     {
       id: 3,
       image: "https://picsum.photos/602/400",
-      top: "Another Top Text",
-      left: ["Aspect A", "Aspect B", "Aspect C"],
-      right: ["Note 1", "Note 2", "Note 3"],
+      top: "3: Aner: Towards force, hacia la fuerza, Eshkol: Not a friend's neck no es el cuello de un amigo, Mamre: Mother madre",
+      left: ["4", "Kedorlaomer: The intense buringin question or sea: King of not badly connected: Elam", "Ampraphel: The tone of forced love: King of the lisped narration: Shinar", "Aurioch: 8 gold rivers: King of the stuttered ruler: Ellasar", "Tidal: The demand to give or go: King of Compliant I give or go(I give or go compliantly): Goiim"],
+      right: ["5", "Bera: From rebels: Sodom: King of the way from you all", "Birsha: Bear: King of no magicians, no reds, no strong: Gomorrah", "Shineab: Lisped yes(untrue confirmation): King of Toward more/mother: Admah", "Shemeber: Lisped Yes myself have: King of the beige kiss: Zeboiim", "Nameless: King of from putting down, fatigue, prison/ cleverness, agility: Bela/Zoar"],
       bottom: "Spanish"
     },
     {
@@ -8486,8 +8505,8 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
       "Neighbourhood = 270 Saddles",
       "Town = 1620 Saddles",
       "1 Saddle = 17 people",
-      "Pu = 4 women(+4 droids) + 11 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]",
-      "Blo = 5 women(+5 droids) + 10 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]"
+      "Pu = 4 women(+4 droids) + 5 male children + 8 female children",
+      "Blo = 5 women(+5 droids) + 4 male children + 8 female children"
 
     ] 
   },
