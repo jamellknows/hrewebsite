@@ -6507,7 +6507,7 @@ useEffect(() => {
   {
     id: 3,
     title: "Entertainment",
-    summary: "",
+    summary: "Ultra Artificial Intelligence Generated Filmography and Games.",
     details:
       "",
   },
