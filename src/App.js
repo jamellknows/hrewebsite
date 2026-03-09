@@ -8294,8 +8294,8 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
       "Neighbourhood = 270 Saddles",
       "Town = 1620 Saddles",
       "1 Saddle = 17 people",
-      "Pu = 4 women + 13 children",
-      "Blo = 5 women + 12 children"
+      "Pu = 4 women + 8 children + 5 female teenagers",
+      "Blo = 5 women + 10 children + 2 female teenagers"
 
     ] 
   },
