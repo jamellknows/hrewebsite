@@ -8295,8 +8295,8 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
       "Neighbourhood = 270 Saddles",
       "Town = 1620 Saddles",
       "1 Saddle = 17 people",
-      "Pu = 4 women + 11 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]",
-      "Blo = 5 women + 10 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]"
+      "Pu = 4 women(+4 droids) + 11 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]",
+      "Blo = 5 women(+5 droids) + 10 children(including males up to 18 years) + 2 female teenagers(14-15)[rate]"
 
     ] 
   },
