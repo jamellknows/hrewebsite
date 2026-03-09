@@ -8431,7 +8431,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
          {
           title: "Fashion",
           text: "Each town contains eight distinct brands, each represented by its own logo. Every brand is managed by a MAC, who serves as the creative director for that brand. Upon assuming the role, the MAC designs the brand’s official logo, which must appear on the label of every garment produced under that brand. All women in the town are affiliated with one of these eight brands. However, within their assigned brand they retain creative freedom. They may design and produce any clothing they wish, provided that the garments align with their rank. The MAC does not dictate the specific designs produced by individual women. Instead, she provides overall creative direction and identity for the brand through the logo and brand concept. Because all women receive the same number of points, each woman has, in theory, the same capacity to produce clothing. As a result, the potential number of garments owned or produced by each woman can be equal, with differences arising only from individual design choices within their rank. ",
-          image: "/images/automation/oasis.png"
+          image: "/images/automation/fashion2.png"
         }
       ]
     }
