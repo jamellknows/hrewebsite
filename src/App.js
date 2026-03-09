@@ -5670,6 +5670,196 @@ useEffect(() => {
 
 
 
+
+function SiddimCarousel() {
+  const [index, setIndex] = useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      image: "https://picsum.photos/600/400",
+      top: "Top Writing Area",
+      left: ["Point A", "Point B", "Point C"],
+      right: ["Detail 1", "Detail 2", "Detail 3"],
+      bottom: "Sorani"
+    },
+    {
+      id: 2,
+      image: "https://picsum.photos/601/400",
+      top: "Another Top Text",
+      left: ["Feature A", "Feature B", "Feature C"],
+      right: ["Insight 1", "Insight 2", "Insight 3"],
+      bottom: "Hebrew"
+    },
+    {
+      id: 3,
+      image: "https://picsum.photos/602/400",
+      top: "Another Top Text",
+      left: ["Aspect A", "Aspect B", "Aspect C"],
+      right: ["Note 1", "Note 2", "Note 3"],
+      bottom: "Spanish"
+    },
+    {
+      id: 4,
+      image: "https://picsum.photos/603/400",
+      top: "Aner: Grace, Eshkol: To gather sin, mistake, offence collect, Mamre: your/his/her (mother?)",
+      left: ["4", "Chedorlaomer: To cut/to cover indeed(truly): King of Okra, togetherness, fertility, abundance, smoothing: Elam", "Amraphel: To buy/disappear: King of to open(spread, beat, extend, hit, pay): Shinar", "Aurioch: To see and to percieve: King of to cut, divide, skim, pass over: Ellasar", "Tidal: Already since past created established belongings: King of my swell and rise: Goiim"],
+      right: ["5", "Bera: Beg to buy: King of cover and lie down/ sew and lie down: Sodom", "Birsha: To be born open: King of rise and buy/rise and dissapear: Gomorrah", "Shineab: Open and spread: King of machette/cutlass, threshold and step: Admah", "Shemeber: Do my beg/Is it my beg?: King of do enter me, do cover men, do protect me: Zeboiim", "Nameless: King of beg to cut, divide, skim/ put together, dance, flow, gather inthe morning, excellence, debt: Bela/Zoar"],
+      bottom: "Yoruba"
+    },
+    {
+      id: 5,
+      image: "https://picsum.photos/604/400",
+      top: "3: Aner: belongings, Eshkol: Maim and fighting, Mamre: Giving",
+      left: ["4", "Chedorlaomer: Time me/ Go love me: King of give and recieve: Elam", "Amraphel: Give take/ recieve grab: King of He/She/it/ this was not to: Shinar", "Aurioch: Eat: King of to sweep/fight/remove: Ellasar", "Tidal: head sleep, head lie, head be located: King of I pour, I throw, I spill: Goiim"],
+      right: ["5", "Bera: Future: King of on/above/over/to increase love/like of you(plural): Sodom", "Birsha: Some fight, some sweep, some remove, some to a certain: King of you(plural) pour, throw, spill: Gomorrah", "Shineab: He/She/it/ this was not to build: King of give/let/allow: Admah", "Shemeber: Not me(I) to go love me/ Not I to time me: King of not me: Zeboiim", "Nameless: King of the future: Bela/Zoar", ""],
+      bottom: "Akan"
+    },
+    {
+      id: 6,
+      image: "https://picsum.photos/605/400",
+      top: "3: Aner: One, Eshkol: Ash-tree, coal, hill, Mamre: fame, renoun",
+      left: ["4", "Chedorlaomer: Mare of the by waters or gate spear: King of the storm being: Elam", "Amraphel: Mighty elf: King of the bright realm/ sea: Shinar", "Aurioch: Mud ox/ golden(poetic) ox: King of god of old age/ wound of old age: Ellasar", "Tidal: Time/season flows through the valley: King of the expanse/ one who aws: Goiim"],
+      right: ["5", "Bera: To carry, bear: King of judgement of seed, sight and sun: Sodom", "Birsha: Wound of the bright dwelling: King of move through the marsh with counsel: Gomorrah", "Shineab: Shining name: King of inspiration of the moor: Admah", "Shemeber: Vision bearer: King of home of the distant dwellers: Zeboiim", "Nameless: offering hill/ year of the sun: Bela/Zoar"],
+      bottom: "Norse"
+    },
+    {
+      id: 7,
+      image: "https://picsum.photos/606/400",
+      top: "3: Aner: Not man (one who is different/another), Eshkol: Divine family/Lordly clan, Mamre: O mine/ my one",
+      left: ["4", "Chedorlaomer: Cosmic bringer of the period of man: King of the Mango: Elam", "Amraphel: Mango push: King of the auspiciously educated peaceful man: Shinar", "Arioch: Poetry: King of the bringer of the head essence: Ellasar", "Tidal: Group: King of the cow: Goiim"],
+      right: ["5", "Bera: Negative: King of the 100 castes(communities): Sodom", "Birsha: Powerful peaceful brave epic man: King of the way of the peacock cow: Gomorrah", "Shinab: Auspicious educational peaceful 9: King of the great man of begining: Admah", "Shemeber: In: King of the pocket: Zeboiim", "Nameless: King of not bringing: Bela/Zoar"],
+      bottom: "Hindi"
+    },
+    {
+      id: 8,
+      image: "https://picsum.photos/607/400",
+      top: "3: Aner: An error, wrong, Anna, Eshkol: exclamation(shock), Mamre: mother, ray(light)",
+      left: ["4", "Kedorlaomer: Door: King of Lamb: Elam", "Amraphel: Shock, disbelief, rapping, fool: King of shin(leg): Shinar ", "Aurioch: sympathy, aww, ok: King of lasers and losing: Ellasar", "Tidal: Time, tye dye, tidal waves, waving, rhythm, mothion: King of gong, goo, going(go him): Goiim"],
+      right: ["5", "Bera: Bears, bearing, a large amount: King of anal sex, so dumb: Sodom", "Birsha: Cold, fuck it: King of go, move, shock, disbelief, him: Gomorrah", "Shineab: Shineing abs: King of adding, add more, mothers: Admah", "Shemeber: Female, members, cold: King of boy him, last, 'boying': Zeboiim", "Nameless: King of calling, soaring(excelling): Bela/Zoar"],
+      bottom: "English"
+    }
+  ];
+
+  const next = () => setIndex((prev) => (prev + 1) % slides.length);
+  const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+
+  const slide = slides[index];
+
+  const bulletStyle = {
+    listStyle: "disc",
+    textAlign: "left",
+    paddingLeft: "20px",
+    lineHeight: "1.6",
+    fontSize: "1.05rem"
+  };
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "60px"
+      }}
+    >
+      <div
+        style={{
+          width: "900px",
+          display: "grid",
+          gridTemplateColumns: "1fr 2fr 1fr",
+          gridTemplateRows: "auto 400px auto",
+          gap: "25px",
+          alignItems: "center"
+        }}
+      >
+        {/* Top */}
+        <div
+          style={{
+            gridColumn: "1 / span 3",
+            fontSize: "1.6rem",
+            fontWeight: "600",
+            textAlign: "center"
+          }}
+        >
+          {slide.top}
+        </div>
+
+        {/* Left bullets */}
+        <ul style={bulletStyle}>
+          {slide.left.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+
+        {/* Image */}
+        <div>
+          <img
+            src={slide.image}
+            alt=""
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "14px",
+              boxShadow: "0 12px 35px rgba(0,0,0,0.15)"
+            }}
+          />
+        </div>
+
+        {/* Right bullets */}
+        <ul style={bulletStyle}>
+          {slide.right.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+
+        {/* Bottom */}
+        <div
+          style={{
+            gridColumn: "1 / span 3",
+            fontSize: "1.25rem",
+            textAlign: "center",
+            letterSpacing: "1px",
+            fontWeight: "500"
+          }}
+        >
+          {slide.bottom}
+        </div>
+
+        {/* Controls */}
+        <div style={{ gridColumn: "1 / span 3", textAlign: "center" }}>
+          <button
+            onClick={prev}
+            style={{
+              marginRight: "12px",
+              padding: "10px 22px",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer"
+            }}
+          >
+            ◀
+          </button>
+
+          <button
+            onClick={next}
+            style={{
+              padding: "10px 22px",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer"
+            }}
+          >
+            ▶
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 function ReligionPage() {
   // State for the top accordion
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -6350,6 +6540,7 @@ const arrowStyle = (side) => ({
 <EnglishLetterCardsCalculator/>
 <JapaneseKanaCards/>
 <KangxiRadicalExplorer/>
+<SiddimCarousel/>
 
     </AnimatedPage>
   );
