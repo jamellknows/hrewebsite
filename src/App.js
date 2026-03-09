@@ -5704,7 +5704,7 @@ useEffect(() => {
     "Bela – 'Swallowing / Destruction' – King of Bela later Zoar ('Small / Little')"
   ],
 
-  bottom: "Hebrew Names and City Meanings – Genesis 14"
+  bottom: "Hebrew"
 },
     {
       id: 3,
@@ -5777,15 +5777,15 @@ function SiddimCarousel() {
   };
 
   return (
-    <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 20px" }}>
+<div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "30px 20px" }}>
   <div
     style={{
       width: "100%",
       maxWidth: "1100px",
       display: "grid",
       gridTemplateColumns: "1fr 2fr 1fr",
-      gridTemplateRows: "auto auto 400px auto auto auto",
-      gap: "25px",
+      gridTemplateRows: "auto auto auto 400px auto auto auto",
+      gap: "15px", // reduced gap
       alignItems: "start",
     }}
   >
@@ -5796,19 +5796,29 @@ function SiddimCarousel() {
         fontSize: "2rem",
         fontWeight: "700",
         textAlign: "center",
-        marginBottom: "10px",
       }}
     >
       Genesis 14 Language Translations
     </div>
 
-    {/* Top bullets */}
+    {/* Description under title */}
     <div
       style={{
         gridColumn: "1 / span 3",
-        ...scrollableStyle,
+        fontSize: "1.1rem",
+        lineHeight: "1.5",
+        textAlign: "center",
+        padding: "12px 20px",
+        borderRadius: "12px",
+        background: "#f4f4f4",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
       }}
     >
+      A 4vs5 represents the interplay of material and cultural dynamics within the linguistic and semantic landscape of a people. It encompasses the collective neuro-semantic processing of a community, reflecting how meaning, communication, and understanding are constructed and shared. This framework can be applied to analyze structural patterns across multiple scales—from the organization of societies, economies, and nations, to the course of human history, cultural production, and social systems. On a more intimate level, it offers insights into interpersonal relationships, organizational behavior, and business interactions, bridging the microscopic and macroscopic dimensions of human experience.
+    </div>
+
+    {/* Top bullets */}
+    <div style={{ gridColumn: "1 / span 3", ...scrollableStyle }}>
       <ul style={{ paddingLeft: "20px", listStyle: "disc", margin: 0 }}>
         {Array.isArray(slide.top) ? (
           slide.top.map((item, i) => <li key={i}>{item}</li>)
@@ -5820,7 +5830,7 @@ function SiddimCarousel() {
 
     {/* Left bullets */}
     <div style={scrollableStyle}>
-      <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+      <ul style={{ paddingLeft: "20px", listStyle: "disc", margin: 0 }}>
         {slide.left.map((item, i) => (
           <li key={i}>{item}</li>
         ))}
@@ -5844,7 +5854,7 @@ function SiddimCarousel() {
 
     {/* Right bullets */}
     <div style={scrollableStyle}>
-      <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+      <ul style={{ paddingLeft: "20px", listStyle: "disc", margin: 0 }}>
         {slide.right.map((item, i) => (
           <li key={i}>{item}</li>
         ))}
@@ -5858,14 +5868,13 @@ function SiddimCarousel() {
         fontSize: "1.2rem",
         textAlign: "center",
         fontWeight: "500",
-        marginTop: "10px",
       }}
     >
       {slide.bottom}
     </div>
 
     {/* Controls */}
-    <div style={{ gridColumn: "1 / span 3", textAlign: "center", marginTop: "-7rem" }}>
+    <div style={{ gridColumn: "1 / span 3", textAlign: "center" }}>
       <button
         onClick={prev}
         style={{
