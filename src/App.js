@@ -4430,7 +4430,7 @@ these women will be 1952.
 
   const metric9 = [
     { id: 0, title: "Global Investment Bank: Roman Anglo Colombian.", text: "The global investment bank owns 51% of the companies of the 5." },
-    { id: 1, title: "National Retail Bank: Livre Euro Argent Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
+    { id: 1, title: "National Retail Bank: Livre Euro Argent D'Cents.", text: "The national retail bank owns 51% of the companies on the side of the 4." }
   ];
 
   const metric10 = [
@@ -8232,16 +8232,6 @@ function WorldRule2Page() {
   
 
 
-  
-
-
-
-
-
-
-  
-  
-
 
   const metrics = [
   { id: 1, title: "LAID", text:"LAID stands for Lady, Amira, Infanta, and Domina. These women are entrusted with overseeing a CLT’s four principal sectors: fashion, entertainment, science, and trade, respectively. Each CLT is dedicated to one of these sectors and appoints four LAID to govern and develop its focus area. With 12,976 CLTs worldwide, this structure results in a total of 311,424 LAID globally, 24 per CLT and 96 per FEST. LAID are educated within the Colleges of the RUS, located in the CLT where they aspire to serve. As members of NIFTYER59HALO, they commit to a vow that restricts their sexual relations exclusively to Alvah or Russell. They may reside in the castles of any town within their FEST and lead their designated industry with the support of Evangellions, ensuring coordination, growth, and excellence across their domain." },
@@ -8315,15 +8305,21 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
     text: "Relic Cities are religiously significant cities that have been preserved and integrated into the ultra-modern era. They are governed by the **Relic of the Rabat**, a specialised branch of the **RACH** responsible for safeguarding the historical and spiritual heritage of these locations while elevating the surrounding regions to the standards of ultra-modern development. Within each Relic City reside priests and religious practitioners associated with the faith for which the city holds significance. These individuals live as ordinary citizens while observing the religious laws and practices of their tradition in full. Their presence ensures the continuity of the city’s spiritual character while allowing it to function within the wider civic structure. Relic Cities are supported by surrounding administrative and production districts, including their own **Polis, Palatinate, Arche, and Emirate**, which operate in the areas around the preserved city. These surrounding districts provide the economic, administrative, and logistical infrastructure necessary to sustain the Relic City while maintaining its protected status. The protected boundary of a Relic City extends only to buildings of direct religious importance. Any other structures located within this zone are removed and replaced with ultra-modern architecture that complements the preserved heritage sites. The **Rabat** is responsible for coordinating this process, ensuring that the historical fabric of the city is carefully restored and maintained in a pristine condition while harmonising it with the surrounding modern environment. Residents of Relic Cities are known as **Kleros**. They may also become citizens of the **PPEA** in the surrounding districts if they choose to participate more directly in the broader civic system. In addition, inhabitants of Relic Cities are permitted to visit other holy cities within the **RACH**, although such travel requires prior authorisation.",
     bg: "/images/fest-governance.jpg",    
     image: "/images/fest-diagram.jpg",
-    bulletPoints:""
+    bulletPoints:[""]
   },
   { 
     id: 3, 
     title: "Routes", 
-    text:"Routes are the primary transportation and mobility networks of the RACH and are administered by the **Oikos of the Oikodrome**, a specialised branch responsible for infrastructure, transit systems, and logistical coordination across the territories. These routes are primarily used by **Acolytes**, mobile residents who travel and work throughout the network. Acolytes live in **Kharvees** ultra modern freight RVs whereas Exiles like in **Kharbikes** ultra modern freight motorbikes. These advanced transport units are capable of functioning both as living spaces and as cargo carriers. Through this system, individuals are able to move continuously between regions while also transporting goods and materials across the wider economic network. The route system extends throughout the entirety of the RACH, forming a continuous walled infrastructure that connects all major settlements, including **CLTs** and **Relic Cities**. This network allows for the efficient movement of people, resources, and services between regions while maintaining a controlled and secure transportation environment. Distributed along these routes are large multifunctional hubs known as **Emporiums**. Each Emporium acts as a centre for manufacturing, logistics, trade, and social activity. They are administered by officials known as **Sextons**, who coordinate operations and ensure that the facilities function smoothly. Emporiums provide essential services to travelling Acolytes, including workspace, rest areas, resource exchange points, and specialised biological donation facilities. The physical structure of the routes is engineered from an exceptionally resilient material designed to resist scratching, erosion, and structural damage. The enclosing walls vary in composition: some sections are transparent, while others are opaque or frosted translucent, depending on environmental and design requirements. The roadways themselves are wide and integrated with an **electrified grid system** that powers autonomous and assisted vehicles travelling along them. Certain routes run at elevated levels above the landscape, while others remain close to ground level, allowing the network to adapt to different terrains and settlement patterns. Safety and compliance across the network are maintained by **wheel-type Evangelions**, autonomous monitoring units that patrol the routes. These systems oversee traffic behaviour and ensure that drivers using manual control operate vehicles safely and according to the regulations of the Oikodrome.",
+    text:"Routes are the primary transportation and mobility networks of the RACH and are administered by the **Oikos of the Oikodrome**, a specialised branch responsible for infrastructure, transit systems, and logistical coordination across the territories. These routes are primarily used by **Acolytes**, mobile residents who travel and work throughout the network. Acolytes live in **Kharvees** ultra modern freight RVs whereas Exiles like in **Gharbikes** ultra modern freight motorbikes. These advanced transport units are capable of functioning both as living spaces and as cargo carriers. Through this system, individuals are able to move continuously between regions while also transporting goods and materials across the wider economic network. The route system extends throughout the entirety of the RACH, forming a continuous walled infrastructure that connects all major settlements, including **CLTs** and **Relic Cities**. This network allows for the efficient movement of people, resources, and services between regions while maintaining a controlled and secure transportation environment. Distributed along these routes are large multifunctional hubs known as **Emporiums**. Each Emporium acts as a centre for manufacturing, logistics, trade, and social activity. They are administered by officials known as **Sextons**, who coordinate operations and ensure that the facilities function smoothly. Emporiums provide essential services to travelling Acolytes, including workspace, rest areas, resource exchange points, and specialised biological donation facilities. The physical structure of the routes is engineered from an exceptionally resilient material designed to resist scratching, erosion, and structural damage. The enclosing walls vary in composition: some sections are transparent, while others are opaque or frosted translucent, depending on environmental and design requirements. The roadways themselves are wide and integrated with an **electrified grid system** that powers autonomous and assisted vehicles travelling along them. Certain routes run at elevated levels above the landscape, while others remain close to ground level, allowing the network to adapt to different terrains and settlement patterns. Safety and compliance across the network are maintained by **wheel-type Evangelions**, autonomous monitoring units that patrol the routes. These systems oversee traffic behaviour and ensure that drivers using manual control operate vehicles safely and according to the regulations of the Oikodrome.",
     bg: "/images/fest-governance.jpg",    
     image: "/images/fest-diagram.jpg",
-    bulletPoints:""
+    bulletPoints:[
+      "Initiation as an Acolyte begins at 16 for women and 18 for men and lasts a minimum of 2 years",
+      "For children of Kleros the duration of membership is 1 year",
+      "Acolytes are permitted to recieve visits from family members who live in CLTs or Relic Cities at Palatinates",
+      "Routes are 8 lanes wide, 6 for Kharvees, 1 for Gharbikes and 2 for unmanned vehicles."
+
+    ]
    },
   { 
     id: 4, 
