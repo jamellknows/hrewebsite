@@ -6923,8 +6923,9 @@ const CarouselContent = ({ large = false }) => (
   style={{
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "14px",
     perspective: "1200px",
+    rowGap:"-4rem",
+    columnGap:"2rem"
   }}
 >
   {rightGrid.map((item) => {
