@@ -5674,7 +5674,7 @@ useEffect(() => {
     {
       id: 1,
       image: "https://picsum.photos/600/400",
-      top: "3: Aner: That man, Eshkol: (His) love (all), pain, dirt, donkey arm(branch, shoulder) Mamre: Hair way, uncle, way",
+      top: ["3: Aner: That man", "Eshkol: (His) love (all), pain, dirt, donkey arm(branch, shoulder)", "Mamre: Hair way, uncle, way"],
       left: ["Kedorlaomer: What, yoghurt, beverage, middle, worf, often, thing, when, (snake/sheep): King of security and people: Elam", "Amraphel: Security opinion of acquainted people: King of depression, prosperity, oppurtunity, 'blue', opinions: Shinar", "Aurioch: Bull/Bully/Leadership: King of the cerebreum, mind, opposite view, nations(people), disobedience: Ellasar", "Tidal: Other women: King of hearing that opinion: Goiim"],
       right: ["Bera: Produce, offspring(of women), fruit: King of doubt of authority: Sodom", "Birsha: Wellness of the mind, reflection: King of hearing opinions: Gomorrah", "Shineab: Depression, 'blue of August: King of literature and culture, snake or sheep: Admah", "Shemeber: Renown(name) of children or famour children: King of (not giving) for that reason not giving: Zeboiim", "Nameless: To go without (leave): Bela/Zoar"],
       bottom: "Kurdish/Farsi mix: There's 2 Kurdish languages and Farsi can go from Pashto to Darija"
@@ -5709,7 +5709,7 @@ useEffect(() => {
     {
       id: 3,
       image: "https://picsum.photos/602/400",
-      top: "3: Aner: Towards force, hacia la fuerza, Eshkol: Not a friend's neck no es el cuello de un amigo, Mamre: Mother madre",
+      top: ["3: Aner: Towards force, hacia la fuerza", "Eshkol: Not a friend's neck no es el cuello de un amigo", "Mamre: Mother madre"],
       left: ["4", "Kedorlaomer: The intense buringin question or sea: King of not badly connected: Elam", "Ampraphel: The tone of forced love: King of the lisped narration: Shinar", "Aurioch: 8 gold rivers: King of the stuttered ruler: Ellasar", "Tidal: The demand to give or go: King of Compliant I give or go(I give or go compliantly): Goiim"],
       right: ["5", "Bera: From rebels: Sodom: King of the way from you all", "Birsha: Bear: King of no magicians, no reds, no strong: Gomorrah", "Shineab: Lisped yes(untrue confirmation): King of Toward more/mother: Admah", "Shemeber: Lisped Yes myself have: King of the beige kiss: Zeboiim", "Nameless: King of from putting down, fatigue, prison/ cleverness, agility: Bela/Zoar"],
       bottom: "Spanish"
@@ -5717,7 +5717,7 @@ useEffect(() => {
     {
       id: 4,
       image: "https://picsum.photos/603/400",
-      top: "Aner: Grace, Eshkol: To gather sin, mistake, offence collect, Mamre: your/his/her (mother?)",
+      top: ["Aner: Grace", "Eshkol: To gather sin, mistake, offence collect", "Mamre: your/his/her (mother?)"],
       left: ["4", "Chedorlaomer: To cut/to cover indeed(truly): King of Okra, togetherness, fertility, abundance, smoothing: Elam", "Amraphel: To buy/disappear: King of to open(spread, beat, extend, hit, pay): Shinar", "Aurioch: To see and to percieve: King of to cut, divide, skim, pass over: Ellasar", "Tidal: Already since past created established belongings: King of my swell and rise: Goiim"],
       right: ["5", "Bera: Beg to buy: King of cover and lie down/ sew and lie down: Sodom", "Birsha: To be born open: King of rise and buy/rise and dissapear: Gomorrah", "Shineab: Open and spread: King of machette/cutlass, threshold and step: Admah", "Shemeber: Do my beg/Is it my beg?: King of do enter me, do cover men, do protect me: Zeboiim", "Nameless: King of beg to cut, divide, skim/ put together, dance, flow, gather inthe morning, excellence, debt: Bela/Zoar"],
       bottom: "Yoruba"
@@ -5725,7 +5725,7 @@ useEffect(() => {
     {
       id: 5,
       image: "https://picsum.photos/604/400",
-      top: "3: Aner: belongings, Eshkol: Maim and fighting, Mamre: Giving",
+      top: ["3: Aner: belongings", "Eshkol: Maim and fighting", "Mamre: Giving"],
       left: ["4", "Chedorlaomer: Time me/ Go love me: King of give and recieve: Elam", "Amraphel: Give take/ recieve grab: King of He/She/it/ this was not to: Shinar", "Aurioch: Eat: King of to sweep/fight/remove: Ellasar", "Tidal: head sleep, head lie, head be located: King of I pour, I throw, I spill: Goiim"],
       right: ["5", "Bera: Future: King of on/above/over/to increase love/like of you(plural): Sodom", "Birsha: Some fight, some sweep, some remove, some to a certain: King of you(plural) pour, throw, spill: Gomorrah", "Shineab: He/She/it/ this was not to build: King of give/let/allow: Admah", "Shemeber: Not me(I) to go love me/ Not I to time me: King of not me: Zeboiim", "Nameless: King of the future: Bela/Zoar", ""],
       bottom: "Akan"
@@ -5733,7 +5733,7 @@ useEffect(() => {
     {
       id: 6,
       image: "https://picsum.photos/605/400",
-      top: "3: Aner: One, Eshkol: Ash-tree, coal, hill, Mamre: fame, renoun",
+      top: ["3: Aner: One", "Eshkol: Ash-tree, coal, hill", "Mamre: fame, renoun"],
       left: ["4", "Chedorlaomer: Mare of the by waters or gate spear: King of the storm being: Elam", "Amraphel: Mighty elf: King of the bright realm/ sea: Shinar", "Aurioch: Mud ox/ golden(poetic) ox: King of god of old age/ wound of old age: Ellasar", "Tidal: Time/season flows through the valley: King of the expanse/ one who aws: Goiim"],
       right: ["5", "Bera: To carry, bear: King of judgement of seed, sight and sun: Sodom", "Birsha: Wound of the bright dwelling: King of move through the marsh with counsel: Gomorrah", "Shineab: Shining name: King of inspiration of the moor: Admah", "Shemeber: Vision bearer: King of home of the distant dwellers: Zeboiim", "Nameless: offering hill/ year of the sun: Bela/Zoar"],
       bottom: "Norse"
@@ -5741,7 +5741,7 @@ useEffect(() => {
     {
       id: 7,
       image: "https://picsum.photos/606/400",
-      top: "3: Aner: Not man (one who is different/another), Eshkol: Divine family/Lordly clan, Mamre: O mine/ my one",
+      top: ["3: Aner: Not man (one who is different/another)", "Eshkol: Divine family/Lordly clan", "Mamre: O mine/ my one"],
       left: ["4", "Chedorlaomer: Cosmic bringer of the period of man: King of the Mango: Elam", "Amraphel: Mango push: King of the auspiciously educated peaceful man: Shinar", "Arioch: Poetry: King of the bringer of the head essence: Ellasar", "Tidal: Group: King of the cow: Goiim"],
       right: ["5", "Bera: Negative: King of the 100 castes(communities): Sodom", "Birsha: Powerful peaceful brave epic man: King of the way of the peacock cow: Gomorrah", "Shinab: Auspicious educational peaceful 9: King of the great man of begining: Admah", "Shemeber: In: King of the pocket: Zeboiim", "Nameless: King of not bringing: Bela/Zoar"],
       bottom: "Hindi"
@@ -5749,7 +5749,7 @@ useEffect(() => {
     {
       id: 8,
       image: "https://picsum.photos/607/400",
-      top: "3: Aner: An error, wrong, Anna, Eshkol: exclamation(shock), Mamre: mother, ray(light)",
+      top: ["3: Aner: An error, wrong, Anna", "Eshkol: exclamation(shock)", "Mamre: mother, ray(light)"],
       left: ["4", "Kedorlaomer: Door: King of Lamb: Elam", "Amraphel: Shock, disbelief, rapping, fool: King of shin(leg): Shinar ", "Aurioch: sympathy, aww, ok: King of lasers and losing: Ellasar", "Tidal: Time, tye dye, tidal waves, waving, rhythm, mothion: King of gong, goo, going(go him): Goiim"],
       right: ["5", "Bera: Bears, bearing, a large amount: King of anal sex, so dumb: Sodom", "Birsha: Cold, fuck it: King of go, move, shock, disbelief, him: Gomorrah", "Shineab: Shineing abs: King of adding, add more, mothers: Admah", "Shemeber: Female, members, cold: King of boy him, last, 'boying': Zeboiim", "Nameless: King of calling, soaring(excelling): Bela/Zoar"],
       bottom: "English"
@@ -5778,125 +5778,133 @@ function SiddimCarousel() {
 
   return (
     <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 20px" }}>
-      <div
+  <div
+    style={{
+      width: "100%",
+      maxWidth: "1100px",
+      display: "grid",
+      gridTemplateColumns: "1fr 2fr 1fr",
+      gridTemplateRows: "auto auto 400px auto auto auto",
+      gap: "25px",
+      alignItems: "start",
+    }}
+  >
+    {/* Title */}
+    <div
+      style={{
+        gridColumn: "1 / span 3",
+        fontSize: "2rem",
+        fontWeight: "700",
+        textAlign: "center",
+        marginBottom: "10px",
+      }}
+    >
+      Genesis 14 Language Translations
+    </div>
+
+    {/* Top bullets */}
+    <div
+      style={{
+        gridColumn: "1 / span 3",
+        ...scrollableStyle,
+      }}
+    >
+      <ul style={{ paddingLeft: "20px", listStyle: "disc", margin: 0 }}>
+        {Array.isArray(slide.top) ? (
+          slide.top.map((item, i) => <li key={i}>{item}</li>)
+        ) : (
+          <li>{slide.top}</li>
+        )}
+      </ul>
+    </div>
+
+    {/* Left bullets */}
+    <div style={scrollableStyle}>
+      <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+        {slide.left.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Image */}
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <img
+        src={slide.image}
+        alt=""
         style={{
           width: "100%",
-          maxWidth: "1100px",
-          display: "grid",
-          gridTemplateColumns: "1fr 2fr 1fr",
-          gridTemplateRows: "auto auto 400px auto auto",
-          gap: "25px",
-          alignItems: "start",
+          maxHeight: "400px",
+          objectFit: "cover",
+          borderRadius: "14px",
+          boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
         }}
-      >
-        {/* Top */}
-        <div
-          style={{
-            gridColumn: "1 / span 3",
-            fontSize: "1.5rem",
-            fontWeight: "600",
-            textAlign: "center",
-            marginBottom: "10px",
-          }}
-        >
-          {Array.isArray(slide.top) ? (
-            <div style={scrollableStyle}>
-              {slide.top.map((item, i) => (
-                <p key={i}>{item}</p>
-              ))}
-            </div>
-          ) : (
-            <div>{slide.top}</div>
-          )}
-        </div>
-
-        {/* Left bullets */}
-        <div style={scrollableStyle}>
-          <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
-            {slide.left.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Image */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            src={slide.image}
-            alt=""
-            style={{
-              width: "100%",
-              maxHeight: "400px",
-              objectFit: "cover",
-              borderRadius: "14px",
-              boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
-            }}
-          />
-        </div>
-
-        {/* Right bullets */}
-        <div style={scrollableStyle}>
-          <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
-            {slide.right.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Bottom */}
-        <div
-          style={{
-            gridColumn: "1 / span 3",
-            fontSize: "1.2rem",
-            textAlign: "center",
-            fontWeight: "500",
-            marginTop: "10px",
-          }}
-        >
-          {slide.bottom}
-        </div>
-
-        {/* Controls */}
-        <div style={{ gridColumn: "1 / span 3", textAlign: "center", marginTop: "-25rem" }}>
-          <button
-            onClick={prev}
-            style={{
-              marginRight: "12px",
-              padding: "12px 24px",
-              borderRadius: "8px",
-              border: "none",
-              cursor: "pointer",
-              background: "#4f46e5",
-              color: "#fff",
-              fontSize: "1.1rem",
-              transition: "0.3s",
-            }}
-            onMouseOver={(e) => (e.target.style.background = "#4338ca")}
-            onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
-          >
-            ◀
-          </button>
-
-          <button
-            onClick={next}
-            style={{
-              padding: "12px 24px",
-              borderRadius: "8px",
-              border: "none",
-              cursor: "pointer",
-              background: "#4f46e5",
-              color: "#fff",
-              fontSize: "1.1rem",
-              transition: "0.3s",
-            }}
-            onMouseOver={(e) => (e.target.style.background = "#4338ca")}
-            onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
-          >
-            ▶
-          </button>
-        </div>
-      </div>
+      />
     </div>
+
+    {/* Right bullets */}
+    <div style={scrollableStyle}>
+      <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+        {slide.right.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Bottom */}
+    <div
+      style={{
+        gridColumn: "1 / span 3",
+        fontSize: "1.2rem",
+        textAlign: "center",
+        fontWeight: "500",
+        marginTop: "10px",
+      }}
+    >
+      {slide.bottom}
+    </div>
+
+    {/* Controls */}
+    <div style={{ gridColumn: "1 / span 3", textAlign: "center", marginTop: "-7rem" }}>
+      <button
+        onClick={prev}
+        style={{
+          marginRight: "12px",
+          padding: "12px 24px",
+          borderRadius: "8px",
+          border: "none",
+          cursor: "pointer",
+          background: "#4f46e5",
+          color: "#fff",
+          fontSize: "1.1rem",
+          transition: "0.3s",
+        }}
+        onMouseOver={(e) => (e.target.style.background = "#4338ca")}
+        onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
+      >
+        ◀
+      </button>
+
+      <button
+        onClick={next}
+        style={{
+          padding: "12px 24px",
+          borderRadius: "8px",
+          border: "none",
+          cursor: "pointer",
+          background: "#4f46e5",
+          color: "#fff",
+          fontSize: "1.1rem",
+          transition: "0.3s",
+        }}
+        onMouseOver={(e) => (e.target.style.background = "#4338ca")}
+        onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
+      >
+        ▶
+      </button>
+    </div>
+  </div>
+</div>
   );
 }
 
