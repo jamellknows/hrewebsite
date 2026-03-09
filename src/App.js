@@ -5670,11 +5670,7 @@ useEffect(() => {
 
 
 
-
-function SiddimCarousel() {
-  const [index, setIndex] = useState(0);
-
-  const slides = [
+ const slides = [
     {
       id: 1,
       image: "https://picsum.photos/600/400",
@@ -5759,104 +5755,124 @@ function SiddimCarousel() {
       bottom: "English"
     }
   ];
+function SiddimCarousel() {
+  const [index, setIndex] = React.useState(0);
+
+
 
   const next = () => setIndex((prev) => (prev + 1) % slides.length);
   const prev = () => setIndex((prev) => (prev - 1 + slides.length) % slides.length);
 
   const slide = slides[index];
 
-  const bulletStyle = {
-    listStyle: "disc",
-    textAlign: "left",
-    paddingLeft: "20px",
-    lineHeight: "1.6",
-    fontSize: "1.05rem"
+  const scrollableStyle = {
+    maxHeight: "250px",
+    overflowY: "auto",
+    padding: "10px",
+    borderRadius: "12px",
+    background: "#f9f9f9",
+    boxShadow: "0 6px 15px rgba(0,0,0,0.1)",
+    fontSize: "1rem",
+    lineHeight: "1.5",
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "60px"
-      }}
-    >
+    <div style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 20px" }}>
       <div
         style={{
-          width: "900px",
+          width: "100%",
+          maxWidth: "1100px",
           display: "grid",
           gridTemplateColumns: "1fr 2fr 1fr",
-          gridTemplateRows: "auto 400px auto",
+          gridTemplateRows: "auto auto 400px auto auto",
           gap: "25px",
-          alignItems: "center"
+          alignItems: "start",
         }}
       >
         {/* Top */}
         <div
           style={{
             gridColumn: "1 / span 3",
-            fontSize: "1.6rem",
+            fontSize: "1.5rem",
             fontWeight: "600",
-            textAlign: "center"
+            textAlign: "center",
+            marginBottom: "10px",
           }}
         >
-          {slide.top}
+          {Array.isArray(slide.top) ? (
+            <div style={scrollableStyle}>
+              {slide.top.map((item, i) => (
+                <p key={i}>{item}</p>
+              ))}
+            </div>
+          ) : (
+            <div>{slide.top}</div>
+          )}
         </div>
 
         {/* Left bullets */}
-        <ul style={bulletStyle}>
-          {slide.left.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
+        <div style={scrollableStyle}>
+          <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+            {slide.left.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
 
         {/* Image */}
-        <div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <img
             src={slide.image}
             alt=""
             style={{
               width: "100%",
-              height: "400px",
+              maxHeight: "400px",
               objectFit: "cover",
               borderRadius: "14px",
-              boxShadow: "0 12px 35px rgba(0,0,0,0.15)"
+              boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
             }}
           />
         </div>
 
         {/* Right bullets */}
-        <ul style={bulletStyle}>
-          {slide.right.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
+        <div style={scrollableStyle}>
+          <ul style={{ paddingLeft: "20px", listStyle: "disc" }}>
+            {slide.right.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
 
         {/* Bottom */}
         <div
           style={{
             gridColumn: "1 / span 3",
-            fontSize: "1.25rem",
+            fontSize: "1.2rem",
             textAlign: "center",
-            letterSpacing: "1px",
-            fontWeight: "500"
+            fontWeight: "500",
+            marginTop: "10px",
           }}
         >
           {slide.bottom}
         </div>
 
         {/* Controls */}
-        <div style={{ gridColumn: "1 / span 3", textAlign: "center" }}>
+        <div style={{ gridColumn: "1 / span 3", textAlign: "center", marginTop: "-25rem" }}>
           <button
             onClick={prev}
             style={{
               marginRight: "12px",
-              padding: "10px 22px",
+              padding: "12px 24px",
               borderRadius: "8px",
               border: "none",
-              cursor: "pointer"
+              cursor: "pointer",
+              background: "#4f46e5",
+              color: "#fff",
+              fontSize: "1.1rem",
+              transition: "0.3s",
             }}
+            onMouseOver={(e) => (e.target.style.background = "#4338ca")}
+            onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
           >
             ◀
           </button>
@@ -5864,11 +5880,17 @@ function SiddimCarousel() {
           <button
             onClick={next}
             style={{
-              padding: "10px 22px",
+              padding: "12px 24px",
               borderRadius: "8px",
               border: "none",
-              cursor: "pointer"
+              cursor: "pointer",
+              background: "#4f46e5",
+              color: "#fff",
+              fontSize: "1.1rem",
+              transition: "0.3s",
             }}
+            onMouseOver={(e) => (e.target.style.background = "#4338ca")}
+            onMouseOut={(e) => (e.target.style.background = "#4f46e5")}
           >
             ▶
           </button>
@@ -6071,6 +6093,7 @@ const arrowStyle = (side) => ({
           </div>
         ))}
       </div>
+      <SiddimCarousel/>
 
       {/* Hebrew Carousel */}
 <div style={{ marginTop: "70px" }}>
@@ -6336,6 +6359,7 @@ const arrowStyle = (side) => ({
     </div>
   )}
 </div>
+
 <NiqqudExplanation/>
 <OldTestamentList/>
 <HebrewLetterCalculator/>
@@ -6559,7 +6583,6 @@ const arrowStyle = (side) => ({
 <EnglishLetterCardsCalculator/>
 <JapaneseKanaCards/>
 <KangxiRadicalExplorer/>
-<SiddimCarousel/>
 
     </AnimatedPage>
   );
