@@ -8579,7 +8579,9 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
     bg: "/images/fest-governance.jpg",    
     image: "/images/automation/halo1.png",
     bulletPoints:[
-      "After 160 years for Townies, 240 years for priests, 180 years for polites, 190 years for acolytes"
+      "After 160 years for Townies, 240 years for priests, 180 years for polites, 190 years for acolytes transition to the next ground",
+      "Men are within the town (Sky castle, moon town etc) for 3 years then 5 years alternating where they are free to have sexual intercourse with any woman.",
+      "Childbirth is prohibited off Earth"
     ]
    },
 ]; 
