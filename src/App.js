@@ -7174,7 +7174,7 @@ const CarouselContent = ({ large = false }) => (
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     perspective: "1200px",
-    rowGap:"-4rem",
+    rowGap:"4rem",
     columnGap:"2rem"
   }}
 >
@@ -8574,11 +8574,13 @@ There are 331,068 priestesses worldwide, calculated as 3 priestesses per town. E
    },
   { 
     id: 4, 
-    title: "Capital and Camp", 
-    text:"",
+    title: "The Infinite", 
+    text:"Those who have lived a sufficient number of years on Earth (RACHEL) and have performed well during their lifetime are granted the opportunity to begin a new stage of life beyond the ground. Their relocation serves a greater purpose: contributing productively to the long-term colonisation of space. The first destination in this transition is the Sky Castle. Here, Townies are given the opportunity to begin life anew in a setting removed from the Earth’s surface. Separate Sky Castles exist for Townies, while priests and polites share a different one. Acolytes who enter the Sky Castle reside there for three years. After this period, they are re-inducted into the Oikos of the Oikodrome, where they take on service within the Halo. The Halo is a vast halo-shaped megastructure containing factories, transit routes, and industrial systems. Within it, individuals perform their duties to the Oikos by operating Kharvees, vehicles used to move through the structure and maintain its productive functions. During their time in the Sky Castle, residents live with considerable personal freedom and may form relationships with any woman residing there. Life within the Sky Castle and the Halo together forms what is known as the Sky Utopia. Once a person has completed this stage of life, they continue the outward progression of human settlement. They are gradually relocated further into space—first to the Moon, then Venus, Mars, Jupiter, Saturn, and eventually beyond. This progression ensures that the oldest populations live the furthest from RACHEL, while younger generations remain closer to Earth. In doing so, the expansion of humanity into space remains orderly, logical, and efficient as populations gradually extend outward. All childbirth occurs exclusively on Earth. Therefore, once an individual has left the ground and begun life in the Sky Utopia or beyond, they are no longer eligible to have children.",
     bg: "/images/fest-governance.jpg",    
-    image: "/images/fest-diagram.jpg",
-    bulletPoints:""
+    image: "/images/automation/halo1.png",
+    bulletPoints:[
+      "After 160 years for Townies, 240 years for priests, 180 years for polites, 190 years for acolytes"
+    ]
    },
 ]; 
 
@@ -8659,9 +8661,9 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           image: "/images/automation/arat.png"
         },
         {
-          title: "Mobility",
-          text: "Circulation sustains structure.",
-          image: "/images/capital2.jpg"
+          title: "Space Colonisation ",
+          text: "Space colonisation will be organised in a way that uses the natural growth of the human population to expand outward in a structured and efficient manner. Advancement beyond Earth is not automatic; it is granted to individuals who have lived responsibly, contributed sufficient labour, and demonstrated acceptable competence in the required skills. In this system, off-world relocation serves both a reward and a responsibility. Those who meet the required standards of work, conduct, and capability are gradually moved beyond Earth to participate directly in the expansion of human civilisation into space. As populations increase naturally on Earth, qualified individuals are progressively transferred outward through the stages of the off-world system—beginning with the Sky Castles and the Halo, and later to further planetary settlements such as the Moon, Venus, Mars, and beyond. This method ensures that space colonisation develops steadily, logically, and sustainably, while also maintaining a culture in which every individual contributes meaningful work before being entrusted with life beyond Earth.",
+          image: "/images/automation/space1.png"
         }
       ]
     },
@@ -8670,7 +8672,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
       slides: [
         {
           title: "Angelic Distribution",
-          text: "The ratio of angels to females for a CLAPPET is 33 angels to 1 adult female.",
+          text: "The ratio of angels to females for a CLAPPET is 33 angels to 1 adult female +  1 droid for each adult woman.",
           image: "/images/angelic1.jpg"
         },
         {
@@ -8682,6 +8684,11 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
           title: "Fashion",
           text: "Each town contains eight distinct brands, each represented by its own logo. Every brand is managed by a MAC, who serves as the creative director for that brand. Upon assuming the role, the MAC designs the brand’s official logo, which must appear on the label of every garment produced under that brand. All women in the town are affiliated with one of these eight brands. However, within their assigned brand they retain creative freedom. They may design and produce any clothing they wish, provided that the garments align with their rank. The MAC does not dictate the specific designs produced by individual women. Instead, she provides overall creative direction and identity for the brand through the logo and brand concept. Because all women receive the same number of points, each woman has, in theory, the same capacity to produce clothing. As a result, the potential number of garments owned or produced by each woman can be equal, with differences arising only from individual design choices within their rank. ",
           image: "/images/automation/fashion2.png"
+        },
+        {
+          title: "Modes of travel",
+          text: "To the honour of Leonardo Da Vinci commericial/common air travel will be banned with people using land or sea routes to travel.",
+          image: "/images/automation/travel.png"
         }
       ]
     }
@@ -8775,7 +8782,7 @@ const navButton = {
     {
       id: 2,
       title: "Materiality",
-      images: ["/images/towniechart.png", "/images/citygirlchart.png"]
+      images: ["/images/towniechart.png", "/images/citygirlchart.png", "/images/tpa.png"]
     },
     {
       id: 3,
