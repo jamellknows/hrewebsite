@@ -8689,7 +8689,7 @@ const panels5 = Array.from({ length: 5 }).map((_, i) => ({
         },
         {
           title: "Modes of travel",
-          text: "To the honour of Leonardo Da Vinci commericial/common air travel will be banned with people using land or sea routes to travel.",
+          text: "To the honour of Leonardo Da Vinci whom people do not allow to make his designs during his lifetime commericial/common air travel will be banned with people using land or sea routes to travel.",
           image: "/images/automation/travel.png"
         }
       ]
